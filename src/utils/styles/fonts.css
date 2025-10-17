@@ -1,0 +1,109 @@
+/* Font-face declarations
+* Variable Fonts
+*/
+
+@font-face {
+  font-family: InterV;
+  src: url("fonts/var/InterVariable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  /* a display typeface for headings */
+  font-family: "Funnel Display";
+  src: url("fonts/var/FunnelDisplay-VariableFont_wght.ttf")
+    format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("fonts/var/jetbrains-mono.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  /* a display typeface for headings */
+  font-family: "Martian Grotesk";
+  src: url("fonts/var/martian-grotesk.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  /* a display typeface for headings */
+  font-family: "WF Sans" /*Webflow Visual Sans*/;
+  src: url("fonts/var/WFVisualSansVF.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "FKGrotesk";
+  src: url("fonts/var/FKGrotesk.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPEditorial Italic";
+  src: url("fonts/var/PPEditorialNew-ItalicVariable.woff2")
+    format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "PPEditorial Var";
+  src: url("fonts/var/PPEditorialNew-Variable.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cabinet Grotesk";
+  src: url("fonts/var/CabinetGrotesk-Variable.ttf") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* 
+* Non-variable fonts
+*/
+@font-face {
+  font-family: Axiforma;
+  src: url("fonts/non-var/axiforma.woff2") format("woff2");
+  font-weight: 400 600 900;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Seriously Nostalgic";
+  src: url("fonts/non-var/SeriouslyNostalgicItal-Reg.otf");
+  font-weight: 400 600 900;
+  font-display: swap;
+}
+
+@font-face {
+  /* a display typeface for headings */
+  font-family: "Cal Sans";
+  src: url("fonts/non-var/CalSans-SemiBold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  /* a display typeface for headings */
+  font-family: "Untitled Sans Bold";
+  src: url("fonts/non-var/Untitled Sans - Bold.woff2") format("woff2");
+  font-display: swap;
+}
+
+@font-face {
+  /* a display typeface for headings */
+  font-family: "Untitled Sans Regular";
+  src: url("fonts/non-var/Untitled Sans - Regular.woff2") format("woff2");
+  font-display: swap;
+}

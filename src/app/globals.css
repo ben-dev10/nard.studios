@@ -1,7 +1,10 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 @import "../utils/styles/themes/neutral.css";
+@import "../utils/styles/fonts.css";
+@import "../utils/styles/custom-scrollbar.css";
 @import "../utils/styles/typography.css";
+@import "../app/clones/payload/assets/payload-cms.css";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -76,7 +79,7 @@
 
 @layer utilities {
   .debug {
-    @apply border border-red-500;
+    @apply border border-y-red-500;
   }
   .debug-y {
     @apply border border-yellow-500;
@@ -118,4 +121,9 @@
       width: 100%;
     }
   }
+}
+
+html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
 }

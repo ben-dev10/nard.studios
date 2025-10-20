@@ -1,0 +1,41 @@
+:root {
+  @apply [--column:calc(100vw-(var(--gutter-h)*2))/8] [--gutter-h:2rem] md:[--column:calc(100vw-(var(--gutter-h)*2))/16] lg:[--gutter-h:8rem] xl:[--gutter-h:calc(50vw-40rem)];
+}
+
+.grid-icon--wrapper {
+  @apply flex col-span-2 md:col-span-2 items-center justify-center;
+}
+
+.grid--icon {
+  @apply size-[calc(var(--column)*1.1)] object-contain;
+}
+
+.grid-line {
+  @apply to-border w-[1px] bg-gradient-to-b from-transparent from-[10px] to-[240px];
+}
+.grid-line2 {
+  @apply bg-border w-[1px];
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none /* firefox */;
+  scrollbar-width: none /* IE */;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none /*chrome, edge*/;
+}

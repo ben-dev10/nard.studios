@@ -264,7 +264,7 @@ function Projects() {
           <div className="right-half md:w-[calc(100%-350px)]">
             <Image
               alt="bg-img"
-              src="/nard/bento/flyers--img-arts.png"
+              src="/_nard/imgs/flyers--img-arts.png"
               width={2382}
               height={1551}
               className="pointer-events-none -mt-10 min-w-[350px] scale-[1.2] md:-mt-20 md:min-w-[500px]"
@@ -284,7 +284,7 @@ function GraphicRow() {
           <div className="_img-1">
             <Image
               alt="flyer-1"
-              src="/nard/imgs/cereal-3d(1).webp"
+              src="/_nard/imgs/cereal-3d(1).webp"
               width={1920}
               height={1080}
               className="w-[220px] min-w-[200px] -rotate-4 rounded-md shadow-2xl sm:w-[250px]"
@@ -292,8 +292,8 @@ function GraphicRow() {
           </div>
           <div className="_img-2">
             <Image
-              alt="flyer-1"
-              src="/nard/imgs/velvet.png"
+              alt="flyer-2"
+              src="/_nard/imgs/velvet.webp"
               width={2040}
               height={1227}
               className="mt-15 w-[220px] min-w-[200px] rotate-6 rounded-sm shadow-2xl sm:w-[250px]"
@@ -301,8 +301,8 @@ function GraphicRow() {
           </div>
           <div className="_img-3">
             <Image
-              alt="flyer-1"
-              src="/nard/imgs/profile-card.webp"
+              alt="flyer-3"
+              src="/_nard/imgs/profile-card.webp"
               width={3000}
               height={3200}
               className="mt-30 w-[140px] min-w-[100px] rotate-5 rounded-sm shadow-2xl sm:w-[150px]"

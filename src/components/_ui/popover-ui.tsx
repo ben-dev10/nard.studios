@@ -40,15 +40,19 @@ export const Trigger02 = () => {
 
 export default function PopoverUI({
   content = "Popover",
+  className,
 }: {
   content?: React.ReactNode;
+  className?: string;
 }) {
   return (
     <Popover>
       <PopoverTrigger>
         <Trigger02 />
       </PopoverTrigger>
-      <PopoverContent className="w-[170px] max-w-max rounded-[10px] p-1.5 px-2.5 text-[0.8rem]">
+      <PopoverContent
+        className={`${className} w-[170px] max-w-max rounded-[10px] p-1.5 px-2.5 text-[0.8rem]`}
+      >
         {content}
       </PopoverContent>
     </Popover>

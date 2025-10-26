@@ -1,4 +1,3 @@
-// _FIXME: fix deprecated lucide icons with custom ones
 import {
   Share2,
   Facebook,
@@ -13,6 +12,11 @@ import {
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+
+/*_FIXME: 
+  1. fix deprecated lucide icons with custom ones
+  2. prettify icons -- too basic
+ */
 
 interface ShareProps {
   url?: string;

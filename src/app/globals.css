@@ -1,16 +1,20 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "../utils/styles/themes/neutral.css";
 @import "../utils/styles/fonts.css";
-@import "../utils/styles/custom-scrollbar.css";
+@import "../app/gallery/clones/payload/assets/payload-cms.css";
+@import "../utils/styles/themes/neutral.css";
+@import "../utils/styles/scrollbars.css";
 @import "../utils/styles/typography.css";
-@import "../app/clones/payload/assets/payload-cms.css";
+
+@plugin "../utils/plugins/tw-bevel.js";
 
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --breakpoint-xs: 375px /*iPhone SE*/;
+  --breakpoint-550: 550px;
 
+  --font-geistSans: var(--font-geist-var-sans);
   --font-InterV: "InterV";
   --font-Axiforma: "Axiforma";
   --font-FKGrotesk: "FKGrotesk";
@@ -19,6 +23,8 @@
   --font-UntitledSansB: "Untitled Sans Bold";
   --font-UntitledSansR: "Untitled Sans Regular";
   --font-CalSans: "Cal Sans";
+  --font-FigtreeR: "Figtree Regular";
+  --font-FigtreeIt: "Figtree Italic";
   --font-FunnelDisplay: "Funnel Display";
   --font-SeriouslyNostalgic: "Seriously Nostalgic";
   --font-JetBrainsMono: "JetBrains Mono";
@@ -91,18 +97,23 @@
     cursor: pointer;
   }
 
+  .container-4xl,
   [datatype="container"] {
     @apply mx-auto max-w-4xl;
   }
+  .container-5xl,
   [datatype="container-5xl"] {
     @apply mx-auto max-w-5xl;
   }
+  .container-6xl,
   [datatype="container-6xl"] {
     @apply mx-auto max-w-6xl;
   }
+  .container-7xl,
   [datatype="container-7xl"] {
     @apply mx-auto max-w-7xl;
   }
+  .container-8xl,
   [datatype="container-8xl"] {
     @apply mx-auto max-w-[1024px];
   }
@@ -121,9 +132,4 @@
       width: 100%;
     }
   }
-}
-
-html {
-  overflow-y: scroll;
-  scrollbar-gutter: stable;
 }

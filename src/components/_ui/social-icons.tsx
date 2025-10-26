@@ -221,7 +221,7 @@ function Linkedin({ SVGClass, link, ...props }: SVGProps) {
 
 type IconListProps = React.HTMLAttributes<HTMLDivElement> & {
   SVGClass?: string;
-  wrapperClass?: string;
+  className?: string;
   github?: true;
   tiktok?: true;
   facebook?: true;
@@ -244,7 +244,8 @@ interface IconConfig {
 
 //  main component
 export default function SocialIcons({
-  SVGClass = "text-white",
+  SVGClass = "text-white size-6 text-black",
+  className = "flex text-black",
   github,
   tiktok,
   facebook,
@@ -260,15 +261,17 @@ export default function SocialIcons({
 }: IconListProps) {
   // links
   const gitHubLink = "https://github.com/ben-dev10";
+  const xtwitterLink = "https://x.com/_nard_q?t=Kfa-eZzpcnv49exB6jA3mQ&s=09";
+  const whatsappLink =
+    "https://wa.me/233541467464?text=Hi%20there!%20I%20found%20you%20through%20your%20portfolio.";
+  const linkedinLink =
+    "https://www.linkedin.com/in/bernard-quarshie-b7a157376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app";
+  const instagramLink = "https://google.com";
   const tiktokLink = "https://google.com";
   const facebookLink = "https://google.com";
-  const instagramLink = "https://google.com";
-  const linkedinLink = "https://google.com";
   const youtubeLink = "https://google.com";
   const threadsLink = "https://google.com";
   const telegramLink = "https://google.com";
-  const xtwitterLink = "https://google.com";
-  const whatsappLink = "https://google.com";
   const discordLink = "https://google.com";
 
   //  icons with their configurations
@@ -377,14 +380,14 @@ export default function SocialIcons({
       {icons.length === 0 ? (
         <p>No icons added</p>
       ) : (
-        <div {...props}>
+        <div {...props} className={`${className}`}>
           {icons.map((icon, index) => (
             <span
               key={`${icon.name}-${index}`}
               className={`flex items-center gap-1 ${icon.color}`}
               title={icon.name}
             >
-              {/* TODO: Implement stats feature
+              {/* _TODO: Implement stats feature
                *      <p className="font-bold font-GeistMono text-[1.2rem]">{icon.stats}</p>
                */}
               {icon.icon}

@@ -17,6 +17,10 @@ import {
   ChevronDownIcon,
 } from "lucide-react";
 
+/**
+ * _FIXME: fix button styling inconsistencies for light & dark modes
+ */
+
 /*
  * 1. Classic Toggle - Sun/Moon switch
  */
@@ -60,7 +64,14 @@ export function ClassicThemeToggle() {
 /*
  * 2. Button Group - Three options toggle
  */
-export function ButtonGroupThemeToggle({className}:{className?: string}) {
+type ToggleButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  className: string;
+};
+
+export function ButtonGroupThemeToggle({
+  className,
+  ...props
+}: ToggleButtonProps) {
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
@@ -76,14 +87,15 @@ export function ButtonGroupThemeToggle({className}:{className?: string}) {
   ];
 
   return (
-    <div className={`flex max-w-max rounded-full ${className}`}>
+    <div className={`flex max-w-max rounded-full !p-2 !px-3 ${className}`}>
       {options.map(({ value, icon, label }) => (
         <button
+          {...props}
           key={value}
           onClick={() => setTheme(value)}
-          className={`flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium transition-colors ${
+          className={`flex items-center gap-2 rounded-full px-3 py-2 text-sm font-medium transition-colors ${
             theme === value
-              ? "bg-white text-gray-900 shadow-sm dark:bg-gray-200 dark:text-gray-50" // active option
+              ? "rounded-full bg-white text-gray-900 shadow-sm dark:bg-gray-200 dark:text-gray-50" // active option
               : "hover:text-gray-9 text-gray-600 dark:text-gray-400 dark:hover:text-gray-100"
           } `}
           aria-label={`Switch to ${label.toLowerCase()} theme`}

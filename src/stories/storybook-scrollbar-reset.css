@@ -1,0 +1,31 @@
+/* Global custom scrollbar styling for Storybook */
+/* For webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fafafa; /* neutral-50 */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d4d4d8; /* neutral-300 */
+  border: 2px solid #fafafa; /* neutral-50 - creates padding effect */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a1a1aa; /* neutral-400 */
+}
+
+::-webkit-scrollbar-thumb:active {
+  background: #71717a; /* neutral-500 */
+}
+
+/* For Firefox */
+.sb-show-main,
+.sb-main,
+.docs-story {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d8 #fafafa; /* thumb track */
+}

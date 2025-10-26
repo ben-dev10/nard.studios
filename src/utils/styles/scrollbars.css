@@ -1,0 +1,50 @@
+/* html {
+  overflow-y: scroll;
+  scrollbar-gutter: stable;
+} */
+
+/* For webkit browsers (Chrome, Safari, Edge) */
+._custom-scrollbar > * ::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+._custom-scrollbar > * ::-webkit-scrollbar-track {
+  background: #2e2e2e;
+}
+
+._custom-scrollbar > * ::-webkit-scrollbar-thumb {
+  background: #5d5d5d;
+  border-radius: 6px;
+}
+
+._custom-scrollbar > * ::-webkit-scrollbar-thumb:hover {
+  background: #8a8a8a;
+}
+
+._custom-scrollbar > * ::-webkit-scrollbar-thumb:active {
+  background: #71717a;
+}
+
+/* new custom scrollbar */
+._scrollbar-override::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+._scrollbar-override::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+._scrollbar-override::-webkit-scrollbar-thumb {
+  background: #e0e0e0;
+  /* border-radius: 6px; */
+}
+
+._scrollbar-override::-webkit-scrollbar-thumb:hover {
+  background: #bababa;
+}
+
+._scrollbar-override::-webkit-scrollbar-thumb:active {
+  background: rgb(165, 165, 165);
+}

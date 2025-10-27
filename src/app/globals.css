@@ -15,6 +15,7 @@
   --breakpoint-550: 550px;
 
   --font-geistSans: var(--font-geist-var-sans);
+  --font-Geist: Geist;
   --font-InterV: "InterV";
   --font-Axiforma: "Axiforma";
   --font-FKGrotesk: "FKGrotesk";
@@ -95,6 +96,10 @@
   }
   button {
     cursor: pointer;
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
   }
 
   .container-4xl,

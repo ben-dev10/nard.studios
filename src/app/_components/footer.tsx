@@ -6,12 +6,13 @@ import {
 import SocialIcons from "@/components/_ui/social-icons";
 import Section from "@/components/ui/elements/section";
 import {
-  Building2,
   ExternalLink,
   FileBox,
   PencilLine,
+  UserCircleIcon,
   Wallpaper,
 } from "lucide-react";
+import Image from "next/image";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 const copy = (
@@ -23,8 +24,8 @@ const copy = (
 
 const footerLinks = [
   {
-    header: "Work",
-    headerIcon: <Building2 size={16} className="" />,
+    header: "About",
+    headerIcon: <UserCircleIcon size={16} className="" />,
     links: [
       {
         name: "Resume",
@@ -125,6 +126,21 @@ export default function Footer() {
                   linkedin
                 />
                 <div className="sm:hidden">{copy}</div>
+
+                <div className="mt-5">
+                  <p className="text-muted-foreground text-[0.6rem] font-bold">
+                    SITE COMPLETION
+                  </p>
+                  <div className="flex items-center gap-2">
+                    <Image
+                      alt="scale-svg"
+                      src="/_nard/svgs/gradient-scale.svg"
+                      width={119}
+                      height={12}
+                    />
+                    <p>15%</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

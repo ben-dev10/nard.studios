@@ -7,3 +7,9 @@
 // base gets overridden as we go further right
 base < components < utilities
 ```
+
+For gradient-text:
+
+```css
+bg-clip-text text-transparent <gradients>
+```

@@ -2,7 +2,7 @@ import { NardLogoSmallLight } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
 import { AppSheet } from "./app--sheet";
-import { Building2, FileBox, PencilLine, Wallpaper } from "lucide-react";
+import { FileBox, PencilLine, UserCircleIcon, Wallpaper } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -23,49 +23,53 @@ export interface NavLinksProps {
 // Navigation links
 const NavLinks = [
   {
-    name: "Work",
-    url: "#",
-    icon: <Building2 size={16} />,
+    name: "About",
+    url: "/about",
+    icon: <UserCircleIcon size={16} />,
   },
   {
     name: "Gallery",
-    url: "#",
+    url: "/gallery",
     icon: <Wallpaper size={16} />,
   },
   {
     name: "Resources",
-    url: "#",
+    url: "/resources",
     icon: <FileBox size={16} />,
   },
   {
     name: "Blog",
-    url: "#",
+    url: "/blog",
     icon: <PencilLine size={16} />,
   },
 ];
 
-export default function Navbar({ isVisible }: { isVisible: boolean }) {
+export default function Navbar() {
   return (
-    <Section.RootElement className="fixed top-0 z-999 w-full">
+    <Section.RootElement
+      as="header"
+      className="_header !sticky !top-2 z-10 w-full"
+    >
       <Section.Container
         container="8xl"
-        className={`flex items-center justify-between p-5 ${isVisible && "pt-12"}`}
+        className={`flex items-center justify-between p-5 py-1`}
       >
-        <div className="_left-half relative cursor-pointer rounded-full border-2 border-white/60 bg-white/55 p-4 px-6 shadow-2xl backdrop-blur-[30px]">
-          <Background.Layer
-            className={`_bg-blur absolute inset-0 -z-1 mt-5 rounded-full ${conicGradient} opacity-25 blur-md`}
-          />
-
-          <div className="_contents flex gap-2">
-            <NardLogoSmallLight />
-            <p className="text-[0.9rem] font-[600]">nard.studios</p>
+        <Link href={"/"}>
+          <div className="_left-half relative rounded-full border-2 border-white/60 bg-white/55 p-4 px-6 shadow-2xl backdrop-blur-[30px]">
+            <Background.Layer
+              className={`_bg-blur absolute inset-0 -z-1 mt-5 rounded-full ${conicGradient} opacity-25 blur-md`}
+            />
+            <div className="_contents flex gap-2">
+              <NardLogoSmallLight />
+              <p className="text-[0.9rem] font-[600]">nard.studios</p>
+            </div>
           </div>
-        </div>
+        </Link>
 
         <div className="_right-half flex items-center gap-2 rounded-full bg-white/55 p-3 px-5 shadow-2xl backdrop-blur-[20px]">
           <div className="_utilities md:mr-3">
             <Link href="mailto:quarshiebernard552@gmail.com?subject=Project%20Inquiry&body=Hi%20there,">
-              <Button className="bevel-[0.5] rounded-full !text-[0.9rem] active:scale-[0.9]">
+              <Button className="rounded-full" variant="ctaBtn">
                 Send Email
               </Button>
             </Link>

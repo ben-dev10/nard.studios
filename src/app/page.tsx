@@ -117,9 +117,11 @@ function Hero() {
 
         <div className="_paragraphs text-muted-foreground mb-15 space-y-3">
           <p className="">
-            Hey 👋, my name is Bernard Quarshie — Ben or{" "}
-            <span className="text-primary">nard</span> works too, welcome to my
-            portfolio.
+            Hey 👋, my name is Bernard Quarshie —{" "}
+            <span className="gradient-text bg-gradient-to-br from-blue-600 to-pink-500">
+              nard
+            </span>{" "}
+            works too, welcome to my portfolio.
           </p>
           <p className="">
             Since you are here, checkout some of my experiments below 👇
@@ -201,7 +203,7 @@ function Projects() {
           <ProjectCard
             href="/gallery/clones/clerk"
             title="Clerk Pricing Page"
-            desc="Clone of CLerk's pricing page"
+            desc="A clone of Clerk's pricing page."
             img={{
               alt: "Clerk's Pricing page banner",
               src: "/_nard/imgs/clerk-banner.webp",
@@ -212,7 +214,7 @@ function Projects() {
           <ProjectCard
             href="/gallery/clones/payload"
             title="Payload's homepage"
-            desc="A near exact clone of Payload's homepage"
+            desc="A near exact clone of Payload's homepage."
             img={{
               alt: "Payload's homepage banner",
               src: "/_nard/imgs/payload-banner.webp",
@@ -335,8 +337,8 @@ function CTA() {
                 className="absolute -right-15 z-2 mt-10 w-[350px] min-w-[340px] mask-b-from-20% mask-b-to-80% opacity-70 md:mt-5 md:w-[370px]"
               />
               <Image
-                alt="nard-chrome"
-                src="/nard/dots-texture.png"
+                alt="dots-texture"
+                src="/_nard/imgs/dots-texture.png"
                 width={500}
                 height={500}
                 className="absolute z-1 -ml-50 min-w-[400px] mask-radial-from-0% mask-radial-to-50% md:-ml-30"
@@ -351,12 +353,12 @@ function CTA() {
               </p>
               <div className="mt-7 flex gap-4">
                 <Link href="mailto:quarshiebernard552@gmail.com?subject=Project%20Inquiry&body=Hi%20there,">
-                  <Button className="bevel-[0.5] bg-white text-black hover:bg-white/90 active:scale-[0.9]">
+                  <Button className="bevel-[0.15] bg-white text-black hover:bg-white/90 active:scale-[0.9]">
                     Send Email
                   </Button>
                 </Link>
                 <Link href="/gallery/clones/payload">
-                  <Button className="bevel-[0.5] bg-white px-5 text-black hover:bg-white/90 active:scale-[0.9]">
+                  <Button className="bevel-[0.15] bg-white px-5 text-black hover:bg-white/90 active:scale-[0.9]">
                     Projects
                   </Button>
                 </Link>
@@ -369,28 +371,39 @@ function CTA() {
   );
 }
 
-const Banner = ({
-  isVisible,
-  setIsVisible,
-}: {
-  isVisible: boolean;
-  setIsVisible: (value: boolean) => void;
-}) => {
+const Banner = () => {
+  const [isVisible, setIsVisible] = useState(true);
   return (
     <>
       {isVisible && (
-        <div className="banner relative !z-50 flex justify-center bg-black p-1 text-white">
-          <div className="flex max-w-max items-center gap-x-2">
-            <p>Site is still a work in progress</p>
-            <button
-              className="cursor-pointer rounded-full p-1"
-              onClick={() => {
-                setIsVisible(false);
-                console.log(isVisible);
-              }}
-            >
-              <X size={16} className="" />
-            </button>
+        <div className="_banner relative !z-50 overflow-hidden bg-black text-white">
+          <div className="flex justify-center">
+            <div className="_line absolute top-0 left-0 z-1 h-[1px] w-full bg-white mix-blend-overlay" />
+            <div className="absolute -ml-90">
+              <div className="absolute top-0 left-0 h-[40px] w-full -rotate-60 bg-white blur-md" />
+              <div className="absolute top-0 left-0 h-[70px] w-full -rotate-60 bg-blue-500 blur-2xl" />
+
+              <Image
+                alt="lines-svg"
+                src="/_nard/svgs/lines.svg"
+                width={345}
+                height={35}
+                className="relative"
+              />
+            </div>
+
+            <div className="_contents relative flex items-center gap-2 p-2">
+              <p className="">Site is a work in progress</p>
+              <button
+                className="cursor-pointer rounded-full"
+                onClick={() => {
+                  setIsVisible(false);
+                  console.log(isVisible);
+                }}
+              >
+                <X size={16} className="" />
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -398,39 +411,42 @@ const Banner = ({
   );
 };
 
-const APP_BG = "bg-[#fafafa]"; /* or: #fafafa, f7f7f7, #f4f5ff */
+export const APP_BG = "#fafafa"; /* or: #fafafa, f7f7f7, #f4f5ff */
 const APP_ZINDEX = "z-2";
 
 /**
  * _FEATURE:
- * 1. navbar+sheet, (more sections: Testimonials, bentos)
- * 1.2 sticky nav
- * 2.showcase pill, global-fonts understand, graphic-row hover interactions
- * 3. assets optimize
+ * 1. (more sections: Testimonials, bentos)
+ * 2. showcase pill, graphic-row hover interactions
  *
  * 4. pages: ui-clones/project-hub, about, gallery
  */
 
 export default function Home() {
-  const [isVisible, setIsVisible] = useState(true);
   return (
-    <main
-      className={`_homepage font min-h-screen overflow-hidden transition-colors duration-300 ${APP_BG} [--gutter-x:3.75rem]`}
+    <div
+      className="_app.root"
+      style={{
+        backgroundColor: APP_BG,
+      }}
     >
-      <Background className="opacity-50">
-        <Background.Layer className="fixed top-0 left-0 h-full w-[30px] bg-[url(/_nard/svgs/left-marquee.svg)]" />
-        <Background.Layer className="fixed top-0 -right-6 h-full w-[45px] bg-[url(/_nard/svgs/right-marquee.svg)]" />
-      </Background>
-
-      <Banner isVisible={isVisible} setIsVisible={setIsVisible} />
-      <div className={`_contents relative ${APP_ZINDEX}`}>
-        <Navbar isVisible={isVisible} />
-        <Hero />
-        <Projects />
-        <GraphicRow />
-        <CTA />
-        <Footer />
-      </div>
-    </main>
+      <Banner />
+      <Navbar />
+      <main
+        className={`_homepage font min-h-screen overflow-hidden transition-colors duration-300`}
+      >
+        <Background className="opacity-50">
+          <Background.Layer className="fixed top-0 left-0 h-full w-[30px] bg-[url(/_nard/svgs/left-marquee.svg)]" />
+          <Background.Layer className="fixed top-0 -right-6 h-full w-[45px] bg-[url(/_nard/svgs/right-marquee.svg)]" />
+        </Background>
+        <div className={`_contents relative ${APP_ZINDEX}`}>
+          <Hero />
+          <Projects />
+          <GraphicRow />
+          <CTA />
+          <Footer />
+        </div>
+      </main>
+    </div>
   );
 }

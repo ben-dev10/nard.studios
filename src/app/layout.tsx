@@ -17,13 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSansVar.variable} font-geistSans ${geistMonoVar.variable} antialiased`}
+        className={`${geistSansVar.variable} ${geistMonoVar.variable} font-geistSans antialiased [--gutter-x:3.75rem]`}
       >
         <ThemeProvider>
-          <div className="_custom-scrollbar">
-            {children}
-            <Analytics />
-          </div>
+          {children}
+          <Analytics />
         </ThemeProvider>
       </body>
     </html>

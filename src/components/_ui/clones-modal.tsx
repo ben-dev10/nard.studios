@@ -82,6 +82,7 @@ export default function ClonesModal({
                 opacity: { duration: 0.2 },
               }}
               className="_mini-modal absolute right-0 bottom-[0%] z-5 flex min-w-[350px] flex-col gap-y-3 rounded-[12px] bg-gradient-to-br from-[#202020] to-black p-5 text-white shadow-2xl"
+            
             >
               <div className="_status-bar mb-auto flex">
                 <p className="pointer-events-none mr-auto !text-[0.8rem] uppercase opacity-70">

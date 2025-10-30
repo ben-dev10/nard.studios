@@ -8,6 +8,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
 import { Check, Copy, LockIcon, MessageCircle } from "lucide-react";
+import { useScrollbarMode } from "@/hooks/use-scrollbar-mode";
 
 /**
  * _FIXME: separate major sections into different components
@@ -22,6 +23,8 @@ interface Addon {
 export default function ClerkPricingPage() {
   const basePrice = 25;
   const [selectedAddons, setSelectedAddons] = useState<Set<string>>(new Set());
+
+  useScrollbarMode("dark");
 
   const addons: Addon[] = [
     { id: "auth", price: 100 },
@@ -70,7 +73,7 @@ export default function ClerkPricingPage() {
             <Background className="">
               <Background.Layer
                 opacity={0.9}
-                className="_gradient-slash absolute inset-x-0 top-0 !z-10 mt-[calc(-571/16*1rem)] -ml-50 overflow-hidden pl-[50%] mix-blend-overlay"
+                className="_gradient-slash absolute inset-x-0 top-0 !z-10 mt-[calc(-571/16*1rem)] -ml-70 overflow-hidden pl-[50%] mix-blend-overlay"
               >
                 <picture>
                   <source
@@ -120,7 +123,7 @@ export default function ClerkPricingPage() {
                 height={416}
                 src={"/_nard/svgs/nard-logo-chrome.svg"}
                 alt="nard-chrome-logo"
-                className="-ml-20 size-90 mask-b-from-20 mask-b-to-80 max-md:size-80"
+                className="-ml-20 size-100 mask-b-from-20 mask-b-to-60 max-md:size-90"
               />
             </div>
             {/* contents */}
@@ -291,12 +294,11 @@ export default function ClerkPricingPage() {
                 <div className="border-t pt-5">
                   <div className="mb-3 flex items-center justify-between gap-x-2 border-l border-sky-300 py-2 pr-3 pl-6">
                     <label
-                      id="authentication"
                       htmlFor="check-1"
-                      className="flex items-center text-[0.9rem]"
+                      className="flex cursor-pointer items-center text-[0.9rem]"
                     >
                       <Checkbox
-                        name="check-1"
+                        id="check-1"
                         checked={selectedAddons.has("auth")}
                         onCheckedChange={() => toggleAddon("auth")}
                         className="mr-2 border-white/50 [--primary:#74d4ff]"
@@ -326,10 +328,10 @@ export default function ClerkPricingPage() {
                   <div className="mb-3 flex items-center justify-between gap-x-2 border-l border-sky-300 py-2 pr-3 pl-6">
                     <label
                       htmlFor="check-2"
-                      className="flex items-center text-[0.9rem]"
+                      className="flex cursor-pointer items-center text-[0.9rem]"
                     >
                       <Checkbox
-                        name="check-2"
+                        id="check-2"
                         checked={selectedAddons.has("admin")}
                         onCheckedChange={() => toggleAddon("admin")}
                         className="mr-2 border-white/50 [--primary:#74d4ff]"
@@ -451,10 +453,10 @@ export default function ClerkPricingPage() {
                     <div className="mb-3 flex items-center gap-x-2 border-l border-yellow-300 py-2 pr-3 pl-6">
                       <label
                         htmlFor="check-3"
-                        className="flex items-center text-[0.9rem]"
+                        className="flex cursor-pointer items-center text-[0.9rem]"
                       >
                         <Checkbox
-                          name="check-3"
+                          id="check-3"
                           checked={selectedAddons.has("b2b-saas")}
                           onCheckedChange={() => toggleAddon("b2b-saas")}
                           className="mr-2 border-white/50 [--primary:_#ffdf20]"

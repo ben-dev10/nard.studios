@@ -1,9 +1,9 @@
-import Home from "@/app/page";
+import Home from "@/app/(main)/page";
 import ClerkPricingPage from "@/app/gallery/clones/clerk/page";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import PayloadCMS from "@/app/gallery/clones/payload/page";
 import GalleryPages from "@/app/gallery/page";
-import AboutPages from "@/app/about/page";
+import AboutPages from "@/app/(main)/about/page";
 
 const meta: Meta = {
   title: "Blocks/Pages",

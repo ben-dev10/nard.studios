@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const ACMELogo = ({
   variant = "simple",
   simpleSizeClass = "size-6",
@@ -12,7 +14,7 @@ export const ACMELogo = ({
   roundedFill?: string;
 }) => {
   return (
-    <a href="#">
+    <Link href="/">
       {variant == "simple" ? (
         //  simple-svg
         <svg
@@ -92,6 +94,6 @@ export const ACMELogo = ({
           </g>
         </svg>
       )}
-    </a>
+    </Link>
   );
 };

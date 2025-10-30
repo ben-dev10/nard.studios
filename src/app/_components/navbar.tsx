@@ -3,8 +3,8 @@ import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
 import { AppSheet } from "./app--sheet";
 import { FileBox, PencilLine, UserCircleIcon, Wallpaper } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import EmailButton from "./email-btn";
 
 // bg-[attr(datatype-bg)]
 const conicGradient =
@@ -68,11 +68,7 @@ export default function Navbar() {
 
         <div className="_right-half flex items-center gap-2 rounded-full bg-white/55 p-3 px-5 shadow-2xl backdrop-blur-[20px]">
           <div className="_utilities md:mr-3">
-            <Link href="mailto:quarshiebernard552@gmail.com?subject=Project%20Inquiry&body=Hi%20there,">
-              <Button className="rounded-full" variant="ctaBtn">
-                Send Email
-              </Button>
-            </Link>
+            <EmailButton text="Send email" className="rounded-full" />
           </div>
           <nav className="hidden md:block">
             <ul className="flex items-center gap-3">

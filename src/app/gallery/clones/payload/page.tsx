@@ -17,6 +17,7 @@ import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { Github } from "@/components/_ui/icons";
 import { Button } from "@/components/ui/button";
 import ClonesModal from "@/components/_ui/clones-modal";
+import { useScrollbarMode } from "@/hooks/use-scrollbar-mode";
 
 /*
 _FIXME: 
@@ -178,7 +179,7 @@ const PayloadHero = () => {
               height="1973"
               src="/payload-cms/payload--hero2.webp"
               alt="A screenshot of live preview."
-              className="max-xs:max-w-[330px] rounded-[4px] border border-white/8 bg-[#141414]/70 p-[6px] shadow-2xl md:max-w-[800px]"
+              className="max-xs:max-w-[330px] rounded-[4px] border border-white/8 bg-[#141414]/70 p-[6px] shadow-2xl shadow-black md:max-w-[800px]"
             />
           </div>
           <div className="top-img absolute pl-20">
@@ -187,7 +188,7 @@ const PayloadHero = () => {
               height="1915"
               src="/payload-cms/payload--hero1.webp"
               alt="Payload app structure and config"
-              className="max-xs:max-w-[330px] rounded-[4px] border border-white/8 bg-[#141414]/70 p-[6px] shadow-2xl md:max-w-[800px]"
+              className="max-xs:max-w-[330px] rounded-[4px] border border-white/8 bg-[#141414]/70 p-[6px] shadow-2xl shadow-black md:max-w-[800px]"
             />
           </div>
         </div>
@@ -201,7 +202,7 @@ const PayloadCustomers = () => {
     <Section.RootElement className="px-[var(--gutter-h)]">
       <Section.Container container="none" className="">
         <div className="_contents flex flex-col md:items-center">
-          <h4 className="font-UntitledSansR relative mb-10">
+          <h4 className="font-UntitledSansR relative mb-10 font-[500]">
             Payload is the open-source Next.js backend used in production by the
             most innovative companies on earth.
           </h4>
@@ -433,6 +434,8 @@ const GridLines = () => {
 
 /* main component */
 export default function PayloadCMS() {
+  useScrollbarMode("dark");
+
   return (
     <Section.RootElement className="_app.payload relative !top-0 !left-0 overflow-hidden text-white [--border:#fff]/15">
       <Section.Container container="none">
@@ -450,7 +453,7 @@ export default function PayloadCMS() {
               blendMode="multiply"
             />
             <Background.Layer className="fixed inset-0 bg-[url(/payload-cms/payload-bg-design.jpg)] bg-cover" />
-            <Background.Layer className="top-mask-gradient fixed inset-x-0 top-0 left-0 h-[250px] bg-gradient-to-b from-black to-transparent" />
+            <Background.Layer className="top-mask-gradient fixed inset-x-0 top-0 left-0 h-[var(--mask-height)] bg-gradient-to-b from-black to-transparent [--mask-height:320px]" />
           </Background>
         </>
         <div

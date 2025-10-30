@@ -32,6 +32,7 @@ export function AppSheet({ NavLinks, side }: NavLinksProps) {
             variant="ghost"
             size="icon"
           >
+            <span className="sr-only">Hamburger icon</span>
             <svg
               className="pointer-events-none"
               width={16}

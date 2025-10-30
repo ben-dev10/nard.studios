@@ -85,7 +85,7 @@ export default function SocialShare({
           <Share2 size={16} className="-ml-1" />
         </span>
       </PopoverTrigger>
-      <PopoverContent className="relative z-9999 -translate-x-10 -translate-y-3 border-[#2e2e2e]/80 bg-[#090909]">
+      <PopoverContent className="relative z-9999 -translate-x-10 -translate-y-3 rounded-2xl border-[#2e2e2e]/80 bg-[#101010] shadow-xl shadow-black/90">
         <div className="grid grid-cols-3 gap-4">
           {shareLinks.map((platform) => {
             const Icon = platform.icon;
@@ -93,7 +93,7 @@ export default function SocialShare({
               <button
                 key={platform.name}
                 onClick={() => handleShare(platform.url)}
-                className="group flex flex-col items-center gap-2 rounded-md p-4 transition-colors hover:bg-[#303030]"
+                className="group flex flex-col items-center gap-2 rounded-xl p-4 transition-colors hover:bg-[#303030]"
               >
                 <div
                   className={`${platform.color} flex h-12 w-12 items-center justify-center rounded-full transition-transform group-hover:scale-110`}

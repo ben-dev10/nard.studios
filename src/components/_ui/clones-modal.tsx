@@ -14,6 +14,7 @@ import {
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import "./_assets/clones-modal.css";
 import { NardLogoDark, ShareIcon } from "./icons";
+import Link from "next/link";
 
 // main component
 type MiniModalProps = {
@@ -61,8 +62,8 @@ export default function ClonesModal({
                 transformOrigin: "bottom right",
               }}
               animate={{
-                width: "auto",
-                height: 340,
+                width: "300px",
+                height: 330,
                 opacity: 1,
                 scale: 1,
               }}
@@ -81,12 +82,13 @@ export default function ClonesModal({
                 stiffness: 300,
                 opacity: { duration: 0.2 },
               }}
-              className="_mini-modal absolute right-0 bottom-[0%] z-5 flex min-w-[350px] flex-col gap-y-3 rounded-[12px] bg-gradient-to-br from-[#202020] to-black p-5 text-white shadow-2xl"
-            
+              className="_mini-modal absolute right-0 bottom-[0%] z-5 flex min-w-[250px] flex-col gap-y-3 rounded-[12px] bg-gradient-to-b from-[#1b1b1b] to-[#0f0f0f] p-5 text-white shadow-xl ring-2 shadow-black/90 ring-neutral-400/20"
             >
-              <div className="_status-bar mb-auto flex">
-                <p className="pointer-events-none mr-auto !text-[0.8rem] uppercase opacity-70">
-                  UI Clones
+              <div className="_status-bar mb-5 flex">
+                <p className="mr-auto !text-[0.8rem] uppercase opacity-70">
+                  <Link href="/" className="cursor-pointer">
+                    UI Clones
+                  </Link>
                 </p>
                 {/* <div className="_toggle-btn mr-3 scale-[0.8]">
                   <ButtonGroupThemeToggle className="bg-[#303030] p-[2px]" />
@@ -96,11 +98,11 @@ export default function ClonesModal({
                 </button>
               </div>
 
-              <div className="_links mb-10">
+              <div className="_links mb-auto">
                 <p className="mb-2 opacity-90">I cloned this UI from</p>
 
                 <div
-                  className={`_mega-link mb-3 h-[70px] ${bgURL} rounded-[12px] bg-[0%_100%] ring ring-neutral-800/5 transition-colors duration-500 hover:ring hover:ring-neutral-500`}
+                  className={`_mega-link mb-3 h-[70px] ${bgURL} rounded-[12px] bg-[0%_100%] ring-2 ring-neutral-800/0 transition-colors duration-500 hover:ring-[2.7px] hover:ring-neutral-500/50`}
                 >
                   <a
                     href={sourceURL}
@@ -180,8 +182,8 @@ export default function ClonesModal({
           className="_modal-trigger relative drop-shadow-2xl focus:scale-[0.9]"
         >
           <span className="_blur gradient-blur-animation absolute inset-0 z-1 block scale-[1.2] rounded-full bg-[conic-gradient(from_180deg_at_50%_50%,_#2BFF17_0deg,_#F86767_180deg,_#2D5AFF_270deg,_#B84EFF_360deg)] opacity-50 blur" />
-          <span className="relative z-2 block rounded-full bg-gradient-to-bl from-[#414141] to-black p-1">
-            <NardLogoDark />
+          <span className="relative z-2 grid place-items-center rounded-full bg-gradient-to-b from-[#333337] to-[#070707] p-2.5 shadow-2xl shadow-black/90">
+            <NardLogoDark className="size-8" />
             <span className="sr-only">Modal Trigger</span>
           </span>
         </button>

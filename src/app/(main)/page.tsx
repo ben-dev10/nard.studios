@@ -7,21 +7,20 @@ import {
   Whatsapp,
   XTwitter,
   DuplicatePlus,
+  Bolt,
 } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
 import Image from "next/image";
 import Link from "next/link";
-import Footer from "./_components/footer";
-import { CircleCheck, X } from "lucide-react";
-import Navbar from "./_components/navbar";
-import { usePlatform } from "@/hooks/use-platform";
+import { CircleCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import EmailButton from "../_components/email-btn";
+import ActionBTN from "../_components/_ui/action-btn";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 const conicGradient =
-  "bg-[conic-gradient(from_180deg_at_50%_50%,_#4BCF9F_-11.27deg,_#FF7575_9.22deg,_#55AAFF_38.01deg,_#ECFF3E_329.66deg,_#4BCF9F_348.73deg,_#FF7575_369.22deg))]";
+  "bg-[conic-gradient(from_180deg_at_50%_50%,_#4BCF9F_-10.27deg,_#FF7575_140.22deg,_#55AAFF_318.01deg,_#76FF98_329.66deg,_#4BCF9F_348.73deg,_#FF7575_369.22deg))]";
 
 function SocialPill({
   icon,
@@ -117,14 +116,15 @@ function Hero() {
 
         <div className="_paragraphs text-muted-foreground mb-15 space-y-3">
           <p className="">
-            Hey 👋, my name is Bernard Quarshie —{" "}
-            <span className="gradient-text bg-gradient-to-br from-blue-600 to-pink-500">
+            Hello👋, my name is Bernard Quarshie (or{" "}
+            <span className="gradient-text bg-gradient-to-tl from-neutral-300 to-neutral-800 font-[600] underline decoration-dashed">
               nard
-            </span>{" "}
-            works too, welcome to my portfolio.
+            </span>
+            ), welcome to my portfolio - I&apos;m a web developer who knows a
+            little bit of design.
           </p>
           <p className="">
-            Since you are here, checkout some of my experiments below 👇
+            Glad you are here, check out some of my experiments below 👇
           </p>
         </div>
 
@@ -156,17 +156,15 @@ function ProjectCard({
           className="rounded-4 mb-4 aspect-[1260/765] rounded-md shadow-lg"
         />
       </Link>
-      <div className="">
-        <p className="mb-1 !text-[1.2rem] font-[700]">{title}</p>
-        {desc}
+      <div className="pl-5">
+        <p className="mb-1 !text-[1.15rem] font-[700]">{title}</p>
+        <span className="text-[0.95rem]">{desc}</span>
       </div>
     </div>
   );
 }
 
 function Projects() {
-  const { isMobile } = usePlatform();
-
   return (
     <Section.RootElement className="mb-15">
       <Section.Container container="none" className="_section--clones mb-8">
@@ -174,6 +172,13 @@ function Projects() {
           container="8xl"
           className="mb-8 px-[var(--gutter-x)]"
         >
+          <div className="_showcase-pill mt-17">
+            <div className="mx-auto flex max-w-max items-center gap-1 rounded-full bg-neutral-200/30 p-1 px-3">
+              <Bolt className="size-3 rotate-30" />
+              <span className="block !text-[0.7rem]">Showcase</span>
+            </div>
+          </div>
+
           <h2 className="font-FigtreeR mx-auto mb-8 max-w-[500px] py-5 text-center">
             Crafting UIs that look{" "}
             <span className="font-SeriouslyNostalgic !font-[100]">good</span>{" "}
@@ -184,11 +189,9 @@ function Projects() {
           </h2>
 
           <div className="mb-5">
-            <div className="_header-pill--clones my-5 mt-8 flex max-w-max items-center gap-2 rounded-md bg-black p-1.5 px-3 text-white shadow-lg">
+            <div className="_header-pill--clones pointer-events-none my-5 mt-8 flex max-w-max items-center gap-2 rounded-md bg-black p-1.5 px-3 text-white shadow-lg">
               <DuplicatePlus className="size-4" />
-              <span className="font-FunnelDisplay text-[0.75rem] font-bold">
-                UI Clones
-              </span>
+              <span className="text-[0.75rem] font-bold">UI Clones</span>
             </div>
 
             <p className="text-muted-foreground text-[0.9rem]">
@@ -198,7 +201,7 @@ function Projects() {
         </Section.Container>
 
         <div
-          className={`_cards-carousel ${!isMobile && "_scrollbar-override"} flex gap-5 overflow-x-auto px-[var(--gutter-x)] py-5 md:justify-center`}
+          className={`_cards-carousel relative flex gap-5 overflow-x-auto px-[var(--gutter-x)] py-5 md:justify-center`}
         >
           <ProjectCard
             href="/gallery/clones/clerk"
@@ -230,11 +233,9 @@ function Projects() {
         className="_section--graphic-design mt-8 mb-8 px-[var(--gutter-x)] py-8"
       >
         {line}
-        <div className="_header-pill--design my-5 mt-20 flex max-w-max items-center gap-2 rounded-md bg-black p-1.5 px-3 text-white shadow-lg">
+        <div className="_header-pill--design pointer-events-none my-5 mt-20 flex max-w-max items-center gap-2 rounded-md bg-black p-1.5 px-3 text-white shadow-lg">
           <PenSparkle className="size-4" />
-          <span className="font-FunnelDisplay text-[0.75rem] font-bold">
-            Graphic Design
-          </span>
+          <span className="text-[0.75rem] font-bold">Graphic Design</span>
         </div>
 
         <div className="flex flex-col gap-x-15 md:flex-row md:justify-center">
@@ -244,6 +245,7 @@ function Projects() {
               Custom designed assets to give every project that unique touch,
               Graphics of all kinds including, but not limited to:
             </p>
+
             <ul className="text-muted-foreground pl-5">
               <li className="flex items-center gap-1">
                 <CircleCheck size={12} className="text-primary" />
@@ -258,18 +260,28 @@ function Projects() {
                 <span className="">3D Renders</span>
               </li>
               <li className="flex items-center gap-1">
-                <CircleCheck size={12} className="text-primary" />
+                <CircleCheck size={12} className="text-primary shrink-0" />
                 <span className="">Thumbnails, and so much more...</span>
               </li>
             </ul>
+
+            <div className="mt-8">
+              <Link
+                href="/gallery"
+                className="rounded-[8px] pb-2 shadow-md shadow-black/45"
+              >
+                <ActionBTN text="See gallery" />
+              </Link>
+            </div>
           </div>
+
           <div className="right-half md:w-[calc(100%-350px)]">
             <Image
               alt="bg-img"
               src="/_nard/imgs/flyers--img-arts.png"
               width={2382}
               height={1551}
-              className="pointer-events-none -mt-10 min-w-[350px] scale-[1.2] md:-mt-20 md:min-w-[500px]"
+              className="pointer-events-none -mt-10 min-w-[500px] scale-[1.2] md:-mt-35 md:min-w-[600px]"
             />
           </div>
         </div>
@@ -279,35 +291,38 @@ function Projects() {
 }
 
 function GraphicRow() {
+  const imgHoverTransition =
+    "transition-transform duration-300 hover:scale-[1.5] hover:rotate-0 sm:w-[250px]";
+
   return (
     <Section.RootElement className="">
       <Section.Container className="">
-        <div className="mt-[40px] mb-[40px] flex justify-center gap-20 py-10 md:gap-30">
-          <div className="_img-1">
+        <div className="max-550:-ml-35 mt-[40px] mb-[40px] flex justify-center gap-20 py-10 md:gap-30">
+          <div className="w-[50%] min-w-[220px] md:w-[70%]">
             <Image
               alt="flyer-1"
               src="/_nard/imgs/cereal-3d(1).webp"
               width={1920}
               height={1080}
-              className="w-[220px] min-w-[200px] -rotate-4 rounded-md shadow-2xl sm:w-[250px]"
+              className={`${imgHoverTransition} -rotate-4 rounded-md object-contain shadow-2xl md:min-w-[320px]`}
             />
           </div>
-          <div className="_img-2">
+          <div className="w-[50%] min-w-[220px] md:w-[70%]">
             <Image
               alt="flyer-2"
               src="/_nard/imgs/velvet.webp"
               width={2040}
               height={1227}
-              className="mt-15 w-[220px] min-w-[200px] rotate-6 rounded-sm shadow-2xl sm:w-[250px]"
+              className={`${imgHoverTransition} mt-15 rotate-6 rounded-sm shadow-2xl md:min-w-[320px]`}
             />
           </div>
-          <div className="_img-3">
+          <div className="w-[25%] min-w-[110px]">
             <Image
               alt="flyer-3"
               src="/_nard/imgs/profile-card.webp"
               width={3000}
               height={3200}
-              className="mt-30 w-[140px] min-w-[100px] rotate-5 rounded-sm shadow-2xl sm:w-[150px]"
+              className={`${imgHoverTransition} mt-30 -rotate-5 rounded-sm shadow-2xl md:min-w-[180px]`}
             />
           </div>
         </div>
@@ -317,16 +332,18 @@ function GraphicRow() {
 }
 
 function CTA() {
+  // _FEATURE: gradient-blur elevation
   return (
-    <Section.RootElement className="[--breakpoint-xms:600px] [--xmm:@media(min-width:550px)]">
+    <Section.RootElement className="">
       <Section.Container
         container="8xl"
-        className="550:px-[var(--gutter-x)] max-550:pb-0 py-15"
+        className="550:px-[var(--gutter-x)] max-550:pb-0 relative z-3 py-15"
       >
-        <div className="_contents+blur relative z-2">
+        <div className="_contents+blur relative">
           <Background.Layer
-            className={`_bg-blur absolute -bottom-3 !-z-4 h-[200px] w-full ${conicGradient} opacity-25 blur-md`}
+            className={`_bg-blur absolute -bottom-5 h-[200px] w-full ${conicGradient} opacity-25 blur-md`}
           />
+
           <div className="550:rounded-md relative z-2 h-[210px] overflow-hidden bg-black p-8 text-white shadow-xl">
             <Background>
               <Image
@@ -341,23 +358,22 @@ function CTA() {
                 src="/_nard/imgs/dots-texture.png"
                 width={500}
                 height={500}
-                className="absolute z-1 -ml-50 min-w-[400px] mask-radial-from-0% mask-radial-to-50% md:-ml-30"
+                className="550:min-w-[340px] absolute z-1 -ml-50 min-w-[200px] mask-radial-from-0% mask-radial-to-50% md:-ml-30"
               />
             </Background>
             <div className="_contents relative z-2 w-[90%] md:w-[70%]">
               <h2 className="font-FigtreeR mb-2">Let&apos;s connect</h2>
-              <p className="opacity-80">
+              <p className="text-[0.95rem] opacity-80">
                 I&apos;m always excited to connect with new people. Feel free to
                 reach out for work related matters or simply to chat, share
                 ideas or provide feedback!
               </p>
-              <div className="mt-7 flex gap-4">
-                <Link href="mailto:quarshiebernard552@gmail.com?subject=Project%20Inquiry&body=Hi%20there,">
-                  <Button className="bevel-[0.15] bg-white text-black hover:bg-white/90 active:scale-[0.9]">
-                    Send Email
-                  </Button>
-                </Link>
-                <Link href="/gallery/clones/payload">
+              <div className="mt-10 flex gap-4">
+                <EmailButton
+                  text="Get in touch"
+                  className="bg-white text-black hover:bg-white/90"
+                />
+                <Link href="/gallery/">
                   <Button className="bevel-[0.15] bg-white px-5 text-black hover:bg-white/90 active:scale-[0.9]">
                     Projects
                   </Button>
@@ -371,82 +387,25 @@ function CTA() {
   );
 }
 
-const Banner = () => {
-  const [isVisible, setIsVisible] = useState(true);
-  return (
-    <>
-      {isVisible && (
-        <div className="_banner relative !z-50 overflow-hidden bg-black text-white">
-          <div className="flex justify-center">
-            <div className="_line absolute top-0 left-0 z-1 h-[1px] w-full bg-white mix-blend-overlay" />
-            <div className="absolute -ml-90">
-              <div className="absolute top-0 left-0 h-[40px] w-full -rotate-60 bg-white blur-md" />
-              <div className="absolute top-0 left-0 h-[70px] w-full -rotate-60 bg-blue-500 blur-2xl" />
-
-              <Image
-                alt="lines-svg"
-                src="/_nard/svgs/lines.svg"
-                width={345}
-                height={35}
-                className="relative"
-              />
-            </div>
-
-            <div className="_contents relative flex items-center gap-2 p-2">
-              <p className="">Site is a work in progress</p>
-              <button
-                className="cursor-pointer rounded-full"
-                onClick={() => {
-                  setIsVisible(false);
-                  console.log(isVisible);
-                }}
-              >
-                <X size={16} className="" />
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
-    </>
-  );
-};
-
-export const APP_BG = "#fafafa"; /* or: #fafafa, f7f7f7, #f4f5ff */
-const APP_ZINDEX = "z-2";
-
 /**
- * _FEATURE:
- * 1. (more sections: Testimonials, bentos)
- * 2. showcase pill, graphic-row hover interactions
- *
- * 4. pages: ui-clones/project-hub, about, gallery
+ * _FEATURE: 1. (more sections: Testimonials, bentos)
  */
 
 export default function Home() {
   return (
-    <div
-      className="_app.root"
-      style={{
-        backgroundColor: APP_BG,
-      }}
+    <main
+      className={`_homepage font min-h-screen overflow-hidden transition-colors duration-300`}
     >
-      <Banner />
-      <Navbar />
-      <main
-        className={`_homepage font min-h-screen overflow-hidden transition-colors duration-300`}
-      >
-        <Background className="opacity-50">
-          <Background.Layer className="fixed top-0 left-0 h-full w-[30px] bg-[url(/_nard/svgs/left-marquee.svg)]" />
-          <Background.Layer className="fixed top-0 -right-6 h-full w-[45px] bg-[url(/_nard/svgs/right-marquee.svg)]" />
-        </Background>
-        <div className={`_contents relative ${APP_ZINDEX}`}>
-          <Hero />
-          <Projects />
-          <GraphicRow />
-          <CTA />
-          <Footer />
-        </div>
-      </main>
-    </div>
+      <Background className="opacity-50">
+        <Background.Layer className="fixed top-0 left-0 h-full w-[30px] bg-[url(/_nard/svgs/left-marquee.svg)]" />
+        <Background.Layer className="fixed top-0 -right-6 h-full w-[45px] bg-[url(/_nard/svgs/right-marquee.svg)]" />
+      </Background>
+      <>
+        <Hero />
+        <Projects />
+        <GraphicRow />
+        <CTA />
+      </>
+    </main>
   );
 }

@@ -4,32 +4,41 @@
 } */
 
 /* For webkit browsers (Chrome, Safari, Edge) */
-._custom-scrollbar > * ::-webkit-scrollbar {
+/* body._cs  */
+:root {
+  --scrollbar-track: "#fafafa";
+  /* --scrollbar-thumb: "#b6b6b6"; */
+  --scrollbar-thumb: "#000000";
+  --scrollbar-thumb-hover: "#8a8a8a";
+  --scrollbar-thumb-active: "#8a8a8a";
+}
+
+._cs::-webkit-scrollbar {
   width: 10px;
   height: 10px;
 }
 
-._custom-scrollbar > * ::-webkit-scrollbar-track {
-  background: #2e2e2e;
+._cs::-webkit-scrollbar-track {
+  background: var(--scrollbar-track);
 }
 
-._custom-scrollbar > * ::-webkit-scrollbar-thumb {
-  background: #5d5d5d;
-  border-radius: 6px;
+._cs::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb);
+  border-radius: 8px;
 }
 
-._custom-scrollbar > * ::-webkit-scrollbar-thumb:hover {
-  background: #8a8a8a;
+._cs::-webkit-scrollbar-thumb:hover {
+  background: var(--scrollbar-thumb-hover);
 }
 
-._custom-scrollbar > * ::-webkit-scrollbar-thumb:active {
-  background: #71717a;
+._cs::-webkit-scrollbar-thumb:active {
+  background: var(--scrollbar-thumb-active);
 }
 
-/* new custom scrollbar */
+/* ----- new custom scrollbar ----- */
 ._scrollbar-override::-webkit-scrollbar {
-  width: 10px;
-  height: 10px;
+  width: 7px;
+  height: 7px;
 }
 
 ._scrollbar-override::-webkit-scrollbar-track {
@@ -38,7 +47,7 @@
 
 ._scrollbar-override::-webkit-scrollbar-thumb {
   background: #e0e0e0;
-  /* border-radius: 6px; */
+  border-radius: 0px;
 }
 
 ._scrollbar-override::-webkit-scrollbar-thumb:hover {

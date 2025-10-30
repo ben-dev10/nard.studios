@@ -1,30 +1,30 @@
-import React from 'react';
+import React from "react";
 
 // Define the allowed HTML elements
-type SectionElement = 'section' | 'div' | 'footer' | 'header' | 'main' | 'nav';
+type SectionElement = "section" | "div" | "footer" | "header" | "main" | "nav";
 
 // Define the container size options
-type ContainerSize = '5xl' | '6xl' | '7xl' | '8xl' | 'none';
+type ContainerSize = "5xl" | "6xl" | "7xl" | "8xl" | "none";
 
 // Generic component props that extend HTML attributes
-type RootElementProps<T extends SectionElement = 'section'> = 
+type RootElementProps<T extends SectionElement = "section"> =
   React.ComponentPropsWithoutRef<T> & {
     as?: T;
   };
 
-type ContainerProps = React.ComponentPropsWithoutRef<'div'> & {
+type ContainerProps = React.ComponentPropsWithoutRef<"div"> & {
   container?: ContainerSize;
 };
 
 // Root Element Component
-const RootElement = <T extends SectionElement = 'section'>({
+const RootElement = <T extends SectionElement = "section">({
   as,
-  className = 'bg-background',
+  className = "bg-background",
   children,
   ...props
 }: RootElementProps<T>) => {
-  const Element = (as || 'section') as React.ElementType;
-  
+  const Element = (as || "section") as React.ElementType;
+
   return (
     <Element className={className} {...props}>
       {children}
@@ -34,19 +34,15 @@ const RootElement = <T extends SectionElement = 'section'>({
 
 // Container Component
 const Container: React.FC<ContainerProps> = ({
-  container = '7xl',
-  className = '',
+  container = "7xl",
+  className = "",
   children,
   ...props
 }) => {
   const containerDataType = `container-${container}`;
 
   return (
-    <div 
-      datatype={containerDataType} 
-      className={className}
-      {...props}
-    >
+    <div datatype={containerDataType} className={className} {...props}>
       {children}
     </div>
   );
@@ -59,5 +55,3 @@ const Section = {
 };
 
 export default Section;
-// Export individual components if needed
-// export { RootElement as SectionRoot, Container as SectionContainer };

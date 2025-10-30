@@ -13,6 +13,7 @@ import {
   Wallpaper,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 const copy = (
@@ -103,7 +104,7 @@ export default function Footer() {
   return (
     <Section.RootElement
       as="footer"
-      className={`${FOOTER_BG} group overflow-hidden`}
+      className={`${FOOTER_BG} group relative overflow-hidden`}
     >
       <Section.Container
         container="8xl"
@@ -113,7 +114,7 @@ export default function Footer() {
           <div className="_header md:max-w-[200px]">
             <div className="logos">
               <NardLogoLargeLight className="mb-2" />
-              <p className="text-muted-foreground mb-10 !text-[0.9rem]">
+              <p className="mb-10 !text-[0.9rem] opacity-80">
                 Crafting stunning and performant UIs, with care and precision.
               </p>
 
@@ -138,7 +139,7 @@ export default function Footer() {
                       width={119}
                       height={12}
                     />
-                    <p>15%</p>
+                    <p>25%</p>
                   </div>
                 </div>
               </div>
@@ -147,22 +148,22 @@ export default function Footer() {
 
           <span className="max-md:py-8 md:hidden">{line}</span>
 
-          <div className="_links flex flex-wrap gap-15 gap-y-18 max-md:gap-x-27 md:gap-10">
+          <div className="_links flex flex-wrap gap-15 gap-y-18 max-md:gap-x-33 md:gap-10">
             {footerLinks.map((item) => (
               <div key={item.header.slice(0, 5)} className="footer-links">
-                <div className="mb-2 flex gap-4 opacity-80">
+                <div className="max-550:mb-3 mb-2 flex gap-4 opacity-80">
                   {item.headerIcon}
                   <p className="">{item.header}</p>
                 </div>
-                <div className="links ml-2 flex h-full flex-col gap-[6px] border-l text-[0.9rem]">
+                <div className="links ml-2 flex h-[90%] flex-col gap-[6px] border-l text-[0.9rem] lg:h-[70%]">
                   {item.links.map((link, index) => (
-                    <a
+                    <Link
                       key={index}
                       href={link.url}
-                      className="hover:border-primary/70 hover:text-primary -ml-[1.5px] border-l border-transparent pl-8"
+                      className="hover:border-primary/70 hover:text-primary max-550:py-0.5 -ml-[1.5px] border-l border-transparent pl-8"
                     >
                       {link.name}
-                    </a>
+                    </Link>
                   ))}
                 </div>
               </div>
@@ -170,7 +171,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-65">
+        <div className="_copy+logo mt-65">
           <div className="hidden sm:block">{copy}</div>
           <div>
             <NardLogoSmallLight className="absolute right-10 -bottom-45 size-90 grayscale-90 transition-[filter] duration-500 group-hover:grayscale-0" />

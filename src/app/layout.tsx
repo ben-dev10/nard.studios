@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { ThemeProvider } from "@/contexts/theme-context";
 import "./globals.css";
 import { geistSansVar, geistMonoVar } from "./_assets/fonts";
+import { ThemeProvider } from "@/contexts/theme-context";
 import { Analytics } from "@vercel/analytics/next";
+import Banner from "./_components/banner";
 
 export const metadata: Metadata = {
   title: "nard.studios",
@@ -20,6 +21,7 @@ export default function RootLayout({
         className={`${geistSansVar.variable} ${geistMonoVar.variable} font-geistSans antialiased [--gutter-x:3.75rem]`}
       >
         <ThemeProvider>
+          <Banner />
           {children}
           <Analytics />
         </ThemeProvider>

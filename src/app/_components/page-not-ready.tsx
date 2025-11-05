@@ -19,14 +19,14 @@ export default function PageNotReady() {
   });
 
   return (
-    <section className="fixed inset-0 z-2 grid h-full w-full place-items-center bg-gradient-to-b from-[#fafafa]/10 to-[#fafafa] backdrop-blur-[20px]">
+    <section className="_PageNotReady fixed inset-0 z-2 grid h-full w-full place-items-center bg-[#fafafa] backdrop-blur-[20px]">
       <div className="_contents">
         <Image
           alt="page-not-ready img"
-          src="/_nard/imgs/404-4.png"
+          src="/_nard/imgs/404-4.webp"
           width={298}
           height={317}
-          className="mx-auto max-md:w-[140px] md:w-[200px]"
+          className="mx-auto mix-blend-darken max-md:w-[200px] md:w-[300px]"
         />
         <div className="mt-5 p-10 text-center">
           <h2 className="">Page not ready.</h2>

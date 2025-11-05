@@ -11,19 +11,19 @@ export default function NotFound() {
   const router = useRouter();
 
   return (
-    <section className="fixed inset-0 z-2 grid h-full w-full place-items-center bg-[#fafafa] backdrop-blur-[20px]">
+    <section className="_404Page fixed inset-0 z-2 grid h-full w-full place-items-center bg-[#fafafa] backdrop-blur-[20px]">
       <div className="_contents">
         <Image
           alt="404-page img"
-          src="/_nard/imgs/404-1.png"
+          src="/_nard/imgs/404-1.webp"
           width={359}
           height={303}
-          className="mx-auto max-md:w-[170px] md:w-[200px]"
+          className="mx-auto mix-blend-darken max-md:w-[200px] md:w-[270px]"
         />
         <div className="mt-5 p-5 text-center">
           <h2 className="">OOps! Page not found.</h2>
           <p className="text-muted-foreground mt-3">
-            The page you are requesting doesn&apos;t exist.
+            The page you are requesting does not exist.
           </p>
           <div className="mt-5 flex items-center justify-center gap-2">
             <Link href="/">

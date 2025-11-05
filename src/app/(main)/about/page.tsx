@@ -1,7 +1,6 @@
 "use client";
 import Section from "@/components/ui/elements/section";
 import Link from "next/link";
-import EmailButton from "@/app/_components/email-btn";
 
 function Article() {
   return (
@@ -17,10 +16,10 @@ function Article() {
             Build.
           </h1>
           <p className="mb-2">
-            Those 3 words are the words I live by, when I see a
-            &apos;design&apos; or an interface that inspires me, I first study
-            it meticulously, like an <b>engineer</b> would, reverse-engineer it,
-            and when the inner workings are fully understood, try and re-
+            Those are the 3 words I live by — when I see a &apos;design&apos; or
+            an interface that inspires me, I first study it meticulously, like
+            an <b>engineer</b> would, reverse-engineer it, and when the inner
+            workings are fully understood, I try to re-
             <b>design</b> and <b>build</b> it in my own simple way.{" "}
           </p>
         </section>
@@ -51,27 +50,18 @@ function Article() {
                 consistent and natural across devices.
               </li>
             </ul>
-
-            <p>
-              I believe that great work is equal parts craft and curiosity —
-              every project is an opportunity to explore a new technique or
-              rethink an old one.
-            </p>
           </div>
         </section>
 
-        <section className="my-8 rounded-md bg-neutral-50 p-5">
+        <section className="my-8 rounded-[13px] border-t-[4px] !bg-neutral-100 p-5">
           <p className="mb-3">
             <b>
               Do you have any questions, or want to collaborate on a project
               together?
             </b>{" "}
-            What are you waiting for? You can reach me via email or WhatsApp,
-            whichever mode you prefer:
+            What are you waiting for? You can reach me via email by clicking on
+            the email button above.
           </p>
-          <div className="flex gap-2">
-            <EmailButton text="Email me" className="h-12 rounded-lg w-[150px]" />
-          </div>
           <hr className="mt-8 border-dashed" />
           <p className="mt-8">
             If you are just passing by too, stop by the{" "}
@@ -104,7 +94,7 @@ function Resume() {
         </div>
 
         <div className="_area-2">
-          <p className="mt-5">
+          <p className="">
             <b>A little bit of history</b>
             <span className="mt-2 block">
               I was first introduced to programming in my pre-high school days,

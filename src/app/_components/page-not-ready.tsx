@@ -24,8 +24,8 @@ export default function PageNotReady() {
         <Image
           alt="page-not-ready img"
           src="/_nard/imgs/404-4.webp"
-          width={298}
-          height={317}
+          width={983}
+          height={787}
           className="mx-auto mix-blend-darken max-md:w-[200px] md:w-[300px]"
         />
         <div className="mt-5 p-10 text-center">

@@ -1,3 +1,4 @@
+"use client";
 import { NardLogoSmallLight } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
@@ -5,6 +6,7 @@ import { AppSheet } from "./app--sheet";
 import { FileBox, PencilLine, UserCircleIcon, Wallpaper } from "lucide-react";
 import Link from "next/link";
 import EmailButton from "./email-btn";
+import { usePathname } from "next/navigation";
 
 // bg-[attr(datatype-bg)]
 const conicGradient =
@@ -45,6 +47,9 @@ const NavLinks = [
 ];
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isActive = (path: string) => path === pathname;
+
   return (
     <Section.RootElement
       as="header"
@@ -74,7 +79,14 @@ export default function Navbar() {
             <ul className="flex items-center gap-3">
               {NavLinks.map((link, index) => (
                 <li key={index} className="">
-                  <a href={link.url} className="text-[0.9rem]">
+                  <a
+                    href={link.url}
+                    className={`text-[0.9rem] ${
+                      isActive(link.url)
+                        ? "text-primary font-[600] underline decoration-black/20 decoration-dotted"
+                        : ""
+                    }`}
+                  >
                     {link.name}
                   </a>
                 </li>

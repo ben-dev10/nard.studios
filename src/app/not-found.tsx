@@ -16,8 +16,8 @@ export default function NotFound() {
         <Image
           alt="404-page img"
           src="/_nard/imgs/404-1.webp"
-          width={359}
-          height={303}
+          width={1024}
+          height={927}
           className="mx-auto mix-blend-darken max-md:w-[200px] md:w-[270px]"
         />
         <div className="mt-5 p-5 text-center">

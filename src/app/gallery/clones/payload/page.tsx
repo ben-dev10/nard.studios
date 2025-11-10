@@ -350,7 +350,7 @@ const TestimonialCard = ({
 }) => {
   return (
     <div
-      className={`${className} _testimonial-card group relative flex !h-full w-full shrink-0 grow-0 snap-start snap-always flex-col border-y border-l bg-black p-8 md:w-1/2`}
+      className={`${className} _testimonial-card group snap-alway relative flex !h-full w-full shrink-0 grow-0 snap-start flex-col border-y border-l bg-black p-8 md:w-1/2`}
     >
       <a href={url} className="absolute inset-0" />
       <div className="">
@@ -388,23 +388,25 @@ const Testimonial = () => {
           &apos;build vs. buy.&apos;
         </h3>
       </Section.Container>
-      <Section.Container
-        container="none"
-        className="_carousel scrollbar-hide relative z-4 flex h-[var(--card-height)] snap-x scroll-pl-[var(--gutter-h)] overflow-visible overflow-x-scroll px-[var(--gutter-h)] py-10 [--card-height:30rem]"
-      >
-        {Testimonials.map((item) => (
-          <TestimonialCard
-            url={item.url}
-            quote={item.quote}
-            key={item.id}
-            author={item.author}
-            img={item.img}
-            className={item.className}
-          />
-        ))}
+
+      <Section.Container container="none">
+        <div className="_carousel-wrapper relative pb-5">
+          <div className="_carousel scrollbar-hide relative z-4 mb-0 flex h-[var(--card-height)] snap-x scroll-pl-[var(--gutter-h)] overflow-visible overflow-x-scroll scroll-smooth px-[var(--gutter-h)] py-10 [--card-height:30rem]">
+            {Testimonials.map((item) => (
+              <TestimonialCard
+                url={item.url}
+                quote={item.quote}
+                key={item.id}
+                author={item.author}
+                img={item.img}
+                className={item.className}
+              />
+            ))}
+          </div>
+        </div>
       </Section.Container>
       <Section.Container
-        className="--testimonial-controls px-[var(--gutter-h)] pb-10"
+        className="__testimonial-controls px-[var(--gutter-h)] pb-10"
         container="none"
       >
         <div className="buttons ml-10">
@@ -476,7 +478,7 @@ export default function PayloadCMS() {
               <div className="grid-line2 gl-right [grid-area:1/17/1/17]" />
             </div>
           </div>
-          <div className="features__testimonials relative bg-black">
+          <div className="features__testimonials relative bg-black pb-60">
             <ProductFeatures />
             <Testimonial />
             <div className="grid-lines pointer-events-none absolute top-0 left-[var(--gutter-h)] z-1 grid h-full w-[calc(100%-var(--gutter-h)*2)] grid-cols-16 gap-0 select-none">

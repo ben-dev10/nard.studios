@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build --turbopack",
+    "dev": "fumadocs-mdx && next dev --turbopack",
+    "build": "fumadocs-mdx && next build --turbopack",
     "start": "next start",
     "lint": "eslint",
     "storybook": "storybook dev -p 6006 --no-open",
@@ -47,7 +47,16 @@
     "recharts": "^2.15.4",
     "sonner": "^2.0.7",
     "tailwind-merge": "^3.3.1",
-    "vaul": "^1.1.2"
+    "vaul": "^1.1.2",
+    "zod": "^4.1.12",
+
+    "fumadocs-core": "^15.6.2",
+    "fumadocs-mdx": "^11.6.10",
+    "fumadocs-ui": "^15.6.2",
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/mdx": "^2.0.13",
+    "@mdx-js/loader": "^3.1.0",
+    "@mdx-js/react": "^3.1.0"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^4.1.1",

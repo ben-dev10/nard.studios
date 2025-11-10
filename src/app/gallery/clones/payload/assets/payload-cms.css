@@ -3,7 +3,7 @@
 }
 
 .grid-icon--wrapper {
-  @apply flex col-span-2 md:col-span-2 items-center justify-center;
+  @apply col-span-2 flex items-center justify-center md:col-span-2;
 }
 
 .grid--icon {

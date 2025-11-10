@@ -20,10 +20,17 @@
     ],
     "paths": {
       "@/*": ["./src/*"],
+      "@/.source": ["./.source"],
       "@/ui": ["./src/components/ui"],
       "@/styles": ["./src/utils/styles"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/utils/plugins/tw-bevel.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "src/utils/plugins/tw-bevel.js"
+  ],
+  "exclude": ["node_modules", ".source"]
 }

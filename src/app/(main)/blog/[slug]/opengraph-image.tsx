@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import Image from "next/image";
 import { docs, meta } from "@/.source";
 import { loader } from "fumadocs-core/source";
 import { createMDXSource } from "fumadocs-mdx";
@@ -12,15 +13,30 @@ export const size = {
 };
 export const contentType = "image/png";
 
-const _mdxSource = createMDXSource(docs, meta);
+const _mdxSource = createMDXSource(docs, meta) as unknown;
+const _maybeFiles = (_mdxSource as { files?: unknown }).files;
 const blogSource = loader({
   baseUrl: "/blog",
-  source: Array.isArray((_mdxSource as any).files)
-    ? { files: (_mdxSource as any).files }
-    : typeof (_mdxSource as any).files === "function"
-      ? { files: (_mdxSource as any).files() }
-      : (_mdxSource as any),
+  source: (Array.isArray(_maybeFiles)
+    ? { files: _maybeFiles as unknown[] }
+    : typeof _maybeFiles === "function"
+      ? { files: (_maybeFiles as () => unknown[])() }
+      : _mdxSource) as unknown as Parameters<typeof loader>[0]["source"],
 });
+
+interface BlogData {
+  title: string;
+  description?: string;
+  date?: string;
+  tags?: string[];
+  thumbnail?: string;
+  author?: string;
+}
+
+interface BlogPage {
+  url?: string;
+  data: BlogData;
+}
 
 const getAssetData = async (authorAvatar?: string) => {
   try {
@@ -169,9 +185,13 @@ const styles = {
   },
 } as const;
 
-export default async function Image({ params }: { params: { slug: string } }) {
+export default async function OGImage({
+  params,
+}: {
+  params: { slug: string };
+}) {
   try {
-    const page = await blogSource.getPage([params.slug]);
+    const page = (await blogSource.getPage([params.slug])) as BlogPage | null;
 
     if (!page) {
       return new Response("Blog post not found", { status: 404 });
@@ -204,7 +224,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
         >
           <div style={styles.container}>
             <div style={styles.titleContainer}>
-              <img
+              <Image
                 src={
                   assetData?.logoBase64 ||
                   `${process.env.NEXT_PUBLIC_SITE_URL}/magicui-logo.png`
@@ -223,7 +243,7 @@ export default async function Image({ params }: { params: { slug: string } }) {
               {authorDetails && (
                 <div style={{ ...styles.metaBase, ...styles.authorMeta }}>
                   {(assetData?.authorAvatarBase64 || authorDetails.avatar) && (
-                    <img
+                    <Image
                       src={
                         assetData?.authorAvatarBase64 ||
                         `${process.env.NEXT_PUBLIC_SITE_URL}${authorDetails.avatar}`

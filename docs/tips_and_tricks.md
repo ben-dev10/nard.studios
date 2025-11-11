@@ -1,5 +1,7 @@
 # Tips & Tricks
 
+### General
+
 ```tsx
 // alternative layout to "max-w-xl mx-auto"
 <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center" />;
@@ -60,4 +62,39 @@ bg-clip-text text-transparent <gradients>
   left: calc(var(--gutter-h) + 60px);
   /* bottom: 0; */
 }
+```
+
+<br />
+
+### Disabling "unexpected any" lint errors in a project
+
+For specific lines
+
+```ts
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+```
+
+For entire-pages
+
+```ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
+```
+
+For a given function: disable right before function declaration and able right after.
+
+```ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
+function ErrorFunction() {}
+/* eslint-enable @typescript-eslint/no-explicit-any */
+```
+
+Disable globally
+
+```ts
+// .eslintrc.cjs or .eslint.config.js
+
+rules:{
+  "@typescript-eslint/no-explicit-any" : "off"
+}
+
 ```

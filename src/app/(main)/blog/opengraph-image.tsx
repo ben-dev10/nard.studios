@@ -1,7 +1,8 @@
+import Image from "next/image";
 import { ImageResponse } from "next/og";
 
 export const runtime = "edge";
-export const alt = "Blog - Magic UI";
+export const alt = "Blog - nard.studios";
 export const size = {
   width: 1200,
   height: 630,
@@ -35,7 +36,7 @@ const getAssetData = async () => {
     ]);
 
     const logoBase64 = `data:image/png;base64,${Buffer.from(logoImage).toString(
-      "base64"
+      "base64",
     )}`;
 
     return {
@@ -91,7 +92,7 @@ const styles = {
   },
 } as const;
 
-export default async function Image() {
+export default async function OGImage() {
   try {
     const assetData = await getAssetData();
 
@@ -104,7 +105,7 @@ export default async function Image() {
           }}
         >
           <div style={styles.container}>
-            <img
+            <Image
               src={
                 assetData?.logoBase64 ||
                 `${process.env.NEXT_PUBLIC_SITE_URL}/magicui-logo.png`
@@ -138,7 +139,7 @@ export default async function Image() {
               },
             ]
           : undefined,
-      }
+      },
     );
   } catch (error) {
     console.error("Error generating image:", error);
@@ -148,7 +149,7 @@ export default async function Image() {
       }`,
       {
         status: 500,
-      }
+      },
     );
   }
 }

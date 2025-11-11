@@ -4,14 +4,17 @@ import { loader } from "fumadocs-core/source";
 import { createMDXSource } from "fumadocs-mdx";
 import Link from "next/link";
 
-const _mdxSource = createMDXSource(docs, meta);
+const _mdxSource = createMDXSource(docs, meta) as unknown;
+
+// Normalize various createMDXSource return shapes without using `any`.
+const _maybeFiles = (_mdxSource as { files?: unknown }).files;
 const blogSource = loader({
   baseUrl: "/blog",
-  source: Array.isArray((_mdxSource as any).files)
-    ? { files: (_mdxSource as any).files }
-    : typeof (_mdxSource as any).files === "function"
-      ? { files: (_mdxSource as any).files() }
-      : (_mdxSource as any),
+  source: (Array.isArray(_maybeFiles)
+    ? { files: _maybeFiles as unknown[] }
+    : typeof _maybeFiles === "function"
+      ? { files: (_maybeFiles as () => unknown[])() }
+      : _mdxSource) as unknown as Parameters<typeof loader>[0]["source"],
 });
 
 const formatDate = (date: Date): string => {
@@ -24,8 +27,8 @@ const formatDate = (date: Date): string => {
 
 interface BlogData {
   title: string;
-  description: string;
-  date: string;
+  description?: string;
+  date?: string;
   tags?: string[];
   featured?: boolean;
   readTime?: string;
@@ -62,7 +65,7 @@ export function ReadMoreSection({
       return {
         ...page,
         relevanceScore: tagOverlap,
-        date: new Date(page.data.date),
+        date: new Date(page.data.date ?? Date.now()),
       };
     })
     .sort((a, b) => {

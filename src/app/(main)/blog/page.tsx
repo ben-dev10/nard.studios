@@ -25,17 +25,15 @@ interface BlogPage {
   data: BlogData;
 }
 
-const _mdxSource = createMDXSource(docs, meta);
+const _mdxSource = createMDXSource(docs, meta) as unknown;
+const _maybeFiles = (_mdxSource as { files?: unknown }).files;
 const blogSource = loader({
   baseUrl: "/blog",
-  // createMDXSource returns an object with a `files()` function in this
-  // environment. Ensure we pass an object with an actual array `files` so
-  // fumadocs-core's loader can call `files.map(...)` safely.
-  source: Array.isArray((_mdxSource as any).files)
-    ? { files: (_mdxSource as any).files }
-    : typeof (_mdxSource as any).files === "function"
-      ? { files: (_mdxSource as any).files() }
-      : (_mdxSource as any),
+  source: (Array.isArray(_maybeFiles)
+    ? { files: _maybeFiles as unknown[] }
+    : typeof _maybeFiles === "function"
+      ? { files: (_maybeFiles as () => unknown[])() }
+      : _mdxSource) as unknown as Parameters<typeof loader>[0]["source"],
 });
 
 const formatDate = (date: Date): string => {
@@ -144,7 +142,7 @@ export default async function HomePage({
             }`}
           >
             {filteredBlogs.map((blog) => {
-              const date = new Date(blog.data.date);
+              const date = new Date(blog.data.date ?? Date.now());
               const formattedDate = formatDate(date);
 
               return (

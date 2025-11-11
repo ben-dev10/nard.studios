@@ -23,15 +23,32 @@ interface PageProps {
 }
 
 // _TODO: Test new source- implementation
-const _mdxSource = createMDXSource(docs, meta);
+const _mdxSource = createMDXSource(docs, meta) as unknown;
+const _maybeFiles = (_mdxSource as { files?: unknown }).files;
 const blogSource = loader({
   baseUrl: "/blog",
-  source: Array.isArray((_mdxSource as any).files)
-    ? { files: (_mdxSource as any).files }
-    : typeof (_mdxSource as any).files === "function"
-      ? { files: (_mdxSource as any).files() }
-      : (_mdxSource as any),
+  source: (Array.isArray(_maybeFiles)
+    ? { files: _maybeFiles as unknown[] }
+    : typeof _maybeFiles === "function"
+      ? { files: (_maybeFiles as () => unknown[])() }
+      : _mdxSource) as unknown as Parameters<typeof loader>[0]["source"],
 });
+
+interface BlogData {
+  title: string;
+  description?: string;
+  date?: string;
+  tags?: string[];
+  thumbnail?: string;
+  author?: string;
+  // MDX body can be a React component
+  body?: unknown;
+}
+
+interface BlogPage {
+  url?: string;
+  data: BlogData;
+}
 
 const formatDate = (date: Date): string => {
   return date.toLocaleDateString("en-US", {
@@ -48,14 +65,16 @@ export default async function BlogPost({ params }: PageProps) {
     notFound();
   }
 
-  const page = blogSource.getPage([slug]);
+  const page = blogSource.getPage([slug]) as unknown as BlogPage | undefined;
 
   if (!page) {
     notFound();
   }
 
-  const MDX = page.data.body;
-  const date = new Date(page.data.date);
+  const MDX = page.data.body as unknown as
+    | React.ComponentType<Record<string, unknown>>
+    | undefined;
+  const date = new Date(page.data.date ?? Date.now());
   const formattedDate = formatDate(date);
 
   const NEGATIVE_MARGIN = "-mt-20";
@@ -137,9 +156,7 @@ export default async function BlogPost({ params }: PageProps) {
 
           <div className="_docs-body p-6 px-[calc(var(--gutter-x)-10px)] lg:p-10">
             <div className="_docs-body--wrapper prose dark:prose-invert prose-headings:scroll-mt-8 prose-headings:font-semibold prose-a:no-underline prose-headings:tracking-tight prose-headings:text-balance prose-p:tracking-tight prose-p:text-balance prose-lg max-w-none">
-              <DocsBody>
-                <MDX />
-              </DocsBody>
+              <DocsBody>{MDX ? <MDX /> : null}</DocsBody>
             </div>
           </div>
 

@@ -1,25 +1,25 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { ThemeToggle } from "@/components/theme-toggle";
+import { ThemeToggle } from "@/components/_blog/theme-toggle";
 
 export function SiteNav() {
   return (
-    <header className="sticky top-0 z-20 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="max-w-7xl mx-auto w-full flex h-14 items-center justify-between px-6">
+    <header className="border-border/40 bg-background/95 supports-[backdrop-filter]:bg-background/60 sticky top-0 z-20 w-full border-b backdrop-blur">
+      <div className="mx-auto flex h-14 w-full max-w-7xl items-center justify-between px-6">
         <div className="mr-4 flex">
           <Link
             href="/"
-            className="mr-6 flex items-center space-x-2 font-medium text-lg tracking-tighter h-8 w-8 rounded-md overflow-hidden"
+            className="mr-6 flex h-8 w-8 items-center space-x-2 overflow-hidden rounded-md text-lg font-medium tracking-tighter"
           >
             <img
               src="/magicui-logo.png"
               alt="Magic UI"
-              className="w-10 h-10 object-cover"
+              className="h-10 w-10 object-cover"
             />
           </Link>
         </div>
 
-        <div className="flex flex-1 w-full justify-end">
+        <div className="flex w-full flex-1 justify-end">
           <nav className="flex items-center">
             <ThemeToggle />
           </nav>

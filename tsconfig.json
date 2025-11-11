@@ -32,5 +32,5 @@
     ".next/types/**/*.ts",
     "src/utils/plugins/tw-bevel.js"
   ],
-  "exclude": ["node_modules", ".source"]
+  "exclude": ["node_modules", ".source", "archive"]
 }

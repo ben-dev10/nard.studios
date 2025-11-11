@@ -1,13 +1,10 @@
-import { docs, meta } from "@/.source";
 import { DocsBody } from "fumadocs-ui/page";
-import { loader } from "fumadocs-core/source";
-import { createMDXSource } from "fumadocs-mdx";
+import { blogSource } from "@/lib/blog-source";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import Image from "next/image";
-
 import { TableOfContents } from "@/components/_blog/table-of-contents";
 import { MobileTableOfContents } from "@/components/_blog/mobile-toc";
 import { AuthorCard } from "@/components/_blog/author-card";
@@ -22,17 +19,7 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// _TODO: Test new source- implementation
-const _mdxSource = createMDXSource(docs, meta) as unknown;
-const _maybeFiles = (_mdxSource as { files?: unknown }).files;
-const blogSource = loader({
-  baseUrl: "/blog",
-  source: (Array.isArray(_maybeFiles)
-    ? { files: _maybeFiles as unknown[] }
-    : typeof _maybeFiles === "function"
-      ? { files: (_maybeFiles as () => unknown[])() }
-      : _mdxSource) as unknown as Parameters<typeof loader>[0]["source"],
-});
+// blogSource is created centrally in src/lib/blog-source.ts
 
 interface BlogData {
   title: string;

@@ -1,8 +1,6 @@
 import { ImageResponse } from "next/og";
 import Image from "next/image";
-import { docs, meta } from "@/.source";
-import { loader } from "fumadocs-core/source";
-import { createMDXSource } from "fumadocs-mdx";
+import { blogSource } from "@/lib/blog-source";
 import { getAuthor, isValidAuthor, type AuthorKey } from "@/lib/authors";
 
 export const runtime = "nodejs";
@@ -12,17 +10,6 @@ export const size = {
   height: 630,
 };
 export const contentType = "image/png";
-
-const _mdxSource = createMDXSource(docs, meta) as unknown;
-const _maybeFiles = (_mdxSource as { files?: unknown }).files;
-const blogSource = loader({
-  baseUrl: "/blog",
-  source: (Array.isArray(_maybeFiles)
-    ? { files: _maybeFiles as unknown[] }
-    : typeof _maybeFiles === "function"
-      ? { files: (_maybeFiles as () => unknown[])() }
-      : _mdxSource) as unknown as Parameters<typeof loader>[0]["source"],
-});
 
 interface BlogData {
   title: string;
@@ -37,6 +24,8 @@ interface BlogPage {
   url?: string;
   data: BlogData;
 }
+
+// blogSource is created centrally in src/lib/blog-source.ts
 
 const getAssetData = async (authorAvatar?: string) => {
   try {

@@ -1,21 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { docs, meta } from "@/.source";
-import { loader } from "fumadocs-core/source";
-import { createMDXSource } from "fumadocs-mdx";
+import { blogSource } from "@/lib/blog-source";
 import Link from "next/link";
-
-const _mdxSource = createMDXSource(docs, meta) as unknown;
-
-// Normalize various createMDXSource return shapes without using `any`.
-const _maybeFiles = (_mdxSource as { files?: unknown }).files;
-const blogSource = loader({
-  baseUrl: "/blog",
-  source: (Array.isArray(_maybeFiles)
-    ? { files: _maybeFiles as unknown[] }
-    : typeof _maybeFiles === "function"
-      ? { files: (_maybeFiles as () => unknown[])() }
-      : _mdxSource) as unknown as Parameters<typeof loader>[0]["source"],
-});
 
 const formatDate = (date: Date): string => {
   return date.toLocaleDateString("en-US", {

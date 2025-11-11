@@ -1,6 +1,4 @@
-import { docs, meta } from "@/.source";
-import { loader } from "fumadocs-core/source";
-import { createMDXSource } from "fumadocs-mdx";
+import { blogSource } from "@/lib/blog-source";
 import { Suspense } from "react";
 import { BlogCard } from "@/components/_blog/blog-card";
 import { TagFilter } from "@/components/_blog/tag-filter";
@@ -25,16 +23,7 @@ interface BlogPage {
   data: BlogData;
 }
 
-const _mdxSource = createMDXSource(docs, meta) as unknown;
-const _maybeFiles = (_mdxSource as { files?: unknown }).files;
-const blogSource = loader({
-  baseUrl: "/blog",
-  source: (Array.isArray(_maybeFiles)
-    ? { files: _maybeFiles as unknown[] }
-    : typeof _maybeFiles === "function"
-      ? { files: (_maybeFiles as () => unknown[])() }
-      : _mdxSource) as unknown as Parameters<typeof loader>[0]["source"],
-});
+// blogSource is created centrally in src/lib/blog-source.ts and imported above
 
 const formatDate = (date: Date): string => {
   return date.toLocaleDateString("en-US", {

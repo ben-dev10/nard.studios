@@ -16,7 +16,7 @@ const getAssetData = async () => {
     const fontUrls = {
       clashDisplay: `${baseUrl}/fonts/ClashDisplay-Semibold.ttf`,
       cabinetGrotesk: `${baseUrl}/fonts/CabinetGrotesk-Medium.ttf`,
-      logo: `${baseUrl}/magicui-logo.png`,
+      logo: `${baseUrl}/nard-logo--small-light.svg`,
     };
 
     const [clashDisplayRes, cabinetGroteskRes, logoRes] = await Promise.all([
@@ -108,9 +108,9 @@ export default async function OGImage() {
             <Image
               src={
                 assetData?.logoBase64 ||
-                `${process.env.NEXT_PUBLIC_SITE_URL}/magicui-logo.png`
+                `${process.env.NEXT_PUBLIC_SITE_URL}/nard-logo--small-light.svg`
               }
-              alt="MagicUI Logo"
+              alt="nard.studios Logo"
               width={100}
               height={100}
             />

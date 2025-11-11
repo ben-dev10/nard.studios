@@ -2,8 +2,6 @@ import { Metadata } from "next";
 import { blogSource } from "@/lib/blog-source";
 import { siteConfig } from "@/lib/site";
 
-// blogSource is created centrally in src/lib/blog-source.ts
-
 interface BlogDataMeta {
   title: string;
   description?: string;
@@ -62,12 +60,12 @@ export async function generateMetadata({
       ],
       authors: [
         {
-          name: page.data.author || "Magic UI",
+          name: page.data.author || "nard.studios",
           url: siteConfig.url,
         },
       ],
-      creator: page.data.author || "Magic UI",
-      publisher: "Magic UI",
+      creator: page.data.author || "nard.studios",
+      publisher: "nard.studios",
       robots: {
         index: true,
         follow: true,
@@ -85,7 +83,7 @@ export async function generateMetadata({
         type: "article",
         url: ogUrl,
         publishedTime: page.data.date,
-        authors: [page.data.author || "Magic UI"],
+        authors: [page.data.author || "nard.studios"],
         tags: page.data.tags,
         images: [
           {
@@ -102,8 +100,8 @@ export async function generateMetadata({
         title: page.data.title,
         description: page.data.description,
         images: [page.data.thumbnail || ogImage],
-        creator: "@dillionverma",
-        site: "@dillionverma",
+        creator: "@_nard_q",
+        site: "@_nard_q",
       },
       alternates: {
         canonical: ogUrl,

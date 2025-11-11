@@ -9,7 +9,7 @@ import { TableOfContents } from "@/components/_blog/table-of-contents";
 import { MobileTableOfContents } from "@/components/_blog/mobile-toc";
 import { AuthorCard } from "@/components/_blog/author-card";
 import { ReadMoreSection } from "@/components/_blog/read-more-section";
-import { PromoContent } from "@/components/_blog/promo-content";
+// import { PromoContent } from "@/components/_blog/promo-content";
 import { getAuthor, isValidAuthor } from "@/lib/authors";
 import { FlickeringGrid } from "@/components/_blog/magicui/flickering-grid";
 import { HashScrollHandler } from "@/components/_blog/hash-scroll-handler";
@@ -19,8 +19,6 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// blogSource is created centrally in src/lib/blog-source.ts
-
 interface BlogData {
   title: string;
   description?: string;
@@ -28,7 +26,6 @@ interface BlogData {
   tags?: string[];
   thumbnail?: string;
   author?: string;
-  // MDX body can be a React component
   body?: unknown;
 }
 
@@ -72,7 +69,7 @@ export default async function BlogPost({ params }: PageProps) {
       className={`${NEGATIVE_MARGIN} _blogpost-page relative z-1 min-h-screen overflow-visible bg-transparent`}
     >
       <HashScrollHandler />
-      <Background className="">
+      <Background className="_flickering-grid-bg">
         <div className="_flickering-grid absolute top-0 left-0 z-0 h-[200px] w-full [mask-image:linear-gradient(to_top,transparent_25%,black_95%)]">
           <FlickeringGrid
             className="absolute top-2 left-0 size-full"
@@ -163,7 +160,7 @@ export default async function BlogPost({ params }: PageProps) {
             <div className="border-border bg-card rounded-lg border p-6">
               <TableOfContents />
             </div>
-            <PromoContent variant="desktop" />
+            {/* <PromoContent variant="desktop" /> */}
           </div>
         </aside>
       </section>

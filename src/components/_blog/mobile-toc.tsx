@@ -2,14 +2,21 @@
 
 import React from "react";
 import { List } from "lucide-react";
-import { Drawer, DrawerTrigger, DrawerContent, DrawerHeader, DrawerBody, DrawerFooter } from "@/components/ui/drawer";
+import {
+  Drawer,
+  DrawerTrigger,
+  DrawerContent,
+  DrawerHeader,
+  DrawerBody,
+  // DrawerFooter
+} from "@/components/ui/drawer";
 import { TableOfContents } from "@/components/_blog/table-of-contents";
-import { PromoContent } from "@/components/_blog/promo-content";
+// import { PromoContent } from "@/components/_blog/promo-content";
 
 export function MobileTableOfContents() {
   return (
     <Drawer>
-      <DrawerTrigger className="lg:hidden fixed bottom-6 right-6 z-50 bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors">
+      <DrawerTrigger className="bg-primary text-primary-foreground hover:bg-primary/90 fixed right-6 bottom-6 z-50 rounded-full p-3 shadow-lg transition-colors lg:hidden">
         <List size={20} />
       </DrawerTrigger>
 
@@ -22,9 +29,9 @@ export function MobileTableOfContents() {
           <TableOfContents />
         </DrawerBody>
 
-        <DrawerFooter>
+        {/* <DrawerFooter>
           <PromoContent variant="mobile" />
-        </DrawerFooter>
+        </DrawerFooter> */}
       </DrawerContent>
     </Drawer>
   );

@@ -23,8 +23,6 @@ interface BlogPage {
   data: BlogData;
 }
 
-// blogSource is created centrally in src/lib/blog-source.ts and imported above
-
 const formatDate = (date: Date): string => {
   return date.toLocaleDateString("en-US", {
     year: "numeric",
@@ -33,7 +31,7 @@ const formatDate = (date: Date): string => {
   });
 };
 
-export default async function HomePage({
+export default async function BlogPage({
   searchParams,
 }: {
   searchParams: Promise<{ tag?: string }>;
@@ -81,7 +79,7 @@ export default async function HomePage({
       className={`${NEGATIVE_MARGIN} _blog-homepage relative z-1 bg-transparent`}
     >
       <Background>
-        <div className="absolute top-0 left-0 z-0 h-[200px] w-full [mask-image:linear-gradient(to_top,transparent_25%,black_95%)]">
+        <div className="_flickering-grid absolute top-0 left-0 z-0 h-[200px] w-full [mask-image:linear-gradient(to_top,transparent_25%,black_95%)]">
           <FlickeringGrid
             className="absolute top-0 left-0 size-full"
             squareSize={4}
@@ -92,17 +90,16 @@ export default async function HomePage({
           />
         </div>
       </Background>
-
       <section
         className={`${PADDING_TOP} _contents border-border relative z-10 flex min-h-[250px] flex-col justify-center gap-6 border-b p-6`}
       >
-        <div className="mx-auto w-full max-w-7xl">
-          <div className="flex flex-col gap-2">
-            <h1 className="text-4xl font-medium tracking-tighter md:text-5xl">
+        <div className="_header+subtitle mx-auto w-full max-w-7xl">
+          <div className="_wrapper flex flex-col gap-2">
+            <h1 className="_heading text-4xl font-medium tracking-tighter md:text-5xl">
               nard.studios Blog
             </h1>
-            <p className="text-muted-foreground text-sm md:text-base lg:text-lg">
-              Latest news and updates from Magic UI.
+            <p className="_subtitle text-muted-foreground text-sm md:text-base lg:text-lg">
+              Latest news and updates from nard.studios.
             </p>
           </div>
         </div>
@@ -153,6 +150,7 @@ export default async function HomePage({
       <section className="_aside+cta border-t">
         <div className="_aside-wrapper container-7xl p-10 py-15 pb-70">
           <h3>End of articles</h3>
+          <p className="text-muted-foreground mt-3">Updates to be made soon.</p>
         </div>
       </section>
     </main>

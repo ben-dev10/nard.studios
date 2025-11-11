@@ -34,7 +34,7 @@ const getAssetData = async (authorAvatar?: string) => {
     const assetUrls = {
       clashDisplay: `${baseUrl}/fonts/ClashDisplay-Semibold.ttf`,
       cabinetGrotesk: `${baseUrl}/fonts/CabinetGrotesk-Medium.ttf`,
-      logo: `${baseUrl}/magicui-logo.png`,
+      logo: `${baseUrl}/nard-logo--small-light.svg`,
       ...(authorAvatar && { authorAvatar: `${baseUrl}${authorAvatar}` }),
     };
 
@@ -216,9 +216,9 @@ export default async function OGImage({
               <Image
                 src={
                   assetData?.logoBase64 ||
-                  `${process.env.NEXT_PUBLIC_SITE_URL}/magicui-logo.png`
+                  `${process.env.NEXT_PUBLIC_SITE_URL}/nard-logo--small-light.svg`
                 }
-                alt="MagicUI Logo"
+                alt="nard.studios Logo"
                 width={80}
                 height={80}
                 style={styles.logo}

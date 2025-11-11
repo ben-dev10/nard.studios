@@ -16,16 +16,16 @@ export function PromoContent({
       <div className={cn("border-border bg-muted/20 border-t p-3", className)}>
         <div className="flex items-center gap-3">
           <img
-            src="/magicui-logo.png"
-            alt="Magic UI"
+            src="/nard-logo--small-light.svg"
+            alt="nard.studios logo"
             className="h-8 w-8 flex-shrink-0 rounded object-cover"
           />
           <div className="min-w-0 flex-1">
             <p className="text-foreground/90 truncate text-xs font-medium">
-              Try Magic UI Pro
+              nard.studios
             </p>
             <p className="text-muted-foreground truncate text-xs">
-              Beautiful design system
+              Crafting stunning UIs with are and precision.
             </p>
           </div>
           <a
@@ -46,17 +46,16 @@ export function PromoContent({
     >
       <div className="flex flex-col gap-4">
         <img
-          src="/_blog/magicui-pro.png"
-          alt="Magic UI"
+          src="/_nard/imgs/profile-img.webp"
+          alt="nard.studios logo"
           className="h-40 w-full rounded-md object-cover"
         />
         <div className="flex flex-col gap-1">
           <h3 className="text-lg font-semibold tracking-tighter">
-            Try Magic UI Pro
+            nard.studios
           </h3>
           <p className="text-muted-foreground text-sm">
-            Magic UI Pro is a design system for building beautiful and
-            responsive web applications.
+            Crafting stunning UIs with are and precision.
           </p>
         </div>
       </div>

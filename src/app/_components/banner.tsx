@@ -8,7 +8,7 @@ import { usePathname } from "next/navigation";
 const Banner = () => {
   const [visible, setVisible] = useState(true);
   const pathname = usePathname();
-  const hideForRoute = pathname.startsWith("/gallery");
+  const hideForRoute = pathname.startsWith("/gallery/clones");
 
   if (!visible || hideForRoute) return null;
 

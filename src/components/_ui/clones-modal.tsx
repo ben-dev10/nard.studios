@@ -138,7 +138,7 @@ export default function ClonesModal({
 
               <div className="_share">
                 <div className="mb-2 flex items-center gap-2">
-                  <ShareIcon className="size-4" />
+                  <ShareIcon className="size-4 stroke-white" />
                   <p className="opacity-80">Share this UI clone</p>
                 </div>
                 <div className="input-share flex">

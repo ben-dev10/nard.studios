@@ -139,7 +139,7 @@ export default function Footer() {
                       width={119}
                       height={12}
                     />
-                    <p>45%</p>
+                    <p>47%</p>
                   </div>
                 </div>
               </div>

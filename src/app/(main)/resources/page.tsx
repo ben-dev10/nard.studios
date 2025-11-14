@@ -1,4 +1,3 @@
-"use client";
 import PageNotReady from "@/app/_components/page-not-ready";
 import Section from "@/components/ui/elements/section";
 

@@ -46,7 +46,7 @@ export function TableOfContents({ className }: TableOfContentsProps) {
         });
 
         let activeHeading = headingPositions.find(
-          (heading) => heading.top >= 0 && heading.top <= 100
+          (heading) => heading.top >= 0 && heading.top <= 100,
         );
 
         if (!activeHeading) {
@@ -73,7 +73,7 @@ export function TableOfContents({ className }: TableOfContentsProps) {
         root: null,
         rootMargin: "-100px",
         threshold: 0,
-      }
+      },
     );
 
     headings.forEach(({ id }) => {
@@ -93,7 +93,7 @@ export function TableOfContents({ className }: TableOfContentsProps) {
       });
 
       let activeHeading = headingPositions.find(
-        (heading) => heading.top >= -50 && heading.top <= 100
+        (heading) => heading.top >= -50 && heading.top <= 100,
       );
 
       if (!activeHeading) {
@@ -129,10 +129,10 @@ export function TableOfContents({ className }: TableOfContentsProps) {
   const handleClick = async (id: string) => {
     const url = `${window.location.origin}${window.location.pathname}#${id}`;
 
-    window.history.pushState({}, '', `#${id}`);
+    window.history.pushState({}, "", `#${id}`);
 
     try {
-      await navigator.clipboard.writeText(url);
+      // await navigator.clipboard.writeText(url);
     } catch (err) {
       console.error(err);
       const textArea = document.createElement("textarea");
@@ -160,7 +160,7 @@ export function TableOfContents({ className }: TableOfContentsProps) {
 
   return (
     <div className={cn("space-y-2", className)}>
-      <h4 className="text-sm font-semibold text-foreground mb-4">
+      <h4 className="text-foreground mb-4 text-sm font-semibold">
         On this page
       </h4>
       <nav>
@@ -170,11 +170,11 @@ export function TableOfContents({ className }: TableOfContentsProps) {
               <button
                 onClick={() => handleClick(heading.id)}
                 className={cn(
-                  "block w-full text-left text-sm transition-colors hover:text-foreground text-muted-foreground",
+                  "hover:text-foreground text-muted-foreground block w-full text-left text-sm transition-colors",
                   {
                     "text-primary font-medium underline underline-offset-4":
                       activeId === heading.id,
-                  }
+                  },
                 )}
               >
                 {heading.text}

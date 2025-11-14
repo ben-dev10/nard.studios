@@ -97,7 +97,7 @@
 @layer base {
   :root {
     /* type scaling */
-    @apply text-[14px] max-md:text-[12px];
+    @apply text-[13px] max-md:text-[11px];
   }
   * {
     @apply border-border outline-ring/50;

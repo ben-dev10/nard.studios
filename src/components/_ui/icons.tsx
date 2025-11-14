@@ -1,5 +1,18 @@
 import { SVGProps } from "react";
 
+/* Icons:
+ *
+ * Styling the icons: most of the attributes on the SVG elements have been stripped off to only essentials, thus all
+ * styling and configuration is to be done with tailwind-css or inline-styles. So if you see a blank space
+ * after rendering, try styling with tailwind first.
+ *
+ * svg tailwind utilities:
+ *  text-* , font-*
+ *  stroke-*
+ *  fill-*
+ *  size-*
+ */
+
 type IconProps = SVGProps<SVGSVGElement> & {
   secondaryfill?: string;
   strokewidth?: number;
@@ -600,7 +613,7 @@ export function ShareIcon({ title = "share", ...props }: IconProps) {
       <g fill="none">
         <path
           d="M21 6h-3.2c-1.68 0-2.52 0-3.162.327a3 3 0 0 0-1.311 1.311C13 8.28 13 9.12 13 10.8V12m8-6-3-3m3 3-3 3m-8-6H7.8c-1.68 0-2.52 0-3.162.327a3 3 0 0 0-1.311 1.311C3 5.28 3 6.12 3 7.8v8.4c0 1.68 0 2.52.327 3.162a3 3 0 0 0 1.311 1.311C5.28 21 6.12 21 7.8 21h8.4c1.68 0 2.52 0 3.162-.327a3 3 0 0 0 1.311-1.311C21 18.72 21 17.88 21 16.2V14"
-          stroke="#ffffff"
+          // stroke="#ffffff"
           strokeLinecap="round"
           strokeLinejoin="round"
           strokeWidth="2"

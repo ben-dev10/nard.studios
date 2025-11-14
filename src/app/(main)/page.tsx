@@ -17,6 +17,7 @@ import { CircleCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import EmailButton from "../_components/email-btn";
 import ActionBTN from "../_components/_ui/action-btn";
+import ProjectCard from "../_components/project-card";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 const conicGradient =
@@ -134,36 +135,6 @@ function Hero() {
   );
 }
 
-function ProjectCard({
-  img,
-  title,
-  desc,
-  href,
-}: {
-  img: Record<"src" | "alt", string> & Record<"width" | "height", number>;
-  title: string;
-  desc: string;
-  href: string;
-}) {
-  return (
-    <div className="">
-      <Link className="block max-w-[600px] min-w-[350px]" href={href}>
-        <Image
-          alt={img.alt}
-          src={img.src}
-          width={img.width}
-          height={img.height}
-          className="rounded-4 mb-4 aspect-[1260/765] rounded-md shadow-lg"
-        />
-      </Link>
-      <div className="pl-5">
-        <p className="mb-1 !text-[1.15rem] font-[700]">{title}</p>
-        <span className="text-[0.95rem]">{desc}</span>
-      </div>
-    </div>
-  );
-}
-
 function Projects() {
   return (
     <Section.RootElement className="mb-15">
@@ -201,7 +172,7 @@ function Projects() {
         </Section.Container>
 
         <div
-          className={`_cards-carousel relative flex gap-5 overflow-x-auto px-[var(--gutter-x)] py-5 md:justify-center`}
+          className={`_cards-carousel relative flex gap-10 overflow-x-auto px-[var(--gutter-x)] py-5 md:justify-center`}
         >
           <ProjectCard
             href="/gallery/clones/clerk"
@@ -213,6 +184,7 @@ function Projects() {
               width: 1260,
               height: 765,
             }}
+            className="max-w-[600px] min-w-[350px]"
           />
           <ProjectCard
             href="/gallery/clones/payload"
@@ -224,6 +196,7 @@ function Projects() {
               width: 1260,
               height: 765,
             }}
+            className="max-w-[600px] min-w-[350px]"
           />
         </div>
       </Section.Container>

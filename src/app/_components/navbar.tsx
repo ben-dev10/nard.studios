@@ -49,53 +49,57 @@ const NavLinks = [
 export default function Navbar() {
   const pathname = usePathname();
   const isActive = (path: string) => path === pathname;
+  const hideNav = pathname.startsWith("/gallery/clones");
 
   return (
-    <Section.RootElement
-      as="header"
-      className="_header !sticky !top-2 z-10 w-full"
-    >
-      <Section.Container
-        container="8xl"
-        className={`flex items-center justify-between p-5 py-1`}
-      >
-        <Link href={"/"}>
-          <div className="_left-half relative rounded-full border-2 border-white/60 bg-white/55 p-4 px-6 shadow-2xl backdrop-blur-[30px]">
-            <Background.Layer
-              className={`_bg-blur absolute inset-0 -z-1 mt-5 rounded-full ${conicGradient} opacity-25 blur-md`}
-            />
-            <div className="_contents flex gap-2">
-              <NardLogoSmallLight />
-              <p className="text-[0.9rem] font-[600]">nard.studios</p>
+    <>
+      {!hideNav && (
+        <Section.RootElement
+          as="header"
+          className="_header !sticky !top-2 z-10 w-full"
+        >
+          <Section.Container
+            container="8xl"
+            className={`flex items-center justify-between p-5 py-1`}
+          >
+            <Link href={"/"}>
+              <div className="_left-half relative rounded-full border-2 border-white/60 bg-white/55 p-4 px-6 shadow-2xl backdrop-blur-[30px]">
+                <Background.Layer
+                  className={`_bg-blur absolute inset-0 -z-1 mt-5 rounded-full ${conicGradient} opacity-25 blur-md`}
+                />
+                <div className="_contents flex gap-2">
+                  <NardLogoSmallLight />
+                  <p className="text-[0.9rem] font-[600]">nard.studios</p>
+                </div>
+              </div>
+            </Link>
+            <div className="_right-half flex items-center gap-2 rounded-full bg-white/55 p-3 px-5 shadow-2xl backdrop-blur-[20px]">
+              <div className="_utilities md:mr-3">
+                <EmailButton text="Send email" className="rounded-full" />
+              </div>
+              <nav className="hidden md:block">
+                <ul className="flex items-center gap-3">
+                  {NavLinks.map((link, index) => (
+                    <li key={index} className="">
+                      <a
+                        href={link.url}
+                        className={`text-[0.9rem] ${
+                          isActive(link.url)
+                            ? "text-primary font-[600] underline decoration-black/20 decoration-dotted"
+                            : ""
+                        }`}
+                      >
+                        {link.name}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+              <AppSheet side="left" NavLinks={NavLinks} />
             </div>
-          </div>
-        </Link>
-
-        <div className="_right-half flex items-center gap-2 rounded-full bg-white/55 p-3 px-5 shadow-2xl backdrop-blur-[20px]">
-          <div className="_utilities md:mr-3">
-            <EmailButton text="Send email" className="rounded-full" />
-          </div>
-          <nav className="hidden md:block">
-            <ul className="flex items-center gap-3">
-              {NavLinks.map((link, index) => (
-                <li key={index} className="">
-                  <a
-                    href={link.url}
-                    className={`text-[0.9rem] ${
-                      isActive(link.url)
-                        ? "text-primary font-[600] underline decoration-black/20 decoration-dotted"
-                        : ""
-                    }`}
-                  >
-                    {link.name}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <AppSheet side="left" NavLinks={NavLinks} />
-        </div>
-      </Section.Container>
-    </Section.RootElement>
+          </Section.Container>
+        </Section.RootElement>
+      )}
+    </>
   );
 }

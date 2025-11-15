@@ -1,5 +1,5 @@
 "use client";
-import { NardLogoSmallLight } from "@/components/_ui/icons";
+import { NardLogoSmall } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
 import { AppSheet } from "./app--sheet";
@@ -68,12 +68,12 @@ export default function Navbar() {
                   className={`_bg-blur absolute inset-0 -z-1 mt-5 rounded-full ${conicGradient} opacity-25 blur-md`}
                 />
                 <div className="_contents flex gap-2">
-                  <NardLogoSmallLight />
+                  <NardLogoSmall />
                   <p className="text-[0.9rem] font-[600]">nard.studios</p>
                 </div>
               </div>
             </Link>
-            <div className="_right-half flex items-center gap-2 rounded-full bg-white/55 p-3 px-5 shadow-2xl backdrop-blur-[20px]">
+            <div className="_right-half flex items-center gap-2 rounded-full bg-white/55 p-3 px-5 shadow-2xl backdrop-blur-[20px] md:pr-10">
               <div className="_utilities md:mr-3">
                 <EmailButton text="Send email" className="rounded-full" />
               </div>

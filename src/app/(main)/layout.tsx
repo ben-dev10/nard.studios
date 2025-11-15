@@ -1,9 +1,6 @@
-import React from "react";
-
 import Navbar from "../_components/navbar";
 import Footer from "../_components/footer";
-
-export const APP_BG = "#fafafa"; /* or: #fafafa, f7f7f7, #f4f5ff */
+import { APP_BG } from "../_assets/constants";
 
 export default function MainLayout({
   children,

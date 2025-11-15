@@ -6,6 +6,7 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import Link from "next/link";
 import ProjectCard from "../_components/project-card";
 import { Button } from "@/components/ui/button";
+import { TooltipUI } from "@/components/_ui/tooltip-ui";
 
 function Hero() {
   return (
@@ -20,9 +21,9 @@ function Hero() {
               Hall of experiments, arts & milestones
             </h1>
             <p>
-              Here you will find a collection of code-design projects and
-              experiments and links to clones & graphics I&apos;ve made recently
-              or in the past.{" "}
+              On this page,you will find a collection of code & design projects,
+              experiments and links to clones & graphics I&apos;ve made until
+              now, and the home of all future projects.
             </p>
           </div>
 
@@ -243,18 +244,29 @@ export default function GalleryPage() {
                     <p>Software</p>
                   </div>
                 </TabsTrigger>
-                <TabsTrigger value="design" disabled>
-                  <div className="flex items-center gap-2">
-                    <PenToolIcon className="size-5 shrink-0" />
-                    <p className="">Design</p>
-                  </div>
-                </TabsTrigger>
-                <TabsTrigger value="engineering" disabled>
-                  <div className="flex items-center gap-2">
-                    <BookTextIcon className="size-5 shrink-0" />
-                    <p>Engineering</p>
-                  </div>
-                </TabsTrigger>
+                {/* _ERROR: The tooltip implementations below will throw hydration errors */}
+                <TooltipUI
+                  content=" Coming Soon"
+                  trigger={
+                    <TabsTrigger value="design" disabled className="">
+                      <div className="flex items-center gap-2">
+                        <PenToolIcon className="size-5 shrink-0" />
+                        <p className="">Design</p>
+                      </div>
+                    </TabsTrigger>
+                  }
+                />
+                <TooltipUI
+                  content=" Coming Soon"
+                  trigger={
+                    <TabsTrigger value="engineering" disabled>
+                      <div className="flex items-center gap-2">
+                        <BookTextIcon className="size-5 shrink-0" />
+                        <p>Engineering</p>
+                      </div>
+                    </TabsTrigger>
+                  }
+                />
               </TabsList>
             </ScrollArea>
             <>

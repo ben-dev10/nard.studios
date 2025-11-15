@@ -1,8 +1,4 @@
-import {
-  Ghana,
-  NardLogoLargeLight,
-  NardLogoSmallLight,
-} from "@/components/_ui/icons";
+import { Ghana, NardLogoGroup, NardLogoSmall } from "@/components/_ui/icons";
 import SocialIcons from "@/components/_ui/social-icons";
 import Section from "@/components/ui/elements/section";
 import {
@@ -113,7 +109,7 @@ export default function Footer() {
         <div className="_header+links flex flex-col gap-y-5 md:flex-row md:gap-15">
           <div className="_header md:max-w-[200px]">
             <div className="logos">
-              <NardLogoLargeLight className="mb-2" />
+              <NardLogoGroup className="mb-2" />
               <p className="mb-10 !text-[0.9rem] opacity-80">
                 Crafting stunning and performant UIs, with care and precision.
               </p>
@@ -139,7 +135,7 @@ export default function Footer() {
                       width={119}
                       height={12}
                     />
-                    <p>47%</p>
+                    <p>49%</p>
                   </div>
                 </div>
               </div>
@@ -174,7 +170,7 @@ export default function Footer() {
         <div className="_copy+logo mt-65">
           <div className="hidden sm:block">{copy}</div>
           <div>
-            <NardLogoSmallLight className="absolute right-10 -bottom-45 size-90 grayscale-90 transition-[filter] duration-500 group-hover:grayscale-0" />
+            <NardLogoSmall className="absolute right-10 -bottom-45 size-90 grayscale-90 transition-[filter] duration-500 group-hover:grayscale-0" />
           </div>
         </div>
       </Section.Container>

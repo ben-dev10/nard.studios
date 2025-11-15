@@ -54,13 +54,13 @@ export default function ClerkPricingPage() {
   return (
     <>
       <>
-        <Background>
+        <Background className="">
           <Background.Layer className="_app-bg fixed inset-0 -z-1 bg-[var(--app-bg)] [--app-bg:#131316]" />
         </Background>
       </>
       <Section.RootElement
         as="main"
-        className="_app.clerk font-Geist overflow-hidden text-white [--border:#2a2b2e]"
+        className="_app.clerk font-Geist overflow-hidden bg-[var(--app-bg)] text-white [--app-bg:#131316] [--border:#2a2b2e]"
       >
         <Section.Container container="7xl" className="">
           <>
@@ -489,7 +489,7 @@ export default function ClerkPricingPage() {
             </div>
           </section>
         </Section.Container>
-        <Section.Container container="none" className="border-t pb-50">
+        <Section.Container container="none" className="mb-50 border-y">
           <section className="mx-auto max-w-7xl px-10">
             <div className="relative border-x lg:grid lg:grid-cols-2">
               <hr className="absolute top-1/2 left-0 w-full lg:hidden" />

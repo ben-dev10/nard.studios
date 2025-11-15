@@ -8,6 +8,7 @@ import {
   XTwitter,
   DuplicatePlus,
   Bolt,
+  NardLogoSmall,
 } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
@@ -314,34 +315,33 @@ function CTA() {
       >
         <div className="_contents+blur relative">
           <Background.Layer
-            className={`_bg-blur absolute -bottom-5 h-[200px] w-full ${conicGradient} opacity-25 blur-md`}
+            className={`_bg-blur absolute -bottom-5 w-full ${conicGradient} opacity-25 blur-md`}
           />
 
-          <div className="550:rounded-md relative z-2 h-[210px] overflow-hidden bg-black p-8 text-white shadow-xl">
-            <Background>
+          <div className="550:rounded-xl relative z-2 overflow-hidden bg-black p-10 py-20 text-white shadow-xl">
+            <Background className="flex justify-center">
               <Image
                 alt="nard-chrome"
-                src="/_nard/svgs/nard-logo-chrome.svg"
-                width={417}
-                height={311}
-                className="absolute -right-15 z-2 mt-10 w-[350px] min-w-[340px] mask-b-from-20% mask-b-to-80% opacity-70 md:mt-5 md:w-[370px]"
-              />
-              <Image
-                alt="dots-texture"
-                src="/_nard/imgs/dots-texture.png"
-                width={500}
-                height={500}
-                className="550:min-w-[340px] absolute z-1 -ml-50 min-w-[200px] mask-radial-from-0% mask-radial-to-50% md:-ml-30"
+                src="/_nard/svgs/nard-chrome-v2.svg"
+                width={215}
+                height={208}
+                className="absolute z-2 mt-8 w-[230px] opacity-90 md:w-[300px]"
               />
             </Background>
-            <div className="_contents relative z-2 w-[90%] md:w-[70%]">
-              <h2 className="font-FigtreeR mb-2">Let&apos;s connect</h2>
-              <p className="text-[0.95rem] opacity-80">
+
+            <div className="_contents relative z-2">
+              <div className="mb-4 flex justify-center">
+                <NardLogoSmall nFill="#E0E0E0" className="size-8" />
+              </div>
+              <h2 className="font-FigtreeR mb-2 text-center">
+                Let&apos;s connect
+              </h2>
+              <p className="mx-auto max-w-[500px] text-center text-[0.95rem] opacity-80">
                 I&apos;m always excited to connect with new people. Feel free to
                 reach out for work related matters or simply to chat, share
                 ideas or provide feedback!
               </p>
-              <div className="mt-10 flex gap-4">
+              <div className="mt-10 flex justify-center gap-4">
                 <EmailButton
                   text="Get in touch"
                   className="bg-white text-black hover:bg-white/90"

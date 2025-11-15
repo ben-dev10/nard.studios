@@ -4,6 +4,7 @@ import { geistSansVar, geistMonoVar } from "./_assets/fonts";
 // import { ThemeProvider } from "@/contexts/theme-context";
 import { Analytics } from "@vercel/analytics/next";
 import Banner from "./_components/banner";
+import { Toaster } from "sonner";
 
 export const metadata: Metadata = {
   title: "nard.studios",
@@ -25,6 +26,7 @@ export default function RootLayout({
         <Banner />
         {children}
         <Analytics />
+        <Toaster position="top-right" richColors />
         {/* </ThemeProvider> */}
       </body>
     </html>

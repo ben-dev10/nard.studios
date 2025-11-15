@@ -13,8 +13,9 @@ import {
 } from "@/components/ui/input-group";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import "./_assets/clones-modal.css";
-import { NardLogoDark, ShareIcon } from "./icons";
+import { NardLogoSmall, ShareIcon } from "./icons";
 import Link from "next/link";
+import { toast } from "sonner";
 
 // main component
 type MiniModalProps = {
@@ -39,12 +40,11 @@ export default function ClonesModal({
   }, []);
 
   /* _FEATURE: 1. make model stick to viewport at lower breakpoints
-               2. Use sonner instead of alert()
-  */
+   */
   const { copyToClipboard, isCopied } = useCopyToClipboard({
     timeout: 100,
     onCopy() {
-      // alert("Copied text");
+      toast.success("Copied to clipboard");
     },
   });
 
@@ -183,7 +183,7 @@ export default function ClonesModal({
         >
           <span className="_blur gradient-blur-animation absolute inset-0 z-1 block scale-[1.2] rounded-full bg-[conic-gradient(from_180deg_at_50%_50%,_#2BFF17_0deg,_#F86767_180deg,_#2D5AFF_270deg,_#B84EFF_360deg)] opacity-50 blur" />
           <span className="relative z-2 grid place-items-center rounded-full bg-gradient-to-b from-[#333337] to-[#070707] p-2.5 shadow-2xl shadow-black/90">
-            <NardLogoDark className="size-8" />
+            <NardLogoSmall nFill="#E0E0E0" className="size-8" />
             <span className="sr-only">Modal Trigger</span>
           </span>
         </button>

@@ -1,3 +1,4 @@
+import { APP_BG } from "../_assets/constants";
 import Navbar from "../_components/navbar";
 
 export default function GalleryPageLayout({
@@ -7,8 +8,10 @@ export default function GalleryPageLayout({
 }>) {
   return (
     <>
-      <Navbar />
-      {children}
+      <div className="_main-app.root" style={{ backgroundColor: APP_BG }}>
+        <Navbar />
+        {children}
+      </div>
     </>
   );
 }

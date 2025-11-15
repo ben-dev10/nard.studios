@@ -15,12 +15,16 @@ export const Trigger01 = () => {
   );
 };
 
-export const TooltipUI = ({ content = "Tooltip" }: { content?: React.ReactNode }) => {
+export const TooltipUI = ({
+  content = "Tooltip",
+  trigger,
+}: {
+  content?: React.ReactNode;
+  trigger?: React.ReactNode;
+}) => {
   return (
     <Tooltip>
-      <TooltipTrigger>
-        <Trigger01 />
-      </TooltipTrigger>
+      <TooltipTrigger>{trigger ? trigger : <Trigger01 />}</TooltipTrigger>
       <TooltipContent className="w-[150px] max-w-max [--primary:#000]">
         {content}
       </TooltipContent>

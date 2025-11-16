@@ -3,6 +3,13 @@
  *   else they may eb needed
  */
 
+import {
+  GITHUB_LINK,
+  LINKEDIN_LINK,
+  WHATSAPP_LINK,
+  XTWITTER_LINK,
+} from "@/app/_assets/constants";
+
 /* ------------ Icons ------------ */
 type SVGProps = React.SVGProps<SVGSVGElement> & {
   link?: string;
@@ -260,12 +267,10 @@ export default function SocialIcons({
   ...props
 }: IconListProps) {
   // links
-  const gitHubLink = "https://github.com/ben-dev10";
-  const xtwitterLink = "https://x.com/_nard_q?t=Kfa-eZzpcnv49exB6jA3mQ&s=09";
-  const whatsappLink =
-    "https://wa.me/233541467464?text=Hi%20there!%20I%20found%20you%20through%20your%20portfolio.";
-  const linkedinLink =
-    "https://www.linkedin.com/in/bernard-quarshie-b7a157376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app";
+  const gitHubLink = GITHUB_LINK;
+  const xtwitterLink = XTWITTER_LINK;
+  const whatsappLink = WHATSAPP_LINK;
+  const linkedinLink = LINKEDIN_LINK;
   const instagramLink = "https://google.com";
   const tiktokLink = "https://google.com";
   const facebookLink = "https://google.com";

@@ -148,10 +148,7 @@ export default async function BlogPage({
       </div>
 
       <section className="_aside+cta border-t">
-        <div className="_aside-wrapper container-7xl p-10 py-15 pb-70">
-          <h3>End of articles</h3>
-          <p className="text-muted-foreground mt-3">Updates to be made soon.</p>
-        </div>
+        <div className="_aside-wrapper container-7xl p-10 py-15 pb-70"></div>
       </section>
     </main>
   );

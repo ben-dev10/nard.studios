@@ -16,7 +16,7 @@ export function PromoContent({
       <div className={cn("border-border bg-muted/20 border-t p-3", className)}>
         <div className="flex items-center gap-3">
           <img
-            src="/nard-logo--small-light.svg"
+            src="/nard-logo_sd.svg"
             alt="nard.studios logo"
             className="h-8 w-8 flex-shrink-0 rounded object-cover"
           />

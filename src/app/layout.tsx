@@ -5,10 +5,17 @@ import { geistSansVar, geistMonoVar } from "./_assets/fonts";
 import { Analytics } from "@vercel/analytics/next";
 import Banner from "./_components/banner";
 import { Toaster } from "sonner";
+import { siteConfig } from "@/lib/site";
+import { metadataKeywords } from "./metadata";
 
 export const metadata: Metadata = {
-  title: "nard.studios",
-  description: "A design and development studio.",
+  metadataBase: new URL(siteConfig.url),
+  title: {
+    default: siteConfig.name,
+    template: `%s - ${siteConfig.name}`,
+  },
+  description: siteConfig.description,
+  keywords: metadataKeywords,
 };
 
 export default function RootLayout({

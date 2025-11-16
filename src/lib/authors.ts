@@ -8,7 +8,7 @@ export const authors: Record<string, Author> = {
   nard: {
     name: "Bernard Quarshie",
     position: "Software Developer",
-    avatar: "/_nard/imgs/profile-img.webp",
+    avatar: "/_blog/authors/nard.webp",
   },
 } as const;
 

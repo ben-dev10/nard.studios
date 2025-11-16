@@ -127,29 +127,30 @@ export default async function BlogPost({ params }: PageProps) {
 
         <section className="_main-blog-contents w-full overflow-hidden p-0">
           {page.data.thumbnail && (
-            <div className="relative h-[500px] w-full overflow-hidden border border-transparent object-cover">
+            <div className="relative w-full overflow-hidden border border-transparent object-cover">
               <Image
                 src={page.data.thumbnail}
                 alt={page.data.title}
-                fill
-                className="object-cover"
+                width={2400}
+                height={1260}
+                className="aspect-[1200/630] object-cover"
                 priority
               />
             </div>
           )}
 
-          <div className="_docs-body p-6 px-[calc(var(--gutter-x)-10px)] lg:p-10">
+          <article className="_docs-body p-6 px-[calc(var(--gutter-x)-10px)] lg:p-10">
             <div className="_docs-body--wrapper prose dark:prose-invert prose-headings:scroll-mt-8 prose-headings:font-semibold prose-a:no-underline prose-headings:tracking-tight prose-headings:text-balance prose-p:tracking-tight prose-p:text-balance prose-lg max-w-none">
               <DocsBody>{MDX ? <MDX /> : null}</DocsBody>
             </div>
-          </div>
+          </article>
 
-          <div className="_read-more mt-10 pb-35">
+          <aside className="_read-more mt-10 pb-35">
             <ReadMoreSection
               currentSlug={[slug]}
               currentTags={page.data.tags}
             />
-          </div>
+          </aside>
         </section>
 
         <aside className="_aside bg-muted/60 dark:bg-muted/20 hidden w-[350px] flex-shrink-0 p-6 pb-30 lg:block lg:p-10">

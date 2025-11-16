@@ -60,11 +60,11 @@ export async function generateMetadata({
       ],
       authors: [
         {
-          name: page.data.author || "nard.studios",
+          name: page.data.author || "nard",
           url: siteConfig.url,
         },
       ],
-      creator: page.data.author || "nard.studios",
+      creator: page.data.author || "nard",
       publisher: "nard.studios",
       robots: {
         index: true,

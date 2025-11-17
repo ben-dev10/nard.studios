@@ -1,6 +1,8 @@
 "use client";
 import Section from "@/components/ui/elements/section";
 import Link from "next/link";
+import Image from "next/image";
+import { MessagesSquare } from "lucide-react";
 
 function Article() {
   return (
@@ -23,6 +25,17 @@ function Article() {
             <b>design</b> and <b>build</b> it in my own simple way.{" "}
           </p>
         </section>
+
+        <div className="_img mt-8 mb-16">
+          <Image
+            priority
+            alt="nard.profile image"
+            width={2400}
+            height={1260}
+            src="/_nard/_thumbnails/nard-profile-banner.webp"
+            className="rounded-md"
+          />
+        </div>
 
         <section>
           <h2 className="mt-8">What I Do</h2>
@@ -53,7 +66,10 @@ function Article() {
           </div>
         </section>
 
-        <section className="my-8 rounded-[13px] border-t-[4px] !bg-neutral-100 p-5">
+        <section className="my-8 rounded-[13px] border-t-[4px] !bg-neutral-100 p-5 pl-8">
+          <div className="mb-5">
+            <MessagesSquare size={18} stroke="black" />
+          </div>
           <p className="mb-3">
             <b>
               Do you have any questions, or want to collaborate on a project
@@ -94,7 +110,7 @@ function Resume() {
         </div>
 
         <div className="_area-2">
-          <p className="">
+          <p className="border-l-3 border-black/70 pl-3">
             <b>A little bit of history</b>
             <span className="mt-2 block">
               I was first introduced to programming in my pre-high school days,

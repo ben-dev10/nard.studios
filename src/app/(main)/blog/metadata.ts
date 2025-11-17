@@ -14,6 +14,7 @@ export const metadataKeywords = [
 ];
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: siteConfig.name,
   description: siteConfig.description,
   keywords: metadataKeywords,
@@ -31,14 +32,28 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: ["/_blog/blog-og.png"],
+    images: [
+      {
+        url: "/_blog/blog-og.png",
+        width: 1200,
+        height: 630,
+        alt: "nard.studios open-graph image",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     creator: "@nard.studios",
-    images: ["/_blog/blog-og.png"],
+    images: [
+      {
+        url: "/_blog/blog-og.png",
+        width: 1200,
+        height: 630,
+        alt: "nard.studios open-graph image",
+      },
+    ],
   },
   robots: {
     index: true,
@@ -51,5 +66,5 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: { canonical: "/(main)/blog" },
+  alternates: { canonical: "/blog" },
 };

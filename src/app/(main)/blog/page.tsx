@@ -2,9 +2,10 @@ import { blogSource } from "@/lib/blog-source";
 import { Suspense } from "react";
 import { BlogCard } from "@/components/_blog/blog-card";
 import { TagFilter } from "@/components/_blog/tag-filter";
-import { FlickeringGrid } from "@/components/_blog/magicui/flickering-grid";
 import Background from "@/components/ui/elements/background";
 import { LoadingSpinner } from "@/components/_ui/icons";
+import BlogFlickeringGrid from "@/app/_components/blog-flickering-grid";
+import CTA from "@/app/_components/cta";
 
 interface BlogData {
   title: string;
@@ -80,14 +81,7 @@ export default async function BlogPage({
     >
       <Background>
         <div className="_flickering-grid absolute top-0 left-0 z-0 h-[200px] w-full [mask-image:linear-gradient(to_top,transparent_25%,black_95%)]">
-          <FlickeringGrid
-            className="absolute top-0 left-0 size-full"
-            squareSize={4}
-            gridGap={6}
-            color="#6B7280"
-            maxOpacity={0.2}
-            flickerChance={0.05}
-          />
+          <BlogFlickeringGrid />
         </div>
       </Background>
       <section
@@ -148,7 +142,9 @@ export default async function BlogPage({
       </div>
 
       <section className="_aside+cta border-t">
-        <div className="_aside-wrapper container-7xl p-10 py-15 pb-70"></div>
+        <div className="_aside-wrapper container-7xl pt-70">
+          <CTA />
+        </div>
       </section>
     </main>
   );

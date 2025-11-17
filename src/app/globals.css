@@ -8,7 +8,7 @@
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
 
-@plugin "../utils/plugins/tw-bevel.js";
+@plugin "../utils/plugins/tw-bevel.mjs";
 
 @custom-variant dark (&:is(.dark *));
 

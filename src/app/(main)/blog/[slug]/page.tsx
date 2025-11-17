@@ -11,9 +11,9 @@ import { AuthorCard } from "@/components/_blog/author-card";
 import { ReadMoreSection } from "@/components/_blog/read-more-section";
 // import { PromoContent } from "@/components/_blog/promo-content";
 import { getAuthor, isValidAuthor } from "@/lib/authors";
-import { FlickeringGrid } from "@/components/_blog/magicui/flickering-grid";
 import { HashScrollHandler } from "@/components/_blog/hash-scroll-handler";
 import Background from "@/components/ui/elements/background";
+import BlogFlickeringGrid from "@/app/_components/blog-flickering-grid";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -66,19 +66,12 @@ export default async function BlogPost({ params }: PageProps) {
 
   return (
     <main
-      className={`${NEGATIVE_MARGIN} _blogpost-page relative z-1 min-h-screen overflow-visible bg-transparent`}
+      className={`${NEGATIVE_MARGIN} _blogpost-page relative z-1 overflow-visible bg-transparent`}
     >
       <HashScrollHandler />
       <Background className="_flickering-grid-bg">
         <div className="_flickering-grid absolute top-0 left-0 z-0 h-[200px] w-full [mask-image:linear-gradient(to_top,transparent_25%,black_95%)]">
-          <FlickeringGrid
-            className="absolute top-2 left-0 size-full"
-            squareSize={4}
-            gridGap={6}
-            color="#6B7280"
-            maxOpacity={0.2}
-            flickerChance={0.05}
-          />
+          <BlogFlickeringGrid />
         </div>
       </Background>
 
@@ -140,7 +133,8 @@ export default async function BlogPost({ params }: PageProps) {
           )}
 
           <article className="_docs-body p-6 px-[calc(var(--gutter-x)-10px)] lg:p-10">
-            <div className="_docs-body--wrapper prose dark:prose-invert prose-headings:scroll-mt-8 prose-headings:font-semibold prose-a:no-underline prose-headings:tracking-tight prose-headings:text-balance prose-p:tracking-tight prose-p:text-balance prose-lg max-w-none">
+            {/* prose-p:text-balance   -   tailwind-prose plugin update */}
+            <div className="_docs-body--wrapper prose dark:prose-invert prose-headings:scroll-mt-8 prose-headings:font-semibold prose-a:no-underline prose-headings:tracking-tight prose-headings:text-balance prose-p:tracking-tight prose-lg max-w-none">
               <DocsBody>{MDX ? <MDX /> : null}</DocsBody>
             </div>
           </article>

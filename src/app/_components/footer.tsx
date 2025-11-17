@@ -132,10 +132,10 @@ export default function Footer() {
                     <Image
                       alt="scale-svg"
                       src="/_nard/svgs/gradient-scale.svg"
-                      width={119}
-                      height={12}
+                      width={121}
+                      height={20}
                     />
-                    <p>52%</p>
+                    <p>56%</p>
                   </div>
                 </div>
               </div>

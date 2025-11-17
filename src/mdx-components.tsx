@@ -21,7 +21,11 @@ const createHeading = (level: number) => {
     children,
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => {
-    return <CopyHeader level={level} {...props}>{children}</CopyHeader>;
+    return (
+      <CopyHeader level={level} {...props}>
+        {children}
+      </CopyHeader>
+    );
   };
 
   Heading.displayName = `Heading${level}`;

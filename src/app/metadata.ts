@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import { XTWITTER_LINK } from "./_assets/constants";
 
 export const metadataKeywords = [
   "Design Studio",
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "nard.studios",
-      url: "https://nard-studios.vercel.app",
+      url: XTWITTER_LINK,
     },
   ],
   creator: "nard",
@@ -29,14 +30,28 @@ export const metadata: Metadata = {
     title: siteConfig.name,
     description: siteConfig.description,
     siteName: siteConfig.name,
-    images: ["/og.png"],
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "nard.studios open-graph image",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: siteConfig.name,
     description: siteConfig.description,
     creator: "@nard.studios",
-    images: ["/og.png"],
+    images: [
+      {
+        url: "/og.png",
+        width: 1200,
+        height: 630,
+        alt: "nard.studios open-graph image",
+      },
+    ],
   },
   robots: {
     index: true,

@@ -7,6 +7,7 @@ import Link from "next/link";
 import ProjectCard from "../_components/project-card";
 import { Button } from "@/components/ui/button";
 import { TooltipUI } from "@/components/_ui/tooltip-ui";
+import { galleryImages } from "./gallery-data";
 
 function Hero() {
   return (
@@ -210,8 +211,28 @@ function SoftwareTabContent() {
 function DesignTabContent() {
   return (
     <Section.RootElement className="min-h-[80vh] p-10">
-      <Section.Container container="8xl">
-        <div className="">Design Tab Section</div>
+      <Section.Container
+        container="8xl"
+        className="px-[calc(var(--gutter-x)-30px)]"
+      >
+        <div className="_header my-5">
+          <h2>Image Gallery</h2>
+          <p className="mt-3 mb-15">Flyers, 3D Renders and Logos</p>
+        </div>
+
+        <div className="_masonry-grid [column-gap:1rem] [column-count:2] md:[column-count:3] lg:[column-count:4]">
+          {galleryImages.map((item, index) => (
+            <div key={index} className="_img-item mb-4">
+              <Image
+                alt={item.img.alt}
+                width={item.img.width}
+                height={item.img.height}
+                src={item.img.src}
+                className="w-full rounded-sm"
+              />
+            </div>
+          ))}
+        </div>
       </Section.Container>
     </Section.RootElement>
   );
@@ -237,25 +258,22 @@ export default function GalleryPage() {
         <div className="_tabbed-section py-10">
           <Tabs defaultValue="software" className="_header-tabs">
             <ScrollArea>
-              <TabsList className="mx-auto grid h-12 grid-cols-3 [&_p]:text-[1.1rem]">
+              <TabsList className="mx-auto grid h-12 grid-cols-3 [&_p]:text-[1rem]">
                 <TabsTrigger value="software">
                   <div className="flex items-center gap-2">
                     <Code2 className="size-5 shrink-0" />
                     <p>Software</p>
                   </div>
                 </TabsTrigger>
-                {/* _ERROR: The tooltip implementations below will throw hydration errors */}
-                <TooltipUI
-                  content=" Coming Soon"
-                  trigger={
-                    <TabsTrigger value="design" disabled className="">
-                      <div className="flex items-center gap-2">
-                        <PenToolIcon className="size-5 shrink-0" />
-                        <p className="">Design</p>
-                      </div>
-                    </TabsTrigger>
-                  }
-                />
+
+                <TabsTrigger value="design" className="">
+                  <div className="flex items-center gap-2">
+                    <PenToolIcon className="size-5 shrink-0" />
+                    <p className="">Design</p>
+                  </div>
+                </TabsTrigger>
+
+                {/* _ERROR: The tooltip implementation below will throw a hydration error */}
                 <TooltipUI
                   content=" Coming Soon"
                   trigger={

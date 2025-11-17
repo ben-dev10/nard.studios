@@ -1,5 +1,6 @@
 import PageNotReady from "@/app/_components/page-not-ready";
 import NotFound from "@/app/not-found";
+import FlickeringGridDemo from "@/stories/_components/FlickeringGridDemo";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 
 const meta: Meta = {
@@ -22,6 +23,10 @@ export const Page404: Story = {
       <NotFound />
     </div>
   ),
+};
+
+export const FlickeringGridDemos: Story = {
+  render: () => <FlickeringGridDemo />,
 };
 
 export default meta;

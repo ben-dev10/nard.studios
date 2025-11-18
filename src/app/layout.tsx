@@ -6,9 +6,10 @@ import { Analytics } from "@vercel/analytics/next";
 import Banner from "./_components/banner";
 import { Toaster } from "sonner";
 import { siteConfig } from "@/lib/site";
-import { metadataKeywords } from "./metadata";
+import { metadata as baseMetadata, metadataKeywords } from "./metadata";
 
 export const metadata: Metadata = {
+  ...baseMetadata,
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.name,

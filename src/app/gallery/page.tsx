@@ -7,7 +7,7 @@ import Link from "next/link";
 import ProjectCard from "../_components/project-card";
 import { Button } from "@/components/ui/button";
 import { TooltipUI } from "@/components/_ui/tooltip-ui";
-import { galleryImages } from "./gallery-data";
+import Masonry from "../_components/masonry";
 
 function Hero() {
   return (
@@ -83,7 +83,7 @@ const BlocksCard = ({
 
 function SoftwareTabContent() {
   return (
-    <Section.RootElement className="">
+    <Section.RootElement id="software-tab" className="">
       <Section.Container container="8xl" className="p-8 px-[var(--gutter-x)]">
         <div className="_header my-5">
           <h2 className="mb-5">Software projects.</h2>
@@ -165,8 +165,8 @@ function SoftwareTabContent() {
             imgClass="pl-8 @sm:pl-0 min-w-[260px]"
             img={{
               alt: "headers-card image",
-              height: 500,
-              width: 664,
+              height: 808,
+              width: 428,
               src: "/_nard/_ui/headers-ui.webp",
             }}
           />
@@ -210,7 +210,7 @@ function SoftwareTabContent() {
 
 function DesignTabContent() {
   return (
-    <Section.RootElement className="min-h-[80vh] p-10">
+    <Section.RootElement id="design-tab" className="min-h-[80vh] p-10">
       <Section.Container
         container="8xl"
         className="px-[calc(var(--gutter-x)-30px)]"
@@ -220,19 +220,7 @@ function DesignTabContent() {
           <p className="mt-3 mb-15">Flyers, 3D Renders and Logos</p>
         </div>
 
-        <div className="_masonry-grid [column-gap:1rem] [column-count:2] md:[column-count:3] lg:[column-count:4]">
-          {galleryImages.map((item, index) => (
-            <div key={index} className="_img-item mb-4">
-              <Image
-                alt={item.img.alt}
-                width={item.img.width}
-                height={item.img.height}
-                src={item.img.src}
-                className="w-full rounded-sm"
-              />
-            </div>
-          ))}
-        </div>
+        <Masonry />
       </Section.Container>
     </Section.RootElement>
   );
@@ -240,7 +228,7 @@ function DesignTabContent() {
 
 function EngineeringTabContent() {
   return (
-    <Section.RootElement className="min-h-[80vh] p-10">
+    <Section.RootElement id="engineering-tab" className="min-h-[80vh] p-10">
       <Section.Container container="8xl">
         <div className="">Engineering Tab Section</div>
       </Section.Container>
@@ -258,7 +246,7 @@ export default function GalleryPage() {
         <div className="_tabbed-section py-10">
           <Tabs defaultValue="software" className="_header-tabs">
             <ScrollArea>
-              <TabsList className="mx-auto grid h-12 grid-cols-3 [&_p]:text-[1rem]">
+              <TabsList className="mx-auto grid h-12 !grid-cols-3 [&_p]:text-[1rem]">
                 <TabsTrigger value="software">
                   <div className="flex items-center gap-2">
                     <Code2 className="size-5 shrink-0" />

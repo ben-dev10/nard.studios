@@ -75,7 +75,7 @@ export default function Navbar() {
             </Link>
             <div className="_right-half flex items-center gap-2 rounded-full bg-white/55 p-3 px-5 shadow-2xl backdrop-blur-[20px] md:pr-10">
               <div className="_utilities md:mr-3">
-                <EmailButton text="Send email" className="rounded-full" />
+                <EmailButton text="Contact" className="rounded-full" />
               </div>
               <nav className="hidden md:block">
                 <ul className="flex items-center gap-3">

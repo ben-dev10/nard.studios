@@ -1,0 +1,77 @@
+"use client";
+import { galleryImages as imgs } from "../_assets/gallery-data";
+import Image from "next/image";
+import { useCallback, useEffect, useState } from "react";
+import Lightbox from "./_ui/lightbox";
+import PopoverUI from "@/components/_ui/popover-ui";
+import { ArrowLeft, ArrowRight, Info } from "lucide-react";
+
+export default function Masonry() {
+  const [selectedImg, setSelectedImg] = useState<number | null>(null);
+
+  const navigate = useCallback(
+    (dir: number) => {
+      if (selectedImg === null) return;
+      setSelectedImg((selectedImg + dir + imgs.length) % imgs.length);
+    },
+    [selectedImg],
+  );
+
+  useEffect(() => {
+    if (selectedImg === null) return;
+
+    const handle = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setSelectedImg(null);
+      if (e.key === "ArrowLeft") navigate(-1);
+      if (e.key === "ArrowRight") navigate(1);
+    };
+
+    window.addEventListener("keydown", handle);
+    return () => window.removeEventListener("keydown", handle);
+  }, [selectedImg, navigate]);
+
+  return (
+    <div className="_masonry+lightbox">
+      <Lightbox
+        imgs={imgs}
+        navigate={navigate}
+        setSelectedImg={setSelectedImg}
+        selectedImg={selectedImg}
+      />
+      <div className="info mb-5 flex justify-end">
+        <PopoverUI
+          className="max-w-[200px]"
+          trigger={<Info className="text-neutral-800" size={12} />}
+          content={
+            <div className="text-neutral-500 [&_p]:!text-[0.85rem]">
+              <p>Click on an image to view in full-screen.</p>
+              <p className="mt-5">
+                Press <kbd>esc</kbd> to exit (or click outside), left{" "}
+                <ArrowLeft size={12} className="mx-1 inline text-black" />
+                and right{" "}
+                <kbd>
+                  <ArrowRight size={12} className="mx-1 inline text-black" />
+                </kbd>{" "}
+                arrow keys to cycle through.
+              </p>
+            </div>
+          }
+        />
+      </div>
+      <div className="_masonry-grid [column-gap:1rem] [column-count:2] md:[column-count:3] lg:[column-count:4]">
+        {imgs.map((item, index) => (
+          <div key={index} className="_img-item mb-4">
+            <Image
+              alt={item.img.alt}
+              width={item.img.width}
+              height={item.img.height}
+              src={item.img.src}
+              className="w-full cursor-pointer rounded-sm"
+              onClick={() => setSelectedImg(index)}
+            />
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}

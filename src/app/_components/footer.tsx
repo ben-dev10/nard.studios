@@ -26,11 +26,11 @@ const footerLinks = [
     links: [
       {
         name: "Resume",
-        url: "#",
+        url: "/about",
       },
       {
         name: "Profile",
-        url: "#",
+        url: "/about",
       },
       {
         name: (
@@ -38,7 +38,7 @@ const footerLinks = [
             Contact <ExternalLink size={12} className="opacity-80" />{" "}
           </span>
         ),
-        url: "#",
+        url: "/about",
       },
     ],
   },
@@ -48,15 +48,15 @@ const footerLinks = [
     links: [
       {
         name: "Web Dev",
-        url: "#",
+        url: "/gallery/#software-tab",
       },
       {
         name: "2D/3D",
-        url: "#",
+        url: "/gallery/#design-tab",
       },
       {
         name: "Engineering",
-        url: "#",
+        url: "/gallery/#engineering-tab",
       },
     ],
   },
@@ -66,15 +66,15 @@ const footerLinks = [
     links: [
       {
         name: "Snippets",
-        url: "#",
+        url: "/resources",
       },
       {
         name: "Curated Links",
-        url: "#",
+        url: "/resources",
       },
       {
         name: "Inspiration",
-        url: "#",
+        url: "/resources",
       },
     ],
   },
@@ -84,11 +84,11 @@ const footerLinks = [
     links: [
       {
         name: "Changelogs",
-        url: "#",
+        url: "/blog",
       },
       {
         name: "Roadmap",
-        url: "#",
+        url: "/blog/introducing-nard-studios",
       },
     ],
   },
@@ -135,7 +135,7 @@ export default function Footer() {
                       width={121}
                       height={20}
                     />
-                    <p>56%</p>
+                    <p>59%</p>
                   </div>
                 </div>
               </div>

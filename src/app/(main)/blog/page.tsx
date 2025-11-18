@@ -6,6 +6,9 @@ import Background from "@/components/ui/elements/background";
 import { LoadingSpinner } from "@/components/_ui/icons";
 import BlogFlickeringGrid from "@/app/_components/blog-flickering-grid";
 import CTA from "@/app/_components/cta";
+import { metadata } from "./metadata";
+
+export { metadata };
 
 interface BlogData {
   title: string;
@@ -18,7 +21,6 @@ interface BlogData {
   authorImage?: string;
   thumbnail?: string;
 }
-
 interface BlogPage {
   url: string;
   data: BlogData;

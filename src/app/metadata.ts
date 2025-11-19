@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     siteName: siteConfig.name,
     images: [
       {
-        url: "/og.png",
+        url: "/og.webp",
         width: 1200,
         height: 630,
         alt: "nard.studios open-graph image",
@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     creator: "@nard.studios",
     images: [
       {
-        url: "/og.png",
+        url: "/og.webp",
         width: 1200,
         height: 630,
         alt: "nard.studios open-graph image",

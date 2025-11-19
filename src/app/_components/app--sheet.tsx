@@ -13,6 +13,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SocialIcons from "@/components/_ui/social-icons";
 import type { NavLinksProps } from "./navbar";
+import Image from "next/image";
 
 export function AppSheet({ NavLinks, side }: NavLinksProps) {
   const pathname = usePathname();
@@ -72,9 +73,17 @@ export function AppSheet({ NavLinks, side }: NavLinksProps) {
           </SheetDescription>
         </SheetHeader>
         <div className="_sheet-content relative">
-          <div className="_sheet-graphic absolute top-0 left-0 -z-2 h-[150px] w-full" />
+          <div className="_sheet-graphic pointer-events-none absolute top-0 left-0 -z-2 h-[150px] w-full">
+            <Image
+              alt="sheet isometric art"
+              width={2400}
+              height={1260}
+              src="/_nard/_ui/sheet-img.webp"
+              className=""
+            />
+          </div>
 
-          <div className="_contents mt-50">
+          <div className="_contents mt-80">
             <nav className="_sheet-links p-5">
               <ul onClick={handleClick} className="space-y-3">
                 {NavLinks.map((link) => (

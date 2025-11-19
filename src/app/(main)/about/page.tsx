@@ -2,7 +2,12 @@
 import Section from "@/components/ui/elements/section";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowUpRight, Download, MessagesSquare } from "lucide-react";
+import {
+  AlarmClockIcon,
+  ArrowUpRight,
+  Download,
+  MessagesSquare,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 function Article() {
@@ -13,7 +18,7 @@ function Article() {
         className="px-[var(--gutter-x)] pt-25 pb-5"
       >
         <section className="">
-          <h1 className="mb-5">
+          <h1 className="font-FigtreeR mb-5">
             Engineer, Design,
             <br />
             Build.
@@ -49,7 +54,7 @@ function Article() {
         className="mb-10 px-[var(--gutter-x)] py-5"
       >
         <section>
-          <h2 className="mt-8">What I Do</h2>
+          <h2 className="font-FigtreeR mt-8 font-[700]">What I Do</h2>
           <div className="mt-3 space-y-5">
             <p>
               I work primarily in front-end development — transforming concepts
@@ -121,7 +126,7 @@ function Resume() {
         </div>
 
         <div className="_area-2 border-l-3 border-black/70 pl-5">
-          <h3 className="mb-3">Work & Resume</h3>
+          <h3 className="font-FigtreeR mb-3 font-[700]">Work & Resume</h3>
 
           <div>
             <Button>
@@ -134,11 +139,11 @@ function Resume() {
             </Link>
           </div>
 
-          <div className="flex gap-3 pt-10">
+          <div className="flex gap-2 pt-10">
             <p>
               <b>Available for work</b>
             </p>
-            <div className="relative flex max-w-max items-center justify-center">
+            <div className="relative flex max-w-max scale-[0.8] items-center justify-center">
               <span className="absolute size-[10px] shrink-0 animate-ping rounded-full bg-blue-300" />
               <span className="absolute inline-block size-[7px] shrink-0 rounded-full bg-blue-400" />{" "}
             </div>
@@ -146,12 +151,13 @@ function Resume() {
           <div className="mt-2 block">
             <p>
               I am currently available for freelance projects or any work
-              opportunities (remote, hybrid or full-time).
+              opportunities (remote, hybrid or full-time). Looking forward to
+              joining a team where I can contribute, learn and help build
+              meaningful digital experiences.
             </p>
 
-            <p className="mt-3">
-              Looking forward to joining a team where I can contribute, learn
-              and help build meaningful digital experiences.
+            <p className="text-muted-foreground mt-8 flex items-center gap-1 font-bold">
+              <AlarmClockIcon size={15} /> Response time: &lt; 24hrs
             </p>
           </div>
         </div>

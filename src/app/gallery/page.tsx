@@ -8,18 +8,21 @@ import ProjectCard from "../_components/project-card";
 import { Button } from "@/components/ui/button";
 import { TooltipUI } from "@/components/_ui/tooltip-ui";
 import Masonry from "../_components/masonry";
+import Background from "@/components/ui/elements/background";
+import MiniFooter from "../_components/mini-footer";
 
 function Hero() {
   return (
-    <Section.RootElement className="">
+    <Section.RootElement className={`bg-[#f4f5f8] pt-20`}>
       <Section.Container
         container="8xl"
         className="px-[var(--gutter-x)] pt-25 pb-10 md:pt-8"
       >
+        <Background.Layer className="absolute inset-0 -top-120 z-10 h-30 bg-blue-500" />
         <div className="flex flex-col gap-5 md:flex-row md:items-center md:gap-15">
           <div className="_header sm:w-[440px] md:min-w-[450px]">
-            <h1 className="mb-5 text-balance">
-              Hall of experiments, arts & milestones
+            <h1 className="font-FigtreeR mb-5 text-balance">
+              Hall of experiments & milestones
             </h1>
             <p>
               On this page,you will find a collection of code & design projects,
@@ -28,13 +31,12 @@ function Hero() {
             </p>
           </div>
 
-          <div className="_hero-img min-w-[500px] max-md:translate-x-5">
+          <div className="_hero-img pointer-events-none min-w-[600px] -translate-x-20">
             <Image
-              priority
-              alt="Gallery hero image"
-              width={1472}
-              height={1264}
-              src="/_nard/imgs/gallery-hero.webp"
+              alt="sheet isometric art"
+              width={2400}
+              height={1260}
+              src="/_nard/_ui/sheet-img-2.webp"
               className=""
             />
           </div>
@@ -86,15 +88,12 @@ function SoftwareTabContent() {
     <Section.RootElement id="software-tab" className="">
       <Section.Container container="8xl" className="p-8 px-[var(--gutter-x)]">
         <div className="_header my-5">
-          <h2 className="mb-5">Software projects.</h2>
-          <p className="text-muted-foreground mb-5">
-            Over the past coupled of years I have built a number of projects,
-            many of which didn&apos;t see the light of day - archived away in a
-            soon to be deleted repository.
-          </p>
-          <p className="text-muted-foreground mb-10">
-            But there are some that works that were fun yet challenging and a
-            great learning experience that I thought would be nice to have
+          <h2 className="font-FigtreeR mb-4">Software projects.</h2>
+          <p className="text-muted-foreground mb-15">
+            Over the past couple of years, I have built a myriad of projects,
+            many of which did not see the light of day - archived away into
+            oblivion. But there were some that were fun, challenging and great
+            learning experiences that I thought would be nice to have them
             featured in my portfolio.
           </p>
         </div>
@@ -216,8 +215,10 @@ function DesignTabContent() {
         className="px-[calc(var(--gutter-x)-30px)]"
       >
         <div className="_header my-5">
-          <h2>Image Gallery</h2>
-          <p className="mt-3 mb-15">Flyers, 3D Renders and Logos</p>
+          <h2 className="font-FigtreeR">Image Gallery</h2>
+          <p className="text-muted-foreground mt-2 mb-15">
+            Flyers, 3D Renders and Logos.
+          </p>
         </div>
 
         <Masonry />
@@ -239,9 +240,9 @@ function EngineeringTabContent() {
 export default function GalleryPage() {
   return (
     <>
-      <main className="overflow-hidden pt-0 transition-colors duration-300">
+      <main className="-mt-20 overflow-hidden pt-0 transition-colors duration-300">
         <Hero />
-        <hr className="_line border-dashed" />
+        <hr className="_line border-t" />
 
         <div className="_tabbed-section py-10">
           <Tabs defaultValue="software" className="_header-tabs">
@@ -289,6 +290,7 @@ export default function GalleryPage() {
           </Tabs>
         </div>
       </main>
+      <MiniFooter links={["About", "Blog", "Resources"]} />
     </>
   );
 }

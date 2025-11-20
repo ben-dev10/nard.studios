@@ -1,97 +1,26 @@
-"use client";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
-import {
-  ArrowLeft,
-  ArrowRight,
-  ArrowUpRight,
-  Check,
-  Copy,
-  Search,
-} from "lucide-react";
-import { useState } from "react";
+import { ArrowLeft, ArrowRight, ArrowUpRight, Search } from "lucide-react";
 import Image from "next/image";
-import { GridIcons, FeatureLinks, Testimonials, NavLinks } from "./assets/data";
+import { GridIcons, Testimonials, NavLinks } from "./assets/data";
 import { ACMELogo } from "@/components/_ui/acme-logo";
-import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { Github } from "@/components/_ui/icons";
 import { Button } from "@/components/ui/button";
 import ClonesModal from "@/components/_ui/clones-modal";
-import { useScrollbarMode } from "@/hooks/use-scrollbar-mode";
+import { ProductFeatures } from "./clients/product-features";
+import { PayloadLinkBtn } from "./clients/payload-btn";
+
+import payloadBgDesign from "./assets/payload-bg-design.jpg";
+import pattern1 from "./assets/pattern-1.gif";
+import hero1 from "./assets/payload--hero1.webp";
+import hero2 from "./assets/payload--hero2.webp";
+import productScreenshots from "./assets/product-screenshots.webp";
 
 /*
-_FIXME: 
-1. Grid-lines Optimize
-3. General code optimization
+_FIXME: Grid-lines Optimize
 */
 
 const CONTENTSZINDEX = 3;
-
-const PayloadLinkBtn = ({
-  link,
-  text,
-  className,
-  variant = "link",
-}: {
-  link?: string;
-  text: string;
-  className?: string;
-  variant: "copy" | "link";
-}) => {
-  const { copyToClipboard, isCopied } = useCopyToClipboard();
-
-  let content: React.ReactNode | string = "no content";
-  const originalStyles =
-    "absolute top-0 flex h-full w-full items-center justify-between p-2 py-3 transition-[top] duration-[450ms] ease-[cubic-bezier(0.17,0.84,0.44,1)] group-hover:-top-[110%] group-hover:-rotate-z-1";
-  const duplicateStyles =
-    "absolute top-[115%] flex h-full w-full rotate-z-1 items-center justify-between bg-white p-2 py-3 text-black transition-[top] duration-[450ms] ease-[cubic-bezier(0.17,0.84,0.44,1)] group-hover:top-0 group-hover:rotate-z-0";
-
-  if (link && variant === "link") {
-    content = (
-      <>
-        <a href={link} className={`px-4 ${originalStyles}`}>
-          {text} <ArrowUpRight className="" size={14} />
-        </a>
-        <a href={link} className={`px-4 ${duplicateStyles}`}>
-          {text} <ArrowUpRight className="" size={14} />
-        </a>
-      </>
-    );
-  }
-
-  if (!link && variant === "copy") {
-    content = (
-      <>
-        <span
-          onClick={() => {
-            copyToClipboard("npx create-payload-app");
-          }}
-          className={`font-JetBrainsMono px-4 ${originalStyles}`}
-        >
-          {text}
-          {isCopied ? <Check size={14} /> : <Copy className="" size={14} />}
-        </span>
-        <span
-          onClick={() => {
-            copyToClipboard("npx create-payload-app");
-          }}
-          className={`font-JetBrainsMono px-4 ${duplicateStyles}`}
-        >
-          {text}
-          {isCopied ? <Check size={14} /> : <Copy className="" size={14} />}
-        </span>
-      </>
-    );
-  }
-
-  return (
-    <button
-      className={`group relative h-[var(--btn-height)] w-full overflow-hidden [--btn-height:50px] md:text-[0.7rem] ${className}`}
-    >
-      {content}
-    </button>
-  );
-};
 
 const PayloadNav = () => {
   return (
@@ -175,18 +104,14 @@ const PayloadHero = () => {
         <div className="_hero-imgs relative grid pb-15 md:col-start-8 md:col-end-[span_9] md:items-center">
           <div className="bottom-img relative pt-20 pr-20 md:pt-50">
             <Image
-              width="3200"
-              height="1973"
-              src="/payload-cms/payload--hero2.webp"
+              src={hero2}
               alt="A screenshot of live preview."
               className="max-xs:max-w-[330px] rounded-[4px] border border-white/8 bg-[#141414]/70 p-[6px] shadow-2xl shadow-black md:max-w-[800px]"
             />
           </div>
           <div className="top-img absolute pl-20">
             <Image
-              width="3200"
-              height="1915"
-              src="/payload-cms/payload--hero1.webp"
+              src={hero1}
               alt="Payload app structure and config"
               className="max-xs:max-w-[330px] rounded-[4px] border border-white/8 bg-[#141414]/70 p-[6px] shadow-2xl shadow-black md:max-w-[800px]"
             />
@@ -245,86 +170,10 @@ const ProductScreenshots = () => {
       </Section.Container>
       <Section.Container container="none" className="_product-img md:mt-5">
         <Image
-          width={2880}
-          height={1940}
-          src={"/payload-cms/product-screenshots.webp"}
+          src={productScreenshots}
           alt="Large product screenshot of payload interfaces"
           className="aspect-[auto_2880/1940]"
         />
-      </Section.Container>
-    </Section.RootElement>
-  );
-};
-
-const ProductFeatures = () => {
-  const [hoveredItem, setHoveredItem] = useState(FeatureLinks[0].id);
-
-  return (
-    <Section.RootElement className="relative px-[var(--gutter-h)]">
-      <Section.Container className="feature-list grid grid-cols-1 py-15 md:grid-cols-16 lg:py-20">
-        <div className="__links--headers h-full pt-10 md:col-span-8">
-          <h5 className="font-UntitledSansR">
-            Use Payload to build anything. Or everything.
-          </h5>
-
-          <div className="_header-links my-5 mb-15 flex flex-col">
-            {FeatureLinks.map((item) => (
-              <button
-                onMouseEnter={() => setHoveredItem(item.id)}
-                onMouseLeave={() => setHoveredItem(FeatureLinks[0].id)}
-                key={item.id}
-                className="group max-w-max"
-              >
-                <a
-                  href={item.url}
-                  className="flex items-center justify-between"
-                >
-                  <span
-                    className={`${
-                      item.className
-                    } transition-opacity duration-500 ${
-                      hoveredItem === item.id ? "opacity-100" : "opacity-40"
-                    } font-UntitledSansB my-2 mr-2 text-left text-3xl md:whitespace-pre-line`}
-                  >
-                    {item.id}
-                  </span>
-                  <ArrowUpRight
-                    size={22}
-                    className="opacity-0 duration-500 ease-in-out group-hover:opacity-30"
-                  />
-                </a>
-              </button>
-            ))}
-          </div>
-
-          <div className="payload-btn lg:grid lg:grid-cols-8">
-            <PayloadLinkBtn
-              variant="link"
-              className="border-y lg:col-span-4"
-              link="#"
-              text="Schedule a demo"
-            />
-          </div>
-        </div>
-
-        <div className="_images relative z-4 flex h-125 items-center justify-center max-md:order-first md:col-span-8 md:h-full md:items-center md:justify-start">
-          {hoveredItem &&
-            FeatureLinks.map(
-              (item) =>
-                hoveredItem === item.id && (
-                  <Image
-                    width={item.img.width}
-                    height={item.img.height}
-                    src={item.img.src}
-                    alt={item.img.alt}
-                    key={item.id}
-                    className="animate-fadeIn absolute sm:max-w-[500px] lg:max-w-[600px] xl:max-w-[800px]"
-                  />
-                ),
-            )}
-        </div>
-
-        <Background.Layer className="bg-scanline absolute inset-y-0 left-[calc(100vw-var(--gutter-h)-var(--column)*8)] hidden w-[calc(var(--gutter-h)+var(--column)*8)] bg-[url(/payload-cms/pattern-element.png)] bg-repeat opacity-8 md:block lg:left-[calc(100vw-var(--gutter-h)-var(--column)*4)]" />
       </Section.Container>
     </Section.RootElement>
   );
@@ -434,27 +283,33 @@ const GridLines = () => {
   );
 };
 
+function MiniModal() {
+  return (
+    <ClonesModal
+      source="payloadcms.com"
+      sourceURL="https://payloadcms.com/"
+      bgURL="bg-[url(/_nard/imgs/payload-banner.webp)]"
+      desc="payloadcms.com, not sponsored by the way :)"
+    />
+  );
+}
+
 /* main component */
 export default function PayloadCMS() {
-  useScrollbarMode("dark");
-
   return (
-    <Section.RootElement className="_app.payload relative !top-0 !left-0 overflow-hidden text-white [--border:#fff]/15">
+    <Section.RootElement className="_app.payload relative !top-0 !left-0 overflow-hidden bg-black text-white [--border:#fff]/15">
       <Section.Container container="none">
         <>
-          <ClonesModal
-            source="payloadcms.com"
-            sourceURL="https://payloadcms.com/"
-            bgURL="bg-[url(/_nard/imgs/payload-banner.webp)]"
-            desc="payloadcms.com, not sponsored by the way :)"
-          />
+          <MiniModal />
           <Background>
-            <Background.Texture
-              texture="url(/payload-cms/pattern-1.gif)"
-              className="fixed !bg-size-[140px] bg-[50%] bg-repeat md:!bg-size-[250px]"
-              blendMode="multiply"
+            <Background.Layer
+              className="debug fixed inset-0 z-1 !bg-size-[140px] bg-[50%] bg-repeat mix-blend-multiply md:!bg-size-[250px]"
+              styles={{ backgroundImage: `url(${pattern1.src})` }}
             />
-            <Background.Layer className="fixed inset-0 bg-[url(/payload-cms/payload-bg-design.jpg)] bg-cover" />
+            <Background.Layer
+              className={`_main-bg-design fixed inset-0 bg-cover`}
+              styles={{ backgroundImage: `url(${payloadBgDesign.src})` }}
+            />
             <Background.Layer className="top-mask-gradient fixed inset-x-0 top-0 left-0 h-[var(--mask-height)] bg-gradient-to-b from-black to-transparent [--mask-height:320px]" />
           </Background>
         </>

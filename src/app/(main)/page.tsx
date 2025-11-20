@@ -18,6 +18,10 @@ import ActionBTN from "../_components/_ui/action-btn";
 import ProjectCard from "../_components/project-card";
 import CTA from "../_components/cta";
 
+import cereal from "@/app/gallery/_assets/_imgs/cereal-3d(1).webp";
+import velvet from "@/app/gallery/_assets/_imgs/velvet.webp";
+import profileCard from "@/app/gallery/_assets/_imgs/profile-card.webp";
+
 const line = <div className="_line w-full border-t border-dashed" />;
 
 function SocialPill({
@@ -271,27 +275,21 @@ function GraphicRow() {
           <div className="w-[50%] min-w-[220px] md:w-[70%]">
             <Image
               alt="flyer-1"
-              src="/_nard/imgs/cereal-3d(1).webp"
-              width={1920}
-              height={1080}
+              src={cereal}
               className={`${imgHoverTransition} -rotate-4 rounded-md object-contain shadow-2xl md:min-w-[320px]`}
             />
           </div>
           <div className="w-[50%] min-w-[220px] md:w-[70%]">
             <Image
               alt="flyer-2"
-              src="/_nard/imgs/velvet.webp"
-              width={2040}
-              height={1227}
+              src={velvet}
               className={`${imgHoverTransition} mt-15 rotate-6 rounded-sm shadow-2xl md:min-w-[320px]`}
             />
           </div>
           <div className="w-[25%] min-w-[110px]">
             <Image
               alt="flyer-3"
-              src="/_nard/imgs/profile-card.webp"
-              width={3000}
-              height={3200}
+              src={profileCard}
               className={`${imgHoverTransition} mt-30 -rotate-5 rounded-sm shadow-2xl md:min-w-[180px]`}
             />
           </div>

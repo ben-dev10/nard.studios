@@ -170,6 +170,7 @@ const Img: React.FC<ImgProps> = ({
 interface LayerProps extends BaseBackgroundProps {
   opacity?: number;
   children?: React.ReactNode;
+  styles?: React.CSSProperties | undefined;
 }
 
 const Layer: React.FC<LayerProps> = ({
@@ -177,12 +178,13 @@ const Layer: React.FC<LayerProps> = ({
   opacity,
   zIndex,
   className,
+  styles,
 }) => {
   return (
     <div
       aria-hidden="true"
       className={`layer--background-graphic pointer-events-none ${className}`}
-      style={{ opacity: opacity, zIndex: zIndex }}
+      style={{ opacity: opacity, zIndex: zIndex, ...styles }}
     >
       {children}
     </div>

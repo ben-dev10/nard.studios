@@ -15,6 +15,8 @@ import SocialIcons from "@/components/_ui/social-icons";
 import type { NavLinksProps } from "./navbar";
 import Image from "next/image";
 
+import sheetImg from "@/app/_assets/_nard/_ui/sheet-img.webp";
+
 export function AppSheet({ NavLinks, side }: NavLinksProps) {
   const pathname = usePathname();
   const isActive = (path: string) => path === pathname;
@@ -74,13 +76,7 @@ export function AppSheet({ NavLinks, side }: NavLinksProps) {
         </SheetHeader>
         <div className="_sheet-content relative">
           <div className="_sheet-graphic pointer-events-none absolute top-0 left-0 -z-2 h-[150px] w-full">
-            <Image
-              alt="sheet isometric art"
-              width={2400}
-              height={1260}
-              src="/_nard/_ui/sheet-img.webp"
-              className=""
-            />
+            <Image priority alt="sheet isometric art" src={sheetImg} />
           </div>
 
           <div className="_contents mt-80">

@@ -1,3 +1,15 @@
+import patternElement from "./pattern-element.png";
+import KongLogo from "./logos/kong-logo.svg";
+import SonosLogo from "./logos/sonos-logo.svg";
+import FanaticsLogo from "./logos/fanatics-logo.svg";
+import MicrosoftLogo from "./logos/microsoft-logo.svg";
+import HelloLogo from "./logos/hello-hello-logo.svg";
+
+import generalEditor from "./feature-imgs/general-editor.webp";
+import shopCards from "./feature-imgs/shop-cards.webp";
+import inputFields from "./feature-imgs/input-fields.webp";
+import mediaEditor from "./feature-imgs/media-editor.webp";
+
 export const GridIcons = [
   {
     className:
@@ -5,35 +17,38 @@ export const GridIcons = [
     asDiv: {
       status: true,
       node: (
-        <div className="inset-[1px] size-[calc(100%-1px)] bg-[url(/payload-cms/pattern-element.png)] bg-repeat opacity-8" />
+        <div
+          className="inset-[1px] size-[calc(100%-1px)] bg-repeat opacity-8"
+          style={{ backgroundImage: `url(${patternElement.src})` }}
+        />
       ),
     },
     img: {
       className: "!payload--hatch-pattern",
-      src: "/payload-cms/pattern-element.png",
+      src: patternElement.src,
+      width: patternElement.width,
+      height: patternElement.height,
       alt: "pattern",
-      width: 200,
-      height: 200,
     },
   },
   {
     className: "--kong grid-icon--wrapper border-y border-r",
     img: {
       className: "grid--icon",
-      src: "/payload-cms/logos/kong-logo.svg",
+      src: KongLogo.src,
+      width: KongLogo.width,
+      height: KongLogo.height,
       alt: "Kong logo",
-      width: 201,
-      height: 200,
     },
   },
   {
     className: "--hello-hello grid-icon--wrapper border-y md:border-r",
     img: {
       className: "grid--icon",
-      src: "/payload-cms/logos/hello-hello-logo.svg",
+      src: HelloLogo.src,
+      width: HelloLogo.width,
+      height: HelloLogo.height,
       alt: "hello-hello logo",
-      width: 201,
-      height: 200,
     },
   },
   {
@@ -41,10 +56,10 @@ export const GridIcons = [
       "--fanatics grid-icon--wrapper max-md:shadow-[0px_-1px_0px_var(--border)] md:border-t border-b max-md:border-l-0 border-r-0",
     img: {
       className: "grid--icon",
-      src: "/payload-cms/logos/fanatics-logo.svg",
+      src: FanaticsLogo.src,
+      width: FanaticsLogo.width,
+      height: FanaticsLogo.height,
       alt: "Fanatics Logo",
-      width: 201,
-      height: 200,
     },
   },
   {
@@ -52,20 +67,20 @@ export const GridIcons = [
       "--sonos grid-icon--wrapper border-x border-b md:border-t sm:max-md:border-r-0",
     img: {
       className: "grid--icon",
-      src: "/payload-cms/logos/sonos-logo.svg",
+      src: SonosLogo.src,
+      width: SonosLogo.width,
+      height: SonosLogo.height,
       alt: "Sonos Logo",
-      width: 201,
-      height: 200,
     },
   },
   {
     className: "--microsoft grid-icon--wrapper border-r border-b md:border-t",
     img: {
       className: "grid--icon",
-      src: "/payload-cms/logos/microsoft-logo.svg",
+      src: MicrosoftLogo.src,
+      width: MicrosoftLogo.width,
+      height: MicrosoftLogo.height,
       alt: "Microsoft Logo",
-      width: 201,
-      height: 200,
     },
   },
 ];
@@ -76,10 +91,10 @@ export const FeatureLinks = [
     className: "",
     url: "#",
     img: {
-      width: 1080,
-      height: 864,
+      src: generalEditor.src,
+      width: generalEditor.width,
+      height: generalEditor.height,
       alt: "Screenshot of PayloadCMS Editor",
-      src: "/payload-cms/feature-imgs/general-editor.webp",
     },
   },
   {
@@ -87,10 +102,10 @@ export const FeatureLinks = [
     className: "",
     url: "#",
     img: {
-      width: 1080,
-      height: 952,
+      src: shopCards.src,
+      width: shopCards.width,
+      height: shopCards.height,
       alt: "Screenshot of PayloadCMS Shop Cards",
-      src: "/payload-cms/feature-imgs/shop-cards.webp",
     },
   },
   {
@@ -98,10 +113,10 @@ export const FeatureLinks = [
     className: "",
     url: "#",
     img: {
-      width: 1080,
-      height: 952,
+      src: inputFields.src,
+      width: inputFields.width,
+      height: inputFields.height,
       alt: "Screenshot of PayloadCMS Input Fields",
-      src: "/payload-cms/feature-imgs/input-fields.webp",
     },
   },
   {
@@ -109,10 +124,10 @@ export const FeatureLinks = [
     className: "",
     url: "#",
     img: {
-      width: 1080,
-      height: 952,
+      src: mediaEditor.src,
+      width: mediaEditor.width,
+      height: mediaEditor.height,
       alt: "Screenshot of PayloadCMS Media Editor",
-      src: "/payload-cms/feature-imgs/media-editor.webp",
     },
   },
 ];

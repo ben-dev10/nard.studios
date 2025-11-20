@@ -6,10 +6,11 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 import Link from "next/link";
 import ProjectCard from "../_components/project-card";
 import { Button } from "@/components/ui/button";
-import { TooltipUI } from "@/components/_ui/tooltip-ui";
 import Masonry from "../_components/masonry";
 import Background from "@/components/ui/elements/background";
 import MiniFooter from "../_components/mini-footer";
+
+import galleryHero from "@/app/_assets/_nard/_ui/gallery-hero.webp";
 
 function Hero() {
   return (
@@ -32,13 +33,7 @@ function Hero() {
           </div>
 
           <div className="_hero-img pointer-events-none min-w-[600px] -translate-x-20">
-            <Image
-              alt="sheet isometric art"
-              width={2400}
-              height={1260}
-              src="/_nard/_ui/sheet-img-2.webp"
-              className=""
-            />
+            <Image priority alt="sheet isometric art" src={galleryHero} />
           </div>
         </div>
       </Section.Container>
@@ -262,18 +257,12 @@ export default function GalleryPage() {
                   </div>
                 </TabsTrigger>
 
-                {/* _ERROR: The tooltip implementation below will throw a hydration error */}
-                <TooltipUI
-                  content=" Coming Soon"
-                  trigger={
-                    <TabsTrigger value="engineering" disabled>
-                      <div className="flex items-center gap-2">
-                        <BookTextIcon className="size-5 shrink-0" />
-                        <p>Engineering</p>
-                      </div>
-                    </TabsTrigger>
-                  }
-                />
+                <TabsTrigger value="engineering" disabled>
+                  <div className="flex items-center gap-2">
+                    <BookTextIcon className="size-5 shrink-0" />
+                    <p>Engineering</p>
+                  </div>
+                </TabsTrigger>
               </TabsList>
             </ScrollArea>
             <>

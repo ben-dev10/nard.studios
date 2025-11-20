@@ -1,15 +1,12 @@
-/* eslint-disable @next/next/no-img-element */
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
+import type { StaticImageData } from "next/image";
+import Image from "next/image";
 
 type ImagesProp = {
   tags: string[];
-  img: {
-    alt: string;
-    src: string;
-    width: number;
-    height: number;
-  };
+  img: StaticImageData;
+  alt: string;
 };
 
 type LightboxProps = {
@@ -44,8 +41,10 @@ export default function Lightbox({
           </button>
 
           <div className="_img-box xs:max-w-5xl max-h-[60vh] w-full px-16">
-            <img
+            <Image
               src={imgs[selectedImg]["img"]["src"]}
+              width={imgs[selectedImg]["img"]["width"]}
+              height={imgs[selectedImg]["img"]["height"]}
               alt={`Image ${selectedImg + 1}`}
               className="mb-5 max-h-[60vh] w-full rounded object-contain"
               onClick={(e) => e.stopPropagation()}
@@ -53,9 +52,7 @@ export default function Lightbox({
             <div className="_img-metadata">
               <div className="_desc-metadata flex items-center gap-2">
                 <p className="text-white/90">Description</p>
-                <p className="text-neutral-400">
-                  {imgs[selectedImg]["img"].alt}
-                </p>
+                <p className="text-neutral-400">{imgs[selectedImg].alt}</p>
               </div>
               <div className="_tags-metadata mt-4 flex items-center gap-4">
                 <p className="text-white/90">Tags</p>

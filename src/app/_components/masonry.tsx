@@ -1,5 +1,5 @@
 "use client";
-import { galleryImages as imgs } from "../_assets/gallery-data";
+import { galleryImages as imgs } from "../gallery/_assets/gallery-data";
 import Image from "next/image";
 import { useCallback, useEffect, useState } from "react";
 import Lightbox from "./_ui/lightbox";
@@ -62,12 +62,14 @@ export default function Masonry() {
         {imgs.map((item, index) => (
           <div key={index} className="_img-item mb-4">
             <Image
-              alt={item.img.alt}
+              alt={item.alt}
               width={item.img.width}
               height={item.img.height}
               src={item.img.src}
               className="w-full cursor-pointer rounded-sm"
               onClick={() => setSelectedImg(index)}
+              placeholder="blur"
+              blurDataURL={item.img.blurDataURL}
             />
           </div>
         ))}

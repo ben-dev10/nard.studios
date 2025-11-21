@@ -14,13 +14,13 @@ import { getAuthor, isValidAuthor } from "@/lib/authors";
 import { HashScrollHandler } from "@/components/_blog/hash-scroll-handler";
 import Background from "@/components/ui/elements/background";
 import BlogFlickeringGrid from "@/app/_components/blog-flickering-grid";
-
-// ------------------------------------------ //
-// _REFACTOR:
-
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 
+/*
+ * generateMetadata() as it name suggests, generates all the metadata that would be
+ *  used in the meta tags after build
+ */
 interface BlogDataMeta {
   title: string;
   description?: string;
@@ -136,6 +136,9 @@ export async function generateMetadata({
 }
 
 // ------------------------------------------ //
+/*
+ * BlogPost() is the main function that would generate the page template for a given blogpost.
+ */
 interface PageProps {
   params: Promise<{ slug: string }>;
 }

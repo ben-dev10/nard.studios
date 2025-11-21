@@ -32,7 +32,7 @@ function Hero() {
             </p>
           </div>
 
-          <div className="_hero-img pointer-events-none min-w-[600px] -translate-x-20">
+          <div className="_hero-img max-xs:-translate-x-35 pointer-events-none min-w-[600px] -translate-x-20">
             <Image priority alt="sheet isometric art" src={galleryHero} />
           </div>
         </div>

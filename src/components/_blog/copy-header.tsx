@@ -71,7 +71,7 @@ export function CopyHeader({
         )}
         // Uncomment below to enable copy header-link on-click
         // onClick={copyToClipboard}
-        title="Click to copy link to this section"
+        // title="Click to copy link to this section"
         {...props}
       >
         {children}

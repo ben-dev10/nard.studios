@@ -18,7 +18,7 @@ export function TableOfContents({ className }: TableOfContentsProps) {
   const [activeId, setActiveId] = useState<string>("");
 
   useEffect(() => {
-    const headingElements = document.querySelectorAll("h1, h2");
+    const headingElements = document.querySelectorAll("h1, h2, h3");
     const headingsArray: Heading[] = [];
 
     headingElements.forEach((element) => {

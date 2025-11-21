@@ -30,11 +30,17 @@ interface BlogPage {
 interface ReadMoreSectionProps {
   currentSlug: string[];
   currentTags?: string[];
+  title?: string;
+  borders?: string;
+  maxPosts?: number;
 }
 
 export function ReadMoreSection({
   currentSlug,
   currentTags = [],
+  title = "Read more",
+  borders = "border-border border-t",
+  maxPosts = 3,
 }: ReadMoreSectionProps) {
   const allPages = blogSource.getPages() as unknown as BlogPage[];
 
@@ -59,16 +65,16 @@ export function ReadMoreSection({
       }
       return b.date.getTime() - a.date.getTime();
     })
-    .slice(0, 3);
+    .slice(0, maxPosts);
 
   if (otherPosts.length === 0) {
     return null;
   }
 
   return (
-    <section className="border-border border-t px-[calc(var(--gutter-x)-40px)]">
+    <section className={`${borders} px-[calc(var(--gutter-x)-40px)]`}>
       <div className="p-6 lg:p-10">
-        <h2 className="mb-8 text-2xl font-medium">Read more</h2>
+        <h2 className="mb-8 text-2xl font-medium">{title}</h2>
 
         <div className="flex flex-col gap-8">
           {otherPosts.map((post) => {

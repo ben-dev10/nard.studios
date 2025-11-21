@@ -1,12 +1,10 @@
-"use client";
+// "use client";
 
 import {
   Github,
   Linkedin,
-  PenSparkle,
   Whatsapp,
   XTwitter,
-  DuplicatePlus,
   Bolt,
 } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
@@ -21,6 +19,9 @@ import CTA from "../_components/cta";
 import cereal from "@/app/gallery/_assets/_imgs/cereal-3d(1).webp";
 import velvet from "@/app/gallery/_assets/_imgs/velvet.webp";
 import profileCard from "@/app/gallery/_assets/_imgs/profile-card.webp";
+import clonesSVG from "../_assets/_nard/svgs/clones-block.svg";
+import gallerySVG from "../_assets/_nard/svgs/gallery-block.svg";
+import { ReadMoreSection } from "@/components/_blog/read-more-section";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 
@@ -160,15 +161,19 @@ function Projects() {
             </span>
           </h2>
 
-          <div className="mb-5">
-            <div className="_header-pill--clones pointer-events-none my-5 mt-8 flex max-w-max items-center gap-2 rounded-md bg-black p-1.5 px-3 text-white shadow-lg">
-              <DuplicatePlus className="size-4" />
-              <span className="text-[0.75rem] font-bold">UI Clones</span>
-            </div>
+          <div className="mb-5 flex">
+            <Image
+              alt="clones svg"
+              src={clonesSVG}
+              className="-translate-x-5 -translate-y-2 scale-[0.8] max-md:scale-[0.6]"
+            />
 
-            <p className="text-muted-foreground text-[0.9rem]">
-              I tried to recreate some of the best UIs on the internet.
-            </p>
+            <div>
+              <h3 className="font-FigtreeR font-[700]">UI Clones</h3>
+              <p className="text-muted-foreground text-[0.9rem]">
+                I tried to recreate some of the best UIs on the internet.
+              </p>
+            </div>
           </div>
         </Section.Container>
 
@@ -207,14 +212,17 @@ function Projects() {
         className="_section--graphic-design mt-8 mb-8 px-[var(--gutter-x)] py-8"
       >
         {line}
-        <div className="_header-pill--design pointer-events-none my-5 mt-20 flex max-w-max items-center gap-2 rounded-md bg-black p-1.5 px-3 text-white shadow-lg">
-          <PenSparkle className="size-4" />
-          <span className="text-[0.75rem] font-bold">Graphic Design</span>
-        </div>
-
-        <div className="flex flex-col gap-x-15 md:flex-row md:justify-center">
+        <div className="ml-10 flex flex-col gap-x-15 md:flex-row md:justify-center">
           <div className="left-half mb-5 md:w-[350px]">
-            <h2 className="font-FigtreeR mb-3">Graphics for every occasion</h2>
+            <Image
+              alt="gallery svg"
+              src={gallerySVG}
+              className="-translate-x-15 translate-y-14 max-md:scale-[0.7]"
+            />
+
+            <h3 className="font-FigtreeR mb-3 font-[700]">
+              Graphics for every occasion
+            </h3>
             <p className="text-muted-foreground mb-5">
               Custom designed assets to give every project that unique touch,
               Graphics of all kinds including, but not limited to:
@@ -255,7 +263,7 @@ function Projects() {
               src="/_nard/imgs/flyers--img-arts.png"
               width={2382}
               height={1551}
-              className="pointer-events-none -mt-10 min-w-[500px] scale-[1.2] md:-mt-35 md:min-w-[600px]"
+              className="pointer-events-none -mt-10 min-w-[500px] scale-[1.2] md:-mt-10 md:min-w-[600px]"
             />
           </div>
         </div>
@@ -299,6 +307,24 @@ function GraphicRow() {
   );
 }
 
+function BlogSection() {
+  return (
+    <Section.RootElement>
+      <Section.Container
+        container="8xl"
+        className="p-10 px-[var(--gutter-x)] pb-20"
+      >
+        <h2 className="font-FigtreeR pt-20 text-center">
+          Latest from the Blog
+        </h2>
+        <div className="">
+          <ReadMoreSection currentSlug={[]} title="" borders="" maxPosts={2} />
+        </div>
+      </Section.Container>
+    </Section.RootElement>
+  );
+}
+
 /**
  * _FEATURE: 1. (more sections: Testimonials, bentos)
  */
@@ -316,6 +342,7 @@ export default function Home() {
         <Hero />
         <Projects />
         <GraphicRow />
+        <BlogSection />
         <CTA />
       </>
     </main>

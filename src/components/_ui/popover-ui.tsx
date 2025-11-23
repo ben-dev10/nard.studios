@@ -42,15 +42,18 @@ export default function PopoverUI({
   content = "Popover",
   className,
   trigger,
+  align,
 }: {
   content?: React.ReactNode;
   className?: string;
   trigger?: React.ReactNode;
+  align?: "center" | "start" | "end" | undefined;
 }) {
   return (
     <Popover>
       <PopoverTrigger>{trigger ? trigger : <Trigger02 />}</PopoverTrigger>
       <PopoverContent
+        align={align}
         className={`${className} w-[170px] max-w-max rounded-[10px] p-1.5 px-2.5 text-[0.8rem]`}
       >
         {content}

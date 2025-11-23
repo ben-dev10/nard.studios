@@ -8,7 +8,7 @@ export default function MiniFooter({ links }: { links: string[] }) {
     <Section.RootElement className="mt-10 bg-[#eff0f0]">
       <Section.Container
         container="8xl"
-        className="flex justify-between px-[var(--gutter-x)] py-7"
+        className="flex justify-between px-[var(--gutter-x)] py-7 text-[0.9rem]"
       >
         <div className="_start flex items-center gap-2">
           <NardLogoSmall />

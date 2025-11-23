@@ -1,7 +1,9 @@
+"use client";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import type { StaticImageData } from "next/image";
 import Image from "next/image";
+import { useEffect } from "react";
 
 type ImagesProp = {
   tags: string[];
@@ -22,6 +24,16 @@ export default function Lightbox({
   selectedImg,
   setSelectedImg,
 }: LightboxProps) {
+  useEffect(() => {
+    if (selectedImg || selectedImg === 0) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "";
+    };
+  });
+
   return (
     <AnimatePresence>
       {selectedImg !== null && (

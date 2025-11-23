@@ -1,4 +1,3 @@
-import Home from "@/app/(main)/page";
 import ClerkPricingPage from "@/app/gallery/clones/clerk/page";
 import type { Meta, StoryObj } from "@storybook/nextjs-vite";
 import PayloadCMS from "@/app/gallery/clones/payload/page";
@@ -14,9 +13,7 @@ type Story = StoryObj<typeof meta>;
 
 export const Homepage: Story = {
   render: () => (
-    <div className="font-Geist [--gutter-x:3.75rem]">
-      <Home />
-    </div>
+    <div className="font-Geist [--gutter-x:3.75rem]">{/* <Home /> */}</div>
   ),
 };
 
@@ -30,9 +27,7 @@ export const AboutPage: Story = {
 
 export const BlogPageUI: Story = {
   render: () => (
-    <div className="font-Geist [--gutter-x:3.75rem]">
-      {/* <BlogPage /> */}
-    </div>
+    <div className="font-Geist [--gutter-x:3.75rem]">{/* <BlogPage /> */}</div>
   ),
 };
 

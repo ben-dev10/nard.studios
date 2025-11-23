@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
+import { NARD_EMAIL } from "../_assets/constants";
 
 export default function EmailButton({
   text,
@@ -10,7 +11,9 @@ export default function EmailButton({
   className?: string;
 }) {
   return (
-    <Link href="mailto:nard.studios.hq@gmail.com?subject=Project%20Inquiry&body=Hi%20there">
+    <Link
+      href={`mailto:${NARD_EMAIL}?subject=Project%20Inquiry&body=Hi%20there`}
+    >
       <Button className={`${className}`} variant="ctaBtn">
         {text}
       </Button>

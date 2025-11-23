@@ -8,3 +8,5 @@ export const WHATSAPP_LINK =
 export const XTWITTER_LINK =
   "https://x.com/_nard_q?t=Kfa-eZzpcnv49exB6jA3mQ&s=09";
 export const IG_LINK = "";
+
+export const NARD_EMAIL = "nard.studios.hq@gmail.com";

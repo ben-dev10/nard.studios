@@ -5,6 +5,7 @@ import { useCallback, useEffect, useState } from "react";
 import Lightbox from "./_ui/lightbox";
 import PopoverUI from "@/components/_ui/popover-ui";
 import { ArrowLeft, ArrowRight, Info } from "lucide-react";
+import { MotionStagger } from "@/components/_motion/core";
 
 export default function Masonry() {
   const [selectedImg, setSelectedImg] = useState<number | null>(null);
@@ -40,6 +41,7 @@ export default function Masonry() {
       />
       <div className="info mb-5 flex justify-end">
         <PopoverUI
+          align="end"
           className="max-w-[200px]"
           trigger={<Info className="text-neutral-800" size={12} />}
           content={
@@ -59,20 +61,22 @@ export default function Masonry() {
         />
       </div>
       <div className="_masonry-grid [column-gap:1rem] [column-count:2] md:[column-count:3] lg:[column-count:4]">
-        {imgs.map((item, index) => (
-          <div key={index} className="_img-item mb-4">
-            <Image
-              alt={item.alt}
-              width={item.img.width}
-              height={item.img.height}
-              src={item.img.src}
-              className="w-full cursor-pointer rounded-sm"
-              onClick={() => setSelectedImg(index)}
-              placeholder="blur"
-              blurDataURL={item.img.blurDataURL}
-            />
-          </div>
-        ))}
+        <MotionStagger preset="blurIn" staggerDelay={0.1}>
+          {imgs.map((item, index) => (
+            <div key={index} className="_img-item mb-4">
+              <Image
+                alt={item.alt}
+                width={item.img.width}
+                height={item.img.height}
+                src={item.img.src}
+                className="w-full cursor-pointer rounded-sm"
+                onClick={() => setSelectedImg(index)}
+                placeholder="blur"
+                blurDataURL={item.img.blurDataURL}
+              />
+            </div>
+          ))}
+        </MotionStagger>
       </div>
     </div>
   );

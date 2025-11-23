@@ -2,13 +2,14 @@ import Section from "@/components/ui/elements/section";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight, BookTextIcon, Code2, PenToolIcon } from "lucide-react";
-import { ScrollArea } from "@/components/ui/scroll-area";
 import Link from "next/link";
 import ProjectCard from "../_components/project-card";
 import { Button } from "@/components/ui/button";
 import Masonry from "../_components/masonry";
 import Background from "@/components/ui/elements/background";
 import MiniFooter from "../_components/mini-footer";
+import clerkCard from "../_assets/_nard/imgs/clerk-banner.webp";
+import payloadCard from "../_assets/_nard/imgs/payload-banner.webp";
 
 import galleryHero from "@/app/_assets/_nard/_ui/gallery-hero.webp";
 
@@ -106,24 +107,16 @@ function SoftwareTabContent() {
           href="/gallery/clones/clerk"
           title="Clerk Pricing Page clone"
           desc="A clone of Clerk's pricing page."
-          img={{
-            alt: "Clerk's Pricing page banner",
-            src: "/_nard/imgs/clerk-banner.webp",
-            width: 1260,
-            height: 765,
-          }}
+          alt="Clerk's Pricing page banner"
+          img={clerkCard}
           date="Sept 2025"
         />
         <ProjectCard
           href="/gallery/clones/payload"
           title="Payload Homepage clone"
           desc="A near-exact clone of Payload's homepage."
-          img={{
-            alt: "Payload's homepage banner",
-            src: "/_nard/imgs/payload-banner.webp",
-            width: 1260,
-            height: 765,
-          }}
+          alt="Payload's homepage banner"
+          img={payloadCard}
           date="Sept 2025"
         />
       </div>
@@ -241,30 +234,28 @@ export default function GalleryPage() {
 
         <div className="_tabbed-section py-10">
           <Tabs defaultValue="software" className="_header-tabs">
-            <ScrollArea>
-              <TabsList className="mx-auto grid h-12 !grid-cols-3 [&_p]:text-[1rem]">
-                <TabsTrigger value="software">
-                  <div className="flex items-center gap-2">
-                    <Code2 className="size-5 shrink-0" />
-                    <p>Software</p>
-                  </div>
-                </TabsTrigger>
+            <TabsList className="mx-auto grid h-12 !grid-cols-3 [&_p]:text-[1rem]">
+              <TabsTrigger value="software">
+                <div className="flex items-center gap-2">
+                  <Code2 className="size-5 shrink-0" />
+                  <p>Software</p>
+                </div>
+              </TabsTrigger>
 
-                <TabsTrigger value="design" className="">
-                  <div className="flex items-center gap-2">
-                    <PenToolIcon className="size-5 shrink-0" />
-                    <p className="">Design</p>
-                  </div>
-                </TabsTrigger>
+              <TabsTrigger value="design" className="">
+                <div className="flex items-center gap-2">
+                  <PenToolIcon className="size-5 shrink-0" />
+                  <p className="">Design</p>
+                </div>
+              </TabsTrigger>
 
-                <TabsTrigger value="engineering" disabled>
-                  <div className="flex items-center gap-2">
-                    <BookTextIcon className="size-5 shrink-0" />
-                    <p>Engineering</p>
-                  </div>
-                </TabsTrigger>
-              </TabsList>
-            </ScrollArea>
+              <TabsTrigger value="engineering" disabled>
+                <div className="flex items-center gap-2">
+                  <BookTextIcon className="size-5 shrink-0" />
+                  <p>Engineer...(soon)</p>
+                </div>
+              </TabsTrigger>
+            </TabsList>
             <>
               <TabsContent value="software">
                 <SoftwareTabContent />

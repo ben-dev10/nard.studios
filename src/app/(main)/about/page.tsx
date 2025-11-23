@@ -1,4 +1,3 @@
-"use client";
 import Section from "@/components/ui/elements/section";
 import Link from "next/link";
 import Image from "next/image";
@@ -9,6 +8,8 @@ import {
   MessagesSquare,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ContactForm } from "@/app/_components/contact-form";
+import { NARD_EMAIL } from "@/app/_assets/constants";
 
 function Article() {
   return (
@@ -81,34 +82,57 @@ function Article() {
             </ul>
           </div>
         </section>
+      </Section.Container>
+    </Section.RootElement>
+  );
+}
 
-        <section className="my-8 rounded-[13px] border-t-[4px] !bg-neutral-100 p-5 pl-8">
-          <div className="mb-5">
-            <MessagesSquare size={18} stroke="black" />
+function Contact() {
+  return (
+    <Section.RootElement>
+      <Section.Container
+        container="8xl"
+        className="_contact-section bg-white px-[var(--gutter-x)] py-20"
+      >
+        <div
+          id="contact"
+          className="_contact-form+headers flex flex-col gap-x-15 md:flex-row"
+        >
+          <div className="_headers md:w-[40%] md:pt-10">
+            <h2 className="font-FigtreeR font-[700]">Get In touch</h2>
+            <p className="text-muted-foreground mt-2 mb-3">
+              Have any questions, or want to collaborate on a project together?
+              I&apos;d love to hear from you.
+            </p>
+            <p className="text-muted-foreground mt-2 mb-3">
+              You can send a message by filling out the forms below or send an
+              email directly by clicking on the &quot;quick mail&quot; link
+              beneath the form.
+            </p>
           </div>
-          <p className="mb-3">
-            <b>
-              Do you have any questions, or want to collaborate on a project
-              together?
-            </b>{" "}
-            What are you waiting for? You can reach me via email by clicking on
-            the email button above.
-          </p>
-          <hr className="mt-8 border-dashed" />
-          <p className="mt-8">
-            If you are just passing by too, stop by the{" "}
-            <Link href="/resources" className="underline">
-              resources page
-            </Link>{" "}
-            for a curated list of tips, tricks and resources I&apos;ve collected
-            over the years, that i&apos;m certain you&apos;d find helpful.
-          </p>
-        </section>
 
-        <p className="">
-          If you want more work specific details, you can find those in the
-          resume below.{" "}
-        </p>
+          <div className="_contact+mail md:w-[60%] md:min-w-[400px]">
+            <div className="_contact-form my-8 rounded-[13px] border-t-[4px] !bg-neutral-100 p-5 pl-8">
+              <div className="mb-8">
+                <MessagesSquare size={18} stroke="black" />
+              </div>
+              <ContactForm />
+            </div>
+
+            <div className="_mail flex justify-end">
+              <p className="text-muted-foreground ml-auto">
+                Or send a{" "}
+                <Link
+                  href={`mailto:${NARD_EMAIL}?subject=Project%20Inquiry&body=Hi%20there`}
+                  className="text-black/90 underline"
+                >
+                  quick mail
+                </Link>{" "}
+                instead.
+              </p>
+            </div>
+          </div>
+        </div>
       </Section.Container>
     </Section.RootElement>
   );
@@ -170,6 +194,7 @@ export default function AboutPage() {
   return (
     <main className="_about-page min-h-screen">
       <Article />
+      <Contact />
       <Resume />
     </main>
   );

@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ShareIcon } from "@/components/_ui/icons";
@@ -14,21 +14,23 @@ const ProjectCard = ({
   date,
   href,
   img,
+  alt,
   className = "max-w-[450px] min-w-[350px]",
 }: {
   title: string;
   desc: string;
   date?: string;
   href: string;
+  img: StaticImageData;
   className?: string;
-  img: Record<"src" | "alt", string> & Record<"width" | "height", number>;
+  alt?: string;
 }) => {
   return (
     <div className="_featured-card max-w-max">
       <div className={`${className} _card-img group relative block`}>
         <Link href={href}>
           <Image
-            alt={img.alt}
+            alt={`${alt}`}
             width={img.width}
             height={img.height}
             src={img.src}

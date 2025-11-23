@@ -1,5 +1,3 @@
-// "use client";
-
 import {
   Github,
   Linkedin,
@@ -15,13 +13,21 @@ import { CircleCheck } from "lucide-react";
 import ActionBTN from "../_components/_ui/action-btn";
 import ProjectCard from "../_components/project-card";
 import CTA from "../_components/cta";
-
+import { ReadMoreSection } from "@/components/_blog/read-more-section";
 import cereal from "@/app/gallery/_assets/_imgs/cereal-3d(1).webp";
 import velvet from "@/app/gallery/_assets/_imgs/velvet.webp";
 import profileCard from "@/app/gallery/_assets/_imgs/profile-card.webp";
 import clonesSVG from "../_assets/_nard/svgs/clones-block.svg";
 import gallerySVG from "../_assets/_nard/svgs/gallery-block.svg";
-import { ReadMoreSection } from "@/components/_blog/read-more-section";
+import clerkCard from "../_assets/_nard/imgs/clerk-banner.webp";
+import payloadCard from "../_assets/_nard/imgs/payload-banner.webp";
+import flyersCollage from "../_assets/_nard/imgs/flyers--img-arts.png";
+import {
+  GITHUB_LINK,
+  LINKEDIN_LINK,
+  WHATSAPP_LINK,
+  XTWITTER_LINK,
+} from "../_assets/constants";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 
@@ -55,17 +61,6 @@ function Hero() {
         className="mb-10 px-[var(--gutter-x)] pt-55"
       >
         <div className="relative max-w-max">
-          <h1 className="font-FigtreeR mb-3 max-w-[400px] text-balance md:max-w-[500px]">
-            I enjoy{" "}
-            <span className="font-SeriouslyNostalgic !font-[100]">
-              designing
-            </span>{" "}
-            &{" "}
-            <span className="font-SeriouslyNostalgic !font-[100]">
-              crafting
-            </span>{" "}
-            user interfaces.
-          </h1>
           <Background>
             <Image
               src="/_nard/svgs/_a--icon-tray.svg"
@@ -89,28 +84,40 @@ function Hero() {
               className="absolute -top-28 -left-10 w-[60px] scale-[0.8] md:-left-20"
             />
           </Background>
+          <h1 className="font-FigtreeR mb-3 max-w-[400px] text-balance md:max-w-[500px]">
+            I enjoy{" "}
+            <span className="font-SeriouslyNostalgic !font-[100]">
+              designing
+            </span>{" "}
+            &{" "}
+            <span className="font-SeriouslyNostalgic !font-[100]">
+              crafting
+            </span>{" "}
+            user interfaces.
+          </h1>
         </div>
+
         <div className="_social-icons mb-10 flex flex-wrap gap-3 *:transition-colors *:duration-200 *:ease-in-out">
           <SocialPill
-            link="https://github.com/ben-dev10"
+            link={GITHUB_LINK}
             icon={<Github className="size-5" />}
             name="Github"
             className="bg-[#e5e5e5] *:group-hover:text-white hover:bg-black"
           />
           <SocialPill
-            link="https://x.com/_nard_q?t=Kfa-eZzpcnv49exB6jA3mQ&s=09"
+            link={XTWITTER_LINK}
             icon={<XTwitter className="size-4.5" />}
             name="Twitter"
             className="bg-[#e5e5e5] *:group-hover:text-white hover:bg-neutral-500"
           />
           <SocialPill
-            link="https://www.linkedin.com/in/bernard-quarshie-b7a157376?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+            link={LINKEDIN_LINK}
             icon={<Linkedin className="size-5" />}
             name="LinkedIn"
             className="bg-[#e5e5e5] *:group-hover:text-white hover:bg-blue-500"
           />
           <SocialPill
-            link="https://wa.me/233541467464?text=Hi%20there!%20I%20found%20you%20through%20your%20portfolio."
+            link={WHATSAPP_LINK}
             icon={<Whatsapp className="size-5" />}
             name="WhatsApp"
             className="xs:flex hidden bg-[#e5e5e5] *:group-hover:text-white hover:bg-green-500"
@@ -184,24 +191,16 @@ function Projects() {
             href="/gallery/clones/clerk"
             title="Clerk Pricing Page"
             desc="A clone of Clerk's pricing page."
-            img={{
-              alt: "Clerk's Pricing page banner",
-              src: "/_nard/imgs/clerk-banner.webp",
-              width: 1260,
-              height: 765,
-            }}
+            alt="Clerk's Pricing page banner"
+            img={clerkCard}
             className="max-w-[600px] min-w-[350px]"
           />
           <ProjectCard
             href="/gallery/clones/payload"
             title="Payload's homepage"
             desc="A near exact clone of Payload's homepage."
-            img={{
-              alt: "Payload's homepage banner",
-              src: "/_nard/imgs/payload-banner.webp",
-              width: 1260,
-              height: 765,
-            }}
+            alt="Payload's homepage banner"
+            img={payloadCard}
             className="max-w-[600px] min-w-[350px]"
           />
         </div>
@@ -260,9 +259,7 @@ function Projects() {
           <div className="right-half md:w-[calc(100%-350px)]">
             <Image
               alt="bg-img"
-              src="/_nard/imgs/flyers--img-arts.png"
-              width={2382}
-              height={1551}
+              src={flyersCollage}
               className="pointer-events-none -mt-10 min-w-[500px] scale-[1.2] md:-mt-10 md:min-w-[600px]"
             />
           </div>
@@ -314,9 +311,7 @@ function BlogSection() {
         container="8xl"
         className="p-10 px-[var(--gutter-x)] pb-20"
       >
-        <h2 className="font-FigtreeR pt-20 text-center">
-          Latest from the Blog
-        </h2>
+        <h2 className="font-FigtreeR pt-20 text-center">Recent Blogs</h2>
         <div className="">
           <ReadMoreSection currentSlug={[]} title="" borders="" maxPosts={2} />
         </div>
@@ -325,8 +320,26 @@ function BlogSection() {
   );
 }
 
+function FAQ() {
+  return (
+    <Section.RootElement className="hidden">
+      <Section.Container
+        container="8xl"
+        className="p-10 px-[var(--gutter-x)] py-15"
+      >
+        <h2 className="font-FigtreeR text-center font-[700]">FAQ</h2>
+        <h4 className="text-center">
+          Let&apos;s get some pressing questions out of the way.
+        </h4>
+
+        <div className="_faq-accordion"></div>
+      </Section.Container>
+    </Section.RootElement>
+  );
+}
+
 /**
- * _FEATURE: 1. (more sections: Testimonials, bentos)
+ * _FEATURE: 1. sections: Testimonials
  */
 
 export default function Home() {
@@ -343,6 +356,7 @@ export default function Home() {
         <Projects />
         <GraphicRow />
         <BlogSection />
+        <FAQ />
         <CTA />
       </>
     </main>

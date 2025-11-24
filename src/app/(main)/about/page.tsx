@@ -89,15 +89,12 @@ function Article() {
 
 function Contact() {
   return (
-    <Section.RootElement>
+    <Section.RootElement id="contact">
       <Section.Container
         container="8xl"
         className="_contact-section bg-white px-[var(--gutter-x)] py-20"
       >
-        <div
-          id="contact"
-          className="_contact-form+headers flex flex-col gap-x-15 md:flex-row"
-        >
+        <div className="_contact-form+headers flex flex-col gap-x-15 md:flex-row">
           <div className="_headers md:w-[40%] md:pt-10">
             <h2 className="font-FigtreeR font-[700]">Get In touch</h2>
             <p className="text-muted-foreground mt-2 mb-3">
@@ -105,14 +102,14 @@ function Contact() {
               I&apos;d love to hear from you.
             </p>
             <p className="text-muted-foreground mt-2 mb-3">
-              You can send a message by filling out the forms below or send an
-              email directly by clicking on the &quot;quick mail&quot; link
+              You can send a message by filling out the form beside or send an
+              email directly by clicking on the &quot;direct email&quot; link
               beneath the form.
             </p>
           </div>
 
           <div className="_contact+mail md:w-[60%] md:min-w-[400px]">
-            <div className="_contact-form my-8 rounded-[13px] border-t-[4px] !bg-neutral-100 p-5 pl-8">
+            <div className="_contact-form my-8 mb-5 rounded-[13px] border-t-[4px] !bg-neutral-100 p-5 pl-8">
               <div className="mb-8">
                 <MessagesSquare size={18} stroke="black" />
               </div>
@@ -126,7 +123,7 @@ function Contact() {
                   href={`mailto:${NARD_EMAIL}?subject=Project%20Inquiry&body=Hi%20there`}
                   className="text-black/90 underline"
                 >
-                  quick mail
+                  direct email
                 </Link>{" "}
                 instead.
               </p>

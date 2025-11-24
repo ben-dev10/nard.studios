@@ -7,8 +7,8 @@ import Section from "@/components/ui/elements/section";
 import { Check, Copy, LockIcon, MessageCircle } from "lucide-react";
 
 import nardChromeLogo from "./assets/svgs/nard-logo-chrome.svg";
-import gradientSlash from "./assets/gradient-paint-slash.avif";
-import whiteSlash from "./assets/white-paint-slash.avif";
+import gradientSlash from "./assets/gradient-paint-slash.webp";
+import whiteSlash from "./assets/white-paint-slash.webp";
 import { PricingTables } from "./clients/pricing-tables";
 
 const MiniModal = () => {

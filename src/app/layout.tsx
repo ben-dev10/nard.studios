@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { geistSansVar, geistMonoVar } from "./_assets/fonts";
 // import { ThemeProvider } from "@/contexts/theme-context";
 import { Analytics } from "@vercel/analytics/next";
 import Banner from "./_components/banner";
@@ -26,16 +25,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSansVar.variable} ${geistMonoVar.variable} font-geistSans antialiased [--gutter-x:3.75rem]`}
-      >
-        {/* theming temporarily disabled */}
-        {/* <ThemeProvider> */}
+      <body className={`font-geistSans antialiased [--gutter-x:3.75rem]`}>
         <Banner />
         {children}
         <Analytics />
-        <Toaster position="top-right" richColors />
-        {/* </ThemeProvider> */}
+        <Toaster
+          toastOptions={{
+            style: {
+              fontSize: "1rem",
+            },
+            className: "text-[1rem]",
+          }}
+          position="top-right"
+          richColors
+        />
       </body>
     </html>
   );

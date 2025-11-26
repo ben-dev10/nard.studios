@@ -23,8 +23,8 @@ export function MediaViewer({
     src,
     alt,
     className: cn(
-      "w-full h-full object-cover rounded-lg border overflow-hidden aspect-video",
-      className
+      "w-full h-full rounded-lg border overflow-hidden aspect-video",
+      className,
     ),
     ...(width && height ? { width, height } : {}),
   };
@@ -44,7 +44,7 @@ export function MediaViewer({
 
   return (
     <div className="my-6 w-full">
-      <div className="relative w-full aspect-video">{renderMedia()}</div>
+      <div className="relative aspect-video w-full">{renderMedia()}</div>
     </div>
   );
 }

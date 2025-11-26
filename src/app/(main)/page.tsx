@@ -11,7 +11,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { CircleCheck } from "lucide-react";
 import ActionBTN from "../_components/_ui/action-btn";
-import ProjectCard from "../_components/project-card";
 import CTA from "../_components/cta";
 import { ReadMoreSection } from "@/components/_blog/read-more-section";
 import cereal from "@/app/gallery/_assets/_imgs/cereal-3d(1).webp";
@@ -19,15 +18,14 @@ import velvet from "@/app/gallery/_assets/_imgs/velvet.webp";
 import profileCard from "@/app/gallery/_assets/_imgs/profile-card.webp";
 import clonesSVG from "../_assets/_nard/svgs/clones-block.svg";
 import gallerySVG from "../_assets/_nard/svgs/gallery-block.svg";
-import clerkCard from "../_assets/_nard/imgs/clerk-banner.webp";
-import payloadCard from "../_assets/_nard/imgs/payload-banner.webp";
-import flyersCollage from "../_assets/_nard/imgs/flyers--img-arts.png";
+import flyersCollage from "../_assets/_nard/imgs/flyers--img-arts.webp";
 import {
   GITHUB_LINK,
   LINKEDIN_LINK,
   WHATSAPP_LINK,
   XTWITTER_LINK,
 } from "../_assets/constants";
+import CardsCarousel from "./_clients/cards-carousel";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 
@@ -184,26 +182,7 @@ function Projects() {
           </div>
         </Section.Container>
 
-        <div
-          className={`_cards-carousel relative flex gap-10 overflow-x-auto px-[var(--gutter-x)] py-5 md:justify-center`}
-        >
-          <ProjectCard
-            href="/gallery/clones/clerk"
-            title="Clerk Pricing Page"
-            desc="A clone of Clerk's pricing page."
-            alt="Clerk's Pricing page banner"
-            img={clerkCard}
-            className="max-w-[600px] min-w-[350px]"
-          />
-          <ProjectCard
-            href="/gallery/clones/payload"
-            title="Payload's homepage"
-            desc="A near exact clone of Payload's homepage."
-            alt="Payload's homepage banner"
-            img={payloadCard}
-            className="max-w-[600px] min-w-[350px]"
-          />
-        </div>
+        <CardsCarousel />
       </Section.Container>
 
       <Section.Container
@@ -211,7 +190,7 @@ function Projects() {
         className="_section--graphic-design mt-8 mb-8 px-[var(--gutter-x)] py-8"
       >
         {line}
-        <div className="ml-10 flex flex-col gap-x-15 md:flex-row md:justify-center">
+        <div className="mt-8 ml-10 flex flex-col gap-x-15 md:mt-15 md:flex-row md:justify-center">
           <div className="left-half mb-5 md:w-[350px]">
             <Image
               alt="gallery svg"
@@ -251,7 +230,7 @@ function Projects() {
                 href="/gallery"
                 className="rounded-[8px] pb-2 shadow-md shadow-black/45"
               >
-                <ActionBTN text="See gallery" />
+                <ActionBTN width="w-full" text="See gallery" />
               </Link>
             </div>
           </div>

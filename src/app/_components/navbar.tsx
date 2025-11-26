@@ -3,12 +3,11 @@ import { NardLogoSmall } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
 import { AppSheet } from "./app--sheet";
-import { FileBox, PencilLine, UserCircleIcon, Wallpaper } from "lucide-react";
+import { PencilLine, UserCircleIcon, Wallpaper, Workflow } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
 
-// bg-[attr(datatype-bg)]
 const conicGradient =
   "bg-[conic-gradient(from_180deg_at_50%_50%,_#2BFF17_0deg,_#F86767_180deg,_#2D5AFF_270deg,_#B84EFF_360deg)]";
 interface LinkProps {
@@ -35,9 +34,9 @@ const NavLinks = [
     icon: <Wallpaper size={16} />,
   },
   {
-    name: "Resources",
-    url: "/resources",
-    icon: <FileBox size={16} />,
+    name: "Process",
+    url: "/process",
+    icon: <Workflow size={16} />,
   },
   {
     name: "Blog",

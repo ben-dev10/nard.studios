@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/app/_components/contact-form";
 import { NARD_EMAIL } from "@/app/_assets/constants";
+import { HashScrollHandler } from "@/components/hash-scroll-handler";
 
 function Article() {
   return (
@@ -137,7 +138,7 @@ function Contact() {
 
 function Resume() {
   return (
-    <Section.RootElement className="border-t">
+    <Section.RootElement id="resume" className="border-t">
       <Section.Container
         container="8xl"
         className="mb-25 p-10 px-[var(--gutter-x)] py-15 pt-5"
@@ -190,6 +191,7 @@ function Resume() {
 export default function AboutPage() {
   return (
     <main className="_about-page min-h-screen">
+      <HashScrollHandler />
       <Article />
       <Contact />
       <Resume />

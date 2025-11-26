@@ -3,15 +3,13 @@ import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ArrowRight, BookTextIcon, Code2, PenToolIcon } from "lucide-react";
 import Link from "next/link";
-import ProjectCard from "../_components/project-card";
 import { Button } from "@/components/ui/button";
 import Masonry from "../_components/masonry";
 import Background from "@/components/ui/elements/background";
 import MiniFooter from "../_components/mini-footer";
-import clerkCard from "../_assets/_nard/imgs/clerk-banner.webp";
-import payloadCard from "../_assets/_nard/imgs/payload-banner.webp";
-
 import galleryHero from "@/app/_assets/_nard/_ui/gallery-hero.webp";
+import { HashScrollHandler } from "@/components/hash-scroll-handler";
+import FeaturedCards from "./_clients/featured-cards";
 
 function Hero() {
   return (
@@ -102,25 +100,7 @@ function SoftwareTabContent() {
         </div>
       </Section.Container>
 
-      <div className="_featured-cards mb-10 flex gap-10 overflow-x-auto px-[var(--gutter-x)] py-5 md:justify-center">
-        <ProjectCard
-          href="/gallery/clones/clerk"
-          title="Clerk Pricing Page clone"
-          desc="A clone of Clerk's pricing page."
-          alt="Clerk's Pricing page banner"
-          img={clerkCard}
-          date="Sept 2025"
-        />
-        <ProjectCard
-          href="/gallery/clones/payload"
-          title="Payload Homepage clone"
-          desc="A near-exact clone of Payload's homepage."
-          alt="Payload's homepage banner"
-          img={payloadCard}
-          date="Sept 2025"
-        />
-      </div>
-
+      <FeaturedCards />
       <Section.Container
         container="8xl"
         className="_ui-blocks mb-30 p-8 px-[var(--gutter-x)]"
@@ -229,6 +209,7 @@ export default function GalleryPage() {
   return (
     <>
       <main className="-mt-20 overflow-hidden pt-0 transition-colors duration-300">
+        <HashScrollHandler />
         <Hero />
         <hr className="_line border-t" />
 

@@ -11,7 +11,7 @@ import { AuthorCard } from "@/components/_blog/author-card";
 import { ReadMoreSection } from "@/components/_blog/read-more-section";
 // import { PromoContent } from "@/components/_blog/promo-content";
 import { getAuthor, isValidAuthor } from "@/lib/authors";
-import { HashScrollHandler } from "@/components/_blog/hash-scroll-handler";
+import { HashScrollHandler } from "@/components/hash-scroll-handler";
 import Background from "@/components/ui/elements/background";
 import BlogFlickeringGrid from "@/app/_components/blog-flickering-grid";
 import { Metadata } from "next";

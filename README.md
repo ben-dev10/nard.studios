@@ -8,11 +8,12 @@ This repo contains the source code for the 3rd revision of my personal website (
 
 ```bash
 npm install
-fumadocs-mdx && next dev --turbopack
+fumadocs-mdx && next dev --turbopack # start up dev server
 ```
 
 Packages and technologies used:
 
 - Next.js, TailwindCSS
 - Fumadocs (for mdx processing)
+- Resend (emails)
 - Vercel analytics

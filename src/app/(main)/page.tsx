@@ -26,6 +26,12 @@ import {
   XTWITTER_LINK,
 } from "../_assets/constants";
 import CardsCarousel from "./_clients/cards-carousel";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 
@@ -157,14 +163,17 @@ function Projects() {
             </div>
           </div>
 
-          <h2 className="font-FigtreeR mx-auto mb-8 max-w-[500px] py-5 text-center">
+          <h2 className="font-FigtreeR mx-auto max-w-[400px] py-5 pb-2 text-center">
             Crafting UIs that look{" "}
             <span className="font-SeriouslyNostalgic !font-[100]">good</span>{" "}
             and works{" "}
             <span className="font-SeriouslyNostalgic !font-[100]">
-              right, (mostly 🙃)
-            </span>
+              right
+            </span>{" "}
           </h2>
+          <p className="mb-8 text-center">
+            (<i>mostly</i> 🙃)
+          </p>
 
           <div className="mb-5 flex">
             <Image
@@ -290,7 +299,10 @@ function BlogSection() {
         container="8xl"
         className="p-10 px-[var(--gutter-x)] pb-20"
       >
-        <h2 className="font-FigtreeR pt-20 text-center">Recent Blogs</h2>
+        <h2 className="font-FigtreeR pt-15 text-center">Recent Blogs</h2>
+        <p className="mt-4 text-center">
+          Topics on software technology, design and anything in-between.
+        </p>
         <div className="">
           <ReadMoreSection currentSlug={[]} title="" borders="" maxPosts={2} />
         </div>
@@ -301,17 +313,74 @@ function BlogSection() {
 
 function FAQ() {
   return (
-    <Section.RootElement className="hidden">
+    <Section.RootElement className="">
       <Section.Container
         container="8xl"
-        className="p-10 px-[var(--gutter-x)] py-15"
+        className="p-10 px-[var(--gutter-x)] py-15 md:flex md:gap-20"
       >
-        <h2 className="font-FigtreeR text-center font-[700]">FAQ</h2>
-        <h4 className="text-center">
-          Let&apos;s get some pressing questions out of the way.
-        </h4>
+        <div className="_header">
+          <h2 className="font-FigtreeR mt-10 mb-2 text-center font-[700] md:text-left">
+            Frequently Asked Questions{" "}
+          </h2>
+          <p className="max-md:text-center">
+            Let&apos;s get some pressing questions out of the way.
+          </p>
+        </div>
 
-        <div className="_faq-accordion"></div>
+        <div className="_faq-accordion my-10 w-full p-5 md:pt-0">
+          <Accordion type="multiple" className="w-full">
+            <AccordionItem value="item-1">
+              <AccordionTrigger className="hover:no-underline">
+                <h5 className="font-FigtreeR">
+                  How long does it take to complete a site?
+                </h5>
+              </AccordionTrigger>
+              <AccordionContent>
+                Well, no two sites are built the same, and so the time to
+                complete one depends on a number of factors - number of pages,
+                core features and functionality (i.e databases, authentications,
+                animations .etc) just to name a few. But In general, a fairly
+                complex site with the most features can take 2-3 weeks to
+                complete, from design to development and then to deployment
+                (launch).{" "}
+                <Link
+                  href="/blog/introducing-nard-studios"
+                  className="text-pink-600 underline"
+                >
+                  I explain more here.
+                </Link>
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-2">
+              <AccordionTrigger className="hover:no-underline">
+                <h5 className="font-FigtreeR">
+                  What do you need from me to get started?
+                </h5>
+              </AccordionTrigger>
+              <AccordionContent>
+                Design is always the first point in development so if you have
+                some designs or concepts ready (i.e brand colors, typography, )
+                that would speed up the development process, no worries if you
+                don&apos;t have any, together, we will build a custom style
+                guide for your project before development begins.
+              </AccordionContent>
+            </AccordionItem>
+
+            <AccordionItem value="item-3">
+              <AccordionTrigger className="hover:no-underline">
+                <h5 className="font-FigtreeR">
+                  Do you offer maintenance after the site is done?
+                </h5>
+              </AccordionTrigger>
+              <AccordionContent>
+                Yes I do. I offer monthly maintenance packages, essentially to
+                make minor content edits, small updates, backups and performance
+                monitoring.
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        </div>
       </Section.Container>
     </Section.RootElement>
   );

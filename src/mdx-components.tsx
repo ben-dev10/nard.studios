@@ -15,6 +15,7 @@ import {
 import { AuthorCard } from "@/components/_blog/author-card";
 import { getAuthor, type AuthorKey } from "@/lib/authors";
 import { CopyHeader } from "@/components/_blog/copy-header";
+import Link from "next/link";
 
 const createHeading = (level: number) => {
   const Heading = ({
@@ -22,7 +23,7 @@ const createHeading = (level: number) => {
     ...props
   }: React.HTMLAttributes<HTMLHeadingElement>) => {
     return (
-      <CopyHeader level={level} {...props}>
+      <CopyHeader level={level} {...props} className="font-FigtreeR font-[700]">
         {children}
       </CopyHeader>
     );
@@ -52,6 +53,7 @@ export function getMDXComponents(components?: MDXComponents): MDXComponents {
     AccordionItem,
     AccordionTrigger,
     Author,
+    Link,
     h1: createHeading(1),
     h2: createHeading(2),
     h3: createHeading(3),

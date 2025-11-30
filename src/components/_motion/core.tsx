@@ -3,6 +3,15 @@ import { Easing, motion, useInView } from "motion/react";
 import { useRef } from "react";
 import { motionPresets } from "./presets";
 
+/* USAGE:
+ * These motion animations only trigger when in view, by default, similar to how
+ * the intersection observer works. MotionWrapper is the base wrapper that applies
+ * a set of predefined motions defined in the presets file.
+ *
+ * MotionStagger is a super wrapper for the base wrapper and applies a staggered
+ * animation on its children.
+ */
+
 export type EasingType =
   | "linear"
   | "easeIn"

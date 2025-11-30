@@ -1,10 +1,4 @@
-import {
-  Github,
-  Linkedin,
-  Whatsapp,
-  XTwitter,
-  Bolt,
-} from "@/components/_ui/icons";
+import { Bolt } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
 import Image from "next/image";
@@ -19,12 +13,6 @@ import profileCard from "@/app/gallery/_assets/_imgs/profile-card.webp";
 import clonesSVG from "../_assets/_nard/svgs/clones-block.svg";
 import gallerySVG from "../_assets/_nard/svgs/gallery-block.svg";
 import flyersCollage from "../_assets/_nard/imgs/flyers--img-arts.webp";
-import {
-  GITHUB_LINK,
-  LINKEDIN_LINK,
-  WHATSAPP_LINK,
-  XTWITTER_LINK,
-} from "../_assets/constants";
 import CardsCarousel from "./_clients/cards-carousel";
 import {
   Accordion,
@@ -32,121 +20,10 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Hero } from "./_clients/home-hero";
+import { MotionStagger } from "@/components/_motion/core";
 
 const line = <div className="_line w-full border-t border-dashed" />;
-
-function SocialPill({
-  icon,
-  name,
-  link,
-  className,
-}: {
-  icon: React.ReactNode;
-  name: string;
-  link: string;
-  className?: string;
-}) {
-  return (
-    <Link
-      target="_"
-      href={link}
-      className={`${className} group flex max-w-max items-center gap-1.5 rounded-full p-1.5 px-3.5`}
-    >
-      {icon} <p className="!text-[0.8rem]">{name}</p>
-    </Link>
-  );
-}
-
-function Hero() {
-  return (
-    <Section.RootElement className="">
-      <Section.Container
-        container="8xl"
-        className="mb-10 px-[var(--gutter-x)] pt-55"
-      >
-        <div className="relative max-w-max">
-          <Background>
-            <Image
-              src="/_nard/svgs/_a--icon-tray.svg"
-              alt="icon-tray-svg"
-              width="188"
-              height="94"
-              className="absolute -top-20 -right-65 scale-[0.8] md:-right-55"
-            />
-            <Image
-              src="/_nard/svgs/_a--cursor.svg"
-              alt="cursor-svg"
-              width="56"
-              height="53"
-              className="absolute top-45 -left-25 scale-[0.8] md:-left-35"
-            />
-            <Image
-              src="/_nard/svgs/_a--palette.svg"
-              alt="palette-svg"
-              width="103"
-              height="68"
-              className="absolute -top-28 -left-10 w-[60px] scale-[0.8] md:-left-20"
-            />
-          </Background>
-          <h1 className="font-FigtreeR mb-3 max-w-[400px] text-balance md:max-w-[500px]">
-            I enjoy{" "}
-            <span className="font-SeriouslyNostalgic !font-[100]">
-              designing
-            </span>{" "}
-            &{" "}
-            <span className="font-SeriouslyNostalgic !font-[100]">
-              crafting
-            </span>{" "}
-            user interfaces.
-          </h1>
-        </div>
-
-        <div className="_social-icons mb-10 flex flex-wrap gap-3 *:transition-colors *:duration-200 *:ease-in-out">
-          <SocialPill
-            link={GITHUB_LINK}
-            icon={<Github className="size-5" />}
-            name="Github"
-            className="bg-[#e5e5e5] *:group-hover:text-white hover:bg-black"
-          />
-          <SocialPill
-            link={XTWITTER_LINK}
-            icon={<XTwitter className="size-4.5" />}
-            name="Twitter"
-            className="bg-[#e5e5e5] *:group-hover:text-white hover:bg-neutral-500"
-          />
-          <SocialPill
-            link={LINKEDIN_LINK}
-            icon={<Linkedin className="size-5" />}
-            name="LinkedIn"
-            className="bg-[#e5e5e5] *:group-hover:text-white hover:bg-blue-500"
-          />
-          <SocialPill
-            link={WHATSAPP_LINK}
-            icon={<Whatsapp className="size-5" />}
-            name="WhatsApp"
-            className="xs:flex hidden bg-[#e5e5e5] *:group-hover:text-white hover:bg-green-500"
-          />
-        </div>
-
-        <div className="_paragraphs text-muted-foreground mb-15 space-y-3">
-          <p className="">
-            Hello👋, my name is Bernard Quarshie (or{" "}
-            <span className="gradient-text bg-gradient-to-tl from-neutral-300 to-neutral-800 font-[600] underline decoration-dashed">
-              nard
-            </span>
-            ), welcome to my portfolio - I&apos;m a web developer who knows a
-            little bit of design.
-          </p>
-          <p className="">
-            Glad you are here, check out some of my experiments below 👇
-          </p>
-        </div>
-
-        {line}
-      </Section.Container>
-    </Section.RootElement>
-  );
-}
 
 function Projects() {
   return (
@@ -156,26 +33,27 @@ function Projects() {
           container="8xl"
           className="mb-8 px-[var(--gutter-x)]"
         >
-          <div className="_showcase-pill mt-17">
-            <div className="mx-auto flex max-w-max items-center gap-1 rounded-full bg-neutral-200/30 p-1 px-3">
-              <Bolt className="size-3 rotate-30" />
-              <span className="block !text-[0.7rem]">Showcase</span>
+          <MotionStagger preset="blurIn" staggerDelay={0.6}>
+            <div className="_showcase-pill mt-17">
+              <div className="mx-auto flex max-w-max items-center gap-1 rounded-full bg-neutral-200/30 p-1 px-3">
+                <Bolt className="size-3 rotate-30" />
+                <span className="block !text-[0.7rem]">Showcase</span>
+              </div>
             </div>
-          </div>
+            <h2 className="_h2 font-FigtreeR mx-auto max-w-[400px] py-5 pb-2 text-center">
+              Crafting UIs that look{" "}
+              <span className="font-SeriouslyNostalgic !font-[100]">good</span>{" "}
+              and works{" "}
+              <span className="font-SeriouslyNostalgic !font-[100]">
+                right
+              </span>{" "}
+            </h2>
+            <p className="mb-8 text-center">
+              (<i>mostly</i> 🙃)
+            </p>
+          </MotionStagger>
 
-          <h2 className="font-FigtreeR mx-auto max-w-[400px] py-5 pb-2 text-center">
-            Crafting UIs that look{" "}
-            <span className="font-SeriouslyNostalgic !font-[100]">good</span>{" "}
-            and works{" "}
-            <span className="font-SeriouslyNostalgic !font-[100]">
-              right
-            </span>{" "}
-          </h2>
-          <p className="mb-8 text-center">
-            (<i>mostly</i> 🙃)
-          </p>
-
-          <div className="mb-5 flex">
+          <div className="_h3 mb-5 flex">
             <Image
               alt="clones svg"
               src={clonesSVG}
@@ -239,7 +117,10 @@ function Projects() {
                 href="/gallery"
                 className="rounded-[8px] pb-2 shadow-md shadow-black/45"
               >
-                <ActionBTN width="w-full" text="See gallery" />
+                <ActionBTN
+                  className="h-11 w-full rounded-lg"
+                  text="See gallery"
+                />
               </Link>
             </div>
           </div>
@@ -331,21 +212,21 @@ function FAQ() {
           <Accordion type="multiple" className="w-full">
             <AccordionItem value="item-1">
               <AccordionTrigger className="hover:no-underline">
-                <h5 className="font-FigtreeR">
+                <h6 className="font-FigtreeR">
                   How long does it take to complete a site?
-                </h5>
+                </h6>
               </AccordionTrigger>
               <AccordionContent>
                 Well, no two sites are built the same, and so the time to
                 complete one depends on a number of factors - number of pages,
                 core features and functionality (i.e databases, authentications,
                 animations .etc) just to name a few. But In general, a fairly
-                complex site with the most features can take 2-3 weeks to
+                complex site with the most features can take <b>2-3 weeks</b> to
                 complete, from design to development and then to deployment
                 (launch).{" "}
                 <Link
                   href="/blog/introducing-nard-studios"
-                  className="text-pink-600 underline"
+                  className="text-n-accent underline"
                 >
                   I explain more here.
                 </Link>
@@ -354,24 +235,24 @@ function FAQ() {
 
             <AccordionItem value="item-2">
               <AccordionTrigger className="hover:no-underline">
-                <h5 className="font-FigtreeR">
+                <h6 className="font-FigtreeR">
                   What do you need from me to get started?
-                </h5>
+                </h6>
               </AccordionTrigger>
               <AccordionContent>
                 Design is always the first point in development so if you have
-                some designs or concepts ready (i.e brand colors, typography, )
-                that would speed up the development process, no worries if you
-                don&apos;t have any, together, we will build a custom style
-                guide for your project before development begins.
+                some designs or concepts ready (i.e brand colors, typography,
+                graphic assets) that would speed up the development process, no
+                worries if you don&apos;t have any, together, we will build a
+                custom style guide for your project before development begins.
               </AccordionContent>
             </AccordionItem>
 
             <AccordionItem value="item-3">
               <AccordionTrigger className="hover:no-underline">
-                <h5 className="font-FigtreeR">
+                <h6 className="font-FigtreeR">
                   Do you offer maintenance after the site is done?
-                </h5>
+                </h6>
               </AccordionTrigger>
               <AccordionContent>
                 Yes I do. I offer monthly maintenance packages, essentially to

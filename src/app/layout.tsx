@@ -6,6 +6,7 @@ import Banner from "./_components/banner";
 import { Toaster } from "sonner";
 import { siteConfig } from "@/lib/site";
 import { metadata as baseMetadata, metadataKeywords } from "./metadata";
+import { geistSansVar } from "./_assets/fonts";
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -25,7 +26,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body className={`font-geistSans antialiased [--gutter-x:3.75rem]`}>
+      <body
+        className={`${geistSansVar.variable} font-geistSans antialiased [--gutter-x:3.75rem]`}
+      >
         <Banner />
         {children}
         <Analytics />

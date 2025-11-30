@@ -3,10 +3,21 @@ import ProjectCard from "@/app/_components/project-card";
 import clerkCard from "../../_assets/_nard/imgs/clerk-banner.webp";
 import payloadCard from "../../_assets/_nard/imgs/payload-banner.webp";
 import { usePlatform } from "@/hooks/use-platform";
+import { useEffect, useState } from "react";
 
 export default function CardsCarousel() {
   const { isMobile } = usePlatform();
-  const scrollbarStyles = isMobile ? "" : "_scrollbar-override";
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const scrollbarStyles = mounted
+    ? isMobile
+      ? ""
+      : "_scrollbar-override"
+    : "";
 
   return (
     <div

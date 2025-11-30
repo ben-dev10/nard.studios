@@ -1,8 +1,7 @@
 import localFont from "next/font/local";
 
-/*
+/* USAGE:
  * import { geistSansVar, geistMonoVar } from "./fonts"
- *
  * <body className={`${geistSansVar.variable} ${geistMonoVar.variable}`}></body>
  */
 

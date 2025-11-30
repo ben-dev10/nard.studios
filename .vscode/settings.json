@@ -14,10 +14,12 @@
     "Grotesk",
     "iemobile",
     "ishop",
+    "lightboxes",
     "maab",
     "magicui",
     "Mintlify",
     "namse",
+    "navbars",
     "navlinks",
     "opengraph",
     "Pagenotready",
@@ -45,6 +47,7 @@
     "Xtwitter",
     "yumfoods",
     "yumlogos",
-    "ZINDEX"
+    "ZINDEX",
+    "zoomable"
   ]
 }

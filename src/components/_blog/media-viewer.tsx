@@ -1,11 +1,12 @@
 "use client";
 
 import { cn } from "@/lib/utils";
+import { ZoomImage } from "./zoom-img";
 
 interface MediaViewerProps {
   src: string;
   alt?: string;
-  type?: "image" | "video";
+  type?: "image" | "zoomable image" | "video";
   className?: string;
   width?: number;
   height?: number;
@@ -35,6 +36,17 @@ export function MediaViewer({
         <video {...mediaProps} controls loop>
           Your browser does not support the video tag.
         </video>
+      );
+    }
+
+    if (type === "zoomable image") {
+      return (
+        <ZoomImage
+          img={{
+            alt: alt,
+            src: src,
+          }}
+        />
       );
     }
 

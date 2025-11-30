@@ -1,5 +1,4 @@
 import React from "react";
-import EmailButton from "./email-btn";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import Section from "@/components/ui/elements/section";
@@ -47,11 +46,12 @@ export default function CTA() {
                 ideas or provide feedback!
               </p>
               <div className="mt-10 flex justify-center gap-4">
-                <EmailButton
-                  text="Get in touch"
-                  className="bg-white text-black hover:bg-white/90"
-                />
-                <Link href="/gallery/">
+                <Link href="/about/#contact">
+                  <Button className="bevel-[0.15] bg-white text-black hover:bg-white/95">
+                    Get in touch
+                  </Button>
+                </Link>
+                <Link href="/gallery">
                   <Button className="bevel-[0.15] bg-neutral-700 px-5 hover:bg-neutral-600">
                     Projects
                   </Button>

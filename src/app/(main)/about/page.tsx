@@ -122,7 +122,7 @@ function Contact() {
                 Or send a{" "}
                 <Link
                   href={`mailto:${NARD_EMAIL}?subject=Project%20Inquiry&body=Hi%20there`}
-                  className="text-black/90 underline"
+                  className="text-n-accent underline"
                 >
                   direct email
                 </Link>{" "}
@@ -141,19 +141,17 @@ function Resume() {
     <Section.RootElement id="resume" className="border-t">
       <Section.Container
         container="8xl"
-        className="mb-25 p-10 px-[var(--gutter-x)] py-15 pt-5"
+        className="mb-25 p-10 px-[var(--gutter-x)] py-15 pt-20"
       >
-        <div className="_area-1">
-          <div className="avatar size-10 rounded-full" />
-        </div>
-
-        <div className="_area-2 border-l-3 border-black/70 pl-5">
+        <div className="_work+resume border-l-3 border-black/70 pl-5">
           <h3 className="font-FigtreeR mb-3 font-[700]">Work & Resume</h3>
 
           <div>
-            <Button>
-              Resume <Download />{" "}
-            </Button>
+            <Link href="/api/cv" target="_blank" rel="noopener noreferrer">
+              <Button>
+                Resume <Download />{" "}
+              </Button>
+            </Link>
             <Link href="/gallery" className="ml-2">
               <Button className="bg-neutral-500 hover:bg-neutral-600">
                 See projects <ArrowUpRight />{" "}

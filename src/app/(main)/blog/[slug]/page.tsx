@@ -200,7 +200,7 @@ export default async function BlogPost({ params }: PageProps) {
       </Background>
 
       <section
-        className={`${PADDING_TOP} _page-header+controls border-border relative z-5 space-y-4 border-b px-[calc(var(--gutter-x)-40px)]`}
+        className={`${PADDING_TOP} _page-header+controls border-border space-y-4 border-b px-[calc(var(--gutter-x)-40px)]`}
       >
         <div className="_header-wrapper mx-auto flex max-w-7xl flex-col gap-6 p-6">
           <div className="_btn+time text-muted-foreground flex flex-wrap items-center gap-3 gap-y-5 text-sm">
@@ -239,7 +239,7 @@ export default async function BlogPost({ params }: PageProps) {
         </div>
       </section>
 
-      <section className="_page-contents divide-border relative mx-auto flex max-w-7xl divide-x px-4 md:px-0">
+      <section className="_page-contents divide-border mx-auto flex max-w-7xl divide-x px-4 md:px-0">
         <div className="_line border-border pointer-events-none absolute left-1/2 mx-auto h-full w-[calc(100%-2rem)] max-w-7xl -translate-x-1/2 border-x p-0 lg:w-full" />
 
         <section className="_main-blog-contents w-full overflow-hidden p-0">
@@ -272,7 +272,7 @@ export default async function BlogPost({ params }: PageProps) {
         </section>
 
         <aside className="_aside bg-muted/60 dark:bg-muted/20 hidden w-[350px] flex-shrink-0 p-6 pb-30 lg:block lg:p-10">
-          <div className="sticky top-20 space-y-8">
+          <div className="sticky top-20 z-0 space-y-8">
             {page.data.author && isValidAuthor(page.data.author) && (
               <AuthorCard author={getAuthor(page.data.author)} />
             )}

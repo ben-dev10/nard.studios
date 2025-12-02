@@ -34,7 +34,7 @@ export function ZoomImage({
     <div className="_img-zoom">
       <div className="_img-clone" style={{ height: open ? height : "" }} />
       <div
-        className={`${open ? "_bg-overlay fixed inset-0 !z-55 cursor-zoom-out bg-white/60 backdrop-blur-[30px]" : "relative z-5"}`}
+        className={`${open ? "_bg-overlay fixed inset-0 !z-55 cursor-zoom-out bg-white/60 backdrop-blur-[30px]" : "relative z-2"}`}
         onClick={() => setOpen(false)}
       />
       <motion.img
@@ -43,7 +43,7 @@ export function ZoomImage({
         onClick={handleClick}
         alt={img.alt}
         src={img.src}
-        className={`_img cursor-zoom-in rounded-lg border ${open ? `fixed top-1/2 left-1/2 !z-56 -translate-x-1/2 -translate-y-1/2 scale-[0.98] !cursor-auto lg:max-w-6xl` : "relative z-5"}`}
+        className={`_img cursor-zoom-in rounded-lg border ${open ? `fixed top-1/2 left-1/2 !z-56 -translate-x-1/2 -translate-y-1/2 scale-[0.98] !cursor-auto xl:max-w-[110rem]` : "relative z-2"}`}
       />
     </div>
   );

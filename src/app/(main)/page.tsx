@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/accordion";
 import { Hero } from "./_clients/home-hero";
 import { MotionStagger } from "@/components/_motion/core";
+import { Button } from "@/components/ui/button";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 
@@ -217,13 +218,10 @@ function FAQ() {
                 </h6>
               </AccordionTrigger>
               <AccordionContent>
-                Well, no two sites are built the same, and so the time to
-                complete one depends on a number of factors - number of pages,
-                core features and functionality (i.e databases, authentications,
-                animations .etc) just to name a few. But In general, a fairly
-                complex site with the most features can take <b>2-3 weeks</b> to
-                complete, from design to development and then to deployment
-                (launch).{" "}
+                The timeline varies depending on the scope. A standard
+                &quot;brochure&quot; website typically takes <b>2-4</b> weeks
+                from discovery to deployment, while more complex e-commerce or
+                custom web applications may take <b>6-10</b> weeks.
                 <Link
                   href="/blog/introducing-nard-studios"
                   className="text-n-accent underline"
@@ -255,12 +253,18 @@ function FAQ() {
                 </h6>
               </AccordionTrigger>
               <AccordionContent>
-                Yes I do. I offer monthly maintenance packages, essentially to
-                make minor content edits, small updates, backups and performance
-                monitoring.
+                Yes I do. I offer a standard 21-day warranty period after launch
+                to fix any bugs. Beyond that, I offer monthly maintenance
+                packages if you would like me to handle software updates,
+                backups, and small content tweaks so you can focus on your
+                business.
               </AccordionContent>
             </AccordionItem>
           </Accordion>
+
+          <Link href="/process/#FAQs">
+            <Button className="mt-8">See all FAQs -&gt; </Button>
+          </Link>
         </div>
       </Section.Container>
     </Section.RootElement>

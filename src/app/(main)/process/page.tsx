@@ -20,14 +20,15 @@ function Hero() {
         className="px-[var(--gutter-x)] pt-25 pb-10"
       >
         <div className="">
-          <h1 className="font-FigtreeR mb-5 text-center">
+          <h1 className="font-FigtreeR max-550:text-4xl max-500:text-balance mb-5 text-center">
             Design & Development Process
           </h1>
           <p className="text-center">
-            Building a great website relies on a structured, collaborative
-            journey that transforms ideas into a refined digital experience.
-            This process should ensure clarity, efficiency, and a final product
-            that not only looks good but performs exceptionally well.
+            I believe building a great website relies on a structured,
+            collaborative journey that transforms ideas into a refined digital
+            experience. This process should ensure clarity, efficiency, and a
+            final product that not only looks good but performs exceptionally
+            well.
           </p>
         </div>
       </Section.Container>
@@ -39,13 +40,13 @@ export const Callout = ({
   text,
   className,
 }: {
-  text: React.ReactNode;
+  text: string | React.ReactNode;
   className?: string;
 }) => {
   return (
     <div
       className={cn(
-        "_info flex gap-2 rounded-lg border border-sky-200/50 bg-sky-50/50 p-4 pl-0 text-sky-950",
+        "_info flex gap-2 rounded-lg border border-sky-200/50 bg-sky-50/50 p-4 pl-0 text-sky-950 [&_p]:text-[0.9rem]",
         className,
       )}
     >
@@ -130,9 +131,9 @@ function Process() {
               className="mb-16"
               text={
                 <p className="_p">
-                  If you happen to have a &quot;design system&quot; ready from a
-                  designer or one you created yourself then we can skip this
-                  step and move onto &quot;development&quot;. This is what a{" "}
+                  If you have a &quot;design system&quot; ready from a designer
+                  or a personal one, we can skip this step and move onto
+                  &quot;development&quot;. This is what a{" "}
                   <Link href="#" className="text-n-accent underline">
                     design system
                   </Link>{" "}
@@ -184,9 +185,9 @@ function Process() {
               className="mb-16"
               text={
                 <p className="_p">
-                  At this stage, I will provide regular daily progress, updates
-                  and milestone reviews through any preferred messaging channel,
-                  to ensure the project is completed before any deadlines.
+                  At this stage, I will be providing daily progress updates and
+                  milestone reviews through any preferred messaging channel, to
+                  ensure the project is completed before any deadlines.
                 </p>
               }
             />

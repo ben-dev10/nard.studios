@@ -3,7 +3,13 @@ import { NardLogoSmall } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
 import { AppSheet } from "./app--sheet";
-import { PencilLine, UserCircleIcon, Wallpaper, Workflow } from "lucide-react";
+import {
+  Gift,
+  PencilLine,
+  UserCircleIcon,
+  Wallpaper,
+  Workflow,
+} from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -27,21 +33,31 @@ const NavLinks = [
     name: "About",
     url: "/about",
     icon: <UserCircleIcon size={16} />,
+    visible: true,
   },
   {
     name: "Gallery",
     url: "/gallery",
     icon: <Wallpaper size={16} />,
+    visible: true,
   },
   {
     name: "Process",
     url: "/process",
     icon: <Workflow size={16} />,
+    visible: true,
   },
   {
     name: "Blog",
     url: "/blog",
     icon: <PencilLine size={16} />,
+    visible: true,
+  },
+  {
+    name: "Resources",
+    url: "/resources",
+    icon: <Gift size={16} />,
+    visible: false,
   },
 ];
 
@@ -81,7 +97,10 @@ export default function Navbar() {
               <nav className="hidden md:block">
                 <ul className="flex items-center gap-3">
                   {NavLinks.map((link, index) => (
-                    <li key={index} className="">
+                    <li
+                      key={index}
+                      className={`${link.visible ? "" : "hidden"}`}
+                    >
                       <a
                         href={link.url}
                         className={`text-[0.9rem] ${

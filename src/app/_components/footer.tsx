@@ -1,7 +1,13 @@
 import { Ghana, NardLogoGroup, NardLogoSmall } from "@/components/_ui/icons";
 import SocialIcons from "@/components/_ui/social-icons";
 import Section from "@/components/ui/elements/section";
-import { FileBox, PencilLine, UserCircleIcon, Wallpaper } from "lucide-react";
+import {
+  Gift,
+  PencilLine,
+  UserCircleIcon,
+  Wallpaper,
+  Workflow,
+} from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -18,10 +24,6 @@ const footerLinks = [
     header: "About",
     headerIcon: <UserCircleIcon size={16} className="" />,
     links: [
-      {
-        name: "Process",
-        url: "/process",
-      },
       {
         name: "Resume",
         url: "/about/#resume",
@@ -56,8 +58,26 @@ const footerLinks = [
     ],
   },
   {
+    header: "Process",
+    headerIcon: <Workflow size={14} />,
+    links: [
+      {
+        name: "Dev Process",
+        url: "/process",
+      },
+      {
+        name: "Pricing",
+        url: "/process/#pricing",
+      },
+      {
+        name: "FAQs",
+        url: "/process/#FAQs",
+      },
+    ],
+  },
+  {
     header: "Resources",
-    headerIcon: <FileBox size={14} />,
+    headerIcon: <Gift size={14} />,
     links: [
       {
         name: "Snippets",
@@ -130,7 +150,7 @@ export default function Footer() {
                       width={121}
                       height={20}
                     />
-                    <p>78%</p>
+                    <p>79%</p>
                   </div>
                 </div>
               </div>

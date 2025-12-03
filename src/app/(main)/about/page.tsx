@@ -53,7 +53,7 @@ function Article() {
 
       <Section.Container
         container="8xl"
-        className="mb-10 px-[var(--gutter-x)] py-5"
+        className="mb-15 px-[var(--gutter-x)] py-5"
       >
         <section>
           <h2 className="font-FigtreeR mt-8 font-[700]">What I Do</h2>
@@ -61,24 +61,28 @@ function Article() {
             <p>
               I work primarily in front-end development — transforming concepts
               and designs into dynamic, accessible, and performant web
-              experiences (I can also take on full-stack projects too but
-              frontend is my stronghold).
+              experiences. A summary of what I do are:
             </p>
-
-            <p>Some of the areas I focus on include:</p>
 
             <ul className="space-y-3 pl-4">
               <li>
-                <b>Web App Development:</b> Building interactive UIs using
-                React, Next.js, and modern front-end tooling.
+                <b>Website Design and Development:</b> Building interactive UIs
+                and web applications using React, Next.js, and modern front-end
+                tooling.
               </li>
               <li>
-                <b>Design Implementation:</b> Translating design systems and
-                prototypes into pixel-perfect, maintainable code.
-              </li>
-              <li>
-                <b>Responsive Design:</b> Ensuring every experience feels
-                consistent and natural across devices.
+                <b>Graphic Design:</b> this is another sub-service I offer,
+                where I make designs for print or digital use (flyers,
+                thumbnails, posters, logos .etc). I offer this as a standalone
+                service but it is included in the web app development package
+                for free. See the{" "}
+                <Link
+                  href="/gallery/#design-tab"
+                  className="text-n-accent underline"
+                >
+                  gallery
+                </Link>{" "}
+                for samples.
               </li>
             </ul>
           </div>
@@ -103,7 +107,7 @@ function Contact() {
               I&apos;d love to hear from you.
             </p>
             <p className="text-muted-foreground mt-2 mb-3">
-              You can send a message by filling out the form beside or send an
+              You can send a message by filling out the form here or send an
               email directly by clicking on the &quot;direct email&quot; link
               beneath the form.
             </p>

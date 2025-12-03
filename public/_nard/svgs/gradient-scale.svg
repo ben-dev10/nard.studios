@@ -6,7 +6,7 @@
     <clipPath id="clip_path_2">
       <use p4:href="#path_1" xmlns:p4="http://www.w3.org/1999/xlink" />
     </clipPath>
-    <linearGradient id="gradient_3" gradientUnits="userSpaceOnUse" x1="77" y1="12.258" x2="0" y2="12.258">
+    <linearGradient id="gradient_3" gradientUnits="userSpaceOnUse" x1="98" y1="12.258" x2="0" y2="12.258">
       <stop offset="0" stop-color="#DD81FF" />
       <stop offset="0.507" stop-color="#65D8FF" />
       <stop offset="0.755" stop-color="#6BF057" />
@@ -123,7 +123,7 @@
         fill="#DEDEDE" transform="translate(119.143 3)" />
     </g>
     <g clip-path="url(#clip_path_2)">
-      <rect id="gradient-bar" width="77" height="20" fill="url(#gradient_3)" fill-rule="evenodd" />
+      <rect id="gradient-bar" width="98" height="20" fill="url(#gradient_3)" fill-rule="evenodd" />
     </g>
   </g>
 </svg>

@@ -79,7 +79,7 @@ const BlocksCard = ({
 
 function SoftwareTabContent() {
   return (
-    <Section.RootElement id="software-tab" className="">
+    <Section.RootElement className="">
       <Section.Container container="8xl" className="p-8 px-[var(--gutter-x)]">
         <div className="_header my-5">
           <h2 className="font-FigtreeR mb-4">Software projects.</h2>
@@ -177,7 +177,7 @@ function SoftwareTabContent() {
 
 function DesignTabContent() {
   return (
-    <Section.RootElement id="design-tab" className="min-h-[80vh] p-10">
+    <Section.RootElement className="min-h-[80vh] p-10">
       <Section.Container
         container="8xl"
         className="px-[calc(var(--gutter-x)-30px)]"
@@ -197,7 +197,7 @@ function DesignTabContent() {
 
 function EngineeringTabContent() {
   return (
-    <Section.RootElement id="engineering-tab" className="min-h-[80vh] p-10">
+    <Section.RootElement className="min-h-[80vh] p-10">
       <Section.Container container="8xl">
         <div className="">Engineering Tab Section</div>
       </Section.Container>
@@ -216,21 +216,21 @@ export default function GalleryPage() {
         <div className="_tabbed-section py-10">
           <Tabs defaultValue="software" className="_header-tabs">
             <TabsList className="mx-auto grid h-12 !grid-cols-3 [&_p]:text-[1rem]">
-              <TabsTrigger value="software">
+              <TabsTrigger id="software-tab" value="software">
                 <div className="flex items-center gap-2">
                   <Code2 className="size-5 shrink-0" />
                   <p>Software</p>
                 </div>
               </TabsTrigger>
 
-              <TabsTrigger value="design" className="">
+              <TabsTrigger id="design-tab" value="design" className="">
                 <div className="flex items-center gap-2">
                   <PenToolIcon className="size-5 shrink-0" />
                   <p className="">Design</p>
                 </div>
               </TabsTrigger>
 
-              <TabsTrigger value="engineering" disabled>
+              <TabsTrigger id="engineering-tab" value="engineering" disabled>
                 <div className="flex items-center gap-2">
                   <BookTextIcon className="size-5 shrink-0" />
                   <p>Engineer...(soon)</p>

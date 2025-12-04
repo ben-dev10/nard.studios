@@ -1,6 +1,5 @@
 import Section from "@/components/ui/elements/section";
 import Image from "next/image";
-import og from "@/app/_assets/_nard/imgs/og.webp";
 import Link from "next/link";
 import { Info } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -11,6 +10,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
+import og from "@/app/_assets/_nard/imgs/og.webp";
+import designProcess from "@/app/_assets/_nard/imgs/design-process.webp";
 
 function Hero() {
   return (
@@ -124,7 +125,7 @@ function Process() {
             </ul>
 
             <div className="_process-media mt-5 mb-8">
-              <Image alt="_design-media" src={og} className="" />
+              <Image alt="_design-media" src={designProcess} className="" />
             </div>
 
             <Callout
@@ -134,7 +135,12 @@ function Process() {
                   If you have a &quot;design system&quot; ready from a designer
                   or a personal one, we can skip this step and move onto
                   &quot;development&quot;. This is what a{" "}
-                  <Link href="#" className="text-n-accent underline">
+                  <Link
+                    href="/api/guide"
+                    className="text-n-accent underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     design system
                   </Link>{" "}
                   usually contains.
@@ -241,6 +247,9 @@ function Pricing() {
           offer transparent pricing packages tailored to the scale of your
           project.
         </p>
+        <div className="_soon grid h-[200px] place-items-center">
+          <p className="text-muted-foreground">Coming soon...</p>
+        </div>
       </Section.Container>
     </Section.RootElement>
   );

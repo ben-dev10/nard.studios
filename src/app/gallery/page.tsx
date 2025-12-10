@@ -215,7 +215,7 @@ export default function GalleryPage() {
 
         <div className="_tabbed-section py-10">
           <Tabs defaultValue="software" className="_header-tabs">
-            <TabsList className="mx-auto grid h-12 !grid-cols-3 [&_p]:text-[1rem]">
+            <TabsList className="mx-auto flex h-12 [&_p]:text-[1rem]">
               <TabsTrigger id="software-tab" value="software">
                 <div className="flex items-center gap-2">
                   <Code2 className="size-5 shrink-0" />
@@ -251,7 +251,7 @@ export default function GalleryPage() {
           </Tabs>
         </div>
       </main>
-      <MiniFooter links={["About", "Blog", "Resources"]} />
+      <MiniFooter />
     </>
   );
 }

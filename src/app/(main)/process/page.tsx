@@ -1,7 +1,7 @@
 import Section from "@/components/ui/elements/section";
 import Image from "next/image";
 import Link from "next/link";
-import { Info } from "lucide-react";
+import { CheckCircle2, Info } from "lucide-react";
 import { cn } from "@/lib/utils";
 import {
   Accordion,
@@ -12,6 +12,8 @@ import {
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
 import og from "@/app/_assets/_nard/imgs/og.webp";
 import designProcess from "@/app/_assets/_nard/imgs/design-process.webp";
+import PopoverUI from "@/components/_ui/popover-ui";
+import { Button } from "@/components/ui/button";
 
 function Hero() {
   return (
@@ -235,20 +237,211 @@ function Process() {
   );
 }
 
+function PricingTable() {
+  return (
+    <div className="_pricing+table">
+      <div className=""></div>
+
+      <div className="_pricing-cards mt-15 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+        <div className="_starter-card flex flex-col justify-between rounded-md bg-white p-8 lg:max-h-max">
+          <div className="_wrapper">
+            <h6 className="font-FigtreeR mb-2 font-[700]">Starter Pack</h6>
+            <div className="_price+label mb-10 flex gap-2">
+              <h2 className="_price">$ 109</h2>
+              <p className="self-end pb-1 text-neutral-500">/per project</p>
+            </div>
+
+            <div className="_list text-[0.9rem]">
+              {[
+                "Free style guide",
+                "4 pages max",
+                "1 round of revisions",
+                <div key={4} className="flex items-center gap-2">
+                  <p className="text-[0.9rem]">
+                    14-day post-launch maintenance warranty
+                  </p>
+                  <PopoverUI
+                    content="I will make updates to the site after launch to fix bugs or minor content changes for free
+                    only for 14 days after launch, beyond which any maintenance will incur a small fee."
+                    trigger={<Info className="size-3" />}
+                  />
+                </div>,
+              ].map((item, index) => (
+                <div key={index} className="mb-2 flex items-center gap-1">
+                  <CheckCircle2 className="size-5 shrink-0 fill-black stroke-white" />{" "}
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <Button className="mt-12 w-full">Get Started</Button>
+        </div>
+
+        <div className="_premium-card flex flex-col justify-between rounded-md bg-white p-8 lg:max-h-max">
+          <div className="_wrapper">
+            <h6 className="font-FigtreeR mb-2 font-[700]">Premium</h6>
+            <div className="_price+label mb-10 flex gap-2">
+              <h2 className="_price">$ 299</h2>
+              <p className="self-end pb-1 text-neutral-500">/per project</p>
+            </div>
+
+            <div className="_list !text-[0.9rem]">
+              {[
+                "Free style guide",
+                "8 pages max",
+                "3 rounds of revisions",
+                <div key={4} className="flex items-center gap-2">
+                  <p className="!text-[0.9rem]">
+                    21-day post-launch maintenance warranty
+                  </p>
+                  <PopoverUI
+                    content="I will make updates to the site after launch to fix bugs or minor content changes for free
+                    only for 21 days after launch, beyond which any maintenance will incur a small fee."
+                    trigger={<Info className="size-3" />}
+                  />
+                </div>,
+                <div key={5} className="flex items-center gap-2">
+                  <p className="!text-[0.9rem]">2 graphic design requests</p>
+                  <PopoverUI
+                    content={
+                      <div>
+                        You get 2 optional free design graphics; for say launch
+                        ads or flyers to post on social media during the launch
+                        period. See{" "}
+                        <Link
+                          href="/gallery/#design-tab"
+                          className="text-n-accent underline"
+                        >
+                          samples
+                        </Link>
+                      </div>
+                    }
+                    trigger={<Info className="size-3" />}
+                  />
+                </div>,
+                "Auth, CMS",
+              ].map((item, index) => (
+                <div key={index} className="mb-2 flex items-center gap-2">
+                  <CheckCircle2 className="size-5 shrink-0 fill-black stroke-white" />{" "}
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <Button className="mt-12 w-full">Get Started</Button>
+        </div>
+
+        <div className="_pro-card flex flex-col justify-between rounded-md bg-black p-8 text-white md:max-lg:col-span-2 lg:max-h-max">
+          <div className="_wrapper">
+            <h6 className="font-FigtreeR mb-2 font-[700]">Pro</h6>
+            <div className="_price+label mb-10 flex gap-2">
+              <h2 className="_price">$ 599</h2>
+              <p className="self-end pb-1 text-neutral-400">/per project</p>
+            </div>
+
+            <div className="_list !text-[0.9rem]">
+              {[
+                "Free style guide",
+                "18 pages max",
+                "4 rounds of revisions",
+                <div key={4} className="flex items-center gap-2">
+                  <p className="!text-[0.9rem]">
+                    30-day post-launch maintenance warranty
+                  </p>
+                  <PopoverUI
+                    className="border-black bg-black text-white"
+                    content="I will make updates to the site after launch to fix bugs or minor content changes for free
+                    only for 30 days after launch, beyond which any maintenance will incur a small fee."
+                    trigger={<Info className="size-3" />}
+                  />
+                </div>,
+                <div key={5} className="flex items-center gap-2">
+                  <p className="!text-[0.9rem]">6 graphic design requests </p>
+                  <PopoverUI
+                    className="border-black bg-black text-white"
+                    content={
+                      <div>
+                        You get 6 optional free design graphics; for say launch
+                        ads or flyers to post on social media during the launch
+                        period. See{" "}
+                        <Link
+                          href="/gallery/#design-tab"
+                          className="text-pink-300 underline"
+                        >
+                          samples
+                        </Link>
+                      </div>
+                    }
+                    trigger={<Info className="size-3" />}
+                  />
+                </div>,
+                "Auth, CMS",
+                "15% discount on next service request",
+              ].map((item, index) => (
+                <div key={index} className="mb-2 flex items-center gap-2">
+                  <CheckCircle2 className="size-5 shrink-0 fill-white stroke-black" />{" "}
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <Button className="mt-12 w-full bg-white text-black hover:bg-white/90">
+            Get Started
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 function Pricing() {
   return (
     <Section.RootElement id="pricing" className="">
       <Section.Container container="8xl" className="p-10 px-[var(--gutter-x)]">
         <h2 className="font-FigtreeR text-center">
-          Great Pricing For everyone
+          Great Pricing For Everybody
         </h2>
         <p className="mt-4 text-center">
           Whether you need a simple landing page or a complex web application, I
           offer transparent pricing packages tailored to the scale of your
           project.
         </p>
-        <div className="_soon grid h-[200px] place-items-center">
-          <p className="text-muted-foreground">Coming soon...</p>
+
+        <PricingTable />
+
+        <div className="_custom-request mt-15 rounded-md bg-black p-8 text-white md:flex">
+          <h2 className="font-FigtreeR md:min-w-[350px]">
+            Want a custom build?
+            <br />
+            Let&apos;s talk
+          </h2>
+
+          <div className="_left flex flex-col max-md:mt-8 md:items-end md:justify-between">
+            <p>
+              Maybe the pricing here may not really cover your needs. If so
+              I&apos;d be happy to talk things out so we come to a meaningful
+              conclusion.
+            </p>
+
+            <div className="mt-5 flex md:mt-8">
+              <Link href="/blog/introducing-nard-studios">
+                <Button
+                  variant={"ghost"}
+                  className="hover:bg-transparent hover:text-white/90"
+                >
+                  Learn more
+                </Button>
+              </Link>
+              <Link href="/about/#contact">
+                <Button className="hover:bg-white-90 bg-white text-black max-md:order-first">
+                  Contact
+                </Button>
+              </Link>
+            </div>
+          </div>
         </div>
       </Section.Container>
     </Section.RootElement>
@@ -370,7 +563,7 @@ function PricingCalculator() {
 
 export default function ProcessPage() {
   return (
-    <main className="_resources-page min-h-screen">
+    <main className="_resources-page min-h-screen overflow-x-hidden">
       <HashScrollHandler />
       <Hero />
       <Process />

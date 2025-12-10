@@ -19,6 +19,7 @@
   --font-geistSans: var(--font-geist-var-sans);
   --font-Geist: Geist;
   --font-InterV: "InterV";
+  --font-Carbona: "Carbona";
   --font-Axiforma: "Axiforma";
   --font-FKGrotesk: "FKGrotesk";
   --font-PPEditorialItalic: "PPEditorial Italic";
@@ -119,13 +120,13 @@
 
 @layer utilities {
   .debug {
-    @apply border border-y-red-500;
+    @apply border border-y-red-500!;
   }
   .debug-y {
-    @apply border border-yellow-500;
+    @apply border border-yellow-500!;
   }
   .debug-g {
-    @apply border border-green-500;
+    @apply border border-green-500!;
   }
   button {
     cursor: pointer;

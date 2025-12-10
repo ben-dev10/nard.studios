@@ -90,6 +90,13 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Carbona";
+  src: url("fonts/var/Carbona Var.woff2") format("woff2-variations");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
 /* 
 * Non-variable fonts
 */

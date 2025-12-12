@@ -76,7 +76,13 @@ export function AppSheet({ NavLinks, side }: NavLinksProps) {
         </SheetHeader>
         <div className="_sheet-content relative">
           <div className="_sheet-graphic pointer-events-none absolute top-0 left-0 -z-2 h-[150px] w-full">
-            <Image priority alt="sheet isometric art" src={sheetImg} />
+            <Image
+              loading="eager"
+              fetchPriority="high"
+              priority
+              alt="sheet isometric art"
+              src={sheetImg}
+            />
           </div>
 
           <div className="_contents mt-80">

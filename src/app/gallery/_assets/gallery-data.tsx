@@ -16,6 +16,8 @@ import pastries from "./_imgs/pastries-flyer.webp";
 import rmf from "./_imgs/rmf-flyer.webp";
 import rolmag from "./_imgs/rolmag-flyer.webp";
 import smoothie from "./_imgs/smoothie-flyer.webp";
+import vanzil1 from "./_imgs/vanzil@3x.webp";
+import vanzil2 from "./_imgs/vanzil-businesscard@3x.webp";
 
 export const galleryImages = [
   {
@@ -37,6 +39,16 @@ export const galleryImages = [
     tags: ["2D", "Flyer"],
     img: seykusine1,
     alt: "Reviews flyer (seykusine)",
+  },
+  {
+    tags: ["2D", "Flyer"],
+    img: vanzil1,
+    alt: "A profile flyer for an electrical engineer",
+  },
+  {
+    tags: ["2D", "Flyer"],
+    img: vanzil2,
+    alt: "A business card for an electrical engineer",
   },
   {
     tags: ["2D", "Flyer"],

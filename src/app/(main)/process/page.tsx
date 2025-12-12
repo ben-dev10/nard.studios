@@ -243,7 +243,7 @@ function PricingTable() {
       <div className=""></div>
 
       <div className="_pricing-cards mt-15 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        <div className="_starter-card flex flex-col justify-between rounded-md bg-white p-8 lg:max-h-max">
+        <div className="_starter-card border-border/50 flex flex-col justify-between rounded-lg border bg-white p-8 lg:max-h-max">
           <div className="_wrapper">
             <h6 className="font-FigtreeR mb-2 font-[700]">Starter Pack</h6>
             <div className="_price+label mb-10 flex gap-2">
@@ -278,8 +278,11 @@ function PricingTable() {
           <Button className="mt-12 w-full">Get Started</Button>
         </div>
 
-        <div className="_premium-card flex flex-col justify-between rounded-md bg-white p-8 lg:max-h-max">
+        <div className="_premium-card border-n-accent/25 flex flex-col justify-between rounded-lg border-[3px] bg-white p-8 lg:max-h-max">
           <div className="_wrapper">
+            <div className="_badge bg-n-accent -mt-4 mb-2 max-w-max rounded-full p-1 px-3 text-[0.80rem] text-white">
+              Most popular
+            </div>
             <h6 className="font-FigtreeR mb-2 font-[700]">Premium</h6>
             <div className="_price+label mb-10 flex gap-2">
               <h2 className="_price">$ 299</h2>
@@ -333,7 +336,7 @@ function PricingTable() {
           <Button className="mt-12 w-full">Get Started</Button>
         </div>
 
-        <div className="_pro-card flex flex-col justify-between rounded-md bg-black p-8 text-white md:max-lg:col-span-2 lg:max-h-max">
+        <div className="_pro-card flex flex-col justify-between rounded-lg bg-black p-8 text-white md:max-lg:col-span-2 lg:max-h-max">
           <div className="_wrapper">
             <h6 className="font-FigtreeR mb-2 font-[700]">Pro</h6>
             <div className="_price+label mb-10 flex gap-2">
@@ -388,7 +391,7 @@ function PricingTable() {
             </div>
           </div>
 
-          <Button className="mt-12 w-full bg-white text-black hover:bg-white/90">
+          <Button className="mt-25 w-full bg-white text-black hover:bg-white/90">
             Get Started
           </Button>
         </div>
@@ -404,7 +407,7 @@ function Pricing() {
         <h2 className="font-FigtreeR text-center">
           Great Pricing For Everybody
         </h2>
-        <p className="mt-4 text-center">
+        <p className="mx-auto mt-4 max-w-3xl text-center">
           Whether you need a simple landing page or a complex web application, I
           offer transparent pricing packages tailored to the scale of your
           project.

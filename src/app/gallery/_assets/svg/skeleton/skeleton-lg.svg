@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg width="700" height="701" viewBox="0 0 700 701" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <g id="skeleton-lg">
+    <rect id="Rectangle" width="222.727" height="138" fill="#F1F1F1" fill-rule="evenodd" />
+    <rect id="Rectangle" width="222.727" height="239" fill="#F1F1F1" fill-rule="evenodd" transform="translate(238.636 0)" />
+    <rect id="Rectangle" width="222.727" height="177" fill="#F1F1F1" fill-rule="evenodd" transform="translate(477.273 0)" />
+    <rect id="Rectangle" width="222.727" height="177" fill="#F1F1F1" fill-rule="evenodd" transform="translate(477.273 193)" />
+    <rect id="Rectangle" width="222.727" height="215" fill="#F1F1F1" fill-rule="evenodd" transform="translate(0 154)" />
+    <rect id="Rectangle" width="222.727" height="215" fill="#F1F1F1" fill-rule="evenodd" transform="translate(238.636 255)" />
+    <rect id="Rectangle" width="222.727" height="215" fill="#F1F1F1" fill-rule="evenodd" transform="translate(0 385)" />
+    <rect id="Rectangle" width="222.727" height="215" fill="#F1F1F1" fill-rule="evenodd" transform="translate(477.273 386)" />
+    <rect id="Rectangle" width="222.727" height="215" fill="#F1F1F1" fill-rule="evenodd" transform="translate(238.636 486)" />
+  </g>
+</svg>

@@ -10,6 +10,8 @@ import MiniFooter from "../_components/mini-footer";
 import galleryHero from "@/app/_assets/_nard/_ui/gallery-hero.webp";
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
 import FeaturedCards from "./_clients/featured-cards";
+import GallerySkeleton from "@/app/gallery/_assets/gallery-skeleton";
+import { Suspense } from "react";
 
 function Hero() {
   return (
@@ -32,7 +34,13 @@ function Hero() {
           </div>
 
           <div className="_hero-img max-xs:-translate-x-35 pointer-events-none min-w-[600px] -translate-x-20">
-            <Image priority alt="sheet isometric art" src={galleryHero} />
+            <Image
+              loading="eager"
+              fetchPriority="high"
+              priority
+              alt="sheet isometric art"
+              src={galleryHero}
+            />
           </div>
         </div>
       </Section.Container>
@@ -189,7 +197,9 @@ function DesignTabContent() {
           </p>
         </div>
 
-        <Masonry />
+        <Suspense fallback={<GallerySkeleton />}>
+          <Masonry />
+        </Suspense>
       </Section.Container>
     </Section.RootElement>
   );

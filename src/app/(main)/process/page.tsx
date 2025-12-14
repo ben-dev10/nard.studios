@@ -1,8 +1,6 @@
 import Section from "@/components/ui/elements/section";
 import Image from "next/image";
 import Link from "next/link";
-import { CheckCircle2, Info } from "lucide-react";
-import { cn } from "@/lib/utils";
 import {
   Accordion,
   AccordionContent,
@@ -12,57 +10,39 @@ import {
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
 import og from "@/app/_assets/_nard/imgs/og.webp";
 import designProcess from "@/app/_assets/_nard/imgs/design-process.webp";
-import PopoverUI from "@/components/_ui/popover-ui";
 import { Button } from "@/components/ui/button";
+import { Callout } from "@/app/_components/callout";
+import PricingTable from "./clients/pricing-table";
 
 function Hero() {
   return (
     <Section.RootElement className="">
       <Section.Container
         container="8xl"
-        className="px-[var(--gutter-x)] pt-25 pb-10"
+        className="px-[calc(var(--gutter-x)-15px)] pt-25 pb-10"
       >
         <div className="">
           <h1 className="font-FigtreeR max-550:text-4xl max-500:text-balance mb-5 text-center">
             Design & Development Process
           </h1>
           <p className="text-center">
+            Have you ever wondered what goes on behind the scenes when a website
+            is being made? Well, I&apos;ve summarized the whole process here for
+            you.
+          </p>
+          <p className="text-muted-foreground mt-8 border-l-[2px] pl-4 italic">
             I believe building a great website relies on a structured,
             collaborative journey that transforms ideas into a refined digital
             experience. This process should ensure clarity, efficiency, and a
             final product that not only looks good but performs exceptionally
-            well.
+            well -{" "}
+            <span className="text-foreground bold not-italic">by me.</span>
           </p>
         </div>
       </Section.Container>
     </Section.RootElement>
   );
 }
-
-export const Callout = ({
-  text,
-  className,
-}: {
-  text: string | React.ReactNode;
-  className?: string;
-}) => {
-  return (
-    <div
-      className={cn(
-        "_info flex gap-2 rounded-lg border border-sky-200/50 bg-sky-50/50 p-4 pl-0 text-sky-950 [&_p]:text-[0.9rem]",
-        className,
-      )}
-    >
-      <div className="_line mx-1 w-1 rounded-full bg-sky-500 p-1" />
-      <div className="_icon+text flex items-center">
-        <div className="_icon mr-4">
-          <Info className="text-sky-600" size={18} />
-        </div>
-        {text}
-      </div>
-    </div>
-  );
-};
 
 function Process() {
   return (
@@ -89,7 +69,7 @@ function Process() {
               &quot;why&quot; behind the project. This phase is all about
               gathering requirements and setting a solid foundation for the
               project at hand. This takes into account your{" "}
-              <b>goals, audience, brand, specific needs</b> and define the{" "}
+              <b>goals, audience, brand, specific needs</b> and the{" "}
               <b>core features</b> your website must have.
             </p>
 
@@ -113,7 +93,7 @@ function Process() {
               Visualizing the user interface & experience.
             </p>
             <p className="_description">
-              With a clear direction established, move onto the next stage -{" "}
+              With a clear direction established, we move onto the next stage -{" "}
               <b>the visual phase</b>. This is where the look and feel of your
               website takes shape. Some of the key activities at this stage
               include:
@@ -167,9 +147,13 @@ function Process() {
               With approved designs in hand, I begin the technical work. I
               translate the visuals into clean, semantic code that ensures your
               website is fast, secure, and responsive across all devices. You
-              can expect all the default features of a modern site like modern
-              UIs, clean maintainable code, mobile-friendly layouts and
-              interactions, accessibility and performance best practices etc.
+              can expect all the nice features you&apos;ve come to know and
+              expect of a modern site like{" "}
+              <b>
+                modern UIs, clean, secure maintainable code, mobile-friendly
+                layouts and interactions, accessibility, great performance
+              </b>{" "}
+              & <b>SEO</b>.
             </p>
 
             <p className="_description mt-4">
@@ -195,14 +179,14 @@ function Process() {
                 <p className="_p">
                   At this stage, I will be providing daily progress updates and
                   milestone reviews through any preferred messaging channel, to
-                  ensure the project is completed before any deadlines.
+                  ensure the project is completed on time.
                 </p>
               }
             />
           </div>
         </div>
 
-        <div className="_design-process flex gap-5">
+        <div className="_deployment-process flex gap-5">
           <div className="_marker basis-[30px]">
             <p className="m-1 mb-2 grid size-8 place-items-center rounded-full bg-black text-[1.1rem] text-white">
               4
@@ -214,17 +198,20 @@ function Process() {
             <h3 className="_heading font-FigtreeR">Deployment</h3>
             <p className="mt-1 mb-3 text-[1.1rem] italic">Launch and liftoff</p>
             <p className="_description">
-              After development, testing & quality assessment, the final phase
+              After development, testing & quality assessment, the final phase,
               deployment, puts your site before the world, ready for users.
               Final testing across devices and browsers is carried out. We then
-              set up hosting, domains, or deployment pipelines. Other Quality
-              Assurance (QA) activities such as SEO and page-speed optimizations
-              are carried out.
+              set up <b>hosting, domains </b> and <b>deployment pipelines</b>.
+              Other Quality Assurance (QA) activities such as SEO and page-speed
+              optimizations are carried out.
             </p>
 
             <p className="_description mt-4">
               Finally, post-launch checks and optional maintenance and updates
-              are also carried out if need be.
+              are also carried out if need be. At the end of it all, you&apos;d
+              be given a <b>document or a database of credentials and keys</b>{" "}
+              (usually in a private Notion account) to your website for
+              safekeeping or for future use.
             </p>
 
             <div className="_process-media mt-5 mb-16">
@@ -237,173 +224,13 @@ function Process() {
   );
 }
 
-function PricingTable() {
-  return (
-    <div className="_pricing+table">
-      <div className=""></div>
-
-      <div className="_pricing-cards mt-15 grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
-        <div className="_starter-card border-border/50 flex flex-col justify-between rounded-lg border bg-white p-8 lg:max-h-max">
-          <div className="_wrapper">
-            <h6 className="font-FigtreeR mb-2 font-[700]">Starter Pack</h6>
-            <div className="_price+label mb-10 flex gap-2">
-              <h2 className="_price">$ 109</h2>
-              <p className="self-end pb-1 text-neutral-500">/per project</p>
-            </div>
-
-            <div className="_list text-[0.9rem]">
-              {[
-                "Free style guide",
-                "4 pages max",
-                "1 round of revisions",
-                <div key={4} className="flex items-center gap-2">
-                  <p className="text-[0.9rem]">
-                    14-day post-launch maintenance warranty
-                  </p>
-                  <PopoverUI
-                    content="I will make updates to the site after launch to fix bugs or minor content changes for free
-                    only for 14 days after launch, beyond which any maintenance will incur a small fee."
-                    trigger={<Info className="size-3" />}
-                  />
-                </div>,
-              ].map((item, index) => (
-                <div key={index} className="mb-2 flex items-center gap-1">
-                  <CheckCircle2 className="size-5 shrink-0 fill-black stroke-white" />{" "}
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <Button className="mt-12 w-full">Get Started</Button>
-        </div>
-
-        <div className="_premium-card border-n-accent/25 flex flex-col justify-between rounded-lg border-[3px] bg-white p-8 lg:max-h-max">
-          <div className="_wrapper">
-            <div className="_badge bg-n-accent -mt-4 mb-2 max-w-max rounded-full p-1 px-3 text-[0.80rem] text-white">
-              Most popular
-            </div>
-            <h6 className="font-FigtreeR mb-2 font-[700]">Premium</h6>
-            <div className="_price+label mb-10 flex gap-2">
-              <h2 className="_price">$ 299</h2>
-              <p className="self-end pb-1 text-neutral-500">/per project</p>
-            </div>
-
-            <div className="_list !text-[0.9rem]">
-              {[
-                "Free style guide",
-                "8 pages max",
-                "3 rounds of revisions",
-                <div key={4} className="flex items-center gap-2">
-                  <p className="!text-[0.9rem]">
-                    21-day post-launch maintenance warranty
-                  </p>
-                  <PopoverUI
-                    content="I will make updates to the site after launch to fix bugs or minor content changes for free
-                    only for 21 days after launch, beyond which any maintenance will incur a small fee."
-                    trigger={<Info className="size-3" />}
-                  />
-                </div>,
-                <div key={5} className="flex items-center gap-2">
-                  <p className="!text-[0.9rem]">2 graphic design requests</p>
-                  <PopoverUI
-                    content={
-                      <div>
-                        You get 2 optional free design graphics; for say launch
-                        ads or flyers to post on social media during the launch
-                        period. See{" "}
-                        <Link
-                          href="/gallery/#design-tab"
-                          className="text-n-accent underline"
-                        >
-                          samples
-                        </Link>
-                      </div>
-                    }
-                    trigger={<Info className="size-3" />}
-                  />
-                </div>,
-                "Auth, CMS",
-              ].map((item, index) => (
-                <div key={index} className="mb-2 flex items-center gap-2">
-                  <CheckCircle2 className="size-5 shrink-0 fill-black stroke-white" />{" "}
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <Button className="mt-12 w-full">Get Started</Button>
-        </div>
-
-        <div className="_pro-card flex flex-col justify-between rounded-lg bg-black p-8 text-white md:max-lg:col-span-2 lg:max-h-max">
-          <div className="_wrapper">
-            <h6 className="font-FigtreeR mb-2 font-[700]">Pro</h6>
-            <div className="_price+label mb-10 flex gap-2">
-              <h2 className="_price">$ 599</h2>
-              <p className="self-end pb-1 text-neutral-400">/per project</p>
-            </div>
-
-            <div className="_list !text-[0.9rem]">
-              {[
-                "Free style guide",
-                "18 pages max",
-                "4 rounds of revisions",
-                <div key={4} className="flex items-center gap-2">
-                  <p className="!text-[0.9rem]">
-                    30-day post-launch maintenance warranty
-                  </p>
-                  <PopoverUI
-                    className="border-black bg-black text-white"
-                    content="I will make updates to the site after launch to fix bugs or minor content changes for free
-                    only for 30 days after launch, beyond which any maintenance will incur a small fee."
-                    trigger={<Info className="size-3" />}
-                  />
-                </div>,
-                <div key={5} className="flex items-center gap-2">
-                  <p className="!text-[0.9rem]">6 graphic design requests </p>
-                  <PopoverUI
-                    className="border-black bg-black text-white"
-                    content={
-                      <div>
-                        You get 6 optional free design graphics; for say launch
-                        ads or flyers to post on social media during the launch
-                        period. See{" "}
-                        <Link
-                          href="/gallery/#design-tab"
-                          className="text-pink-300 underline"
-                        >
-                          samples
-                        </Link>
-                      </div>
-                    }
-                    trigger={<Info className="size-3" />}
-                  />
-                </div>,
-                "Auth, CMS",
-                "15% discount on next service request",
-              ].map((item, index) => (
-                <div key={index} className="mb-2 flex items-center gap-2">
-                  <CheckCircle2 className="size-5 shrink-0 fill-white stroke-black" />{" "}
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <Button className="mt-25 w-full bg-white text-black hover:bg-white/90">
-            Get Started
-          </Button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function Pricing() {
   return (
     <Section.RootElement id="pricing" className="">
-      <Section.Container container="8xl" className="p-10 px-[var(--gutter-x)]">
+      <Section.Container
+        container="8xl"
+        className="p-10 px-[calc(var(--gutter-x)-15px)]"
+      >
         <h2 className="font-FigtreeR text-center">
           Great Pricing For Everybody
         </h2>
@@ -412,6 +239,13 @@ function Pricing() {
           offer transparent pricing packages tailored to the scale of your
           project.
         </p>
+
+        <div className="_info-callout my-8">
+          <Callout
+            theme="red"
+            text="The payment feature here isn't fully implemented yet. We'll be going by the traditional payments routes for now."
+          />
+        </div>
 
         <PricingTable />
 
@@ -454,7 +288,10 @@ function Pricing() {
 function FAQMain() {
   return (
     <Section.RootElement id="FAQs" className="">
-      <Section.Container container="8xl" className="p-10 px-[var(--gutter-x)]">
+      <Section.Container
+        container="8xl"
+        className="p-10 px-[calc(var(--gutter-x)-20px)]"
+      >
         <div className="_header">
           <h2 className="font-FigtreeR mt-10 mb-2 text-center font-[700]">
             Frequently Asked Questions{" "}

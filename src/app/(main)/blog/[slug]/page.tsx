@@ -9,7 +9,6 @@ import { TableOfContents } from "@/components/_blog/table-of-contents";
 import { MobileTableOfContents } from "@/components/_blog/mobile-toc";
 import { AuthorCard } from "@/components/_blog/author-card";
 import { ReadMoreSection } from "@/components/_blog/read-more-section";
-// import { PromoContent } from "@/components/_blog/promo-content";
 import { getAuthor, isValidAuthor } from "@/lib/authors";
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
 import Background from "@/components/ui/elements/background";
@@ -17,10 +16,6 @@ import BlogFlickeringGrid from "@/app/_components/blog-flickering-grid";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
 
-/*
- * generateMetadata() as it name suggests, generates all the metadata that would be
- *  used in the meta tags after build
- */
 interface BlogDataMeta {
   title: string;
   description?: string;
@@ -135,10 +130,6 @@ export async function generateMetadata({
   }
 }
 
-// ------------------------------------------ //
-/*
- * BlogPost() is the main function that would generate the page template for a given blogpost.
- */
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
@@ -166,6 +157,7 @@ const formatDate = (date: Date): string => {
   });
 };
 
+/* main slug component for a given post. */
 export default async function BlogPost({ params }: PageProps) {
   const { slug } = await params;
 
@@ -237,6 +229,12 @@ export default async function BlogPost({ params }: PageProps) {
             </p>
           )}
         </div>
+
+        <div className="block max-w-7xl p-6 pt-0 lg:hidden">
+          {page.data.author && isValidAuthor(page.data.author) && (
+            <AuthorCard author={getAuthor(page.data.author)} />
+          )}
+        </div>
       </section>
 
       <section className="_page-contents divide-border mx-auto flex max-w-7xl divide-x px-4 md:px-0">
@@ -279,7 +277,6 @@ export default async function BlogPost({ params }: PageProps) {
             <div className="border-border bg-card rounded-lg border p-6">
               <TableOfContents />
             </div>
-            {/* <PromoContent variant="desktop" /> */}
           </div>
         </aside>
       </section>

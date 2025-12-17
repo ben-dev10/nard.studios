@@ -43,17 +43,26 @@ export default function PopoverUI({
   className,
   trigger,
   align,
+  asChild,
+  side,
+  disabled,
 }: {
   content?: React.ReactNode;
   className?: string;
   trigger?: React.ReactNode;
   align?: "center" | "start" | "end" | undefined;
+  asChild?: boolean | undefined;
+  side?: "top" | "right" | "bottom" | "left" | undefined;
+  disabled?: boolean | undefined;
 }) {
   return (
     <Popover>
-      <PopoverTrigger>{trigger ? trigger : <Trigger02 />}</PopoverTrigger>
+      <PopoverTrigger asChild={asChild} disabled={disabled}>
+        {trigger ? trigger : <Trigger02 />}
+      </PopoverTrigger>
       <PopoverContent
         align={align}
+        side={side}
         className={`${className} w-[170px] max-w-max rounded-[10px] p-1.5 px-2.5 text-[0.8rem]`}
       >
         {content}

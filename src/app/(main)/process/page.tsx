@@ -8,11 +8,14 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
-import og from "@/app/_assets/_nard/imgs/og.webp";
-import designProcess from "@/app/_assets/_nard/imgs/design-process.webp";
 import { Button } from "@/components/ui/button";
 import { Callout } from "@/app/_components/callout";
 import PricingTable from "./clients/pricing-table";
+
+import discoveryProcess from "./assets/discovery-process.webp";
+import designProcess from "./assets/design-process.webp";
+import developmentProcess from "./assets/development-process.webp";
+import deploymentProcess from "./assets/deployment-process.webp";
 
 function Hero() {
   return (
@@ -74,7 +77,11 @@ function Process() {
             </p>
 
             <div className="_process-media mt-5 pb-16">
-              <Image alt="_discover-media" src={og} className="" />
+              <Image
+                alt="_discover-media"
+                src={discoveryProcess}
+                className=""
+              />
             </div>
           </div>
         </div>
@@ -170,7 +177,11 @@ function Process() {
             </p>
 
             <div className="_process-media mt-5 mb-8">
-              <Image alt="_development-media" src={og} className="" />
+              <Image
+                alt="_development-media"
+                src={developmentProcess}
+                className=""
+              />
             </div>
 
             <Callout
@@ -215,7 +226,11 @@ function Process() {
             </p>
 
             <div className="_process-media mt-5 mb-16">
-              <Image alt="_discover-media" src={og} className="" />
+              <Image
+                alt="_discover-media"
+                src={deploymentProcess}
+                className=""
+              />
             </div>
           </div>
         </div>

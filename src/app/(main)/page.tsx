@@ -7,12 +7,6 @@ import { CircleCheck } from "lucide-react";
 import ActionBTN from "../_components/_ui/action-btn";
 import CTA from "../_components/cta";
 import { ReadMoreSection } from "@/components/_blog/read-more-section";
-import cereal from "@/app/gallery/_assets/_imgs/cereal-3d(1).webp";
-import velvet from "@/app/gallery/_assets/_imgs/velvet.webp";
-import profileCard from "@/app/gallery/_assets/_imgs/profile-card.webp";
-import clonesSVG from "../_assets/_nard/svgs/clones-block.svg";
-import gallerySVG from "../_assets/_nard/svgs/gallery-block.svg";
-import flyersCollage from "../_assets/_nard/imgs/flyers--img-arts.webp";
 import CardsCarousel from "./_clients/cards-carousel";
 import {
   Accordion,
@@ -23,6 +17,16 @@ import {
 import { Hero } from "./_clients/home-hero";
 import { MotionStagger } from "@/components/_motion/core";
 import { Button } from "@/components/ui/button";
+
+import cereal from "@/app/gallery/_assets/_imgs/cereal-3d(1).webp";
+import velvet from "@/app/gallery/_assets/_imgs/velvet.webp";
+import profileCard from "@/app/gallery/_assets/_imgs/profile-card.webp";
+import clonesSVG from "../_assets/_nard/svgs/clones-block.svg";
+import gallerySVG from "../_assets/_nard/svgs/gallery-block.svg";
+import flyersCollage from "../_assets/_nard/imgs/flyers--img-arts.webp";
+import ndkFlyer from "../_assets/_nard/imgs/ndk-flyer.webp";
+import ProjectCard from "../_components/project-card";
+import { NDK_SITE } from "../_assets/constants";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 
@@ -53,6 +57,18 @@ function Projects() {
               (<i>mostly</i> 🙃)
             </p>
           </MotionStagger>
+
+          <div className="_featured-card mx-auto mt-15 mb-15 max-w-[650px]">
+            <ProjectCard
+              href={NDK_SITE}
+              title="ndk"
+              desc="A mini toolkit for frontend development - shadcn components, themes, and more."
+              alt="ndk's homepage flyer"
+              img={ndkFlyer}
+              className=""
+              linkText="Website"
+            />
+          </div>
 
           <div className="_h3 mb-5 flex">
             <Image

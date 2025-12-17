@@ -12,6 +12,11 @@ import { HashScrollHandler } from "@/components/hash-scroll-handler";
 import FeaturedCards from "./_clients/featured-cards";
 import GallerySkeleton from "@/app/gallery/_assets/gallery-skeleton";
 import { Suspense } from "react";
+import ProjectCard from "../_components/project-card";
+import { NDK_SITE } from "../_assets/constants";
+
+import ndkFlyer from "../_assets/_nard/imgs/ndk-flyer.webp";
+import PopoverUI from "@/components/_ui/popover-ui";
 
 function Hero() {
   return (
@@ -106,9 +111,22 @@ function SoftwareTabContent() {
           </p>
           <hr className="w-full" />
         </div>
+
+        <div className="_featured-card mx-auto mt-15 mb-15 max-w-[650px]">
+          <ProjectCard
+            href={NDK_SITE}
+            title="ndk"
+            desc="A mini toolkit for frontend development - shadcn components, themes, and more."
+            alt="ndk's homepage flyer"
+            img={ndkFlyer}
+            className=""
+            linkText="Website"
+          />
+        </div>
       </Section.Container>
 
       <FeaturedCards />
+
       <Section.Container
         container="8xl"
         className="_ui-blocks mb-30 p-8 px-[var(--gutter-x)]"
@@ -227,25 +245,33 @@ export default function GalleryPage() {
           <Tabs defaultValue="software" className="_header-tabs">
             <TabsList className="mx-auto flex h-12 [&_p]:text-[1rem]">
               <TabsTrigger id="software-tab" value="software">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 px-2">
                   <Code2 className="size-5 shrink-0" />
                   <p>Software</p>
                 </div>
               </TabsTrigger>
 
               <TabsTrigger id="design-tab" value="design" className="">
-                <div className="flex items-center gap-2">
+                <div className="flex items-center gap-2 px-2">
                   <PenToolIcon className="size-5 shrink-0" />
                   <p className="">Design</p>
                 </div>
               </TabsTrigger>
 
-              <TabsTrigger id="engineering-tab" value="engineering" disabled>
-                <div className="flex items-center gap-2">
-                  <BookTextIcon className="size-5 shrink-0" />
-                  <p>Engineer...(soon)</p>
-                </div>
-              </TabsTrigger>
+              <div className="" id="engineering-tab">
+                <PopoverUI
+                  side="top"
+                  trigger={
+                    <TabsTrigger value="engineering" disabled asChild>
+                      <div className="flex items-center gap-2 opacity-40">
+                        <BookTextIcon className="size-5 shrink-0" />
+                        <p>Engineering</p>
+                      </div>
+                    </TabsTrigger>
+                  }
+                  content="Coming soon..."
+                />
+              </div>
             </TabsList>
             <>
               <TabsContent value="software">

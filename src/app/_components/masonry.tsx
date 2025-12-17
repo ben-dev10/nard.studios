@@ -6,6 +6,7 @@ import Lightbox from "./_ui/lightbox";
 import PopoverUI from "@/components/_ui/popover-ui";
 import { ArrowLeft, ArrowRight, Info } from "lucide-react";
 import { MotionStagger } from "@/components/_motion/core";
+import { Kbd, KbdGroup } from "@/components/ui/kbd";
 
 export default function Masonry() {
   const [selectedImg, setSelectedImg] = useState<number | null>(null);
@@ -48,12 +49,22 @@ export default function Masonry() {
             <div className="text-neutral-500 [&_p]:!text-[0.85rem]">
               <p>Click on an image to view in full-screen.</p>
               <p className="mt-5">
-                Press <kbd>esc</kbd> to exit (or click outside), left{" "}
-                <ArrowLeft size={12} className="mx-1 inline text-black" />
+                Press{" "}
+                <KbdGroup>
+                  <Kbd> esc </Kbd>
+                </KbdGroup>{" "}
+                to exit (or click outside), left{" "}
+                <KbdGroup>
+                  <Kbd>
+                    <ArrowLeft size={12} className="m-1 inline" />
+                  </Kbd>
+                </KbdGroup>
                 and right{" "}
-                <kbd>
-                  <ArrowRight size={12} className="mx-1 inline text-black" />
-                </kbd>{" "}
+                <KbdGroup>
+                  <Kbd>
+                    <ArrowRight size={12} className="m-1 inline" />
+                  </Kbd>
+                </KbdGroup>{" "}
                 arrow keys to cycle through.
               </p>
             </div>

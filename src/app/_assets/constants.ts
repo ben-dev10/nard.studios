@@ -10,3 +10,4 @@ export const XTWITTER_LINK =
 export const IG_LINK = "";
 
 export const NARD_EMAIL = "nard.studios.hq@gmail.com";
+export const NDK_SITE = "https://ndk-ui.vercel.app/";

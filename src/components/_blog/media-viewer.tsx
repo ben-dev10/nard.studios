@@ -23,10 +23,7 @@ export function MediaViewer({
   const mediaProps = {
     src,
     alt,
-    className: cn(
-      "w-full h-full rounded-lg border overflow-hidden aspect-video",
-      className,
-    ),
+    className: cn("w-full h-full rounded-lg border overflow-hidden", className),
     ...(width && height ? { width, height } : {}),
   };
 
@@ -42,6 +39,7 @@ export function MediaViewer({
     if (type === "zoomable image") {
       return (
         <ZoomImage
+          {...mediaProps}
           img={{
             alt: alt,
             src: src,
@@ -56,7 +54,7 @@ export function MediaViewer({
 
   return (
     <div className="my-6 w-full">
-      <div className="relative aspect-video w-full">{renderMedia()}</div>
+      <div className="relative w-full">{renderMedia()}</div>
     </div>
   );
 }

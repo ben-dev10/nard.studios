@@ -13,7 +13,7 @@ import { SVGProps } from "react";
  *  size-*
  */
 
-type IconProps = SVGProps<SVGSVGElement> & {
+export type IconProps = SVGProps<SVGSVGElement> & {
   secondaryfill?: string;
   strokewidth?: number;
   title?: string;

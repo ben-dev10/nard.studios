@@ -116,6 +116,10 @@
     border-top-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
   }
+
+  .shiki > div > pre > code {
+    @apply text-[0.92rem];
+  }
 }
 
 @layer utilities {
@@ -134,6 +138,10 @@
 
   .gradient-text {
     @apply bg-clip-text text-transparent;
+  }
+
+  ._blog-link {
+    @apply text-n-accent decoration-n-accent !underline;
   }
 
   .container-4xl,

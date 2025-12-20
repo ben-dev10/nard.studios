@@ -17,11 +17,12 @@ export const { docs, meta } = defineDocs({
   docs: {
     schema: frontmatterSchema.extend({
       date: z.string(),
+      readTime: z.string(),
       tags: z.array(z.string()).optional(),
       featured: z.boolean().optional().default(false),
-      readTime: z.string().optional(),
       author: z.string().optional(),
       thumbnail: z.string().optional(),
+      lastModifiedDate: z.string().optional(),
     }),
   },
 });

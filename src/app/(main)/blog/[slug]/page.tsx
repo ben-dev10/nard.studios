@@ -15,6 +15,7 @@ import Background from "@/components/ui/elements/background";
 import BlogFlickeringGrid from "@/app/_components/blog-flickering-grid";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
+import TimerIcon from "@/components/_ui/icons/timer";
 
 interface BlogDataMeta {
   title: string;
@@ -23,6 +24,8 @@ interface BlogDataMeta {
   tags?: string[];
   thumbnail?: string;
   author?: string;
+  readTime?: string;
+  featured?: boolean;
 }
 
 interface BlogPageMeta {
@@ -142,6 +145,9 @@ interface BlogData {
   thumbnail?: string;
   author?: string;
   body?: unknown;
+  readTime?: string;
+  featured?: boolean;
+  lastModifiedDate?: string;
 }
 
 interface BlogPage {
@@ -182,7 +188,7 @@ export default async function BlogPost({ params }: PageProps) {
 
   return (
     <main
-      className={`${NEGATIVE_MARGIN} _blogpost-page relative overflow-visible bg-transparent`}
+      className={`${NEGATIVE_MARGIN} _blogpost-page _ui-reset relative overflow-visible bg-transparent`}
     >
       <HashScrollHandler />
       <Background className="_flickering-grid-bg">
@@ -230,10 +236,26 @@ export default async function BlogPost({ params }: PageProps) {
           )}
         </div>
 
-        <div className="block max-w-7xl p-6 pt-0 lg:hidden">
-          {page.data.author && isValidAuthor(page.data.author) && (
-            <AuthorCard author={getAuthor(page.data.author)} />
-          )}
+        <div className="_page-data mx-auto mt-10 mb-2 flex max-w-7xl justify-between gap-2 lg:px-6">
+          <div className="_author-card block p-6 pt-0 lg:hidden">
+            {page.data.author && isValidAuthor(page.data.author) && (
+              <AuthorCard author={getAuthor(page.data.author)} />
+            )}
+          </div>
+
+          <div className="_dates flex flex-col pr-6 lg:flex-row lg:items-center lg:gap-5">
+            <div className="flex items-center gap-1 pb-2 lg:pb-0">
+              <TimerIcon className="text-muted-foreground size-4" />{" "}
+              <p className="text-[0.9rem]">{page.data.readTime}</p>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <p className="text-muted-foreground text-[0.9rem]">
+                Last Modified:
+              </p>
+              <p className="text-[0.9rem]">{page.data.lastModifiedDate}</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -254,9 +276,9 @@ export default async function BlogPost({ params }: PageProps) {
             </div>
           )}
 
-          <article className="_docs-body p-6 px-[calc(var(--gutter-x)-10px)] lg:p-10">
+          <article className="_docs-body p-6 px-[calc(var(--gutter-x)-20px)] lg:p-10">
             {/* prose-p:text-balance   -   tailwind-prose plugin update */}
-            <div className="_docs-body--wrapper prose dark:prose-invert prose-headings:scroll-mt-8 prose-headings:font-semibold prose-a:no-underline prose-headings:tracking-tight prose-headings:text-balance prose-p:tracking-tight prose-lg max-w-none">
+            <div className="_docs-body--wrapper prose dark:prose-invert prose-headings:scroll-mt-8 prose-headings:font-semibold prose-a:no-underline prose-headings:tracking-tight prose-headings:text-balance prose-code:text-[0.90rem] prose-p:tracking-tight prose-p:!leading-[1.8rem] prose-lg max-w-none pb-30">
               <DocsBody>{MDX ? <MDX /> : null}</DocsBody>
             </div>
           </article>
@@ -269,7 +291,7 @@ export default async function BlogPost({ params }: PageProps) {
           </aside>
         </section>
 
-        <aside className="_aside bg-muted/60 dark:bg-muted/20 hidden w-[350px] flex-shrink-0 p-6 pb-30 lg:block lg:p-10">
+        <aside className="_aside bg-muted/60 debug dark:bg-muted/20 hidden w-[350px] flex-shrink-0 p-6 pb-30 lg:block lg:p-10">
           <div className="sticky top-20 z-0 space-y-8">
             {page.data.author && isValidAuthor(page.data.author) && (
               <AuthorCard author={getAuthor(page.data.author)} />

@@ -86,6 +86,7 @@ export default function PricingTable() {
       };
 
       setRates(newRates);
+      toast.success("Rates updated successfully.");
     } catch (err) {
       toast.error("Failed to update rates");
       console.error("Error fetching exchange rates:", err);

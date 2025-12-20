@@ -10,40 +10,45 @@ thumbnail: "/_blog/thumbnails/vscode-customization.webp"
 lastModifiedDate: "19/12/25"
 ---
 
-
-Part of what makes VS Code beloved by many is it's extensibility, you can customize pretty much any part of the interface through extensions. 
-One way of customization is through the **product and file icons** VS Code uses in it's interface.
-
-
+Part of what makes VS Code beloved by many is its extensibility—you can customize pretty much any part of the interface through extensions.
+One way of doing this is by customizing the <Link target="_blank" href="https://code.visualstudio.com/api/extension-guides/product-icon-theme" className="_blog-link">product</Link> and file icons VS Code uses in its interface, this article will focus on the latter.
 
 # Configuring with custom icons.
 
-Took me a while to figure it out but you can customize the folder icons for Material Icon theme (Published by Philipp Kief, v5.28.0). I followed the instructions outlined in the details tab of the extension page.
+It took me a while to figure this out, but you can customize folder icons for the Material Icon Theme (published by Philipp Kief, v5.28.0). I followed the instructions outlined in the Details tab of the extension page.
 
+Before we begin, make sure you prepare two SVG icons for the folder you want to customize — one for the closed state and the other for the opened state. Here is a sample for a folder name `lab`.
 
+SVG Files:
 
-Before we begin, make sure you prepare 2 SVG icons for the folder you want to customize, one for the closed state and the other for the opened state. Here is a sample for a folder name `lab`.
-
-SVG Files: 
-<div className='flex items-center w-[100px] h-[40px] mb-10'>
-  <ImageViewer className="size-12 border-0 !my-0" src="/_blog/posts/customizing-vs-code/svgs/folder-sample-open.svg" />
-  <ImageViewer className="size-12 border-0 !my-0" src="/_blog/posts/customizing-vs-code/svgs/folder-sample.svg" />
+<div className="mb-10 flex h-[40px] w-[100px] items-center">
+  <ImageViewer
+    className="!my-0 size-12 border-0"
+    src="/_blog/posts/customizing-vs-code/svgs/folder-sample-open.svg"
+  />
+  <ImageViewer
+    className="!my-0 size-12 border-0"
+    src="/_blog/posts/customizing-vs-code/svgs/folder-sample.svg"
+  />
 </div>
 
+You can name them whatever you want, but be sure to append `-open` before the file extension for the opened-state SVG.
 
-You can call them whatever you want, but be sure to attach `-open` before the extension for the opened state SVG. <MediaViewer type="zoomable image" src="/_blog/posts/customizing-vs-code/imgs/svgs.png" />
+<MediaViewer
+  type="zoomable image"
+  src="/_blog/posts/customizing-vs-code/imgs/svgs.png"
+/>
 
+Next, you need to move the icons to a folder on your system where the extension can access them. For this to work, place them in a custom folder (I named mine "icons") inside the VS Code extensions directory.
+The is usually located in your root folder at: `<user>/.vscode/extensions/`.
 
+<MediaViewer
+  type="zoomable image"
+  src="/_blog/posts/customizing-vs-code/imgs/icons-folder.png"
+/>
 
-Next, you have to move the icons to a folder on your system where the extension can reach. For this to work, you have to drop them in a custom folder (I named mine "icons") in the VS Code extensions folder. 
-The is usually in your root folder: `<user>/.vscode/extensions/`.
-
-<MediaViewer type="zoomable image" src="/_blog/posts/customizing-vs-code/imgs/icons-folder.png" />
-
-
-
-The last thing to do is to update Material Theme Icons' config in the user `settings.json` file. To access this, search for "material" in settings and click on "Edit in settings.json" 
-link under "Material Icons > Folders: Associations ",  and add the following snippet (that is if the config object hasn't been populated automatically):
+The final step is to update the Material Icon Theme configuration in your user `settings.json` file. To access this, search for “material” in Settings and click the “Edit in settings.json” link under
+Material Icons > Folders: Associations, then add the following snippet (only if the object hasn't already been populated):
 
 ```json title="settings.json"
   "material-icon-theme.folders.associations": {
@@ -51,29 +56,30 @@ link under "Material Icons > Folders: Associations ",  and add the following sni
   }
 ```
 
-
 <Callout type="info">
-  You can get to the user settings quicker by searching "user settings" in the command prompt. 
+  You can get to the user settings more quickly by searching for "User Settings"
+  in the Command Palette.
 </Callout>
 
+<MediaViewer
+  type="zoomable image"
+  src="/_blog/posts/customizing-vs-code/imgs/settings.png"
+/>
 
+Now, create a folder named "lab", and your new icons will be applied. (You may need to restart VS Code for the changes to take effect.)
 
+Final result:
 
-<MediaViewer type="zoomable image" src="/_blog/posts/customizing-vs-code/imgs/settings.png" />
-
-
-
-Now, create a folder with the name `lab` and or new icons will be applied. (You may need to restart VS Code after this).
-
-Final result: 
-
-<MediaViewer type="zoomable image" src="/_blog/posts/customizing-vs-code/imgs/lab.png" />
-
+<MediaViewer
+  type="zoomable image"
+  src="/_blog/posts/customizing-vs-code/imgs/lab.png"
+/>
 
 ## Cloning existing icons
 
-If you don't have the time to make custom icons of your own, you can clone existing icons and have them associate with a custom name you choose.
-This approach is way more simpler and straightforward. Open your user `settings.json` file and paste the following snippet:
+If you don't have the time to create custom icons, you can clone existing ones and associate them with custom folder names.
+
+This approach is much simpler and straightforward. Open your user `settings.json` file and paste the following snippet:
 
 ```json title="settings.json"
   "material-icon-theme.folders.customClones": [
@@ -87,17 +93,16 @@ This approach is way more simpler and straightforward. Open your user `settings.
     }
   ]
 ```
-For the above example. the new association here is `del` and the icon we are cloning is `trash`. See the folder and Icon names <Link href="#" className="_blog-link">reference.</Link>
 
-<br className='mt-10' />
+For the above example, the new association is `del` and the icon being cloned is `trash`. See the folder and Icon names <Link target="_blank" href="https://www.npmjs.com/package/material-icon-theme?activeTab=readme" className="_blog-link">reference.</Link>
+
+<br className="mt-10" />
 
 # Conclusion
 
-Today we only covered folder customizations but you can apply this same method to customize file icons too. Take a look at these links to learn
-more about this topic.
-- <Link href="">VSCode</Link>
-- <Link href="">Official Material Theme Docs</Link>
-- <Link href="">Material theme extension download</Link>
-- <Link href="">Icon and folder name reference.</Link>
+Today, we only covered folder customizations, but the same method can be applied to file icons as well. Thanks for reading!
 
-Thanks for reading!
+### Resources
+
+- <Link href="https://www.npmjs.com/package/material-icon-theme?activeTab=readme" target="_blank" className="_blog-link">Official Material Theme Docs</Link>
+- <Link href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme" target="_blank" className="_blog-link">Material theme extension download</Link>

@@ -28,7 +28,6 @@ export function CopyHeader({
 
   const HeadingTag = `h${level}` as "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const copyToClipboard = async () => {
     const url = `${window.location.origin}${window.location.pathname}#${id}`;
 
@@ -69,9 +68,8 @@ export function CopyHeader({
           "group hover:text-muted-foreground relative flex cursor-pointer scroll-mt-20 items-center gap-2 transition-colors duration-200",
           className,
         )}
-        // Uncomment below to enable copy header-link on-click
-        // onClick={copyToClipboard}
-        // title="Click to copy link to this section"
+        onClick={copyToClipboard}
+        title="Click to copy link to this section"
         {...props}
       >
         {children}

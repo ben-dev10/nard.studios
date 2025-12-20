@@ -172,7 +172,7 @@ const ProductScreenshots = () => {
         <Image
           src={productScreenshots}
           alt="Large product screenshot of payload interfaces"
-          className="aspect-[auto_2880/1940]"
+          className="aspect-[auto_2880/1940] w-full"
         />
       </Section.Container>
     </Section.RootElement>

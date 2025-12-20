@@ -291,7 +291,7 @@ export default async function BlogPost({ params }: PageProps) {
           </aside>
         </section>
 
-        <aside className="_aside bg-muted/60 debug dark:bg-muted/20 hidden w-[350px] flex-shrink-0 p-6 pb-30 lg:block lg:p-10">
+        <aside className="_aside bg-muted/60 dark:bg-muted/20 hidden w-[350px] flex-shrink-0 p-6 pb-30 lg:block lg:p-10">
           <div className="sticky top-20 z-0 space-y-8">
             {page.data.author && isValidAuthor(page.data.author) && (
               <AuthorCard author={getAuthor(page.data.author)} />

@@ -172,6 +172,7 @@ function Resume() {
               <span className="absolute inline-block size-[7px] shrink-0 rounded-full bg-blue-400" />{" "}
             </div>
           </div>
+          
           <div className="mt-2 block">
             <p>
               I am currently available for freelance projects or any work

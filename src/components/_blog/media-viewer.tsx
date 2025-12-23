@@ -60,6 +60,10 @@ export function MediaViewer({
 }
 
 // Helper components for easier MDX usage
+export function ZoomImageViewer(props: Omit<MediaViewerProps, "type">) {
+  return <MediaViewer {...props} type="zoomable image" />;
+}
+
 export function ImageViewer(props: Omit<MediaViewerProps, "type">) {
   return <MediaViewer {...props} type="image" />;
 }

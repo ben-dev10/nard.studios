@@ -5,6 +5,7 @@ import {
   MediaViewer,
   ImageViewer,
   VideoViewer,
+  ZoomImageViewer,
 } from "@/components/_blog/media-viewer";
 import {
   Accordion,
@@ -16,6 +17,7 @@ import { AuthorCard } from "@/components/_blog/author-card";
 import { getAuthor, type AuthorKey } from "@/lib/authors";
 import { CopyHeader } from "@/components/_blog/copy-header";
 import Link from "next/link";
+import { ImageZoom as ImgZoom } from "fumadocs-ui/components/image-zoom";
 
 const createHeading = (level: number) => {
   const Heading = ({
@@ -45,7 +47,12 @@ function Author({ id }: AuthorProps) {
 export function getMDXComponents(components?: MDXComponents): MDXComponents {
   return {
     ...defaultMdxComponents,
+    ImageZoom: (props) => (
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      <ImgZoom className="w-full rounded-lg" {...(props as any)} />
+    ),
     MediaViewer,
+    ZoomImageViewer,
     ImageViewer,
     VideoViewer,
     Accordion,

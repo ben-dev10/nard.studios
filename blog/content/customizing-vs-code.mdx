@@ -34,18 +34,12 @@ SVG Files:
 
 You can name them whatever you want, but be sure to append `-open` before the file extension for the opened-state SVG.
 
-<MediaViewer
-  type="zoomable image"
-  src="/_blog/posts/customizing-vs-code/imgs/svgs.png"
-/>
+<ImageZoom src="/_blog/posts/customizing-vs-code/imgs/svgs.png" />
 
 Next, you need to move the icons to a folder on your system where the extension can access them. For this to work, place them in a custom folder (I named mine "icons") inside the VS Code extensions directory.
 The is usually located in your root folder at: `<user>/.vscode/extensions/`.
 
-<MediaViewer
-  type="zoomable image"
-  src="/_blog/posts/customizing-vs-code/imgs/icons-folder.png"
-/>
+<ImageZoom src="/_blog/posts/customizing-vs-code/imgs/icons-folder.png" />
 
 The final step is to update the Material Icon Theme configuration in your user `settings.json` file. To access this, search for “material” in Settings and click the “Edit in settings.json” link under
 Material Icons > Folders: Associations, then add the following snippet (only if the object hasn't already been populated):
@@ -61,19 +55,13 @@ Material Icons > Folders: Associations, then add the following snippet (only if 
   in the Command Palette.
 </Callout>
 
-<MediaViewer
-  type="zoomable image"
-  src="/_blog/posts/customizing-vs-code/imgs/settings.png"
-/>
+<ImageZoom src="/_blog/posts/customizing-vs-code/imgs/settings.png" />
 
 Now, create a folder named "lab", and your new icons will be applied. (You may need to restart VS Code for the changes to take effect.)
 
 Final result:
 
-<MediaViewer
-  type="zoomable image"
-  src="/_blog/posts/customizing-vs-code/imgs/lab.png"
-/>
+<ImageZoom src="/_blog/posts/customizing-vs-code/imgs/lab.png" />
 
 ## Cloning existing icons
 
@@ -104,5 +92,17 @@ Today, we only covered folder customizations, but the same method can be applied
 
 ### Resources
 
-- <Link href="https://www.npmjs.com/package/material-icon-theme?activeTab=readme" target="_blank" className="_blog-link">Official Material Theme Docs</Link>
-- <Link href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme" target="_blank" className="_blog-link">Material theme extension download</Link>
+- <Link
+    href="https://www.npmjs.com/package/material-icon-theme?activeTab=readme"
+    target="_blank"
+    className="_blog-link"
+  >
+    Official Material Theme Docs
+  </Link>
+- <Link
+    href="https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme"
+    target="_blank"
+    className="_blog-link"
+  >
+    Material theme extension download
+  </Link>

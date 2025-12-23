@@ -237,7 +237,7 @@ function FAQ() {
                 The timeline varies depending on the scope. A standard
                 &quot;brochure&quot; website typically takes <b>2-4</b> weeks
                 from discovery to deployment, while more complex e-commerce or
-                custom web applications may take <b>6-10</b> weeks.
+                custom web applications may take <b>6-10</b> weeks.{" "}
                 <Link
                   href="/blog/introducing-nard-studios"
                   className="text-n-accent underline"

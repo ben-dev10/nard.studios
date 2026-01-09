@@ -15,6 +15,7 @@
 @theme inline {
   --breakpoint-xs: 375px /*iPhone SE*/;
   --breakpoint-550: 550px;
+  --breakpoint-1024: 1024px;
 
   --font-geistSans: var(--font-geist-var-sans);
   --font-Geist: Geist;
@@ -97,6 +98,10 @@
   }
 }
 
+:root {
+  --gutter-x: 3.75rem;
+}
+
 @layer base {
   :root {
     /* type scaling */
@@ -111,31 +116,19 @@
   html {
     scroll-behavior: smooth;
   }
-
+  button {
+    cursor: pointer;
+  }
   .shiki > div > button {
     border-top-left-radius: 0 !important;
     border-bottom-right-radius: 0 !important;
   }
-
   .shiki > div > pre > code {
     @apply text-[0.92rem];
   }
 }
 
 @layer utilities {
-  .debug {
-    @apply border border-y-red-500!;
-  }
-  .debug-y {
-    @apply border border-yellow-500!;
-  }
-  .debug-g {
-    @apply border border-green-500!;
-  }
-  button {
-    cursor: pointer;
-  }
-
   .gradient-text {
     @apply bg-clip-text text-transparent;
   }
@@ -175,10 +168,19 @@
   @supports not (field-sizing: content) {
     input,
     textarea {
-      /* fallback styles */
       width: 100%;
     }
   }
+}
+
+@utility debug {
+  border: 1px solid red !important;
+}
+@utility debug-y {
+  border: 1px solid yellow !important;
+}
+@utility debug-g {
+  border: 1px solid green !important;
 }
 
 [data-sonner-toast] {
@@ -193,10 +195,12 @@
 [data-sonner-toast] [data-description] {
   font-size: 1rem !important;
 }
+
 [data-sonner-toast] [data-icon] svg {
   width: 1.25rem !important;
   height: 1.25rem !important;
 }
+
 @media (max-width: 48rem) {
   [data-sonner-toast] [data-icon] svg {
     width: 1.2rem !important;

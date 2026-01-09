@@ -9,14 +9,10 @@ import Background from "@/components/ui/elements/background";
 import MiniFooter from "../_components/mini-footer";
 import galleryHero from "@/app/_assets/_nard/_ui/gallery-hero.webp";
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
-import FeaturedCards from "./_clients/featured-cards";
 import GallerySkeleton from "@/app/gallery/_assets/gallery-skeleton";
 import { Suspense } from "react";
-import ProjectCard from "../_components/project-card";
-import { NDK_SITE } from "../_assets/constants";
-
-import ndkFlyer from "../_assets/_nard/imgs/ndk-flyer.webp";
 import PopoverUI from "@/components/_ui/popover-ui";
+import CardsCarousel from "../(main)/_clients/cards-carousel";
 
 function Hero() {
   return (
@@ -39,13 +35,8 @@ function Hero() {
           </div>
 
           <div className="_hero-img max-xs:-translate-x-35 pointer-events-none min-w-[600px] -translate-x-20">
-            <Image
-              loading="eager"
-              fetchPriority="high"
-              priority
-              alt="sheet isometric art"
-              src={galleryHero}
-            />
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img alt="sheet isometric art" src={galleryHero.src} />
           </div>
         </div>
       </Section.Container>
@@ -111,21 +102,9 @@ function SoftwareTabContent() {
           </p>
           <hr className="w-full" />
         </div>
-
-        <div className="_featured-card mx-auto mt-15 mb-15 max-w-[650px]">
-          <ProjectCard
-            href={NDK_SITE}
-            title="ndk"
-            desc="A mini toolkit for frontend development - shadcn components, themes, and more."
-            alt="ndk's homepage flyer"
-            img={ndkFlyer}
-            className=""
-            linkText="Website"
-          />
-        </div>
       </Section.Container>
 
-      <FeaturedCards />
+      <CardsCarousel />
 
       <Section.Container
         container="8xl"

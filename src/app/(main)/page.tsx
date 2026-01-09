@@ -24,9 +24,6 @@ import profileCard from "@/app/gallery/_assets/_imgs/profile-card.webp";
 import clonesSVG from "../_assets/_nard/svgs/clones-block.svg";
 import gallerySVG from "../_assets/_nard/svgs/gallery-block.svg";
 import flyersCollage from "../_assets/_nard/imgs/flyers--img-arts.webp";
-import ndkFlyer from "../_assets/_nard/imgs/ndk-flyer.webp";
-import ProjectCard from "../_components/project-card";
-import { NDK_SITE } from "../_assets/constants";
 
 const line = <div className="_line w-full border-t border-dashed" />;
 
@@ -53,22 +50,10 @@ function Projects() {
                 right
               </span>{" "}
             </h2>
-            <p className="mb-8 text-center">
+            <p className="mb-15 text-center">
               (<i>mostly</i> 🙃)
             </p>
           </MotionStagger>
-
-          <div className="_featured-card mx-auto mt-15 mb-15 max-w-[650px]">
-            <ProjectCard
-              href={NDK_SITE}
-              title="ndk"
-              desc="A mini toolkit for frontend development - shadcn components, themes, and more."
-              alt="ndk's homepage flyer"
-              img={ndkFlyer}
-              className=""
-              linkText="Website"
-            />
-          </div>
 
           <div className="_h3 mb-5 flex">
             <Image
@@ -78,7 +63,9 @@ function Projects() {
             />
 
             <div>
-              <h3 className="font-FigtreeR font-[700]">UI Clones</h3>
+              <h3 className="font-FigtreeR mb-2 font-[700]">
+                Software Projects
+              </h3>
               <p className="text-muted-foreground text-[0.9rem]">
                 I tried to recreate some of the best UIs on the internet.
               </p>
@@ -102,28 +89,26 @@ function Projects() {
               className="-translate-x-15 translate-y-14 max-md:scale-[0.7]"
             />
 
-            <h3 className="font-FigtreeR mb-3 font-[700]">
-              Graphics for every occasion
-            </h3>
+            <h3 className="font-FigtreeR mb-3 font-[700]">Graphics Design</h3>
             <p className="text-muted-foreground mb-5">
-              Custom designed assets to give every project that unique touch,
-              Graphics of all kinds including, but not limited to:
+              Custom designed assets of all kinds to give every project that
+              unique touch, including, but not limited to:
             </p>
 
             <ul className="text-muted-foreground pl-5">
-              <li className="flex items-center gap-1">
+              <li className="flex items-center gap-1.5">
                 <CircleCheck size={12} className="text-primary" />
                 <span className="">Flyers, Posters</span>
               </li>
-              <li className="flex items-center gap-1">
+              <li className="flex items-center gap-1.5">
                 <CircleCheck size={12} className="text-primary" />
                 <span className="">Banners</span>
               </li>
-              <li className="flex items-center gap-1">
+              <li className="flex items-center gap-1.5">
                 <CircleCheck size={12} className="text-primary" />
                 <span className="">3D Renders</span>
               </li>
-              <li className="flex items-center gap-1">
+              <li className="flex items-center gap-1.5">
                 <CircleCheck size={12} className="text-primary shrink-0" />
                 <span className="">Thumbnails, and so much more...</span>
               </li>

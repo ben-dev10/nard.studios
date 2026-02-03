@@ -26,11 +26,10 @@ function About() {
           <h1 className="font-FigtreeR mb-5">A developer (and designer?)</h1>
           <h6 className="text-muted-foreground mb-2">
             I am a passionate and dedicated programmer based in the heart of
-            Accra, Ghana. I share a similar passion for design as well because I
-            have come to the realization that <b>design</b> is more than what
-            users see but a medium through which we get to evoke emotions and
-            convey intent, with the ultimate goal of guiding a user to a
-            specific goal.
+            Accra, Ghana. I share a passion for design also and lately I have
+            come to the realization that <b>design</b> is more than what users
+            see. But a medium through which we get to evoke emotions and convey
+            intent, with the ultimate aim of guiding a user to a specific goal.
           </h6>
         </div>
 

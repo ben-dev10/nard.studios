@@ -33,7 +33,7 @@ const ProjectCard = ({
   return (
     <div className="_featured-card max-w-max">
       <div className={`${className} _card-img group relative block`}>
-        <Link href={href}>
+        <Link href={href} target="_blank">
           <Image
             alt={`${alt}`}
             width={img.width}
@@ -66,7 +66,7 @@ const ProjectCard = ({
         </div>
 
         <div className="_preview-btn">
-          <Link href={href}>
+          <Link href={href} target="_blank">
             <Button variant="secondary">
               {linkText} <ArrowUpRight />
             </Button>

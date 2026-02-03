@@ -16,7 +16,9 @@ import CardsCarousel from "../(main)/_clients/cards-carousel";
 
 function Hero() {
   return (
-    <Section.RootElement className={`bg-[#f4f5f8] pt-20`}>
+    <Section.RootElement
+      className={`bg-gradient-to-b from-[#f4f5f8] to-transparent pt-20`}
+    >
       <Section.Container
         container="8xl"
         className="px-[var(--gutter-x)] pt-25 pb-10 md:pt-8"
@@ -218,7 +220,6 @@ export default function GalleryPage() {
       <main className="-mt-20 overflow-hidden pt-0 transition-colors duration-300">
         <HashScrollHandler />
         <Hero />
-        <hr className="_line border-t" />
 
         <div className="_tabbed-section py-10">
           <Tabs defaultValue="software" className="_header-tabs">

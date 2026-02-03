@@ -2,9 +2,10 @@
 import ProjectCard from "@/app/_components/project-card";
 import clerkCard from "../../_assets/_nard/imgs/clerk-banner.webp";
 import payloadCard from "../../_assets/_nard/imgs/payload-banner.webp";
+import remarkCard from "../../_assets/_nard/imgs/remark-og.png";
 import { usePlatform } from "@/hooks/use-platform";
 import { useEffect, useState } from "react";
-import { NDK_SITE } from "@/app/_assets/constants";
+import { NDK_SITE, REMARK_SITE } from "@/app/_assets/constants";
 import ndkFlyer from "../../_assets/_nard/imgs/ndk-flyer.webp";
 import { ShimmeringText } from "@/components/_ui/shimmering-text";
 import { ChevronRight } from "lucide-react";
@@ -28,6 +29,15 @@ export default function CardsCarousel() {
       <div
         className={`_cards-carousel ${scrollbarStyles} max-1024:px-[var(--gutter-x)] 1024:scroll-pl-[calc((100vw-1024px)/2)] 1024:px-[calc((100vw-1024px)/2)] relative flex snap-x justify-start gap-10 overflow-x-auto scroll-smooth py-5`}
       >
+        <ProjectCard
+          href={REMARK_SITE}
+          title="Remark"
+          desc="A lightweight comment-section template powered by Convex."
+          alt="remark's og"
+          img={remarkCard}
+          className="ml-auto! max-w-[600px] min-w-[330px] snap-center lg:min-w-[500px]"
+          linkText="Website"
+        />
         <ProjectCard
           href={NDK_SITE}
           title="ndk"

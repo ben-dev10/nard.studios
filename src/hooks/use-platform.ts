@@ -1,8 +1,16 @@
 "use client";
-
 import { useState, useEffect } from "react";
 
-/*
+interface PlatformInfo {
+  os: "windows" | "macos" | "linux" | "ios" | "android" | "unknown";
+  device: "mobile" | "tablet" | "desktop";
+  platform: string; // e.g., "android-mobile", "windows-desktop"
+  isMobile: boolean;
+  isDesktop: boolean;
+  userAgent: string;
+}
+
+/**
  * USAGE:
  * const { platform, os, isMobile } = usePlatform();
  *
@@ -14,16 +22,6 @@ import { useState, useEffect } from "react";
  *    {os === "linux" ? <p>linux</p> : <p>not linux</p>}
  * </div>
  */
-
-interface PlatformInfo {
-  os: "windows" | "macos" | "linux" | "ios" | "android" | "unknown";
-  device: "mobile" | "tablet" | "desktop";
-  platform: string; // e.g., "android-mobile", "windows-desktop"
-  isMobile: boolean;
-  isDesktop: boolean;
-  userAgent: string;
-}
-
 export const usePlatform = (): PlatformInfo => {
   const [platform, setPlatform] = useState<PlatformInfo>(() => {
     // SSR-safe: return default values during server-side rendering

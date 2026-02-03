@@ -1,7 +1,6 @@
 "use client";
 
-/*
- * USAGE:
+/**
  * useShare returns an event handler function that calls the browser's
  * navigator API to share the current window's URL along with some title
  * and description.
@@ -10,10 +9,9 @@
  *
  * <button onClick={handleClick}> Share this link </button />
  */
-
 export default function useShare({
-  title = "UI clone",
-  desc = "Checkout this cool UI clone I found",
+  title = "UI Resource",
+  desc = "Checkout this cool site I found!",
   url,
 }: {
   title?: string;
@@ -22,19 +20,29 @@ export default function useShare({
 }) {
   const handleShare = async () => {
     if (!navigator.share) {
-      alert("Share API not supported on this browser");
+      const isSecureContext = window.isSecureContext;
+      const inIframe = window.self !== window.top;
+      const errorMsg = `Share API not supported: ${
+        !isSecureContext ? "⚠️ Connection not HTTPS" : ""
+      } ${inIframe ? "⚠️ In iframe (may restrict Share)" : ""}`.trim();
+
+      alert(errorMsg || "Share API not supported on this browser");
       return;
     }
 
     try {
-      await navigator.share({
+      const shareData: ShareData = {
         title: title,
         text: desc,
-        url: url ? url : window.location.href,
-      });
+        url: url || window.location.href,
+      };
+
+      await navigator.share(shareData);
     } catch (error) {
-      if ((error as Error).name !== "AbortError") {
-        console.error("Error sharing:", error);
+      const errorName = (error as Error).name;
+      if (errorName !== "AbortError") {
+        console.error("Share API error:", error);
+        alert(`Share failed: ${(error as Error).message || errorName}`);
       }
     }
   };

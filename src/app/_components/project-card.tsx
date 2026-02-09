@@ -39,7 +39,7 @@ const ProjectCard = ({
             width={img.width}
             height={img.height}
             src={img.src}
-            className="mb-4 aspect-[1260/765] rounded-md shadow-lg"
+            className="mb-4 aspect-[1260/765] rounded-lg shadow-lg ring-4 ring-black/8"
             loading="eager"
             fetchPriority="high"
             priority

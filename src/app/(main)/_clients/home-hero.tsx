@@ -12,8 +12,6 @@ import Image from "next/image";
 import Section from "@/components/ui/elements/section";
 import { Github, Linkedin, Whatsapp, XTwitter } from "@/components/_ui/icons";
 
-const line = <div className="_line w-full border-t border-dashed" />;
-
 function SocialPill({
   icon,
   name,
@@ -59,7 +57,7 @@ export function Hero() {
     <Section.RootElement className="">
       <Section.Container
         container="8xl"
-        className="mb-10 px-[var(--gutter-x)] pt-65"
+        className="mb-35 px-[var(--gutter-x)] pt-65"
       >
         <div className="relative max-w-max">
           <Background>
@@ -154,7 +152,7 @@ export function Hero() {
         >
           <p className="">
             Hello👋, my name is Bernard Quarshie (or{" "}
-            <span className="gradient-text bg-gradient-to-tl from-neutral-300 to-neutral-800 font-[600] underline decoration-dashed">
+            <span className="gradient-text bg-gradient-to-tl from-neutral-300 to-neutral-800 font-[600] decoration-dashed">
               nard
             </span>
             ), welcome to my portfolio - I&apos;m a web developer who knows a
@@ -164,8 +162,6 @@ export function Hero() {
             Glad you are here, check out some of my experiments below 👇
           </p>
         </motion.div>
-
-        {line}
       </Section.Container>
     </Section.RootElement>
   );

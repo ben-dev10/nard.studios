@@ -29,10 +29,10 @@ function Hero() {
             <h1 className="font-FigtreeR mb-5 text-balance">
               Hall of experiments & milestones
             </h1>
-            <p>
-              On this page,you will find a collection of code & design projects,
-              experiments and links to clones & graphics I&apos;ve made until
-              now, and the home of all future projects.
+            <p className="text-muted-foreground">
+              On this page, you will find a collection of code & design
+              projects, experiments and links to clones & graphics I&apos;ve
+              made for the past few years, and a home to all future projects.
             </p>
           </div>
 

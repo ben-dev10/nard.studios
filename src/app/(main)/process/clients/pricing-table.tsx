@@ -1,6 +1,7 @@
 "use client";
 import PopoverUI from "@/components/_ui/popover-ui";
 import { Button } from "@/components/ui/button";
+import { useOnline } from "@/hooks/use-online";
 import { CheckCircle2, Info, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";
@@ -40,6 +41,7 @@ export default function PricingTable() {
   const [rates, setRates] = useState<ExchangeRates>(DEFAULT_RATES);
   const [isRefreshing, setIsRefreshing] = useState(false);
   const [error, setError] = useState<string>("");
+  const isOnline = useOnline();
 
   const formatPrice = (price: number): string => {
     return price.toLocaleString("en-US", {
@@ -70,7 +72,13 @@ export default function PricingTable() {
         "https://api.exchangerate-api.com/v4/latest/USD",
       );
 
+      if (!isOnline) {
+        toast.error("Network Disconnected.");
+        return;
+      }
+
       if (!response.ok) {
+        toast.error("Failed to update rates");
         throw new Error("Failed to fetch rates");
       }
 

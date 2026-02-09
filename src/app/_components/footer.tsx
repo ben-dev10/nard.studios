@@ -14,7 +14,7 @@ import Link from "next/link";
 const line = <div className="_line w-full border-t border-dashed" />;
 const copy = (
   <p className="copy mr-1 !text-[0.88rem] opacity-70 max-md:text-[0.9rem]">
-    &copy; 2025 - present, with ❤️ from Ghana{" "}
+    &copy; 2025 - {new Date().getFullYear()}, made with ❤️ from Ghana{" "}
     <Ghana className="-mt-1 ml-1 inline size-4 shrink-0" />
   </p>
 );
@@ -150,7 +150,7 @@ export default function Footer() {
                       width={121}
                       height={20}
                     />
-                    <p>87%</p>
+                    <p>88%</p>
                   </div>
                 </div>
               </div>
@@ -159,14 +159,14 @@ export default function Footer() {
 
           <span className="max-md:py-8 md:hidden">{line}</span>
 
-          <div className="_links flex flex-wrap gap-15 gap-y-18 max-md:gap-x-33 md:gap-10">
+          <div className="_links flex flex-wrap gap-15 gap-y-18 max-md:gap-x-33 md:gap-15">
             {footerLinks.map((item) => (
               <div key={item.header.slice(0, 5)} className="footer-links">
-                <div className="max-550:mb-3 mb-2 flex gap-4 opacity-80">
+                <div className="flex gap-4 opacity-80">
                   {item.headerIcon}
-                  <p className="">{item.header}</p>
+                  <p className="text-[1.1rem]">{item.header}</p>
                 </div>
-                <div className="links ml-2 flex h-[90%] flex-col gap-[6px] border-l text-[0.9rem] lg:h-[70%]">
+                <div className="links ml-2 flex h-[90%] flex-col gap-[6px] border-l border-black/10 pt-3 text-[0.9rem] lg:h-[70%]">
                   {item.links.map((link, index) => (
                     <Link
                       key={index}

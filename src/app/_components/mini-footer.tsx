@@ -4,14 +4,14 @@ import Section from "@/components/ui/elements/section";
 
 export default function MiniFooter() {
   return (
-    <Section.RootElement className="mt-10 bg-[#eff0f0]">
+    <Section.RootElement className="mt-10">
       <Section.Container
         container="8xl"
         className="flex justify-between px-[var(--gutter-x)] py-7 text-[0.9rem]"
       >
         <div className="_start flex items-center gap-2">
           <NardLogoSmall />
-          <span>&copy; 2025</span>
+          <span>&copy; 2025 - {new Date().getFullYear()}</span>
         </div>
 
         <div className="_end">

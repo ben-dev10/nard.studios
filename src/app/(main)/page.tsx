@@ -25,63 +25,73 @@ import clonesSVG from "../_assets/_nard/svgs/clones-block.svg";
 import gallerySVG from "../_assets/_nard/svgs/gallery-block.svg";
 import flyersCollage from "../_assets/_nard/imgs/flyers--img-arts.webp";
 
-const line = <div className="_line w-full border-t border-dashed" />;
-
 function Projects() {
   return (
     <Section.RootElement className="mb-15">
       <Section.Container container="none" className="_section--clones mb-8">
-        <Section.Container
-          container="8xl"
-          className="mb-8 px-[var(--gutter-x)]"
-        >
-          <MotionStagger preset="blurIn" staggerDelay={0.6}>
-            <div className="_showcase-pill mt-17">
-              <div className="mx-auto flex max-w-max items-center gap-1 rounded-full bg-neutral-200/30 p-1 px-3">
-                <Bolt className="size-3 rotate-30" />
-                <span className="block !text-[0.7rem]">Showcase</span>
+        <div className="bg-white pt-1">
+          <Section.Container
+            container="8xl"
+            className="relative mb-8 px-[var(--gutter-x)]"
+          >
+            <Background className="grid justify-center">
+              <Background.Texture texture="noise" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                alt="background gradient"
+                src="/_nard/gradient-blob.png"
+                className="min-w-300 origin-center scale-150 opacity-30"
+              />
+            </Background>
+
+            <MotionStagger preset="blurIn" staggerDelay={0.6}>
+              <div className="_showcase-pill mt-17">
+                <div className="mx-auto flex max-w-max items-center gap-1 rounded-full bg-neutral-200/30 p-1 px-3">
+                  <Bolt className="size-3 rotate-30" />
+                  <span className="block !text-[0.7rem]">Showcase</span>
+                </div>
+              </div>
+              <h2 className="_h2 font-FigtreeR mx-auto max-w-[400px] py-5 pb-2 text-center">
+                Crafting UIs that look{" "}
+                <span className="font-SeriouslyNostalgic !font-[100]">
+                  good
+                </span>{" "}
+                and works{" "}
+                <span className="font-SeriouslyNostalgic !font-[100]">
+                  right
+                </span>{" "}
+              </h2>
+              <p className="mb-15 text-center">
+                (<i>mostly</i> 🙃)
+              </p>
+            </MotionStagger>
+            <div className="_h3 mb-5 flex">
+              <Image
+                alt="clones svg"
+                src={clonesSVG}
+                className="-translate-x-5 -translate-y-2 scale-[0.8] max-md:scale-[0.6]"
+              />
+              <div>
+                <h3 className="font-FigtreeR mb-2 font-[700]">
+                  Software Development
+                </h3>
+                <p className="text-muted-foreground text-[0.9rem]">
+                  Mainly Web design and development. Mobile Development coming
+                  soon.
+                </p>
               </div>
             </div>
-            <h2 className="_h2 font-FigtreeR mx-auto max-w-[400px] py-5 pb-2 text-center">
-              Crafting UIs that look{" "}
-              <span className="font-SeriouslyNostalgic !font-[100]">good</span>{" "}
-              and works{" "}
-              <span className="font-SeriouslyNostalgic !font-[100]">
-                right
-              </span>{" "}
-            </h2>
-            <p className="mb-15 text-center">
-              (<i>mostly</i> 🙃)
-            </p>
-          </MotionStagger>
+          </Section.Container>
 
-          <div className="_h3 mb-5 flex">
-            <Image
-              alt="clones svg"
-              src={clonesSVG}
-              className="-translate-x-5 -translate-y-2 scale-[0.8] max-md:scale-[0.6]"
-            />
-
-            <div>
-              <h3 className="font-FigtreeR mb-2 font-[700]">
-                Software Projects
-              </h3>
-              <p className="text-muted-foreground text-[0.9rem]">
-                I tried to recreate some of the best UIs on the internet.
-              </p>
-            </div>
-          </div>
-        </Section.Container>
-
-        <CardsCarousel />
+          <CardsCarousel />
+        </div>
       </Section.Container>
 
       <Section.Container
         container="8xl"
-        className="_section--graphic-design mt-8 mb-8 px-[var(--gutter-x)] py-8"
+        className="_section--graphic-design mb-8 px-[var(--gutter-x)] py-8"
       >
-        {line}
-        <div className="mt-8 ml-10 flex flex-col gap-x-15 md:mt-15 md:flex-row md:justify-center">
+        <div className="ml-10 flex flex-col gap-x-15 md:flex-row md:justify-center">
           <div className="left-half mb-5 md:w-[350px]">
             <Image
               alt="gallery svg"
@@ -89,7 +99,7 @@ function Projects() {
               className="-translate-x-15 translate-y-14 max-md:scale-[0.7]"
             />
 
-            <h3 className="font-FigtreeR mb-3 font-[700]">Graphics Design</h3>
+            <h3 className="font-FigtreeR mb-3 font-[700]">Graphic Design</h3>
             <p className="text-muted-foreground mb-5">
               Custom designed assets of all kinds to give every project that
               unique touch, including, but not limited to:
@@ -113,18 +123,6 @@ function Projects() {
                 <span className="">Thumbnails, and so much more...</span>
               </li>
             </ul>
-
-            <div className="mt-8">
-              <Link
-                href="/gallery"
-                className="rounded-[8px] pb-2 shadow-md shadow-black/45"
-              >
-                <ActionBTN
-                  className="h-11 w-full rounded-lg"
-                  text="See gallery"
-                />
-              </Link>
-            </div>
           </div>
 
           <div className="right-half md:w-[calc(100%-350px)]">
@@ -147,7 +145,7 @@ function GraphicRow() {
   return (
     <Section.RootElement className="">
       <Section.Container className="">
-        <div className="max-550:-ml-35 mt-[40px] mb-[40px] flex justify-center gap-20 py-10 md:gap-30">
+        <div className="max-550:-ml-35 mb-[40px] flex justify-center gap-20 py-10 md:gap-30">
           <div className="w-[50%] min-w-[220px] md:w-[70%]">
             <Image
               alt="flyer-1"
@@ -170,6 +168,14 @@ function GraphicRow() {
             />
           </div>
         </div>
+        <div className="mt-8 mb-15 flex justify-center">
+          <Link
+            href="/gallery/#design-tab"
+            className="block rounded-[8px] pb-2 drop-shadow-xl drop-shadow-black/10"
+          >
+            <ActionBTN className="h-11 rounded-full" text="See more designs" />
+          </Link>
+        </div>
       </Section.Container>
     </Section.RootElement>
   );
@@ -177,7 +183,7 @@ function GraphicRow() {
 
 function BlogSection() {
   return (
-    <Section.RootElement>
+    <Section.RootElement className="bg-white">
       <Section.Container
         container="8xl"
         className="p-10 px-[var(--gutter-x)] pb-20"
@@ -282,17 +288,58 @@ export default function Home() {
       className={`_homepage font min-h-screen overflow-hidden transition-colors duration-300`}
     >
       <Background className="opacity-50">
-        <Background.Layer className="fixed top-0 left-0 h-full w-[30px] bg-[url(/_nard/svgs/left-marquee.svg)]" />
-        <Background.Layer className="fixed top-0 -right-6 h-full w-[45px] bg-[url(/_nard/svgs/right-marquee.svg)]" />
+        <Background.Layer className="fixed top-0 left-0 h-full w-[30px] origin-bottom bg-[url(/_nard/svgs/left-marquee.svg)] lg:scale-[1.5]" />
+        <Background.Layer className="fixed top-0 -right-6 h-full w-[45px] origin-bottom bg-[url(/_nard/svgs/right-marquee.svg)] lg:scale-[1.5]" />
       </Background>
       <>
-        <Hero />
-        <Projects />
-        <GraphicRow />
-        <BlogSection />
-        <FAQ />
-        <CTA />
+        <div>
+          <Hero />
+          <Projects />
+          <GraphicRow />
+          <BlogSection />
+          <FAQ />
+          <CTA />
+        </div>
       </>
     </main>
   );
 }
+
+// const svg = (
+//   <svg
+//     width="1938"
+//     height="2627"
+//     viewBox="0 0 1938 2627"
+//     fill="none"
+//     xmlns="http://www.w3.org/2000/svg"
+//     style={{ opacity: "0.8" }}
+//   >
+//     <path
+//       fillRule="evenodd"
+//       clipRule="evenodd"
+//       d="M1 570.475V2626H570.279V1630.83H1006.41C1441.57 1630.83 1936.81 1383.87 1936.81 842.979V759.073C1936.81 230.739 1454.89 1 1036.29 1H570.279V570.475H1294.24V1064.71H570.279V570.475H1Z"
+//       fill="#2CFBCD"
+//       fillOpacity="0.03"
+//     ></path>
+//     <path
+//       d="M570.279 570.475V1H1036.29C1454.89 1 1936.81 230.739 1936.81 759.073V842.979C1936.81 1383.87 1441.57 1630.83 1006.41 1630.83H570.279V2626H1V570.475H570.279ZM570.279 570.475H1294.24V1064.71H570.279V570.475Z"
+//       stroke="url(#paint0_linear_411_712)"
+//       strokeOpacity="0.3"
+//       strokeWidth="1.5"
+//     ></path>
+//     <defs>
+//       <linearGradient
+//         id="paint0_linear_411_712"
+//         x1="2219.15"
+//         y1="1884.98"
+//         x2="-10.3029"
+//         y2="1.34118"
+//         gradientUnits="userSpaceOnUse"
+//       >
+//         <stop offset="0.5" stop-color="#2BFBCD" stopOpacity="0.1"></stop>
+//         <stop offset="0.772665" stop-color="#2BFBCD"></stop>
+//         <stop offset="1" stop-color="#2BFBCD" stopOpacity="0.1"></stop>
+//       </linearGradient>
+//     </defs>
+//   </svg>
+// );

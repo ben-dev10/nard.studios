@@ -95,7 +95,7 @@ export default function Navbar() {
                 </Link>
               </div>
               <nav className="hidden md:block">
-                <ul className="flex items-center gap-3">
+                <ul className="flex items-center text-muted-foreground gap-3">
                   {NavLinks.map((link, index) => (
                     <li
                       key={index}
@@ -105,7 +105,7 @@ export default function Navbar() {
                         href={link.url}
                         className={`text-[0.9rem] ${
                           isActive(link.url)
-                            ? "text-primary font-[600] underline decoration-black/20 decoration-dotted"
+                            ? "text-primary font-[600] decoration-black/20"
                             : ""
                         }`}
                       >

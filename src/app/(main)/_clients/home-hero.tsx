@@ -3,14 +3,15 @@ import { motion, Variants } from "motion/react";
 import {
   GITHUB_LINK,
   LINKEDIN_LINK,
-  WHATSAPP_LINK,
   XTWITTER_LINK,
 } from "../../_assets/constants";
 import Link from "next/link";
 import Background from "@/components/ui/elements/background";
 import Image from "next/image";
 import Section from "@/components/ui/elements/section";
-import { Github, Linkedin, Whatsapp, XTwitter } from "@/components/_ui/icons";
+import { Github, Linkedin, XTwitter } from "@/components/_ui/icons";
+import ActionBTN from "@/app/_components/_ui/action-btn";
+import { Button } from "@/components/ui/button";
 
 function SocialPill({
   icon,
@@ -135,12 +136,6 @@ export function Hero() {
             name="LinkedIn"
             className="bg-[#e5e5e5] *:group-hover:text-white hover:bg-blue-500"
           />
-          <SocialPill
-            link={WHATSAPP_LINK}
-            icon={<Whatsapp className="size-5" />}
-            name="WhatsApp"
-            className="xs:flex hidden bg-[#e5e5e5] *:group-hover:text-white hover:bg-green-500"
-          />
         </motion.div>
 
         <motion.div
@@ -161,6 +156,23 @@ export function Hero() {
           <p className="">
             Glad you are here, check out some of my experiments below 👇
           </p>
+
+          <div className="flex items-center gap-4">
+            <Link
+              href="/process"
+              className="mt-8 block drop-shadow-xl drop-shadow-black/10"
+            >
+              <ActionBTN className="h-10 rounded-full" text="Learn more" />
+            </Link>
+            <Link
+              href="/blog"
+              className="mt-8 block drop-shadow-sm drop-shadow-black/10"
+            >
+              <Button variant="outline" className="rounded-full px-6 py-4.5">
+                Read blogs
+              </Button>
+            </Link>
+          </div>
         </motion.div>
       </Section.Container>
     </Section.RootElement>

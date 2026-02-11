@@ -157,7 +157,7 @@ function Process() {
               can expect all the nice features you&apos;ve come to know and
               expect of a modern site like{" "}
               <b>
-                modern UIs, clean, secure maintainable code, mobile-friendly
+                stunning UIs, clean, secure & maintainable code, mobile-friendly
                 layouts and interactions, accessibility, great performance
               </b>{" "}
               & <b>SEO</b>.
@@ -209,18 +209,16 @@ function Process() {
             <h3 className="_heading font-FigtreeR">Deployment</h3>
             <p className="mt-1 mb-3 text-[1.1rem] italic">Launch and liftoff</p>
             <p className="_description">
-              After development, testing & quality assessment, the final phase,
-              deployment, puts your site before the world, ready for users.
-              Final testing across devices and browsers is carried out. We then
-              set up <b>hosting, domains </b> and <b>deployment pipelines</b>.
-              Other Quality Assurance (QA) activities such as SEO and page-speed
-              optimizations are carried out.
+              After development, the final phase (hosting, domains .etc) puts
+              your site before the world, ready for users. Testing across
+              devices and browsers are carried out plus Quality Assurance (QA)
+              activities such as SEO and page-speed optimizations.
             </p>
 
             <p className="_description mt-4">
-              Finally, post-launch checks and optional maintenance and updates
-              are also carried out if need be. At the end of it all, you&apos;d
-              be given a <b>document or a database of credentials and keys</b>{" "}
+              Post-launch checks and optional maintenance updates are
+              also carried out if need be. At the end of it all, you&apos;d be
+              given a <b>document or a database of keys and credentials</b>{" "}
               (usually in a private Notion account) to your website for
               safekeeping or for future use.
             </p>
@@ -324,7 +322,7 @@ function FAQMain() {
                   How long does it take to complete a site?
                 </h6>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="text-muted-foreground pb-10">
                 The timeline varies depending on the scope. A standard
                 &quot;brochure&quot; website typically takes <b>2-4</b> weeks
                 from discovery to deployment, while more complex e-commerce or
@@ -345,7 +343,7 @@ function FAQMain() {
                   What do you need from me to get started?
                 </h6>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="text-muted-foreground pb-10">
                 Design is always the first point in development so if you have
                 some designs or concepts ready (i.e brand colors, typography,
                 graphic assets) that would speed up the development process, no
@@ -360,7 +358,7 @@ function FAQMain() {
                   Do you offer maintenance after the site is done?
                 </h6>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="text-muted-foreground pb-10">
                 Yes I do. I offer a standard 21-day warranty period after launch
                 to fix any bugs. Beyond that, I offer monthly maintenance
                 packages if you would like me to handle software updates,
@@ -375,7 +373,7 @@ function FAQMain() {
                   What platform or tools do you use to build websites?
                 </h6>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="text-muted-foreground pb-10">
                 I choose the best tool for the job. I almost always develop
                 full-code (without any no-code tool) because of its flexibility
                 and having full control over of every aspect of the application.
@@ -392,7 +390,7 @@ function FAQMain() {
                   one?
                 </h6>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="text-muted-foreground pb-10">
                 Of course. I can review your current site, identify what&apos;s
                 working and what&apos;s not, and provide a modern, optimized
                 redesign.

@@ -167,8 +167,9 @@ function Contact() {
 
           <div className="_contact+mail md:w-[60%] md:min-w-[400px]">
             <div className="_contact-form my-8 mb-5 rounded-[13px] border-t-[4px] bg-neutral-100 p-5 pl-8 shadow-lg shadow-black/2">
-              <div className="mb-8">
-                <MessagesSquare size={18} stroke="black" />
+              <div className="text-muted-foreground mb-8 flex items-center gap-2">
+                <MessagesSquare size={14} stroke="black" />{" "}
+                <h5 className="">Quick Message</h5>
               </div>
               <ContactForm />
             </div>

@@ -14,7 +14,7 @@ import Link from "next/link";
 const line = <div className="_line w-full border-t border-dashed" />;
 const copy = (
   <p className="copy mr-1 !text-[0.88rem] opacity-70 max-md:text-[0.9rem]">
-    &copy; 2025 - {new Date().getFullYear()}, made with ❤️ from Ghana{" "}
+    &copy; 2025 - {new Date().getFullYear()}, with ❤️ from Ghana{" "}
     <Ghana className="-mt-1 ml-1 inline size-4 shrink-0" />
   </p>
 );
@@ -131,11 +131,12 @@ export default function Footer() {
 
               <div className="">
                 <SocialIcons
-                  className="mb-3 flex max-w-max gap-2 pb-1"
+                  className="mb-3 flex max-w-max gap-4 pb-1"
                   SVGClass="size-6 text-black"
                   xtwitter
                   github
                   linkedin
+                  whatsapp
                 />
                 <div className="sm:hidden">{copy}</div>
 
@@ -162,7 +163,7 @@ export default function Footer() {
           <div className="_links flex flex-wrap gap-15 gap-y-18 max-md:gap-x-33 md:gap-15">
             {footerLinks.map((item) => (
               <div key={item.header.slice(0, 5)} className="footer-links">
-                <div className="flex gap-4 opacity-80">
+                <div className="mb-1 flex gap-4 opacity-80">
                   {item.headerIcon}
                   <p className="text-[1.1rem]">{item.header}</p>
                 </div>

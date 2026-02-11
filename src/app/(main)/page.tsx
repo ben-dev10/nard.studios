@@ -16,7 +16,6 @@ import {
 } from "@/components/ui/accordion";
 import { Hero } from "./_clients/home-hero";
 import { MotionStagger } from "@/components/_motion/core";
-import { Button } from "@/components/ui/button";
 
 import cereal from "@/app/gallery/_assets/_imgs/cereal-3d(1).webp";
 import velvet from "@/app/gallery/_assets/_imgs/velvet.webp";
@@ -171,9 +170,9 @@ function GraphicRow() {
         <div className="mt-8 mb-15 flex justify-center">
           <Link
             href="/gallery/#design-tab"
-            className="block rounded-[8px] pb-2 drop-shadow-xl drop-shadow-black/10"
+            className="block pb-2 drop-shadow-xl drop-shadow-black/10"
           >
-            <ActionBTN className="h-11 rounded-full" text="See more designs" />
+            <ActionBTN className="h-10 rounded-full" text="See more designs" />
           </Link>
         </div>
       </Section.Container>
@@ -224,7 +223,7 @@ function FAQ() {
                   How long does it take to complete a site?
                 </h6>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="text-muted-foreground pb-10">
                 The timeline varies depending on the scope. A standard
                 &quot;brochure&quot; website typically takes <b>2-4</b> weeks
                 from discovery to deployment, while more complex e-commerce or
@@ -244,7 +243,7 @@ function FAQ() {
                   What do you need from me to get started?
                 </h6>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="text-muted-foreground pb-10">
                 Design is always the first point in development so if you have
                 some designs or concepts ready (i.e brand colors, typography,
                 graphic assets) that would speed up the development process, no
@@ -259,7 +258,7 @@ function FAQ() {
                   Do you offer maintenance after the site is done?
                 </h6>
               </AccordionTrigger>
-              <AccordionContent>
+              <AccordionContent className="text-muted-foreground pb-10">
                 Yes I do. I offer a standard 21-day warranty period after launch
                 to fix any bugs. Beyond that, I offer monthly maintenance
                 packages if you would like me to handle software updates,
@@ -269,8 +268,11 @@ function FAQ() {
             </AccordionItem>
           </Accordion>
 
-          <Link href="/process/#FAQs">
-            <Button className="mt-8">See all FAQs -&gt; </Button>
+          <Link
+            href="/process/#FAQs"
+            className="mt-8 block drop-shadow-xl drop-shadow-black/10"
+          >
+            <ActionBTN className="h-10 rounded-full" text="See all FAQs" />
           </Link>
         </div>
       </Section.Container>
@@ -288,8 +290,8 @@ export default function Home() {
       className={`_homepage font min-h-screen overflow-hidden transition-colors duration-300`}
     >
       <Background className="opacity-50">
-        <Background.Layer className="fixed top-0 left-0 h-full w-[30px] origin-bottom bg-[url(/_nard/svgs/left-marquee.svg)] lg:scale-[1.5]" />
-        <Background.Layer className="fixed top-0 -right-6 h-full w-[45px] origin-bottom bg-[url(/_nard/svgs/right-marquee.svg)] lg:scale-[1.5]" />
+        <Background.Layer className="fixed top-0 left-0 h-full w-[30px] origin-bottom bg-[url(/_nard/svgs/left-marquee.svg)] lg:scale-[1.2]" />
+        <Background.Layer className="fixed top-0 -right-6 h-full w-[45px] origin-bottom bg-[url(/_nard/svgs/right-marquee.svg)] lg:scale-[1.2]" />
       </Background>
       <>
         <div>

@@ -183,7 +183,7 @@ export default function PricingTable() {
           <Button className="mt-12 w-full">Get Started</Button>
         </div>
 
-        <div className="_premium-card border-n-accent/55 flex flex-col justify-between rounded-lg border-[2px] bg-white p-8 lg:max-h-max">
+        <div className="_premium-card border-n-accent/40 flex flex-col justify-between rounded-lg border-2 bg-white p-8 shadow-lg ring-[2px] ring-black/4 lg:max-h-max">
           <div className="_wrapper">
             <div className="_badge bg-n-accent -mt-4 mb-2 max-w-max rounded-full p-1 px-3 text-[0.80rem] text-white">
               Most popular
@@ -194,7 +194,9 @@ export default function PricingTable() {
                 <span className="mr-2">{getCurrencySymbol()}</span>
                 {convertPrice(PRICING_TIERS[1].priceUSD)}
               </h2>
-              <p className="self-end pb-1 text-neutral-500">/per project</p>
+              <p className="text-muted-foreground self-end pb-1">
+                /per project
+              </p>
             </div>
 
             <div className="_list !text-[0.9rem]">

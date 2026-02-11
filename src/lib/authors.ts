@@ -7,7 +7,7 @@ export interface Author {
 export const authors: Record<string, Author> = {
   nard: {
     name: "Bernard Quarshie",
-    position: "Software Developer",
+    position: "Software Developer | Engineer",
     avatar: "/profile-photo.webp",
   },
 } as const;

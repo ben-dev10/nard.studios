@@ -2,8 +2,7 @@ import { Ghana, NardLogoGroup, NardLogoSmall } from "@/components/_ui/icons";
 import SocialIcons from "@/components/_ui/social-icons";
 import Section from "@/components/ui/elements/section";
 import {
-  Gift,
-  PencilLine,
+  BookText,
   UserCircleIcon,
   Wallpaper,
   Workflow,
@@ -75,27 +74,27 @@ const footerLinks = [
       },
     ],
   },
-  {
-    header: "Resources",
-    headerIcon: <Gift size={14} />,
-    links: [
-      {
-        name: "Snippets",
-        url: "/resources",
-      },
-      {
-        name: "Curated Links",
-        url: "/resources",
-      },
-      {
-        name: "Inspiration",
-        url: "/resources",
-      },
-    ],
-  },
+  // {
+  //   header: "Resources",
+  //   headerIcon: <Gift size={14} />,
+  //   links: [
+  //     {
+  //       name: "Snippets",
+  //       url: "/resources",
+  //     },
+  //     {
+  //       name: "Curated Links",
+  //       url: "/resources",
+  //     },
+  //     {
+  //       name: "Inspiration",
+  //       url: "/resources",
+  //     },
+  //   ],
+  // },
   {
     header: "Blog",
-    headerIcon: <PencilLine size={14} />,
+    headerIcon: <BookText size={14} />,
     links: [
       {
         name: "Changelogs",
@@ -167,7 +166,7 @@ export default function Footer() {
                   {item.headerIcon}
                   <p className="text-[1.1rem]">{item.header}</p>
                 </div>
-                <div className="links ml-2 flex h-[90%] flex-col gap-[6px] border-l border-black/10 pt-3 text-[0.9rem] lg:h-[70%]">
+                <div className="links ml-2 flex h-[90%] flex-col gap-[6px] border-l border-black/10 pt-3 text-[0.9rem] md:h-[55%]">
                   {item.links.map((link, index) => (
                     <Link
                       key={index}

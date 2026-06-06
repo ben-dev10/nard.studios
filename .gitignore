@@ -46,3 +46,4 @@ storybook-static
 
 # fumadocs-mdx generated files
 .source/
+.vscode/

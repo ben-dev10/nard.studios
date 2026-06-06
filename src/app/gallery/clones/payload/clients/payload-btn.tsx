@@ -1,5 +1,5 @@
 "use client";
-import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
+import { useCopyToClipboard } from "@/lib/hooks/use-copy-to-clipboard";
 import { ArrowUpRight, Check, Copy } from "lucide-react";
 
 export const PayloadLinkBtn = ({

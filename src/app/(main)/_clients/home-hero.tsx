@@ -146,12 +146,12 @@ export function Hero() {
           className="_paragraphs text-muted-foreground mb-15 space-y-3"
         >
           <p className="">
-            Hello👋, my name is Bernard Quarshie (or{" "}
+            Hello👋, my name is Bernard Quarshie (
             <span className="gradient-text bg-gradient-to-tl from-neutral-300 to-neutral-800 font-[600] decoration-dashed">
               nard
             </span>
-            ), welcome to my portfolio - I&apos;m a web developer who knows a
-            little bit of design.
+            ), welcome to my portfolio. I&apos;m a web developer, engineer and
+            knows a little bit of design.
           </p>
           <p className="">
             Glad you are here, check out some of my experiments below 👇

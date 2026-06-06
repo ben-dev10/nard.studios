@@ -4,9 +4,8 @@ import Image from "next/image";
 import {
   AlarmClockIcon,
   ArrowUpRight,
-  Briefcase,
+  BadgeCentIcon,
   Download,
-  MapPin,
   MessagesSquare,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -14,8 +13,81 @@ import { ContactForm } from "@/app/_components/contact-form";
 import { NARD_EMAIL } from "@/app/_assets/constants";
 import { HashScrollHandler } from "@/components/hash-scroll-handler";
 import { Badge } from "@/components/ui/badge";
+import GhanaGlobe from "@/components/globe";
+import { cn } from "@/lib/utils";
+import { NardLogoSmall } from "@/components/_ui/icons";
+
+const ImageCard = ({
+  imgSrc,
+  className,
+}: {
+  imgSrc: string;
+  className?: string;
+}) => {
+  return (
+    <div
+      className={cn(
+        "absolute aspect-[0.9/1] w-[60%] rounded-lg bg-white p-1 pb-5 shadow-lg",
+        className,
+      )}
+    >
+      <div
+        className="h-full rounded-lg"
+        style={{
+          backgroundImage: imgSrc,
+          backgroundRepeat: "no-repeat",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      />
+    </div>
+  );
+};
 
 function About() {
+  const gridItemsSize = "border-border/50 h-95 rounded-lg border bg-[#fafafc]";
+  const badgeCSS =
+    "text-foreground flex items-center rounded-full hover:cursor-pointer hover:bg-black hover:text-white border border-black/10 bg-transparent nth-[2]:border-transparent nth-[2]:bg-[#27d4ee] nth-[2]:text-white";
+
+  const skillsData = [
+    {
+      icon: <BadgeCentIcon className="shrink-0" />,
+      text: "Nextjs",
+    },
+    {
+      icon: <BadgeCentIcon className="shrink-0" />,
+      text: "React",
+    },
+    {
+      icon: <BadgeCentIcon className="shrink-0" />,
+      text: "Typescript",
+    },
+    {
+      icon: <BadgeCentIcon className="shrink-0" />,
+      text: "Convex",
+    },
+    {
+      icon: <BadgeCentIcon className="shrink-0" />,
+      text: "Supabase",
+    },
+    {
+      icon: <BadgeCentIcon className="shrink-0" />,
+      text: "Clerk",
+    },
+    {
+      icon: <BadgeCentIcon className="shrink-0" />,
+      text: "MongoDB",
+    },
+    {
+      icon: <BadgeCentIcon className="shrink-0" />,
+      text: "C",
+    },
+    {
+      icon: <BadgeCentIcon className="shrink-0" />,
+      text: "Python",
+    },
+  ];
+
   return (
     <Section.RootElement className="">
       <Section.Container
@@ -23,7 +95,7 @@ function About() {
         className="px-[calc(var(--gutter-x)-22px)] pt-25 pb-15"
       >
         <div className="mb-12">
-          <h1 className="font-FigtreeR mb-5">A developer (and designer?)</h1>
+          <h1 className="font-FigtreeR mb-5">A developer and designer.</h1>
           <h6 className="text-muted-foreground mb-2">
             I am a passionate and dedicated programmer based in the heart of
             Accra, Ghana. I share a passion for design also and lately I have
@@ -33,42 +105,92 @@ function About() {
           </h6>
         </div>
 
-        <div className="flex gap-6 rounded-lg border bg-white p-3">
-          <div className="w-[6px] rounded-full bg-black" />
-          <div className="flex h-full max-w-max flex-wrap items-center gap-10 p-2 py-3">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src="profile-photo.webp"
-              className="size-15 rounded-full"
-              alt="my profile photo"
-            />
-            <div className="flex flex-col gap-2">
-              <div className="flex items-center gap-1">
-                <MapPin size={13} className="text-n-accent -mt-1" />{" "}
-                <span className="text-muted-foreground">Accra, Ghana</span>
-              </div>
-              <div className="flex items-center gap-1">
-                <Briefcase size={13} className="text-n-accent -mt-1" />{" "}
-                <span className="text-muted-foreground">
-                  3+ years experience
+        <div className="_profile-bento mt-6 grid grid-cols-1 gap-4 md:grid-cols-5">
+          <div
+            className={cn(
+              "_location-card overflow-hidden md:col-span-3",
+              gridItemsSize,
+            )}
+          >
+            <div className="p-6">
+              <h3 className="font-FigtreeR mb-1.5">Building beautiful UIs</h3>
+              <p className="text-muted-foreground">
+                Based in the bustling city of{" "}
+                <span className="text-n-accent font-bold">
+                  Accra, Ghana (GH)
                 </span>
-              </div>
-            </div>
-            <div className="_skills">
-              <p className="text-muted-foreground mb-2 text-[0.8rem] uppercase">
-                Skills
+                , where everyday presents a new exciting problem to solve.
               </p>
-              <div className="flex max-w-xs flex-wrap gap-2">
-                <Badge className="rounded-full">React</Badge>
-                <Badge className="rounded-full">Typescript</Badge>
-                <Badge className="rounded-full">Next.js</Badge>
-                <Badge className="rounded-full">Supabase</Badge>
-                <Badge className="rounded-full">Firebase</Badge>
-                <Badge className="rounded-full">MongoDB</Badge>
-                <Badge className="rounded-full">Docker/Git</Badge>
+            </div>
+
+            <div className="_map grid grid-cols-[0.4fr_0.6fr]">
+              <div className="_pictures relative mt-6 place-items-center">
+                <ImageCard
+                  imgSrc="url('/_blog/_imgs/full-code-tools.webp')"
+                  className="-ml-8 -rotate-10"
+                />
+                <ImageCard
+                  imgSrc="url('/_blog/_imgs/full-code-tools.webp')"
+                  className="mt-15 ml-28 rotate-20"
+                />
               </div>
+              <GhanaGlobe />
             </div>
           </div>
+
+          <div
+            className={cn(
+              "_skills-card flex flex-col md:col-span-2",
+              gridItemsSize,
+            )}
+          >
+            <NardLogoSmall className="my-6 mb-8 ml-6" />
+
+            <div className="_badges @container relative grow overflow-hidden">
+              <div className="row_1 mb-3 flex gap-2">
+                {skillsData.map((item, index) => (
+                  <Badge key={index} className={badgeCSS}>
+                    {item.icon}
+                    <p>{item.text}</p>
+                  </Badge>
+                ))}
+              </div>
+
+              <div className="row_2 mb-3 flex flex-row-reverse gap-2 lg:-mr-30">
+                {skillsData.map((item, index) => (
+                  <Badge key={index} className={cn(badgeCSS)}>
+                    {item.icon}
+                    <p>{item.text}</p>
+                  </Badge>
+                ))}
+              </div>
+
+              <div className="row_3 -ml-6 flex gap-2">
+                {skillsData.map((item, index) => (
+                  <Badge key={index} className={badgeCSS}>
+                    {item.icon}
+                    <p>{item.text}</p>
+                  </Badge>
+                ))}
+              </div>
+
+              <div className="pointer-events-none">
+                <div className="absolute inset-y-0 left-0 w-90 bg-gradient-to-r from-[#fafafc] from-15% to-transparent @max-[500px]:w-40" />
+                <div className="absolute inset-y-0 right-0 w-90 bg-gradient-to-l from-[#fafafc] from-15% to-transparent @max-[500px]:w-40" />
+              </div>
+            </div>
+
+            <div className="_base px-6 pb-6">
+              <h3 className="font-FigtreeR mb-2">Growing digital skills</h3>
+              <p className="text-muted-foreground max-w-[450px]">
+                Armed with a mastery of a variety of{" "}
+                <span className="text-n-accent font-bold">digital skills</span>{" "}
+                crucial for developing projects at breakneck speeds
+              </p>
+            </div>
+          </div>
+          <div className={cn("md:col-span-2", gridItemsSize)}>3</div>
+          <div className={cn("md:col-span-3", gridItemsSize)}>4</div>
         </div>
       </Section.Container>
     </Section.RootElement>
@@ -246,7 +368,7 @@ function Resume() {
 
 export default function AboutPage() {
   return (
-    <main className="_about-page min-h-screen">
+    <main className="_about-page -mt-25 min-h-screen bg-[#fcfcfc] pt-25">
       <HashScrollHandler />
       <About />
       <Article />

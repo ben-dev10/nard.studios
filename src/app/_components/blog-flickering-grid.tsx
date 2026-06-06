@@ -1,6 +1,6 @@
 "use client";
 import { FlickeringGrid } from "@/components/_blog/flickering-grid";
-import { useIsMobile } from "@/hooks/use-mobile";
+import { useIsMobile } from "@/lib/hooks/use-mobile";
 
 export default function BlogFlickeringGrid() {
   const isMobile = useIsMobile();

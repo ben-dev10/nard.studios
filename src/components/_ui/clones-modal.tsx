@@ -11,7 +11,7 @@ import {
   InputGroupButton,
   InputGroupInput,
 } from "@/components/ui/input-group";
-import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
+import { useCopyToClipboard } from "@/lib/hooks/use-copy-to-clipboard";
 import "./_assets/clones-modal.css";
 import { NardLogoSmall, ShareIcon } from "./icons";
 import Link from "next/link";

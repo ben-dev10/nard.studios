@@ -22,7 +22,7 @@ export default function CTA() {
             className={`_bg-blur absolute -bottom-5 w-full ${conicGradient} opacity-25 blur-md`}
           />
 
-          <div className="550:rounded-xl relative z-2 overflow-hidden bg-black p-10 py-20 text-white shadow-xl">
+          <div className="550:rounded-xl relative z-2 overflow-hidden bg-black/85 p-10 py-20 text-white shadow-xl">
             <Background className="flex justify-center">
               <Image
                 alt="nard-chrome"
@@ -45,14 +45,14 @@ export default function CTA() {
                 reach out for work related matters or simply to chat, share
                 ideas or provide feedback!
               </p>
-              <div className="mt-10 flex justify-center gap-4">
+              <div className="mt-10 flex justify-center gap-3">
                 <Link href="/about/#contact">
-                  <Button className="bevel-[0.15] bg-white text-black hover:bg-white/95">
+                  <Button className="bevel-[0.15] rounded-full bg-white text-black hover:bg-white/95">
                     Get in touch
                   </Button>
                 </Link>
                 <Link href="/gallery">
-                  <Button className="bevel-[0.15] bg-neutral-700 px-5 hover:bg-neutral-600">
+                  <Button className="bevel-[0.15] rounded-full bg-neutral-700 px-5 hover:bg-neutral-600">
                     Projects
                   </Button>
                 </Link>

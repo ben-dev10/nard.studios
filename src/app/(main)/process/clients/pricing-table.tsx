@@ -1,7 +1,7 @@
 "use client";
 import PopoverUI from "@/components/_ui/popover-ui";
 import { Button } from "@/components/ui/button";
-import { useOnline } from "@/hooks/use-online";
+import { useOnline } from "@/lib/hooks/use-online";
 import { CheckCircle2, Info, RefreshCw } from "lucide-react";
 import Link from "next/link";
 import { useState } from "react";

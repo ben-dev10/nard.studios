@@ -1,17 +1,7 @@
+import { cn } from "@/lib/utils";
 import { SVGProps } from "react";
 
-/* Icons:
- *
- * Styling the icons: most of the attributes on the SVG elements have been stripped off to only essentials, thus all
- * styling and configuration is to be done with tailwind-css or inline-styles. So if you see a blank space
- * after rendering, try styling with tailwind first.
- *
- * svg tailwind utilities:
- *  text-* , font-*
- *  stroke-*
- *  fill-*
- *  size-*
- */
+// FIXME: optimize-icons, fix-nard icons
 
 export type IconProps = SVGProps<SVGSVGElement> & {
   secondaryfill?: string;
@@ -19,22 +9,20 @@ export type IconProps = SVGProps<SVGSVGElement> & {
   title?: string;
 };
 
-/* _FIXME: optimize-icons, fix-nard icons */
-
 // nard-logos --------//
 export function NardLogoSmall({
   title = "nard.studios_s",
   nFill = "#1D1D1D",
+  className,
   ...props
 }: IconProps & {
   nFill?: "#1D1D1D" | "#E0E0E0";
 }) {
   return (
     <svg
-      width="16"
-      height="16"
       viewBox="0 0 16 16"
       fill="none"
+      className={cn("w-8", className)}
       xmlns="http://www.w3.org/2000/svg"
       {...props}
     >
@@ -304,8 +292,8 @@ export function NardLogoGroup({
     </svg>
   );
 }
-// ---------- //
 
+// ---------- //
 export function Github({ title = "Github", ...props }: IconProps) {
   return (
     <svg

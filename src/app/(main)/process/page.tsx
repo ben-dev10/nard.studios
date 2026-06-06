@@ -216,11 +216,11 @@ function Process() {
             </p>
 
             <p className="_description mt-4">
-              Post-launch checks and optional maintenance updates are
-              also carried out if need be. At the end of it all, you&apos;d be
-              given a <b>document or a database of keys and credentials</b>{" "}
-              (usually in a private Notion account) to your website for
-              safekeeping or for future use.
+              Post-launch checks and optional maintenance updates are also
+              carried out if need be. At the end of it all, you&apos;d be given
+              a <b>document or a database of keys and credentials</b> (usually
+              in a private Notion account) to your website for safekeeping or
+              for future use.
             </p>
 
             <div className="_process-media mt-5 mb-16">
@@ -420,7 +420,7 @@ export default function ProcessPage() {
       <HashScrollHandler />
       <Hero />
       <Process />
-      <Pricing />
+      {/* <Pricing /> */}
       <FAQMain />
       <PricingCalculator />
     </main>

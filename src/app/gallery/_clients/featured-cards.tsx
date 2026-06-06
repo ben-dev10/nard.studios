@@ -2,7 +2,7 @@
 import ProjectCard from "@/app/_components/project-card";
 import clerkCard from "../../_assets/_nard/imgs/clerk-banner.webp";
 import payloadCard from "../../_assets/_nard/imgs/payload-banner.webp";
-import { usePlatform } from "@/hooks/use-platform";
+import { usePlatform } from "@/lib/hooks/use-platform";
 import { useEffect, useState } from "react";
 
 export default function FeaturedCards() {

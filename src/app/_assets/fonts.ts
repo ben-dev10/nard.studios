@@ -8,12 +8,12 @@ import localFont from "next/font/local";
 export const geistSansVar = localFont({
   src: [
     {
-      path: "../../utils/styles/fonts/var/geist/Geist[wght].ttf",
+      path: "../../lib/styles/fonts/var/geist/Geist[wght].ttf",
       weight: "100 900",
       style: "normal",
     },
     {
-      path: "../../utils/styles/fonts/var/geist/Geist-Italic[wght].ttf",
+      path: "../../lib/styles/fonts/var/geist/Geist-Italic[wght].ttf",
       weight: "100 900",
       style: "italic",
     },
@@ -25,12 +25,12 @@ export const geistSansVar = localFont({
 export const geistMonoVar = localFont({
   src: [
     {
-      path: "../../utils/styles/fonts/var/geist/GeistMono[wght].ttf",
+      path: "../../lib/styles/fonts/var/geist/GeistMono[wght].ttf",
       weight: "100 900",
       style: "normal",
     },
     {
-      path: "../../utils/styles/fonts/var/geist/GeistMono-Italic[wght].ttf",
+      path: "../../lib/styles/fonts/var/geist/GeistMono-Italic[wght].ttf",
       weight: "100 900",
       style: "italic",
     },

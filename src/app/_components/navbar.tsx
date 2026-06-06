@@ -3,13 +3,7 @@ import { NardLogoSmall } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
 import { AppSheet } from "./app-sheet";
-import {
-  Gift,
-  PencilLine,
-  UserCircleIcon,
-  Wallpaper,
-  Workflow,
-} from "lucide-react";
+import { BookText, UserCircleIcon, Wallpaper, Workflow } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -50,15 +44,15 @@ const NavLinks = [
   {
     name: "Blog",
     url: "/blog",
-    icon: <PencilLine size={16} />,
+    icon: <BookText size={16} />,
     visible: true,
   },
-  {
-    name: "Resources",
-    url: "/resources",
-    icon: <Gift size={16} />,
-    visible: false,
-  },
+  // {
+  //   name: "Resources",
+  //   url: "/resources",
+  //   icon: <Gift size={16} />,
+  //   visible: false,
+  // },
 ];
 
 export default function Navbar() {
@@ -83,7 +77,7 @@ export default function Navbar() {
                   className={`_bg-blur absolute inset-0 -z-1 mt-5 rounded-full ${conicGradient} opacity-25 blur-md`}
                 />
                 <div className="_contents flex gap-2">
-                  <NardLogoSmall />
+                  <NardLogoSmall className="w-5" />
                   <p className="text-[0.9rem] font-[600]">nard.studios</p>
                 </div>
               </div>
@@ -95,7 +89,7 @@ export default function Navbar() {
                 </Link>
               </div>
               <nav className="hidden md:block">
-                <ul className="flex items-center text-muted-foreground gap-3">
+                <ul className="text-muted-foreground flex items-center gap-3">
                   {NavLinks.map((link, index) => (
                     <li
                       key={index}
@@ -105,7 +99,7 @@ export default function Navbar() {
                         href={link.url}
                         className={`text-[0.9rem] ${
                           isActive(link.url)
-                            ? "text-primary font-[600] decoration-black/20"
+                            ? "text-n-accent before:bg-n-accent relative font-[600] decoration-black/20 before:absolute before:-bottom-1 before:h-[2px] before:w-[50%] before:rounded-full"
                             : ""
                         }`}
                       >

@@ -1,14 +1,14 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@import "../utils/styles/fonts.css";
+@import "../lib/styles/fonts.css";
 @import "../app/gallery/clones/payload/assets/payload-cms.css";
-@import "../utils/styles/themes/neutral.css";
-@import "../utils/styles/scrollbars.css";
-@import "../utils/styles/typography.css";
+@import "../lib/styles/themes/neutral.css";
+@import "../lib/styles/scrollbars.css";
+@import "../lib/styles/typography.css";
 @import "fumadocs-ui/css/neutral.css";
 @import "fumadocs-ui/css/preset.css";
 
-@plugin "../utils/plugins/tw-bevel.mjs";
+@plugin "../lib/plugins/tw-bevel.mjs";
 
 @custom-variant dark (&:is(.dark *));
 
@@ -207,4 +207,27 @@
     height: 1.2rem !important;
     transform: translate3d(0.8rem, -1px, 0px) !important;
   }
+}
+
+::selection {
+  background-color: var(--color-pink-500);
+  color: var(--color-pink-50);
+}
+
+::-moz-selection {
+  /* firefox */
+  background-color: var(--color-pink-500);
+  color: var(--color-pink-50);
+}
+
+input[type="checkbox"],
+input[type="radio"],
+progress {
+  accent-color: var(--color-pink-500);
+}
+
+._pointer {
+  width: 0;
+  height: 0;
+  border-left: 50px so;
 }

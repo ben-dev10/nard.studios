@@ -22,7 +22,8 @@
       "@/*": ["./src/*"],
       "@/.source": ["./.source"],
       "@/ui": ["./src/components/ui"],
-      "@/styles": ["./src/utils/styles"]
+      "@/styles": ["./src/utils/styles"],
+      "@/mdx-components": ["./mdx-components.tsx"]
     }
   },
   "include": [

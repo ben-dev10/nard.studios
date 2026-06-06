@@ -1,9 +1,8 @@
 import Section from "@/components/ui/elements/section";
 import Image from "next/image";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ArrowRight, BookTextIcon, Code2, PenToolIcon } from "lucide-react";
+import { BookTextIcon, Code2, PenToolIcon } from "lucide-react";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 import Masonry from "../_components/masonry";
 import Background from "@/components/ui/elements/background";
 import MiniFooter from "../_components/mini-footer";
@@ -13,6 +12,7 @@ import GallerySkeleton from "@/app/gallery/_assets/gallery-skeleton";
 import { Suspense } from "react";
 import PopoverUI from "@/components/_ui/popover-ui";
 import CardsCarousel from "../(main)/_clients/cards-carousel";
+import ActionBTN from "../_components/_ui/action-btn";
 
 function Hero() {
   return (
@@ -171,10 +171,11 @@ function SoftwareTabContent() {
         </div>
 
         <div className="flex justify-center">
-          <Link href={"/gallery/ui"}>
-            <Button className="rounded-full">
-              See all blocks <ArrowRight size={12} />
-            </Button>
+          <Link
+            href="/gallery/ui"
+            className="mt-8 block drop-shadow-xl drop-shadow-black/10"
+          >
+            <ActionBTN className="h-10 rounded-full" text="See all blocks" />
           </Link>
         </div>
       </Section.Container>

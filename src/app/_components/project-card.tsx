@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ShareIcon } from "@/components/_ui/icons";
 import { ArrowUpRight } from "lucide-react";
-import useShare from "@/hooks/use-share";
+import useShare from "@/lib/hooks/use-share";
 
 const ProjectCard = ({
   title,

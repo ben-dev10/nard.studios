@@ -87,7 +87,7 @@ export function AppSheet({ NavLinks, side }: NavLinksProps) {
                     <Link
                       href={link.url}
                       id="navLink"
-                      className={`sheet-link hover:bg-primary/80 flex items-center gap-1 rounded-lg p-2 px-3 hover:text-white ${
+                      className={`sheet-link hover:bg-primary/60 flex items-center gap-1 rounded-full p-2 px-3 hover:text-white ${
                         isActive(link.url)
                           ? "active bg-primary font-[600] text-white"
                           : ""

@@ -1,12 +1,7 @@
 import { Ghana, NardLogoGroup, NardLogoSmall } from "@/components/_ui/icons";
 import SocialIcons from "@/components/_ui/social-icons";
 import Section from "@/components/ui/elements/section";
-import {
-  BookText,
-  UserCircleIcon,
-  Wallpaper,
-  Workflow,
-} from "lucide-react";
+import { BookText, UserCircleIcon, Wallpaper, Workflow } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -108,7 +103,7 @@ const footerLinks = [
   },
 ];
 
-const FOOTER_BG = "bg-[#eff0f0]"; /* or: #fafafa #f4f5ff */
+const FOOTER_BG = "bg-[#f3f3f4]"; /* or: #fafafa #f4f5ff #eff0f0 */
 
 export default function Footer() {
   return (
@@ -164,7 +159,7 @@ export default function Footer() {
               <div key={item.header.slice(0, 5)} className="footer-links">
                 <div className="mb-1 flex gap-4 opacity-80">
                   {item.headerIcon}
-                  <p className="text-[1.1rem]">{item.header}</p>
+                  <p className="text-[1.1rem] font-semibold">{item.header}</p>
                 </div>
                 <div className="links ml-2 flex h-[90%] flex-col gap-[6px] border-l border-black/10 pt-3 text-[0.9rem] md:h-[55%]">
                   {item.links.map((link, index) => (

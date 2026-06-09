@@ -18,23 +18,11 @@
   --breakpoint-1024: 1024px;
 
   --font-geistSans: var(--font-geist-var-sans);
-  --font-Geist: Geist;
-  --font-InterV: "InterV";
-  --font-Carbona: "Carbona";
-  --font-Axiforma: "Axiforma";
-  --font-FKGrotesk: "FKGrotesk";
-  --font-PPEditorialItalic: "PPEditorial Italic";
-  --font-PPEditorialVar: "PPEditorial Var";
-  --font-UntitledSansB: "Untitled Sans Bold";
-  --font-UntitledSansR: "Untitled Sans Regular";
-  --font-CalSans: "Cal Sans";
+  --font-interVar: var(--font-inter-var);
   --font-FigtreeR: "Figtree Regular";
   --font-FigtreeIt: "Figtree Italic";
-  --font-FunnelDisplay: "Funnel Display";
   --font-SeriouslyNostalgic: "Seriously Nostalgic";
   --font-JetBrainsMono: "JetBrains Mono";
-  --font-WFSans: "WF Sans";
-  --fontCabinetGrotesk: "Cabinet Grotesk";
 
   --color-n-accent: var(--nard-accent);
 

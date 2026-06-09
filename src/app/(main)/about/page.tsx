@@ -1,13 +1,7 @@
 import Section from "@/components/ui/elements/section";
 import Link from "next/link";
 import Image from "next/image";
-import {
-  AlarmClockIcon,
-  ArrowUpRight,
-  BadgeCentIcon,
-  Download,
-  MessagesSquare,
-} from "lucide-react";
+import { AlarmClockIcon, ArrowUpRight, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ContactForm } from "@/app/_components/contact-form";
 import { NARD_EMAIL } from "@/app/_assets/constants";
@@ -16,6 +10,18 @@ import { Badge } from "@/components/ui/badge";
 import GhanaGlobe from "@/components/globe";
 import { cn } from "@/lib/utils";
 import { NardLogoSmall } from "@/components/_ui/icons";
+import figmaUI from "@public/_nard/svgs/grid--figma.svg";
+import comingSoon from "@public/_nard/svgs/coming-soon.svg";
+import convexLogo from "@public/_nard/svgs/convex-logo.svg";
+import cLogo from "@public/_nard/_imgs/c-lang-logo.webp";
+import { FlickeringGrid } from "@/components/_blog/flickering-grid";
+import NextjsIcon from "@/components/icons/next-js";
+import ReactIcon from "@/components/icons/react";
+import TypescriptIcon from "@/components/icons/typescript";
+import SupabaseIcon from "@/components/icons/supabase";
+import MongodbIcon from "@/components/icons/mongo-db";
+import PythonIcon from "@/components/icons/python";
+import ClerkIcon from "@/components/icons/clerk";
 
 const ImageCard = ({
   imgSrc,
@@ -45,45 +51,62 @@ const ImageCard = ({
 };
 
 function About() {
-  const gridItemsSize = "border-border/50 h-95 rounded-lg border bg-[#fafafc]";
+  const gridItemsSize =
+    "border-border/50 h-105 rounded-lg border bg-[#fafafc] overflow-hidden";
   const badgeCSS =
     "text-foreground flex items-center rounded-full hover:cursor-pointer hover:bg-black hover:text-white border border-black/10 bg-transparent nth-[2]:border-transparent nth-[2]:bg-[#27d4ee] nth-[2]:text-white";
 
   const skillsData = [
     {
-      icon: <BadgeCentIcon className="shrink-0" />,
+      icon: <NextjsIcon className="shrink-0" />,
       text: "Nextjs",
     },
     {
-      icon: <BadgeCentIcon className="shrink-0" />,
+      icon: <ReactIcon className="shrink-0" />,
       text: "React",
     },
     {
-      icon: <BadgeCentIcon className="shrink-0" />,
+      icon: <TypescriptIcon className="shrink-0" />,
       text: "Typescript",
     },
     {
-      icon: <BadgeCentIcon className="shrink-0" />,
+      icon: (
+        <Image
+          src={convexLogo.src}
+          width={convexLogo.width}
+          height={convexLogo.height}
+          alt="convex logo"
+          className="w-3.5 shrink-0"
+        />
+      ),
       text: "Convex",
     },
     {
-      icon: <BadgeCentIcon className="shrink-0" />,
+      icon: <SupabaseIcon className="shrink-0" />,
       text: "Supabase",
     },
     {
-      icon: <BadgeCentIcon className="shrink-0" />,
+      icon: <ClerkIcon className="shrink-0" />,
       text: "Clerk",
     },
     {
-      icon: <BadgeCentIcon className="shrink-0" />,
+      icon: <MongodbIcon className="shrink-0" />,
       text: "MongoDB",
     },
     {
-      icon: <BadgeCentIcon className="shrink-0" />,
+      icon: (
+        <Image
+          src={cLogo.src}
+          width={cLogo.width}
+          height={cLogo.height}
+          alt="c-lang logo"
+          className="w-3.5 shrink-0"
+        />
+      ),
       text: "C",
     },
     {
-      icon: <BadgeCentIcon className="shrink-0" />,
+      icon: <PythonIcon className="shrink-0" />,
       text: "Python",
     },
   ];
@@ -94,57 +117,30 @@ function About() {
         container="8xl"
         className="px-[calc(var(--gutter-x)-22px)] pt-25 pb-15"
       >
-        <div className="mb-12">
+        <div className="mb-20">
           <h1 className="font-FigtreeR mb-5">A developer and designer.</h1>
-          <h6 className="text-muted-foreground mb-2">
-            I am a passionate and dedicated programmer based in the heart of
-            Accra, Ghana. I share a passion for design also and lately I have
-            come to the realization that <b>design</b> is more than what users
-            see. But a medium through which we get to evoke emotions and convey
-            intent, with the ultimate aim of guiding a user to a specific goal.
-          </h6>
+          <p className="text-muted-foreground mb-2">
+            I am a passionate and dedicated programmer | engineer based in the
+            heart of Accra, Ghana.
+          </p>
         </div>
 
         <div className="_profile-bento mt-6 grid grid-cols-1 gap-4 md:grid-cols-5">
+          {/* skills */}
           <div
             className={cn(
-              "_location-card overflow-hidden md:col-span-3",
+              "_skills-card relative flex flex-col md:col-span-2",
               gridItemsSize,
             )}
           >
-            <div className="p-6">
-              <h3 className="font-FigtreeR mb-1.5">Building beautiful UIs</h3>
-              <p className="text-muted-foreground">
-                Based in the bustling city of{" "}
-                <span className="text-n-accent font-bold">
-                  Accra, Ghana (GH)
-                </span>
-                , where everyday presents a new exciting problem to solve.
-              </p>
+            <div className="_dots-texture absolute top-0 h-20 w-full mask-b-from-20% mask-b-to-80% opacity-50">
+              <FlickeringGrid
+                squareSize={1.5}
+                gridGap={3.5}
+                flickerChance={0.1}
+              />
             </div>
-
-            <div className="_map grid grid-cols-[0.4fr_0.6fr]">
-              <div className="_pictures relative mt-6 place-items-center">
-                <ImageCard
-                  imgSrc="url('/_blog/_imgs/full-code-tools.webp')"
-                  className="-ml-8 -rotate-10"
-                />
-                <ImageCard
-                  imgSrc="url('/_blog/_imgs/full-code-tools.webp')"
-                  className="mt-15 ml-28 rotate-20"
-                />
-              </div>
-              <GhanaGlobe />
-            </div>
-          </div>
-
-          <div
-            className={cn(
-              "_skills-card flex flex-col md:col-span-2",
-              gridItemsSize,
-            )}
-          >
-            <NardLogoSmall className="my-6 mb-8 ml-6" />
+            <NardLogoSmall className="my-6 mb-12 ml-6" />
 
             <div className="_badges @container relative grow overflow-hidden">
               <div className="row_1 mb-3 flex gap-2">
@@ -181,16 +177,122 @@ function About() {
             </div>
 
             <div className="_base px-6 pb-6">
-              <h3 className="font-FigtreeR mb-2">Growing digital skills</h3>
-              <p className="text-muted-foreground max-w-[450px]">
-                Armed with a mastery of a variety of{" "}
-                <span className="text-n-accent font-bold">digital skills</span>{" "}
-                crucial for developing projects at breakneck speeds
+              <h4 className="font-FigtreeR mb-2">Growing digital skills</h4>
+              <p className="text-muted-foreground max-w-[450px] text-[0.9rem]">
+                Equipped with a diverse set of{" "}
+                <span className="text-n-accent font-bold">digital skills,</span>{" "}
+                enabling the rapid design and development of modern digital
+                products.
               </p>
             </div>
           </div>
-          <div className={cn("md:col-span-2", gridItemsSize)}>3</div>
-          <div className={cn("md:col-span-3", gridItemsSize)}>4</div>
+
+          {/* location */}
+          <div
+            className={cn(
+              "_location-card @container md:col-span-3",
+              gridItemsSize,
+            )}
+          >
+            <div className="p-6">
+              <h4 className="font-FigtreeR mb-1.5">Building beautiful UIs</h4>
+              <p className="text-muted-foreground max-w-2xl text-[0.9rem]">
+                Based in{" "}
+                <span className="text-n-accent font-bold">
+                  Accra, Ghana (GH)
+                </span>
+                , where every day brings new opportunities to solve meaningful
+                design and development challenges.
+              </p>
+            </div>
+
+            <div className="_map grid grid-cols-[0.4fr_0.6fr]">
+              <div className="_pictures relative mt-6 place-items-center">
+                <div className="_stars absolute">
+                  <Image
+                    src="/_nard/svgs/stars.svg"
+                    width={127}
+                    height={117}
+                    alt="stars svg"
+                    className="w-80"
+                  />
+                  <Image
+                    src="/_nard/svgs/stars.svg"
+                    width={127}
+                    height={117}
+                    alt="stars svg"
+                    className="-mt-125 ml-50 w-80"
+                  />
+                </div>
+
+                <ImageCard
+                  imgSrc="url('/_nard/_imgs/ghana-1.webp')"
+                  className="-ml-8 -rotate-10"
+                />
+                <ImageCard
+                  imgSrc="url('/_nard/_imgs/ghana-2.webp')"
+                  className="mt-15 ml-28 rotate-20"
+                />
+              </div>
+              <GhanaGlobe />
+            </div>
+          </div>
+
+          {/* design */}
+          <div
+            className={cn(
+              "_design-card flex flex-col md:col-span-3",
+              gridItemsSize,
+            )}
+          >
+            <div className="p-6">
+              <h4 className="font-FigtreeR mb-1.5">Unique Designs</h4>
+              <p className="text-muted-foreground text-[0.9rem]">
+                From <span className="text-n-accent font-bold">2D</span>{" "}
+                graphics to <span className="text-n-accent font-bold">3D</span>{" "}
+                visuals, every design is carefully crafted to bring ideas to
+                life and elevate every project.
+              </p>
+            </div>
+
+            <div className="_img grow">
+              <Image
+                priority
+                src={figmaUI.src}
+                width={figmaUI.width}
+                height={figmaUI.height}
+                alt="Figma UI"
+                className="w-full"
+              />
+            </div>
+          </div>
+
+          {/* coming-soon */}
+          <div
+            className={cn(
+              "_coming-soon-card flex flex-col md:col-span-2",
+              gridItemsSize,
+            )}
+          >
+            <div className="@container flex h-[65%]">
+              <Image
+                src={comingSoon.src}
+                alt="Coming soon Ui"
+                width={comingSoon.width}
+                height={comingSoon.height}
+                className="h-full min-h-[250px] w-full justify-center"
+              />
+            </div>
+
+            <div className="h-[45%] grow p-6">
+              <h4 className="font-FigtreeR mb-1.5">Coming soon</h4>
+              <p className="text-muted-foreground text-[0.9rem]">
+                <span className="text-n-accent font-bold">nard.studios </span>is
+                expanding beyond design into video editing, mobile applications,
+                and desktop software development.
+              </p>
+            </div>
+          </div>
         </div>
       </Section.Container>
     </Section.RootElement>
@@ -209,14 +311,15 @@ function Article() {
             <h2 className="font-FigtreeR mb-4 font-bold">What I do.</h2>
 
             <p>
-              I work primarily in front-end development — transforming concepts
+              I work primarily in front-end development, transforming concepts
               and designs into dynamic, accessible, and performant web
-              experiences (I am actively developing my backend skills as well so
-              I should be growing into a full-stack role very soon). A summary
-              of what I do are:
+              experiences.{" "}
+              {/* (I am actively developing my backend skills as well so
+              I should be growing into a full-stack role very soon).  */}
+              A summary of what I do:
             </p>
 
-            <ul className="ml-8 list-disc space-y-3">
+            <ul className="ml-10 list-disc space-y-3">
               <li>
                 <b>Website Design and Development:</b> Building interactive UIs
                 and web applications using React, Next.js, and modern front-end
@@ -227,12 +330,11 @@ function Article() {
                 where I make designs for print or digital use (flyers,
                 thumbnails, posters, logos .etc). I offer this as a standalone
                 service but it is included in the web{" "}
-                <Link
+                {/* <Link
                   href="/process/#pricing"
                   className="text-n-accent underline"
-                >
-                  development package
-                </Link>{" "}
+                > */}
+                development package {/* </Link>{" "} */}
                 for free. See the{" "}
                 <Link
                   href="/gallery/#design-tab"
@@ -257,7 +359,7 @@ function Article() {
             alt="nard.profile image"
             width={2400}
             height={1260}
-            src="/_nard/_thumbnails/nard-profile-banner.webp"
+            src="/_nard/_thumbnails/nard-profile-banner-inverted.webp"
             className="md:rounded-md"
           />
         </div>
@@ -271,34 +373,30 @@ function Contact() {
     <Section.RootElement id="contact">
       <Section.Container
         container="8xl"
-        className="_contact-section bg-white px-[calc(var(--gutter-x)-22px)] py-15"
+        className="_contact-section bg-white px-[calc(var(--gutter-x)-22px)] py-12"
       >
-        <div className="_contact-form+headers flex flex-col gap-x-15 md:flex-row">
-          <div className="_headers md:w-[40%] md:pt-10">
-            <h2 className="font-FigtreeR font-[700]">Get In touch</h2>
-            <p className="text-muted-foreground mt-2 mb-3">
-              Have any questions, or want to collaborate on a project together?
-              I&apos;d love to hear from you.
-            </p>
-            <p className="text-muted-foreground mt-3 mb-3">
-              You can send a message by filling out the form here or send an
-              email directly by clicking on the &quot;direct email&quot; link
-              beneath the form.
-            </p>
-          </div>
-
-          <div className="_contact+mail md:w-[60%] md:min-w-[400px]">
-            <div className="_contact-form my-8 mb-5 rounded-[13px] border-t-[4px] bg-neutral-100 p-5 pl-8 shadow-lg shadow-black/2">
-              <div className="text-muted-foreground mb-8 flex items-center gap-2">
-                <MessagesSquare size={14} stroke="black" />{" "}
-                <h5 className="">Quick Message</h5>
+        <div className="_contact-form">
+          <div className="_contact+mail mx-auto md:w-[80%] md:min-w-[500px]">
+            <div className="_contact-form border-border/70 my-8 mb-5 rounded-xl border bg-neutral-50/[55%] p-5 pl-8 shadow-lg shadow-black/2">
+              <div className="_header mb-10">
+                <h2 className="font-FigtreeR font-[700]">Get In touch</h2>
+                <p className="text-muted-foreground mt-2 mb-4 text-balance">
+                  Have any questions, or want to collaborate on a project
+                  together? I&apos;d love to hear from you.
+                </p>
+                <p className="text-muted-foreground mt-3 mb-3 max-w-2xl text-[0.9rem] text-balance">
+                  You can send a message by filling out the form here or send an
+                  email directly by clicking on the &quot;direct email&quot;
+                  link beneath the form.
+                </p>
               </div>
+
               <ContactForm />
             </div>
 
             <div className="_mail flex justify-end">
               <p className="text-muted-foreground ml-auto">
-                Or send a{" "}
+                Send a{" "}
                 <Link
                   href={`mailto:${NARD_EMAIL}?subject=Project%20Inquiry&body=Hi%20there`}
                   className="text-n-accent underline"
@@ -320,46 +418,42 @@ function Resume() {
     <Section.RootElement id="resume" className="">
       <Section.Container
         container="8xl"
-        className="mb-25 p-10 px-[calc(var(--gutter-x)-22px)] py-15 pt-20"
+        className="p-5 px-[calc(var(--gutter-x)-22px)]"
       >
-        <div className="_work+resume">
-          <h3 className="font-FigtreeR mb-3 font-[700]">Work & Resume</h3>
+        <div className="_work+resume my-15 mb-6 rounded-xl border bg-white p-10">
+          <h3 className="font-FigtreeR mb-3 text-center font-[700]">
+            Work & Resume
+          </h3>
 
-          <div>
+          <div className="text-muted-foreground mx-auto mb-6 max-w-xl text-center">
+            I am currently available for freelance projects or any work
+            opportunities (remote, hybrid or full-time).
+            <div className="relative -top-1 -mt-18 ml-3 inline-block">
+              <div className="relative flex max-w-max scale-[0.8] items-center justify-center">
+                <span className="absolute size-[10px] shrink-0 animate-ping rounded-full bg-blue-300" />
+                <span className="absolute inline-block size-[7px] shrink-0 rounded-full bg-blue-400" />{" "}
+              </div>
+            </div>
+          </div>
+
+          <div className="text-center">
             <Link href="/api/cv" target="_blank" rel="noopener noreferrer">
-              <Button>
+              <Button className="rounded-full px-4.5!">
                 Resume <Download />{" "}
               </Button>
             </Link>
             <Link href="/gallery" className="ml-3">
-              <Button variant="outline" className="">
+              <Button variant="outline" className="rounded-full">
                 See projects <ArrowUpRight />{" "}
               </Button>
             </Link>
           </div>
-
-          <div className="flex gap-2 pt-10">
-            <p>
-              <b>Available for work</b>
-            </p>
-            <div className="relative flex max-w-max scale-[0.8] items-center justify-center">
-              <span className="absolute size-[10px] shrink-0 animate-ping rounded-full bg-blue-300" />
-              <span className="absolute inline-block size-[7px] shrink-0 rounded-full bg-blue-400" />{" "}
+          <small className="text-muted-foreground mt-2 flex justify-center">
+            <div className="flex items-center gap-1">
+              <AlarmClockIcon size={12} />{" "}
+              <span className="mt-1">Response time: &lt; 24hrs</span>
             </div>
-          </div>
-
-          <div className="mt-2 block">
-            <p>
-              I am currently available for freelance projects or any work
-              opportunities (remote, hybrid or full-time). Looking forward to
-              joining a team where I can contribute, learn and help build
-              meaningful digital experiences.
-            </p>
-
-            <p className="text-muted-foreground mt-8 flex items-center gap-1 font-bold">
-              <AlarmClockIcon size={15} /> Response time: &lt; 24hrs
-            </p>
-          </div>
+          </small>
         </div>
       </Section.Container>
     </Section.RootElement>

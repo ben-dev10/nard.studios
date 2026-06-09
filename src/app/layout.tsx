@@ -6,7 +6,7 @@ import Banner from "./_components/banner";
 import { Toaster } from "sonner";
 import { siteConfig } from "@/lib/site";
 import { metadata as baseMetadata, metadataKeywords } from "./metadata";
-import { geistSansVar } from "./_assets/fonts";
+import { interVar } from "./_assets/fonts";
 
 export const metadata: Metadata = {
   ...baseMetadata,
@@ -26,9 +26,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSansVar.variable} _ui font-geistSans antialiased`}
-      >
+      <body className={`${interVar.variable} _ui font-interVar antialiased`}>
         <Banner />
         {children}
         <Analytics />

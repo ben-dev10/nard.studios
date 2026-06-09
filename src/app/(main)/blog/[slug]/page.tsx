@@ -15,7 +15,7 @@ import Background from "@/components/ui/elements/background";
 import BlogFlickeringGrid from "@/app/_components/blog-flickering-grid";
 import { Metadata } from "next";
 import { siteConfig } from "@/lib/site";
-import TimerIcon from "@/components/_ui/icons/timer";
+import TimerIcon from "@/components/icons/timer";
 
 interface BlogDataMeta {
   title: string;

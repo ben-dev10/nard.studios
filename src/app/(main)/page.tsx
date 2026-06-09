@@ -3,7 +3,14 @@ import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
 import Image from "next/image";
 import Link from "next/link";
-import { CircleCheck } from "lucide-react";
+import {
+  CircleCheck,
+  CirclePlus,
+  Copy,
+  ExternalLink,
+  Plus,
+  Share,
+} from "lucide-react";
 import ActionBTN from "../_components/_ui/action-btn";
 import CTA from "../_components/cta";
 import { ReadMoreSection } from "@/components/_blog/read-more-section";
@@ -16,13 +23,15 @@ import {
 } from "@/components/ui/accordion";
 import { Hero } from "./_clients/home-hero";
 import { MotionStagger } from "@/components/_motion/core";
-
 import cereal from "@/app/gallery/_assets/_imgs/cereal-3d(1).webp";
 import velvet from "@/app/gallery/_assets/_imgs/velvet.webp";
 import profileCard from "@/app/gallery/_assets/_imgs/profile-card.webp";
 import clonesSVG from "../_assets/_nard/svgs/clones-block.svg";
 import gallerySVG from "../_assets/_nard/svgs/gallery-block.svg";
 import flyersCollage from "../_assets/_nard/imgs/flyers--img-arts.webp";
+import nydHero from "@public/_clients/nyd55/nyd55-hero.webp";
+import nydFavicon from "@public/_clients/nyd55/nyd-logo-arrow.svg";
+import { PathBeam } from "@/components/path-beam";
 
 function Projects() {
   return (
@@ -34,7 +43,7 @@ function Projects() {
             className="relative mb-8 px-[var(--gutter-x)]"
           >
             <Background className="grid justify-center">
-              <Background.Texture texture="noise" />
+              {/* <Background.Texture texture="noise" className="debug -z-1" /> */}
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 alt="background gradient"
@@ -44,13 +53,7 @@ function Projects() {
             </Background>
 
             <MotionStagger preset="blurIn" staggerDelay={0.6}>
-              <div className="_showcase-pill mt-17">
-                <div className="mx-auto flex max-w-max items-center gap-1 rounded-full bg-neutral-200/30 p-1 px-3">
-                  <Bolt className="size-3 rotate-30" />
-                  <span className="block !text-[0.7rem]">Showcase</span>
-                </div>
-              </div>
-              <h2 className="_h2 font-FigtreeR mx-auto max-w-[400px] py-5 pb-2 text-center">
+              <h2 className="_h2 font-FigtreeR mx-auto mt-17 max-w-[400px] py-5 pb-2 text-center">
                 Crafting UIs that look{" "}
                 <span className="font-SeriouslyNostalgic !font-[100]">
                   good
@@ -63,17 +66,128 @@ function Projects() {
               <p className="mb-15 text-center">
                 (<i>mostly</i> 🙃)
               </p>
+
+              <div className="_client-projects relative z-3 mb-30">
+                <div className="_showcase-pill mb-18 max-md:mb-22">
+                  <div className="mx-auto flex max-w-max items-center gap-1 rounded-full bg-neutral-200/30 p-1 px-3">
+                    <Bolt className="size-3 rotate-30" />
+                    <span className="block !text-[0.7rem]">
+                      Client Projects
+                    </span>
+                  </div>
+                </div>
+
+                <div className="_card-stack relative flex justify-center transition-transform duration-300 ease-in-out max-md:scale-110">
+                  {/* card 1 */}
+                  <div className="card relative z-3 mx-auto max-w-5xl rounded-lg bg-[#fffdfc] p-1 pb-0 shadow-xl">
+                    <div className="header">
+                      <Image
+                        priority
+                        // placeholder="blur"
+                        src={nydHero.src}
+                        width={nydHero.width}
+                        height={nydHero.height}
+                        alt="nyd55 hero image"
+                        className="border-border/50 rounded-md border"
+                      />
+                    </div>
+                    <div className="body flex items-center justify-between p-3">
+                      <div className="flex items-center gap-3">
+                        <div className="size-6.5 rounded-full p-1">
+                          <Image
+                            src={nydFavicon.src}
+                            width={nydFavicon.width}
+                            height={nydFavicon.height}
+                            alt="nyd55 favicon"
+                            className=""
+                          />
+                        </div>
+                        <div>
+                          <p className="m-0! text-[0.9rem] font-semibold">
+                            NYD55 LOGISTICS
+                          </p>
+                          <p className="text-muted-foreground text-[0.75rem]">
+                            A retail and logistics company.
+                          </p>
+                        </div>
+                      </div>
+
+                      <a
+                        href="https://nydlogistic.com"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                      >
+                        <small className="_link text-muted-foreground hover:text-n-accent flex items-center gap-1.5 transition-colors duration-200">
+                          Visit Website{" "}
+                          <ExternalLink size={11} className="-mt-1" />
+                        </small>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* card 2 */}
+                  <div className="_card-2 border-border/70 absolute z-2 mx-auto h-full w-full max-w-5xl -translate-y-8 scale-95 rounded-lg border bg-neutral-50 p-1 shadow-2xl md:-translate-y-10">
+                    <div className="_bg h-full w-full rounded-lg bg-white">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-1 p-1">
+                          <span className="rounded-md bg-neutral-200/60 p-0.75 text-neutral-600">
+                            <CirclePlus size={6.5} className="" />
+                          </span>
+                          <small className="text-muted-foreground text-[0.65rem]">
+                            Future project
+                          </small>
+                        </div>
+                        <div className="flex items-center gap-2 pr-2">
+                          <Share size={6.5} className="text-muted-foreground" />
+                          <Plus size={6.5} className="text-muted-foreground" />
+                          <Copy size={6.5} className="text-muted-foreground" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* card 3 */}
+                  <div className="_card-2 border-border/70 absolute z-1 mx-auto h-full w-full max-w-5xl -translate-y-15 scale-90 rounded-lg border bg-neutral-50 p-1 shadow-2xl md:-translate-y-20">
+                    <div className="_bg h-full w-full rounded-lg bg-white">
+                      <div className="flex items-center justify-between">
+                        <div className="flex items-center gap-1 p-1">
+                          <span className="rounded-md bg-neutral-200/60 p-0.75 text-neutral-600">
+                            <CirclePlus size={6.5} className="" />
+                          </span>
+                          <small className="text-muted-foreground text-[0.65rem]">
+                            Future project
+                          </small>
+                        </div>
+                        <div className="flex items-center gap-2 pr-2">
+                          <Share size={6.5} className="text-muted-foreground" />
+                          <Plus size={6.5} className="text-muted-foreground" />
+                          <Copy size={6.5} className="text-muted-foreground" />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </MotionStagger>
+
             <div className="_h3 mb-5 flex">
-              <Image
-                alt="clones svg"
-                src={clonesSVG}
-                className="-translate-x-5 -translate-y-2 scale-[0.8] max-md:scale-[0.6]"
-              />
+              <div className="relative flex flex-col justify-center">
+                <Image
+                  alt="clones svg"
+                  src={clonesSVG}
+                  className="-translate-x-5 -translate-y-2 scale-[0.8] max-md:scale-[0.6]"
+                />
+
+                <PathBeam
+                  path="M0 0L0 856"
+                  duration={2.5}
+                  height={500}
+                  width={2}
+                  className="absolute top-[70%] mask-b-from-20% mask-b-to-80%"
+                />
+              </div>
               <div>
-                <h3 className="font-FigtreeR mb-2 font-[700]">
-                  Software Development
-                </h3>
+                <h3 className="font-FigtreeR mb-2 font-[700]">Experiments</h3>
                 <p className="text-muted-foreground text-[0.9rem]">
                   Mainly Web design and development. Mobile Development coming
                   soon.
@@ -92,11 +206,21 @@ function Projects() {
       >
         <div className="ml-10 flex flex-col gap-x-15 md:flex-row md:justify-center">
           <div className="left-half mb-5 md:w-[350px]">
-            <Image
-              alt="gallery svg"
-              src={gallerySVG}
-              className="-translate-x-15 translate-y-14 max-md:scale-[0.7]"
-            />
+            <div className="relative flex flex-col justify-center">
+              <Image
+                alt="gallery svg"
+                src={gallerySVG}
+                className="-translate-x-15 translate-y-14 max-md:scale-[0.7]"
+              />
+
+              <PathBeam
+                path="M0 0L0 239.5L10 251.5L10 359L0 372.5L0 726.5"
+                duration={3}
+                height={750}
+                width={20}
+                className="absolute top-[190%] -translate-x-10.5 mask-b-from-20% mask-b-to-80% opacity-50"
+              />
+            </div>
 
             <h3 className="font-FigtreeR mb-3 font-[700]">Graphic Design</h3>
             <p className="text-muted-foreground mb-5">
@@ -306,42 +430,3 @@ export default function Home() {
     </main>
   );
 }
-
-// const svg = (
-//   <svg
-//     width="1938"
-//     height="2627"
-//     viewBox="0 0 1938 2627"
-//     fill="none"
-//     xmlns="http://www.w3.org/2000/svg"
-//     style={{ opacity: "0.8" }}
-//   >
-//     <path
-//       fillRule="evenodd"
-//       clipRule="evenodd"
-//       d="M1 570.475V2626H570.279V1630.83H1006.41C1441.57 1630.83 1936.81 1383.87 1936.81 842.979V759.073C1936.81 230.739 1454.89 1 1036.29 1H570.279V570.475H1294.24V1064.71H570.279V570.475H1Z"
-//       fill="#2CFBCD"
-//       fillOpacity="0.03"
-//     ></path>
-//     <path
-//       d="M570.279 570.475V1H1036.29C1454.89 1 1936.81 230.739 1936.81 759.073V842.979C1936.81 1383.87 1441.57 1630.83 1006.41 1630.83H570.279V2626H1V570.475H570.279ZM570.279 570.475H1294.24V1064.71H570.279V570.475Z"
-//       stroke="url(#paint0_linear_411_712)"
-//       strokeOpacity="0.3"
-//       strokeWidth="1.5"
-//     ></path>
-//     <defs>
-//       <linearGradient
-//         id="paint0_linear_411_712"
-//         x1="2219.15"
-//         y1="1884.98"
-//         x2="-10.3029"
-//         y2="1.34118"
-//         gradientUnits="userSpaceOnUse"
-//       >
-//         <stop offset="0.5" stop-color="#2BFBCD" stopOpacity="0.1"></stop>
-//         <stop offset="0.772665" stop-color="#2BFBCD"></stop>
-//         <stop offset="1" stop-color="#2BFBCD" stopOpacity="0.1"></stop>
-//       </linearGradient>
-//     </defs>
-//   </svg>
-// );

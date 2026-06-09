@@ -38,3 +38,15 @@ export const geistMonoVar = localFont({
   variable: "--font-geist-var-mono",
   display: "swap",
 });
+
+export const interVar = localFont({
+  src: [
+    {
+      path: "../../lib/styles/fonts/var/InterVariable.woff2",
+      weight: "100 900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-inter-var",
+  display: "swap",
+});

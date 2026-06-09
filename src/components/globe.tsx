@@ -96,7 +96,7 @@ export default function GhanaGlobe() {
 
   return (
     <div className="relative h-full">
-      <div className="-mt-10 -mr-15 ml-auto">
+      <div className="-mt-5 -mr-15 ml-auto @max-[400px]:mt-15">
         <canvas
           ref={canvasRef}
           className="h-full w-full cursor-grab active:cursor-grabbing"

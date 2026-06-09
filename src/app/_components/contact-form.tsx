@@ -176,18 +176,19 @@ export function ContactForm() {
         name="name"
         placeholder="Your name"
         required
-        className="bg-white"
+        className="placeholder:text-muted-foreground rounded-full bg-white"
       />
 
       <div className="space-between flex items-center gap-5">
         <Input
           name="emailOrPhone"
           placeholder="Email or phone"
-          className="w-[50%] bg-white"
+          className="placeholder:text-muted-foreground w-[50%] rounded-full bg-white"
           required
         />
+
         <Select onValueChange={setServiceType} value={serviceType}>
-          <SelectTrigger className="w-[50%] bg-white">
+          <SelectTrigger className="placeholder:text-muted-foreground w-[50%] rounded-full bg-white">
             <SelectValue placeholder="Select a service" />
           </SelectTrigger>
           <SelectContent>
@@ -203,11 +204,15 @@ export function ContactForm() {
       <Textarea
         name="message"
         placeholder="Your message"
-        className="h-32 bg-white"
+        className="placeholder:text-muted-foreground h-32 rounded-xl bg-white"
         required
       />
 
-      <Button type="submit" disabled={loading} className="w-full">
+      <Button
+        type="submit"
+        disabled={loading}
+        className="mt-6 w-full rounded-full py-5 transition-colors duration-350 hover:text-white! hover:brightness-85"
+      >
         {loading ? "Sending..." : "Send Message"}
       </Button>
     </form>

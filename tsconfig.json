@@ -23,6 +23,7 @@
       "@/.source": ["./.source"],
       "@/ui": ["./src/components/ui"],
       "@/styles": ["./src/utils/styles"],
+      "@public/*": ["./public/*"],
       "@/mdx-components": ["./mdx-components.tsx"]
     }
   },

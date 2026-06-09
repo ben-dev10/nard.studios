@@ -2,7 +2,7 @@
 import { NardLogoSmall } from "@/components/_ui/icons";
 import Background from "@/components/ui/elements/background";
 import Section from "@/components/ui/elements/section";
-import { AppSheet } from "./app-sheet";
+import { AppSheet } from "./_sheet";
 import { BookText, UserCircleIcon, Wallpaper, Workflow } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

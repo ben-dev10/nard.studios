@@ -22,7 +22,7 @@ export default function CTA() {
             className={`_bg-blur absolute -bottom-5 w-full ${conicGradient} opacity-25 blur-md`}
           />
 
-          <div className="550:rounded-xl relative z-2 overflow-hidden bg-black/85 p-10 py-20 text-white shadow-xl">
+          <div className="550:rounded-xl relative z-2 overflow-hidden bg-[#252525] p-10 py-20 text-white shadow-xl">
             <Background className="flex justify-center">
               <Image
                 alt="nard-chrome"

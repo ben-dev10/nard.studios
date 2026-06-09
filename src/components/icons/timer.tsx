@@ -1,5 +1,5 @@
 import React from "react";
-import { IconProps } from "../icons";
+import { IconProps } from "../_ui/icons";
 
 export default function TimerIcon({ title = "", ...props }: IconProps) {
   return (
